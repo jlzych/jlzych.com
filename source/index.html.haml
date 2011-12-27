@@ -6,3 +6,9 @@
   I am a user interface designer who enjoys puzzling over how to create clean, useful web apps with HTML, CSS, and jQuery. Currently I'm a 2nd year Masters student at UC Berkeley's 
   = link_to "School of Information", "http://ischool.berkeley.edu", { :title => "School of Information home page" }
   , soaking up as much knowledge as I can about information and technology. View some of my recent projects below:
+
+#projects
+  - data.blog.articles.each do |article|
+    .project
+      =link_to article.title, article.url
+      =article.summary
