@@ -1,0 +1,33 @@
+!!! 5
+%html
+  %head>
+    %meta{ :charset => 'utf-8' }
+    %title Jeff Zych
+    %meta{ :content => "Jeff Zych's homepage", :name => 'description' }
+    %meta{ :content => 'Jeff Zych', :name => 'author' }
+    %link{ :href => "http://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic", :rel => "stylesheet", :type => "text/css" }
+    %link{ :href => 'http://fonts.googleapis.com/css?family=PT+Sans',  :rel => 'stylesheet', :type => 'text/css' }
+    =stylesheet_link_tag "reset"
+    =stylesheet_link_tag "application"
+
+  %body{ :id => 'index' }
+    %div{ :id => "main", :role => "main" }
+      =yield
+    
+    #projects
+      - data.blog.articles.each do |article|
+        .project
+          =link_to article.title, article.url
+          =article.summary
+
+    / Google Analytics tracking
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21389659-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
