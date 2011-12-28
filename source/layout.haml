@@ -9,7 +9,7 @@
     %link{ :href => 'http://fonts.googleapis.com/css?family=PT+Sans',  :rel => 'stylesheet', :type => 'text/css' }
     =stylesheet_link_tag "reset", "application"
 
-  %body{ :id => 'index' }
+  %body{ :id => data.page.title }
     #vignette
     #main{ :role => "main" }
       =yield
