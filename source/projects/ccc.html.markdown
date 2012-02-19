@@ -1,6 +1,6 @@
 --- 
 title: "Cal Cooking Club"
-date: 01/01/2011
+date: '01/01/2011'
 preview_img: /projects/ccc.png
 ---
 

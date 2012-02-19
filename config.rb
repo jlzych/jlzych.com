@@ -5,6 +5,7 @@ set :blog_layout_engine, "haml"
 # set :blog_summary_length, 500
 
 page "/feed.xml", :layout => false
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
