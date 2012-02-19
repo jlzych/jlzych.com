@@ -10,9 +10,9 @@
     =stylesheet_link_tag "reset", "application"
 
   %body{ :id => data.page.title }
-    #vignette
     #main{ :role => "main" }
       =yield
+    #vignette
 
     / Google Analytics tracking
     :javascript
