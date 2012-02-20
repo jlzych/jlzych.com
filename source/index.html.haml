@@ -2,10 +2,6 @@
 title: "index"
 ---
 
-%h1
-  Jeff Zych
-  %a{ :href => "http://dubster-levels.heroku.com", :class => "highlight" }><
-    \.
 %p{ :id => "about" }
   I am a user interface designer who enjoys puzzling over how to create clean, useful web apps with HTML, CSS, and jQuery. Currently I'm a 2nd year Masters student at UC Berkeley's 
   = link_to "School of Information", "http://ischool.berkeley.edu", { :title => "School of Information home page" }
@@ -18,3 +14,5 @@ title: "index"
         -if article.preview_img
           = image_tag article.preview_img
         =article.title
+
+=link_to "Resume", "/JeffZych_resume.pdf", { :id => "resume" }

@@ -11,7 +11,15 @@
 
   %body{ :id => data.page.title }
     #main{ :role => "main" }
-      =yield
+      %h1
+        Jeff Zych
+        %a{ :href => "http://dubster-levels.heroku.com", :class => "highlight" }><
+          \.
+      
+      %article
+        - if is_blog_article?
+          %h1= current_article_title
+        =yield
     #vignette
 
     / Google Analytics tracking
