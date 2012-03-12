@@ -3,16 +3,22 @@ title: "index"
 ---
 
 %p{ :id => "about" }
-  I am a user interface designer who enjoys puzzling over how to create clean, useful web apps with HTML, CSS, and jQuery. Currently I'm a 2nd year Masters student at UC Berkeley's 
+  I am a 2nd year Masters student at UC Berkeley's
   = link_to "School of Information", "http://ischool.berkeley.edu", { :title => "School of Information home page" }
-  , soaking up as much knowledge as I can about information and technology. View some of my recent projects below:
+  , graduating in May 2012. I am focused on applying insights from behavioral economics and cognitive psychology to information systems. View some of my recent projects below:
 
 #projects
+  %h2 Projects
   - data.blog.articles.each do |article|
-    .project>
-      %a{ :href => article.url, :title => article.title }
-        -if article.preview_img
-          = image_tag article.preview_img
-        =article.title
+    - if !article.draft
+      .project>
+        %a{ :href => article.url, :title => article.title }
+          -if article.preview_img
+            = image_tag article.preview_img
+          =article.title
 
-=link_to "Resume", "/JeffZych_resume.pdf", { :id => "resume" }
+%h2 Other links
+%p
+  =link_to "Github repo", "http://github.com/jlzych"
+  =link_to "Twitter", "http://twitter.com/jlzych"
+  =link_to "Resume (pdf)", "/JeffZych_resume.pdf"

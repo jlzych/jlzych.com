@@ -11,13 +11,13 @@
 
   %body{ :id => data.page.title }
     #main{ :role => "main" }
-      %h1
-        Jeff Zych
+      %h1.name
+        =link_to "Jeff Zych", "/", "Home"
         %a{ :href => "http://dubster-levels.heroku.com", :class => "highlight" }><
           \.
-      
-      %article
-        - if is_blog_article?
+
+      %article{ :class => (data.page.title != 'index') ? 'project_desc' : '' }
+        - if data.page.title != 'index'
           %h1= current_article_title
         =yield
     #vignette
