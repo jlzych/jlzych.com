@@ -12,13 +12,15 @@ title: "index"
   - data.blog.articles.each do |article|
     - if !article.draft
       .project>
+        -# Strip .html from the article URLs: article.url.slice(0..-6)
         %a{ :href => article.url, :title => article.title }
           -if article.preview_img
             = image_tag article.preview_img
           =article.title
 
-%h2 Other links
-%p
-  =link_to "Github repo", "http://github.com/jlzych"
-  =link_to "Twitter", "http://twitter.com/jlzych"
-  =link_to "Resume (pdf)", "/JeffZych_resume.pdf"
+%h2 Contact
+%ul
+  %li Email: jlzych [at] gmail [dot] com
+  %li=link_to "Github", "http://github.com/jlzych"
+  %li=link_to "Twitter", "http://twitter.com/jlzych"
+  %li=link_to "Resume (pdf)", "/JeffZych_resume.pdf"
