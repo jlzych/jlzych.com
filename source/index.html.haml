@@ -12,8 +12,8 @@ title: "index"
   - data.blog.articles.each do |article|
     - if !article.draft
       .project>
-        -# Strip .html from the article URLs: article.url.slice(0..-6)
-        %a{ :href => article.url, :title => article.title }
+        -# Strip .html from the article URLs
+        %a{ :href => article.url.slice(0..-6), :title => article.title }
           -if article.preview_img
             = image_tag article.preview_img
           =article.title
