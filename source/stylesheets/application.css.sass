@@ -1,8 +1,7 @@
 @import "compass"
 
 *
-  box-sizing: border-box
-  -moz-box-sizing: border-box
+  +box-sizing(border-box)
 
 body
   background-color: #E5DDC3
@@ -14,7 +13,7 @@ body
   position: relative
   z-index: 10
 
-@media screen
+@media only screen
   /* Overlays a sweet vignette on the page contents */
   #vignette
     position: fixed
@@ -30,8 +29,10 @@ body
   margin-top: .5em
   padding-left: 20%
   text-align: left
-  @media all and (max-width: 500px)
+  @media screen and (max-width: 500px)
     font-size: 50pt
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+    padding-left: 10%
   a
     color: #E5DDC3
     font-weight: normal
@@ -49,6 +50,16 @@ article
     margin-bottom: 1em
     margin-right: 1em
     max-width: 60%
+  @media screen and (max-width: 500px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+    font-size: 40px
+    padding: 0 10%
+    &.project_desc img
+      float: none
+      margin-right: 0
+      max-width: inherit
+      width: 100%
+    h1
+      font-size: 1.5em
 
 blockquote
   clear: both
@@ -59,7 +70,6 @@ blockquote
 .project
   display: inline-block
   margin-bottom: 1em
-  /*min-height: 100px
   padding-bottom: 1em
   vertical-align: top
   width: 46%
@@ -73,8 +83,8 @@ blockquote
     margin-bottom: 1em
     width: 100%
   &:nth-child(odd)
-    margin-right: 4%
-  @media all and (max-width: 700px)
+    margin-right: 8%
+  @media all and (max-width: 700px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
     margin-right: 0
     width: 100%
 
