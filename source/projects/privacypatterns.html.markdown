@@ -1,6 +1,6 @@
---- 
+---
 title: "Privacy Patterns"
-date: 02/16/2012
+date: 02/20/2012
 preview_img: /projects/privacypatterns_preview.png
 ---
 
