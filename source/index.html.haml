@@ -7,11 +7,11 @@ title: "index"
   = link_to "School of Information", "http://ischool.berkeley.edu", { :title => "School of Information home page" }
   , graduating in May 2012. I am focused on applying insights from behavioral economics and cognitive psychology to information systems. View some of my recent projects below:
 
-#projects
-  %h2 Projects
+%h2 Projects
+%ul#projects
   - data.blog.articles.each do |article|
     - if !article.draft
-      .project>
+      %li.project>
         -# Strip .html from the article URLs
         %a{ :href => article.url.slice(0..-6), :title => article.title }
           -if article.preview_img
