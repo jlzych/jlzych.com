@@ -1,6 +1,7 @@
 @import "compass"
 
 $dark-blue: #00294C
+$dark-brown: #190F00
 $light-blue: #66C7FF
 $light-brown: #E5DDC3
 
@@ -53,16 +54,28 @@ p
     height: 100%
     +background-image(radial-gradient(color-stops(rgba(0,0,0,0), rgba(0,0,0,0) 85%, rgba(0,0,0,0.2) 100%), center ellipse))
 
-.name
-  background-color: #190F00
-  font-size: 55pt
-  margin-top: .5em
-  padding-left: 20%
+header
+  margin-bottom: 1.5em
+  margin-top: 4%
+  padding: 0 20%
+
+  background-color: $dark-brown
   text-align: left
-  @media screen and (max-width: 500px)
-    font-size: 50pt
-  @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
-    padding-left: 10%
+  hgroup
+    display: inline-block
+    &.name
+      width: 60%
+    &.nav
+      width: 39%
+      text-align: right
+      vertical-align: baseline
+  h1
+    font-size: 55pt
+    margin: 0
+    @media screen and (max-width: 500px)
+      font-size: 50pt
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+      padding: 0 10%
   a
     color: $light-brown
     font-weight: normal
@@ -71,6 +84,16 @@ p
       text-decoration: none
     &:active
       color: $light-brown
+    &.current
+      color: $light-blue
+  nav a
+    font-size: 1.25em
+    &:hover
+      color: $light-blue
+    &:active
+      color: $dark-blue
+    &:first-child
+      margin-right: 1em
 
 article
   padding: 0 20%
