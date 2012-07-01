@@ -16,7 +16,7 @@
         %a{ :href => "http://dubster-levels.heroku.com", :class => "highlight" }><
           \.
 
-      %article{ :class => ('project_desc' unless data.page.title == 'index') }
+      %article{ :class => (data.page.article_class || ('project_desc' unless data.page.title == 'index')) }
         - if data.page.title != 'index'
           -# Bug here that prints index even though it's not a blog article, hence if statement
           %h1= current_article_title

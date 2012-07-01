@@ -13,11 +13,11 @@ title: "index"
   %strong cognitive psychology
   to increase the usability and effectiveness of information systems. View some of my recent projects below:
 
-%h2 Projects
-%ul#projects
+%h1 Projects
+%ul#projects_list
   - data.blog.articles.each do |article|
     - if !article.draft
-      %li.project>
+      %li.project_preview>
         -# Strip .html from the article URLs
         %a{ :href => article.url.slice(0..-6), :title => article.title }
           -if article.preview_img
