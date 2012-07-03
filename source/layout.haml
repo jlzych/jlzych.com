@@ -20,7 +20,7 @@
         %hgroup.nav
           %nav
             =link_to "Resume", "/resume", "Resume", :class => ("current" if data.page.title == "Resume")
-            =link_to "Contact", "/contact", "Contact", :class => ("current" if data.page.title == "Contact Me")
+            =link_to "Contact", "/#contact", "Contact", :class => ("current" if data.page.title == "Contact Me")
 
       %article{ :class => (data.page.article_class || ('project_desc' unless data.page.title == 'index')) }
         - if data.page.title != 'index'

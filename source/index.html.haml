@@ -23,3 +23,14 @@ title: "index"
           -if article.preview_img
             = image_tag article.preview_img
           =article.title
+
+%h2#contact Contact
+%ul
+  %li
+    Email:
+    =mail_to "jlzych@gmail.com"
+  %li=link_to "Github", "http://github.com/jlzych"
+  %li<
+    Twitter: @
+    =link_to "jlzych", "http://twitter.com/jlzych"
+  %li=link_to "Resume (pdf)", "http://people.ischool.berkeley.edu/~jlzych/JeffZych_Resume.pdf"
