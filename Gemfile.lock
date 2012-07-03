@@ -115,5 +115,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman
-  middleman-blog
+  middleman (~> 2.0.16)
+  middleman-blog (~> 0.1.5)
