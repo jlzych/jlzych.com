@@ -22,7 +22,10 @@ body
   line-height: 1.4
   text-align: center
 
-/* Font styles: see developer.yahoo.com/yui/fonts/ for more info
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
+    font-size: 1.5em
+
+/* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
 h1
   font-size: 2.2em
 
@@ -76,14 +79,17 @@ header
       width: 39%
       text-align: right
       vertical-align: baseline
+
   h1
     font-size: 55pt
     margin: 0
-    @media screen and (max-width: 500px)
+
+    @media screen and (max-device-width: 960px)
       font-size: 50pt
-    // This is wrong now - Retina MBPs pick this up
-    @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
-      padding: 0 10%
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
+    padding: 0 10%
+
   a
     color: $light-brown
     font-weight: normal
@@ -107,14 +113,17 @@ article
   padding: 0 20%
   padding-bottom: 15%
   text-align: left
+
   &.project_desc img
     float: left
     margin-bottom: 1em
     margin-right: 1em
     max-width: 60%
-  @media screen and (max-width: 500px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
     font-size: 40px
     padding: 0 10%
+
     &.project_desc img
       float: none
       margin-right: 0
@@ -150,6 +159,7 @@ blockquote
     width: 100%
   &:nth-child(odd)
     margin-right: 8%
+
   @media all and (max-width: 700px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
     margin-right: 0
     width: 100%
@@ -180,7 +190,7 @@ a
   position: relative
   z-index: 10
 
-  @media screen and (max-width: 500px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
     padding: 2em 10%
   ul
     list-style: none
