@@ -73,22 +73,23 @@ header
   text-align: left
   hgroup
     display: inline-block
-    &.name
-      width: 60%
-    &.nav
-      width: 39%
-      text-align: right
-      vertical-align: baseline
+  .name
+    width: 60%
+  .nav
+    width: 39%
+    text-align: right
+    vertical-align: baseline
 
   h1
     font-size: 55pt
     margin: 0
 
-    @media screen and (max-device-width: 960px)
-      font-size: 50pt
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
-    padding: 0 10%
+  @media (max-width: 980px)
+    .name, .nav
+      text-align: center
+      width: 100%
+    .nav
+      font-size: 1.3em
 
   a
     color: $light-brown
@@ -120,8 +121,8 @@ article
     margin-right: 1em
     max-width: 60%
 
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px)
-    font-size: 40px
+  @media (max-width: 980px)
+    font-size: 1.6em
     padding: 0 10%
 
     &.project_desc img
@@ -160,7 +161,7 @@ blockquote
   &:nth-child(odd)
     margin-right: 8%
 
-  @media all and (max-width: 700px), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+  @media all and (max-width: 980px)
     margin-right: 0
     width: 100%
 
