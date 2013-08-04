@@ -15,15 +15,15 @@ article_class: "resume"
     .school
       %h3
         UC Berkeley,
-        =link_to "School of Information", "http://ischool.berkeley.edu", "School of Information homepage"
+        =link_to "School of Information", "http://ischool.berkeley.edu", { :title => "School of Information homepage" }
       .subhead
-        %span.title=link_to "Master of Information Management and Systems", "http://www.ischool.berkeley.edu/programs/masters", "Master's degree homepage"
+        %span.title=link_to "Master of Information Management and Systems", "http://www.ischool.berkeley.edu/programs/masters", { :title => "Master's degree homepage" }
         %span.dates 2012
       %p GPA: 3.95
     .school
-      %h3=link_to "Cal Poly, San Luis Obispo", "http://calpoly.edu", "Cal Poly homepage"
+      %h3=link_to "Cal Poly, San Luis Obispo", "http://calpoly.edu", { title: "Cal Poly homepage" }
       .subhead
-        %span.title=link_to "Graphic Communication B.S.", "http://www.grc.calpoly.edu", "Graphic Communication homepage"
+        %span.title=link_to "Graphic Communication B.S.", "http://www.grc.calpoly.edu", { title: "Graphic Communication homepage" }
         %span.dates 2007
       %p Minor in Computer Science
       %p GPA: 3.7
@@ -43,17 +43,7 @@ article_class: "resume"
   .section-content
     .position
       %h3.location
-        =link_to "MeFunction", "http://mefunction.com", "MeFunction homepage"
-        (Oakland, CA)
-      .subhead
-        %span.title Javascript Contractor
-        %span.dates 06/12 &mdash; Present
-      %p.description
-        Implemented interactive, AJAX-powered web pages using the Ext.js Javascript library.
-
-    .position
-      %h3.location
-        =link_to "Cityspan Technologies", "http://cityspan.com", "Cityspan homepage"
+        =link_to "Cityspan Technologies", "http://cityspan.com", { title: "Cityspan homepage" }
         (Berkeley, CA)
       .subhead
         %span.title UI Designer
@@ -62,7 +52,7 @@ article_class: "resume"
 
     .position
       %h3.location
-        =link_to "PrivacyPatterns.org", "http://privacypatterns.org", "Privacy Patterns homepage"
+        =link_to "PrivacyPatterns.org", "http://privacypatterns.org", { title: "Privacy Patterns homepage" }
         (Berkeley, CA)
       .subhead
         %span.title Lead Designer & Developer
@@ -71,7 +61,7 @@ article_class: "resume"
 
     .position
       %h3.location
-        =link_to "Cityspan Technologies", "http://cityspan.com", "Cityspan homepage"
+        =link_to "Cityspan Technologies", "http://cityspan.com", { title: "Cityspan homepage" }
         (Berkeley, CA)
       .subhead
         %span.title Data Warehouse Developer
@@ -92,7 +82,7 @@ article_class: "resume"
   .section-content
     %ul
       %li
-        =link_to "Cal Cooking Club", "http://cooking.berkeley.edu", "Cal Cooking Club homepage"
+        =link_to "Cal Cooking Club", "http://cooking.berkeley.edu", { title: "Cal Cooking Club homepage" }
         webmaster, 2010-2011 academic year
       %li Cal Poly Film Club secretary, 2005-2006 academic year
       %li Ventura High School Tennis Team 1999-2003 (MVP 2003 season)
