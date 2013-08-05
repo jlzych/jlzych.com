@@ -3,35 +3,37 @@
   %head>
     %meta{ :charset => 'utf-8' }
     %title Jeff Zych
-    %meta{ :content => "Jeff Zych's homepage", :name => 'description' }
-    %meta{ :content => 'Jeff Zych', :name => 'author' }
-    %link{ :href => "http://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic", :rel => "stylesheet", :type => "text/css" }
-    %link{ :href => 'http://fonts.googleapis.com/css?family=PT+Sans',  :rel => 'stylesheet', :type => 'text/css' }
-    =stylesheet_link_tag "reset", "application"
+    %meta{ :content => "Jeff Zych's homepage", :name => "description" }
+    %meta{ :content => "Jeff Zych", :name => "author" }
+    =favicon_tag "/favicon.ico"
+
+    =stylesheet_link_tag "application"
 
   %body{ :id => data.page.title }
     #main{ :role => "main" }
       %header
-        %hgroup.name
-          %h1
-            =link_to "Jeff Zych", "/", { :title => "Home" }
-        %hgroup.nav
-          %nav
-            =link_to "Resume", "/resume", { :title => "Resume", :class => ("current" if data.page.title == "Resume") }
-            =link_to "Contact", "#contact", { :title => "Contact" }
+        %h1.monogram
+          =link_to "/", { title: "Home" } do
+            =image_tag "monogram.svg", { width: 100, height: 100, alt: "JZ" }
+            Jeff Zych
 
-      %article= yield
+        %nav.nav-main
+          %ul
+            %li=link_to "About", "/about", { title: "About Jeff Zych" }
+            %li=link_to "Resume", "/resume", { title: "Resume", :class => ("current" if data.page.title == "Resume") }
 
-    %footer#contact
-      %ul
-        %li>
-          =mail_to "jlzych@gmail.com"
-        %li>
-          =link_to "github.com/jlzych", "http://github.com/jlzych"
-        %li>
-          =link_to "@jlzych", "http://twitter.com/jlzych"
-        %li>
-          =link_to "Resume (pdf)", "https://www.dropbox.com/s/1dj653zjvubj11a/JeffZych_Resume.pdf"
+      .content= yield
+
+      %footer
+        %ul
+          %li>
+            =mail_to "jlzych@gmail.com"
+          %li>
+            =link_to "github.com/jlzych", "http://github.com/jlzych"
+          %li>
+            =link_to "@jlzych", "http://twitter.com/jlzych"
+          %li>
+            =link_to "Resume (pdf)", "https://www.dropbox.com/s/1dj653zjvubj11a/JeffZych_Resume.pdf"
 
     / Google Analytics tracking
     :javascript

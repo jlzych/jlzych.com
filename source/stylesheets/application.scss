@@ -1,0 +1,164 @@
+@import "compass";
+
+// Colors
+$primary-color: #185D72;
+$bg-color: #FCFCF7;
+$black: #061519;
+
+$dark-brown: #190F00;
+$light-blue: #66C7FF;
+
+// Transitions
+$default-transition-property: color;
+$default-transition-duration: .3s;
+
+// Width of the content, nav, footer, etc.
+$main-column-width: 83%;
+
+// Import these after so the variables are available to them
+@import "normalize";
+@import "resume";
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  background-color: $bg-color;
+  color: $black;
+  font-family: "Minion Pro", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px) {
+    font-size: 1.5em;
+  }
+}
+
+/* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+
+  a {
+    color: $black;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+
+// Transition the color in and out for all links
+a,
+a:hover {
+  @include single-transition();
+}
+
+a {
+  color: $primary-color;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#main {
+  margin-left: 10%;
+  max-width: 1000px;
+  min-width: 700px;
+  overflow: hidden;
+  width: 80%;
+}
+
+// Styles used by elements who
+%main-column-styles {
+  clear: both;
+  float: right;
+  width: $main-column-width;
+}
+
+header {
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  width: 100%;
+} // header
+
+// The JZ monogram!
+.monogram {
+  display: inline-block;
+  height: 100px;
+  margin: 0;
+  margin-right: 1em;
+  overflow: hidden;
+  position: fixed;
+  width: 100px;
+}
+
+.nav-main {
+  @extend %main-column-styles;
+  border-bottom: 1px solid $primary-color;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    color: $black;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.5em;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-variant: small-caps;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  } // a
+} // .nav-main
+
+.content {
+  @extend %main-column-styles;
+}
+
+footer {
+  @extend %main-column-styles;
+}

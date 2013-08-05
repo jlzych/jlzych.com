@@ -4,16 +4,6 @@ pageable: true
 per_page: 10
 ---
 
-%p{ :id => "about" }
-  I am a
-  %strong UI Engineer
-  for
-  = link_to "Optimizely", "http://www.optimizely.com", { :title => "Optimizely," }
-  in charge of crafting beautiful HTML, CSS, and JS for their website. I also apply insights from
-  %strong behavioral economics
-  to web design, which I write about in my blog series,
-  = link_to "Testing Theory.", "http://blog.optimizely.com/author/jeffzych/", { :title => "Testing Theory: Academic Findings You Can Actually Use on Optimizely's blog, Conversion Rate Optimism" }
-
 - page_articles.each_with_index do |article, i|
   %article
     %h1= link_to article.title, article
