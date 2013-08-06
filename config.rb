@@ -2,7 +2,7 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = "America/Los_Angeles"
 
 activate :blog do |blog|
   # blog.prefix = "blog"
@@ -20,15 +20,22 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
-  # blog.paginate = true
-  # blog.per_page = 10
+  blog.paginate = true
+  blog.per_page = 5
   # blog.page_link = "page/:num"
 end
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 page "/feed.xml", :layout => false
 activate :directory_indexes
 
 set :build_dir, "../jlzych.github.com"
+set :partials_dir, "partials"
+
+activate :livereload
+activate :syntax
 
 # Build-specific configuration
 configure :build do

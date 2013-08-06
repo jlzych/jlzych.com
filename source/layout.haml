@@ -2,14 +2,19 @@
 %html
   %head>
     %meta{ :charset => 'utf-8' }
-    %title Jeff Zych
+    %title
+      Jeff Zych
+      - if current_page.data.title
+        = " - #{current_page.data.title}"
+
     %meta{ :content => "Jeff Zych's homepage", :name => "description" }
     %meta{ :content => "Jeff Zych", :name => "author" }
     =favicon_tag "/favicon.ico"
 
     =stylesheet_link_tag "application"
+    %link( rel="alternate" type="application/rss+xml" title="RSS for Jeff Zych" href="/feed.xml" )
 
-  %body{ :id => data.page.title }
+  %body
     #main{ :role => "main" }
       %header
         %h1.monogram
@@ -20,20 +25,9 @@
         %nav.nav-main
           %ul
             %li=link_to "About", "/about", { title: "About Jeff Zych" }
-            %li=link_to "Resume", "/resume", { title: "Resume", :class => ("current" if data.page.title == "Resume") }
+            %li=link_to "Contact", "/contact", { title: "Contact Jeff Zych" }
 
       .content= yield
-
-      %footer
-        %ul
-          %li>
-            =mail_to "jlzych@gmail.com"
-          %li>
-            =link_to "github.com/jlzych", "http://github.com/jlzych"
-          %li>
-            =link_to "@jlzych", "http://twitter.com/jlzych"
-          %li>
-            =link_to "Resume (pdf)", "https://www.dropbox.com/s/1dj653zjvubj11a/JeffZych_Resume.pdf"
 
     / Google Analytics tracking
     :javascript
