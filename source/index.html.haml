@@ -1,20 +1,17 @@
----
-pageable: true
-per_page: 2
----
-
-- page_articles.each_with_index do |article, i|
+- page_articles[0..4].each do |article|
   =partial :post, locals: { article: article }
 
-- if paginate
-  .pagination
-    %p
-      Page
-      = page_number
-      of
-      = num_pages
+=link_to "View all posts", "/archives", { class: "view-all-link" }
 
-    - if prev_page
-      = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous" }
-    - if next_page
-      = link_to "Next page &raquo;", next_page, { class: "paginate-next" }
+-# - if paginate
+-#   .pagination
+-#     %p
+-#       Page
+-#       = page_number
+-#       of
+-#       = num_pages
+-#
+-#     - if prev_page
+-#       = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous" }
+-#     - if next_page
+-#       = link_to "Next page &raquo;", next_page, { class: "paginate-next" }

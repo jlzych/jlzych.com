@@ -2,10 +2,13 @@
 
 // Colors
 $primary-color: #185d72;
-$bg-color: #fcfcfa;
+$link-color: lighten($primary-color, 10%);
+$bg-color: #fcfcf9;
 $black: #061519;
 $de-emphasized-text: desaturate(lighten($black, 12%), 45%);
 $light-gray: desaturate(lighten($black, 70%), 60%);
+$light-gray-background-color: #f8f8f5;
+$light-gray-border-color: #e8e8e5;
 
 // Transitions
 $default-transition-property: color;
@@ -83,7 +86,7 @@ a:hover {
 }
 
 a {
-  color: $primary-color;
+  color: $link-color;
   text-decoration: underline;
 
   &:hover {
@@ -99,8 +102,8 @@ pre {
 pre,
 .highlight {
   @include border-radius(3px);
-  background-color: #f8f8f5;
-  border: 1px solid #e8e8e5;
+  background-color: $light-gray-background-color;
+  border: 1px solid $light-gray-border-color;
   padding: 0.75em;
 }
 
@@ -132,7 +135,7 @@ time {
 }
 
 header {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.3em;
   overflow: hidden;
   width: 100%;
 } // header
@@ -209,8 +212,25 @@ header {
   padding-bottom: 0.8em; // These values differ to make the text more visually centered
   padding-top: 1em;
   text-transform: uppercase;
-
-  a {
-    margin: 0 1.5em;
-  }
 }
+
+.tag {
+  margin: 0 1.5em;
+}
+
+// A link to the full blog article (on the archive)
+.post-teaser {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    @include border-radius(3px);
+    background-color: $light-gray-background-color;
+    border: $light-gray-border-color;
+    text-decoration: none;
+
+    h3 {
+      color: $primary-color;
+    }
+  }
+} // .post-teaser

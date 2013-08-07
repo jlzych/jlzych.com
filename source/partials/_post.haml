@@ -9,4 +9,5 @@
   %footer.tags
     Tags:
     - article.tags.each do |tag|
-      = link_to tag, tag_path(tag), { title: "Articles tagged #{tag}" }
+      -# = link_to tag, tag_path(tag), { class: "tag", title: "Articles tagged #{tag}" }
+      %span.tag= tag

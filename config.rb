@@ -7,22 +7,21 @@ Time.zone = "America/Los_Angeles"
 activate :blog do |blog|
   # blog.prefix = "blog"
   # blog.permalink = ":year/:month/:day/:title.html"
-  blog.sources = "posts/:year-:month-:day-:title.html"
-  # blog.taglink = "tags/:tag.html"
-  blog.layout = "post_layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
-  blog.default_extension = ".md"
+  # blog.per_page = 5
+  # blog.taglink = "tags/:tag.html"
 
+  blog.sources = "posts/:year-:month-:day-:title.html"
+  blog.layout = "post_layout"
+  blog.default_extension = ".md"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
-
   blog.paginate = true
-  blog.per_page = 5
-  # blog.page_link = "page/:num"
+  blog.page_link = ":num"
 end
 
 set :markdown_engine, :redcarpet
