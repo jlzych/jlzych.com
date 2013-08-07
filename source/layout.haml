@@ -14,6 +14,10 @@
     =stylesheet_link_tag "application"
     %link( rel="alternate" type="application/rss+xml" title="RSS for Jeff Zych" href="/feed.xml" )
 
+    %script( type="text/javascript" src="//use.typekit.net/kbr8kzk.js" )
+    :javascript
+      try{Typekit.load();}catch(e){}
+
   %body
     #main{ :role => "main" }
       %header
