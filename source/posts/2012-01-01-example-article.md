@@ -1,6 +1,7 @@
 ---
 title: Example Article
 date: 2012-01-01
+published: false
 tags: example
 ---
 

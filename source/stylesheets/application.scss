@@ -15,7 +15,7 @@ $default-transition-property: color;
 $default-transition-duration: .25s;
 
 // Width of the content, nav, footer, etc.
-$main-column-width: 83%;
+$main-column-width: 700px;
 $monogram-width: 100px;
 $gutter: 30px;
 
@@ -35,9 +35,9 @@ body {
   font-size: 20px;
   line-height: 1.4;
 
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px) {
-    font-size: 1.5em;
-  }
+  // @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px) {
+  //   font-size: 40px;
+  // }
 }
 
 /* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
