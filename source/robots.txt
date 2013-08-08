@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /assignments
+Disallow: /projects
+Disallow: /resume
 Allow: /
 
