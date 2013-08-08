@@ -1,6 +1,6 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  xml.title "Jeff Zych's Blog"
+  xml.title "Jeff Zych"
   xml.subtitle ""
   xml.id "http://jlzych.com/"
   xml.link "href" => "http://jlzych.com/"
