@@ -16,7 +16,7 @@ activate :blog do |blog|
   # blog.taglink = "tags/:tag.html"
 
   blog.sources = "posts/:year-:month-:day-:title.html"
-  blog.layout = "post_layout"
+  blog.layout = "layouts/post_layout"
   blog.default_extension = ".md"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
