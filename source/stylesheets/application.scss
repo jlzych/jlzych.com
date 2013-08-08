@@ -14,10 +14,12 @@ $light-gray-border-color: #e8e8e5;
 $default-transition-property: color;
 $default-transition-duration: .25s;
 
-// Width of the content, nav, footer, etc.
-$main-column-width: 700px;
 $monogram-width: 100px;
-$gutter: 30px;
+$monogram-right-gutter: 30px;
+$content-left-gutter: $monogram-width + $monogram-right-gutter;
+
+// Mobile vars
+$breakpoint-small: "only screen and (max-width: 700px)";
 
 // Import these after so the variables are available to them
 @import "normalize";
@@ -35,9 +37,9 @@ body {
   font-size: 20px;
   line-height: 1.4;
 
-  // @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 960px), only screen and (min-device-pixel-ratio: 1.5) and (max-device-width: 960px) {
-  //   font-size: 40px;
-  // }
+  @media #{$breakpoint-small} {
+    padding: 0 5%;
+  }
 }
 
 /* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
@@ -123,21 +125,38 @@ time {
   margin-bottom: 3em;
   margin-left: 10%;
   max-width: 1000px;
-  min-width: 700px;
+  min-width: 500px;
   overflow: hidden;
   width: 80%;
+
+  img {
+    max-width: 100%; // Ensure images stay within the main content at any size
+  }
+
+  @media #{$breakpoint-small} {
+    margin-left: 0;
+    min-width: initial;
+    width: 95%;
+  }
 }
 
 // Styles used by elements who
 %main-column-styles {
-  margin-left: $monogram-width + $gutter;
-  width: $main-column-width;
+  padding-left: $content-left-gutter;
+
+  @media #{$breakpoint-small} {
+    padding-left: 0; // body has a margin on it in this breakpoint
+  }
 }
 
 header {
   margin-bottom: 2.3em;
   overflow: hidden;
   width: 100%;
+
+  @media #{$breakpoint-small} {
+    margin-bottom: 0.5em;
+  }
 } // header
 
 // The JZ monogram!
@@ -153,13 +172,21 @@ header {
     width: 100%;
     height: 100%;
   }
-}
+
+  @media #{$breakpoint-small} {
+    position: relative;
+    width: 70px;
+    height: 70px;
+  }
+} // .monogram
 
 .nav-main {
   @extend %main-column-styles;
-  border-bottom: 1px solid $black; // desaturate(lighten($black, 30%), 45%);
+  display: inline-block;
+  width: 100%;
 
   ul {
+    border-bottom: 1px solid $black; // desaturate(lighten($black, 30%), 45%);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -180,7 +207,6 @@ header {
     font-size: 1.2em;
     font-weight: bold;
     padding: 0.5em;
-    padding-bottom: 0.3em;
     text-decoration: none;
     text-transform: lowercase;
     font-variant: small-caps;
@@ -190,6 +216,20 @@ header {
       text-decoration: none;
     }
   } // a
+
+  @media #{$breakpoint-small} {
+    float: right;
+    width: 75%;
+
+    a {
+      font-size: 1em;
+    }
+  }
+
+  // Special breakpoint in case someone is on an old phone
+  @media only screen and (max-width: 350px) {
+    width: 70%;
+  }
 } // .nav-main
 
 .content {
