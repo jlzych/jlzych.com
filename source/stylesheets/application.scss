@@ -1,25 +1,6 @@
+// Import these first so they're available to the rest of the imports.
 @import "compass";
-
-// Colors
-$primary-color: #185d72;
-$link-color: lighten($primary-color, 10%);
-$bg-color: #fcfcf9;
-$black: #061519;
-$de-emphasized-text: desaturate(lighten($black, 12%), 45%);
-$light-gray: desaturate(lighten($black, 70%), 60%);
-$light-gray-background-color: #f8f8f5;
-$light-gray-border-color: #e8e8e5;
-
-// Transitions
-$default-transition-property: color;
-$default-transition-duration: .25s;
-
-$monogram-width: 100px;
-$monogram-right-gutter: 30px;
-$content-left-gutter: $monogram-width + $monogram-right-gutter;
-
-// Mobile vars
-$breakpoint-small: "only screen and (max-width: 700px)";
+@import "variables";
 
 // Import these after so the variables are available to them
 @import "normalize";
@@ -126,7 +107,6 @@ time {
  * Layout styles (nav, content, etc.)
  */
 #main {
-  margin-bottom: 3em;
   margin-left: 10%;
   max-width: 1000px;
   min-width: 500px;
@@ -149,7 +129,7 @@ time {
   padding-left: $content-left-gutter;
 
   @media #{$breakpoint-small} {
-    padding-left: 0; // body has a margin on it in this breakpoint
+    padding-left: 0; // Relies on the body's margin to keep content from the very edge
   }
 }
 
@@ -240,9 +220,17 @@ header {
   @extend %main-column-styles;
 }
 
-// footer {
-//   @extend %main-column-styles;
-// }
+#site-footer {
+  border-top: 1px solid $light-gray-border-color;
+  color: darken($light-gray, 15%);
+  font-size: 0.75em;
+  margin-left: $content-left-gutter;
+  margin-top: 3em;
+
+  @media #{$breakpoint-small} {
+    margin-left: 0;
+  }
+}
 
 /**
  * Tags at the end of each article

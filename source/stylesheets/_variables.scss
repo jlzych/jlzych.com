@@ -1,0 +1,24 @@
+/**
+ * Variables used throughout the stylesheets.
+ */
+
+// Colors
+$primary-color: #185d72;
+$link-color: lighten($primary-color, 10%);
+$bg-color: #fcfcf9;
+$black: #061519;
+$de-emphasized-text: desaturate(lighten($black, 12%), 45%);
+$light-gray: desaturate(lighten($black, 70%), 60%);
+$light-gray-background-color: #f8f8f5;
+$light-gray-border-color: #e8e8e5;
+
+// Transitions
+$default-transition-property: color;
+$default-transition-duration: .25s;
+
+$monogram-width: 100px;
+$monogram-right-gutter: 30px;
+$content-left-gutter: $monogram-width + $monogram-right-gutter;
+
+// Mobile vars
+$breakpoint-small: "only screen and (max-width: 700px)";

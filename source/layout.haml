@@ -37,6 +37,9 @@
 
       .content= yield
 
+      %footer#site-footer
+        %p= "&copy; 2010&ndash;#{Time.now.year} Jeff Zych"
+
     / Google Analytics tracking
     :javascript
       var _gaq = _gaq || [];
