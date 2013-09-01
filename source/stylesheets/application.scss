@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 
     &:hover {
-      color: $primary-color;
+      color: $link-color;
       text-decoration: none;
     }
   }
@@ -197,7 +197,7 @@ header {
     font-variant: small-caps;
 
     &:hover {
-      color: $primary-color;
+      color: $link-color;
       text-decoration: none;
     }
   } // a
