@@ -267,3 +267,11 @@ header {
     }
   }
 } // .post-teaser
+
+.follow-me {
+  background-color: $light-gray-background-color;
+  // border: 1px solid $light-gray-border-color;
+  font-size: 0.85em;
+  font-style: italic;
+  padding: 0.5em;
+}
