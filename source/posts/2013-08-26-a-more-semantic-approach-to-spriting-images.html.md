@@ -1,8 +1,10 @@
 ---
 title: A More Semantic Approach to Spriting Images
 date: 2013-08-26 21:24 PDT
-tags: html, css
+tags: html, css, spriting
 ---
+
+_Update (9/1/2013): Read my [follow up](/2013/09/01/automating-semantic-sprites-with-compass/) on how to automate this with Compass._
 
 Spriting images is a well-known, well-documented way to speed up page load times. The standard technique is to set a sprite sheet image as the `background-image` of an element, and position it so the proper sprite shows through. This works great for icons and other images that aren't part of the actual content, but not so great for images that belong in the page content.
 
@@ -52,10 +54,12 @@ Codepen:
 <p data-height="268" data-theme-id="0" data-slug-hash="ExLzG" data-user="jlzych" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/jlzych/pen/ExLzG'>ExLzG</a> by Jeff (<a href='http://codepen.io/jlzych'>@jlzych</a>) on <a href='http://codepen.io'>CodePen</a></p>
 <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
-Generating this CSS can be a pain, but I will discuss how to accomplish this with Compass in my next blog post.
+Generating this CSS can be a pain, but I will discuss how to accomplish this with Compass in my [next blog post](/2013/09/01/automating-semantic-sprites-with-compass/).
 
 ## Closing Thoughts
 
 This method lets us use sprites in `img` tags, which is more semantic than empty `div`s or `span`s (depending on the use case). However, it has a couple of drawbacks. First, it requires a container element around your image. This could add unneccessary bloat to your markup (in my case the image already had a parent element). Second, and greatest of all, the image `src` attribute now references an entire sprite sheet, when technically it should only reference the actual image that it's showing. Screenreaders won't care at all, but some services may use this image for other purposes. For example, Facebook grabs a representative image of your page when a link is shared, and it could grab a sprite sheet instead of the actual image. That's no good.
 
 Ultimately it's a tradeoff between having a container element and actual `img` tag in your markup versus an empty element whose background image is a sprite. Overall, I think the pros (semantic HTML; better accessibility) outweigh the cons (container element; `src` attribute is a sprite sheet). If you want to use sprites with actual `img` tags, this is a solid technique. If anyone has any thoughts on how to overcome the drawbacks, hit me up [@jlzych](http://twitter.com/jlzych).
+
+_Update (9/1/2013): Read my [follow up](/2013/09/01/automating-semantic-sprites-with-compass/) on how to automate this with Compass._
