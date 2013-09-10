@@ -4,8 +4,11 @@
 
 // Import these after so the variables are available to them
 @import "normalize";
-@import "resume";
 @import "syntax-highlighting";
+
+// Specific pages
+@import "about";
+@import "resume";
 
 * {
   @include box-sizing(border-box);

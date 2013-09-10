@@ -1,0 +1,14 @@
+/**
+ * About page specific styles
+ */
+
+.me {
+  float: right;
+  margin-left: 1.25em;
+  margin-right: 50px;
+
+  @media #{$breakpoint-small} {
+    margin-right: 0;
+    width: 50%;
+  }
+}
