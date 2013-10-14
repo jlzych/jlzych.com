@@ -107,6 +107,14 @@ time {
   }
 }
 
+blockquote {
+  border-left: 2px solid $light-gray-border-color;
+  color: lighten($de-emphasized-text, 10%); // lighten($black, 20%);
+  margin: 0;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
 /**
  * Layout styles (nav, content, etc.)
  */
