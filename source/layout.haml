@@ -7,7 +7,7 @@
       - if current_page.data.title
         = " - #{current_page.data.title}"
 
-    %meta{ :content => "Jeff Zych's homepage", :name => "description" }
+    %meta{ :content => "Jeff Zych's website", :name => "description" }
     %meta{ :content => "Jeff Zych", :name => "author" }
     %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes")
     %meta(name="apple-mobile-web-app-status-bar-style" content="black")
@@ -16,16 +16,16 @@
     / FB Open Graph meta tags
     %meta(property="og:type" content="blog")
     %meta(property="og:site_name" content="Jeff Zych's Blog")
-    %meta(property="og:image" content="http://jlzych.com/monogram.png")
+    %meta(property="og:image" content="http://jlzych.com/images/monogram.png")
     %meta(property="og:image:type" content="image/png")
     %meta(property="og:image:width" content="1024")
     %meta(property="og:image:height" content="1024")
     %meta(property="og:url" content="http://jlzych.com#{current_page.url}")
 
     - if current_page.data.title
-      %meta(property="og:title" content="#{current_page.data.title} - Jeff Zych")
+      %meta(property="og:title" content="#{current_page.data.title}")
     - else
-      %meta(property="og:title" content="Jeff Zych")
+      %meta(property="og:title" content="Jeff Zych's home page")
 
     =favicon_tag "/favicon.ico?v=1"
 
