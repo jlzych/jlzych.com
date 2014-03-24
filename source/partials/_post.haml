@@ -3,9 +3,6 @@
     %i Posted on
     = article.date.strftime('%b %e, %Y')
 
-  %p{ style: "display: none" }
-    By Jeff Zych
-
   %h1= link_to article.title, article
 
   ~ article.body
