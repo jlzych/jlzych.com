@@ -10,7 +10,7 @@
 @import "about";
 @import "resume";
 
-* {
+*, *::before, *::after {
   @include box-sizing(border-box);
 }
 
@@ -113,6 +113,19 @@ blockquote {
   margin: 0;
   margin-left: 1em;
   padding-left: 1em;
+}
+
+
+/**
+ * Utility classes
+ */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-small {
+  font-size: 0.7em;
 }
 
 /**
@@ -251,11 +264,9 @@ header {
   $border-style: 1px solid $light-gray;
   border-bottom: $border-style;
   border-top: $border-style;
-  font-size: 0.7em;
   margin-top: 2em;
   padding-bottom: 0.8em; // These values differ to make the text more visually centered
   padding-top: 1em;
-  text-transform: uppercase;
 }
 
 .tag {
@@ -285,4 +296,28 @@ header {
   font-size: 0.85em;
   font-style: italic;
   padding: 0.5em;
+}
+
+// Links to previous/next articles
+.article-links {
+  display: table;
+  width: 100%;
+
+  > div {
+    display: table-cell;
+
+    &:first-child {
+      padding-right: 1em;
+    }
+
+    &:last-child:not(:first-child) {
+      padding-left: 1em;
+      text-align: right;
+      width: 50%;
+    }
+  }
+}
+
+.article-link-label {
+  display: block;
 }
