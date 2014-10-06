@@ -115,6 +115,12 @@ blockquote {
   padding-left: 1em;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid $light-gray;
+  margin: 1.75em 2.5em;
+}
+
 
 /**
  * Utility classes
