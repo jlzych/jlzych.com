@@ -246,11 +246,17 @@ header {
 }
 
 #site-footer {
+  $footer-text-color: darken($light-gray, 15%);
+
   border-top: 1px solid $light-gray-border-color;
-  color: darken($light-gray, 15%);
+  color: $footer-text-color;
   font-size: 0.75em;
   margin-left: $content-left-gutter;
   margin-top: 3em;
+
+  a {
+    color: $footer-text-color;
+  }
 
   @media #{$breakpoint-small} {
     margin-left: 0;

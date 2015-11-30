@@ -1,6 +1,6 @@
 _Writing, like design, is a craft that can be practiced and improved. I've been compiling a collection of principles from various sources to improve my writing. I decided to share them online to crystallize what I've learned so far, and to help others who want to improve at the craft of writing. Enjoy!_
 
-_— Jeff Zych_
+_— [Jeff Zych](https://twitter.com/jlzych)_
 
 # Principles
 

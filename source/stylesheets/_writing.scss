@@ -132,6 +132,15 @@ $writing-font-color--lighter: #201D25;
     margin-top: 1.25em;
   }
 
+  a {
+    color: $writing-font-color;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   ul {
     padding-left: 1em;
   }
