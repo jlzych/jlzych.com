@@ -16,7 +16,7 @@ Every word, sentence, paragraph, section, and chapter should be in service to yo
 >
 > Leave the reader with one provocative thought. Not two, not five, just one. Choosing a destination will give you a better idea of what route to take to get there, and affect your decision about tone and attitude.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 
 ## Simple
@@ -25,7 +25,7 @@ Good writing is simple. Simple writing communicates your point more effectively.
 
 > Simple writing is persuasive. A good argument in five sentences will sway more people than a brilliant argument in a hundred sentences. Don’t fight it.
 >
-> — <cite>Scott Adams, The Day You Become a Better Writer</cite>
+> — <cite>Scott Adams, [The Day You Become a Better Writer][scott-adams]</cite>
 
 Use straightforward language. Don't use a long word when a short word will do.
 
@@ -35,13 +35,13 @@ Write short sentences. Don't put multiple thoughts in one sentence. Prune clutte
 >
 > Look for the clutter in your writing and prune it ruthlessly. Be grateful for everything you can throw away. Reexamine each sentence you put on paper. Is every word doing new work? Can any thought be expressed with more economy? Is anything pompous or pretentious or faddish? Are you hanging on to something useless just because you think it’s beautiful? **Simplify, simplify**.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 Use simple _subject-verb-object_ sentence structures. This makes it clear who did what, and is easy to understand.
 
 > Learn how brains organize ideas. Readers comprehend “the boy hit the ball” quicker than “the ball was hit by the boy.” Both sentences mean the same, but it’s easier to imagine the object (the boy) before the action (the hitting). All brains work that way. (Notice I didn’t say, “That is the way all brains work”?)
 >
-> — <cite>Scott Adams, The Day You Become a Better Writer</cite>
+> — <cite>Scott Adams, [The Day You Become a Better Writer][scott-adams]</cite>
 
 
 ## Genuine
@@ -52,13 +52,13 @@ Therefore, write for yourself, and write how you speak. Your writing will flow a
 
 > Readers want the person who is talking to them to sound genuine. Therefore a fundamental rule is: be yourself. To do so, relax, and have confidence.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 ---
 
 > Never say anything in writing that you wouldn’t say in conversation.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 ---
 
@@ -72,14 +72,14 @@ Don't worry about whether the reader will “get it” or not. **You are who you
 >
 > Think of the other as a creative act: the expressing of who you are. Relax and say what you want to say.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 If you follow your affections you will write well and will engage your readers.
 
 
 # The Mechanics of Writing
 
-The mechanics of writing are _how_ you actually write well. It's the process of constructing a piece. It's the syntax, grammar, and words you choose. These guidelines will ensure the fundamentals of your writing are sound. This section is adapted from _On Writing Well_ by William Zinsser.
+The mechanics of writing are _how_ you actually write well. It's the process of constructing a piece. It's the syntax, grammar, and words you choose. These guidelines will ensure the fundamentals of your writing are sound. This section is adapted from _[On Writing Well][writing-well]_ by William Zinsser.
 
 Writing is an evolving _process_, not a finished _product_.
 
@@ -118,7 +118,7 @@ Keep putting yourself in the reader's place. Is there something he should have b
 
 > Writing is like a good watch — it should run smoothly and have no extra parts.
 >
-> — <cite>William Zinsser, On Writing Well</cite>
+> — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 **Tip**: When editing, put brackets around every component that isn't doing useful work. Then read the piece without the bracketed components and see if it works.
 
@@ -126,7 +126,7 @@ Sometimes you'll put brackets around entire sentences or paragraphs — ones tha
 
 > Don’t write, “He was very happy” when you can write “He was happy.” You think the word “very” adds something. It doesn’t. Prune your sentences.
 >
-> — <cite>Scott Adams, The Day You Become a Better Writer</cite>
+> — <cite>Scott Adams, [The Day You Become a Better Writer][scott-adams]</cite>
 
 
 ## Words
@@ -331,10 +331,15 @@ Use “you.” Instead of talking about “the writer” and the trouble “he�
 
 These books and articles helped me improve my writing immensely:
 
-- [On Writing Well](http://www.amazon.com/Writing-Well-30th-Anniversary-Edition/dp/0060891548) by William Zinsser
-- [The Day You Become a Better Writer](http://blog.dilbert.com/post/127310496506/the-day-you-became-a-better-writer-2nd-look) by Scott Adams (yes, of Dilbert fame)
+- [On Writing Well][writing-well] by William Zinsser
+- [The Day You Become a Better Writer][scott-adams] by Scott Adams (yes, of Dilbert fame)
 - [Crystal Clear Writing](http://boostblogtraffic.com/crystal-clear-writing/) by Glen Long
 - [The Art of Omission](http://www.newyorker.com/magazine/2015/09/14/omission) by John McPhee for The New Yorker
 - [Headings Are Pick-Up Lines: 5 Tips for Writing Headlines That Convert](http://www.nngroup.com/articles/headings-pickup-lines/) by Hoa Loranger for Nielsen Norman Group
 - [8 Classic Storytelling Techniques](http://www.sparkol.com/blog/8-classic-storytelling-techniques-for-engaging-presentations/) by Ffion Lindsay
 - [Interactive guide to unambiguous grammar](http://www.mcsweeneys.net/articles/an-interactive-guide-to-ambiguous-grammar) by Vijith Assar for McSweeney's
+
+
+[writing-well]: http://www.amazon.com/Writing-Well-30th-Anniversary-Edition/dp/0060891548 "On Writing Well on Amazon"
+
+[scott-adams]: http://blog.dilbert.com/post/127310496506/the-day-you-became-a-better-writer-2nd-look "The Day You Become a Better Writer by Scott Adams"
