@@ -1,0 +1,35 @@
+---
+title: "Principles of Writing Well"
+layout: false
+typekit_id: "nfs8xne"
+last_updated_date: "11/29/15"
+---
+
+!!! 5
+%html
+  = partial "head_tag"
+
+  %body.writing
+    %header.writing__header.u-full-width
+      %h1.writing__headline
+        %span.writing__headline--intro
+
+          %span.arrow.arrow--left= partial "arrow"
+          %span.arrow.arrow--right= partial "arrow"
+
+          Principles of
+
+        Writing Well
+
+    #main{ :role => "main" }
+
+      %article.content.writing__content
+        = partial "writing_principles"
+
+        %hr
+
+        %em= "Last updated on #{current_page.data.last_updated_date}"
+
+      = partial "footer_tag"
+
+    = partial "ga"

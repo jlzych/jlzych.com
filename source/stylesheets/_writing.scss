@@ -1,0 +1,156 @@
+/**
+ * Writing principles page specific styles
+ */
+
+$writing-font-headline: "garamond-premier-pro-display", Garamond, Georgia, serif;
+$writing-font-body: "garamond-premier-pro", Garamond, Georgia, serif;
+$writing-font-color: #0E0321;
+$writing-font-color--lighter: #201D25;
+
+.writing {
+  color: $writing-font-color;
+  font-family: $writing-font-body;
+  font-size: 22px;
+  line-height: 1.6;
+
+  @media #{$breakpoint-small} {
+    font-size: 20px;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $writing-font-headline;
+  }
+
+  // Lotsa tech debt here. Gotta clean this up
+  #site-footer {
+    @media #{$breakpoint-small} {
+      margin-left: 1em;
+    }
+  }
+}
+
+.writing__header {
+  background: #A9D8B4;
+  background: linear-gradient(250deg, #c2e69c 4%, #64b3f4 122%);
+  font-family: $writing-font-headline;
+  min-height: 85vh;
+  padding: 8% 0;
+
+  // Display properties
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.writing__headline {
+  font-size: 102pt;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+
+  @media #{$breakpoint-small} {
+    font-size: 94px;
+  }
+}
+
+.writing__headline--intro {
+  display: block;
+  font-size: 38pt;
+  font-style: italic;
+  margin-bottom: 0.25em;
+
+  // For arrow positioning
+  position: relative;
+
+  @media #{$breakpoint-small} {
+    font-size: 36px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: -16%;
+
+  g {
+    stroke: currentColor;
+  }
+
+  @media #{$breakpoint-small} {
+    svg {
+      margin: 0 10px;
+      width: 50px;
+    }
+  }
+}
+
+.arrow--left {
+  left: 0;
+}
+
+.arrow--right {
+  right: 0;
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.writing__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32em;
+  padding: 0;
+  padding-left: 1em;
+
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+
+  h1 {
+    color: $writing-font-color--lighter;
+    font-size: 62px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+
+  h3 {
+    -moz-font-feature-settings: "smcp";
+    -webkit-font-feature-settings: "smcp";
+    font-feature-settings: "smcp";
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-top: 1.25em;
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  blockquote {
+    color: $writing-font-color--lighter;
+    margin-bottom: 1.25em;
+
+    p {
+      margin: 0;
+    }
+
+    p + * {
+      margin-top: 1em;
+    }
+  }
+} // .writing__content

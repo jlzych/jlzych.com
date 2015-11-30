@@ -3,6 +3,7 @@
 ###
 
 Time.zone = "America/Los_Angeles"
+I18n.enforce_available_locales = false
 
 activate :blog do |blog|
   # blog.prefix = "blog"
@@ -25,7 +26,11 @@ activate :blog do |blog|
 end
 
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown,
+  :fenced_code_blocks => true,
+  :smartypants => true,
+  :with_toc_data => true
+# To generate TOC https://github.com/vmg/redcarpet/pull/186#issuecomment-22783188
 
 page "/feed.xml", :layout => false
 activate :directory_indexes
