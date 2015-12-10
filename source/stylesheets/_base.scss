@@ -327,3 +327,8 @@ header {
 .article-link-label {
   display: block;
 }
+
+.article__subtitle {
+  color: $de-emphasized-text;
+  margin-top: -0.75em;
+}
