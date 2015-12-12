@@ -106,6 +106,17 @@ $writing-font-color--lighter: #201D25;
 
   h1, h2, h3 {
     line-height: 1.2;
+    position: relative;
+
+    .headline-anchor-link {
+      opacity: 0;
+      transition: opacity 0.1s ease-in,
+        color 0.1s ease-in;
+    }
+
+    &:hover .headline-anchor-link {
+      opacity: 1;
+    }
   }
 
   h1 {
@@ -162,4 +173,25 @@ $writing-font-color--lighter: #201D25;
       margin-top: 1em;
     }
   }
+
+  .headline-anchor-link {
+    color: $light-gray;
+    // Cleaner looking hashes
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.75em;
+    font-weight: 300;
+    text-decoration: none;
+
+    // Positioning to prevent the link from causing line breaks
+    // if it's at the very end of the line
+    position: absolute;
+    bottom: 0.2em;
+    margin-left: 0.15em;
+
+    &:hover {
+      color: $writing-font-color;
+      text-decoration: none;
+    }
+  }
+
 } // .writing__content

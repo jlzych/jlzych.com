@@ -33,3 +33,27 @@ last_updated_date: "11/29/15"
       = partial "footer_tag"
 
     = partial "ga"
+
+  :javascript
+    if (document.querySelector) {
+      var headlines = document.querySelector(".writing__content").querySelectorAll("h1, h2, h3, h4, h5, h6");
+      var link, headline;
+      var i = 0;
+
+      for (i; i < headlines.length; i++) {
+        headline = headlines[i];
+
+        // Only do this shiz if this function exists
+        if (headline.insertAdjacentHTML) {
+          link = document.createElement("a");
+          link.text = "#";
+          link.href = "#" + headline.id;
+          link.classList.add("headline-anchor-link");
+
+          headline.insertAdjacentHTML(
+            "beforeend",
+            "<a href='#" + headline.id + "' class='headline-anchor-link'>#</a>"
+          );
+        }
+      }
+    }
