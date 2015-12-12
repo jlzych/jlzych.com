@@ -24,3 +24,9 @@ The best designers understand these constraints, and design for them. To gain th
 But this comes with a caveat: designers shouldn’t write production code. They're experts in the user experience, not frontend technology. They should be solving customer problems, not trying to write scalable, maintainable, and performant code. That's a full-time job that requires [dedicated professionals](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.qiwr5ezia).
 
 So learn how to code. Ink traps don’t design themselves.
+
+---
+
+_Update 12/12/15: This article sparked a lot of questions about designers not writing production code on [Designer News](https://www.designernews.co/stories/60579). I responded to a lot of them and attempted to clarify what I meant by that statement._
+
+_In summary, I wasn't trying to draw a hard and fast line on what designers should do, or what they're capable of doing skill-wise. Writing production code on occasion is fine. But what I have a problem with is if designers are expected to code everything they design. Those are separate jobs that should be handled by separate people._
