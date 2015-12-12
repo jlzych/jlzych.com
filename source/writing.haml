@@ -34,8 +34,19 @@ last_updated_date: "11/29/15"
 
     = partial "ga"
 
+  / Custom page scripts
   :javascript
     if (document.querySelector) {
+      // Rotate the hue of the header based on the day of the year
+      var today = new Date();
+      var hueValue = today.getDate() + today.getMonth() * 30.4;
+      var hueString = "hue-rotate(" + hueValue + "deg)";
+
+      var header = document.querySelector(".writing__header");
+      header.style.webkitFilter = hueString;
+      header.style.filter = hueString;
+
+      // Add anchor links to the headlines
       var headlines = document.querySelector(".writing__content").querySelectorAll("h1, h2, h3, h4, h5, h6");
       var link, headline;
       var i = 0;
