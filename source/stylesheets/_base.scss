@@ -9,8 +9,12 @@ body {
   font-size: 20px;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1;
   font-kerning: normal;
+  font-variant-ligatures: common-ligatures, contextual;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 
   @media #{$breakpoint-small} {
     padding: 0 5%;
