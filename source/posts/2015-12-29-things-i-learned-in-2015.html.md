@@ -32,6 +32,8 @@ I learned that just telling someone a lesson you’ve learned through experience
 
 Similarly, I learned that giving people information in an effort to increase their knowledge, or change their behavior, isn’t the most effective way of achieving this goal. It’s much more effective, albeit harder, to ask questions that lead a person to “earn” this knowledge themselves. By getting someone to come to their own conclusions, they’re more likely to internalize and act on that new knowledge. And they can apply the framework for gaining that knowledge to new situations. This is an art as much as it is a skill, and takes practice.
 
+I learned that my top 5 strengths, according to the [Clifton StrengthsFinder](http://www.strengthsfinder.com/), are: 1. **Learner**; 2. **Intellection**; 3. **Achiever**; 4. **Individualization**; and 5. **Analytical**. Nothing too surprising, but cool to see nonetheless.
+
 I learned that product development is hard, even when a person’s been doing it for a long time. Especially with teams, and as a company grows. I learned that as clueless as I might feel about how to run a team or build products, no one seems to have it completely figured out (even if they’re experienced and, from the outside, seem to know what they’re doing).
 
 I learned that I like having physical books over eBooks. I display them on my shelves, which makes me much more likely to re-engage with a book after I’ve finished reading it. By seeing it, I’ll think about it more, and pick it up and flip through it. I don’t do this when a book is trapped in software. The same is generally true with music and movies, too.
