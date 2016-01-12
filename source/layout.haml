@@ -10,7 +10,7 @@
             =image_tag "monogram.svg", { alt: "JZ" }
             Jeff Zych
 
-        %nav.nav-main
+        %nav{ :class => "nav-main #{current_page.data.nav_classes}" }
           %ul
             %li=link_to "About Me", "/about", { title: "About Jeff Zych" }
             %li=link_to "Archives", "/archives"

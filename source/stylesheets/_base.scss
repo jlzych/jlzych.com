@@ -8,6 +8,8 @@ body {
   font-family: "minion-pro", Georgia, serif;
   font-size: 20px;
   line-height: 1.4;
+
+  // OpenType features: kerning, ligatures
   text-rendering: optimizeLegibility;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures, contextual;
@@ -15,6 +17,10 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "alt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+
+  // Font smoothing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   @media #{$breakpoint-small} {
     padding: 0 5%;
@@ -116,6 +122,16 @@ hr {
 }
 
 
+// New
+.media {
+  display: block;
+  width: 100%;
+}
+
+.img--right {
+  float: right;
+}
+
 /**
  * Utility classes
  */
@@ -130,6 +146,15 @@ hr {
 
 .u-full-width {
   width: 100%;
+}
+
+.u-pos-a {
+  position: absolute;
+}
+
+.u-top-left {
+  top: 0;
+  left: 0;
 }
 
 /**
@@ -244,6 +269,17 @@ header {
     width: 70%;
   }
 } // .nav-main
+
+.nav-main--light {
+  ul {
+    border-bottom: 0;
+  }
+
+  a {
+    color: #ccc;
+    mix-blend-mode: screen;
+  }
+}
 
 .content {
   @extend %main-column-styles;

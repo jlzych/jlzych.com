@@ -2,13 +2,58 @@
  * About page specific styles
  */
 
-.me {
-  float: right;
-  margin-left: 1.25em;
-  margin-right: 50px;
+$about-banner-height--default: 38vw;
+$about-banner-height--bp-small: 47vw;
+$about-banner-height--bp-smaller: 72vw;
+$about-sans: "Helvetica Neue Light", "Helvetica Neue", "Segoe UI Light", "Segoe UI", sans-serif;
+
+.about-banner {
+  background-image: url("/images/me-banner.jpg");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: $about-banner-height--default;
+  max-height: 500px;
+  overflow: hidden;
+  z-index: -1;
 
   @media #{$breakpoint-small} {
-    margin-right: 0;
-    width: 50%;
+    background-position: top right;
+    height: $about-banner-height--bp-small;
   }
+
+  @media only screen and (max-width: 525px) {
+    background-position: top right -7vw;
+    height: $about-banner-height--bp-smaller;
+  }
+}
+
+.about-headline {
+  color: white;
+  font-family: $about-sans;
+  font-size: 64px;
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: $about-banner-height--default / 2;
+  margin-top: $about-banner-height--default / 4;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+  @media #{$breakpoint-small} {
+    font-size: 58px;
+    margin-top: 0;
+    margin-bottom: $about-banner-height--bp-small / 2;
+  }
+
+  @media only screen and (max-width: 525px) {
+    color: $black;
+    text-shadow: none;
+    margin-bottom: 0;
+    margin-top: $about-banner-height--bp-smaller - 10;
+  }
+}
+
+.about-subheadline {
+  font-family: $about-sans;
+  font-size: 40px;
+  font-weight: 100;
 }
