@@ -12,7 +12,7 @@ I learned that blogging consistently is hard. Coming up with ideas and pushing t
 
 I learned that even when I have a lot of ideas to write about, not all of them are worth working on. I’m okay with letting ideas go rather than trying to force myself to work on them. I’ve learned this is a good litmus test for knowing what’s worth spending my time on. The most interesting topics will naturally drive me to work on them.
 
-I learned that it’s just as much work, often more, to promote your writing, as it is to do the writing itself.
+I learned that it’s just as much work, often more, to promote your writing, as it is to do the writing itself. I learned what it feels like to have a post at the top of Designer News. And I learned what it feels like when people misinterpret what I was trying to communicate.
 
 Just like writing, I learned that dating takes a lot of time and energy (even when it’s online). I learned that I can’t put in that time and energy unless I’m attracted (both mentally and physically) to a woman. I can’t force it. I learned that even with online dating, or because of it, it will take a lot of dates before finding someone who feels “right.”
 
