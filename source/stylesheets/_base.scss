@@ -27,6 +27,16 @@ body {
   }
 }
 
+::selection {
+  background: $primary-color;
+  color: #eee;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  color: #eee;
+}
+
 /* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
 h1 {
   font-size: 2em;
