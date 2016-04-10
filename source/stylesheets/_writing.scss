@@ -36,6 +36,8 @@ $writing-font-color--lighter: #201D25;
   font-family: $writing-font-headline;
   min-height: 85vh;
   padding: 8% 0;
+  transition: -webkit-filter 0.5s ease,
+              filter 0.5s ease;
 
   // Display properties
   display: flex;
@@ -163,6 +165,7 @@ $writing-font-color--lighter: #201D25;
 
   blockquote {
     color: $writing-font-color--lighter;
+    font-size: 0.9em;
     margin-bottom: 1.25em;
 
     p {

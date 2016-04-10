@@ -1,14 +1,14 @@
-_Writing, like design, is a craft that can be practiced and improved. To do so, I've been compiling a collection of principles from books and articles. I decided to share them online to crystallize my own understanding of what I've learned so far, and to help others who want to improve at the craft of writing as well. I will continue to update this page as I learn more. Enjoy!_
+_Writing, like design, is a craft that can be practiced and improved. To help me improve my writing, I've compiled a collection of principles from books and articles that I've read. I've shared them online to crystallize my own understanding of what I've learned, and to help others who want to improve at the craft of writing as well._
 
-_— [Jeff Zych](https://twitter.com/jlzych)_
+_— [Jeff Zych](/)_
 
 # Principles
 
-Good writing is **Purposeful**, **Simple**, and **Genuine**.
+Good writing is **Purposeful**, **Clear**, and **Genuine**.
 
 ## Purposeful
 
-Good writing is purposeful. What **one point** are you trying to make? Not two, not five, just one. Trying to make one point affects every subsequent decision about tone, attitude, words, title, etc.
+Good writing is purposeful. What **one point** are you trying to make? Not two, not five, just one. Trying to make one point affects every subsequent decision about tone, attitude, words, and title.
 
 Every word, sentence, paragraph, section, and chapter should be in service to your one point. Have a reason for everything in your writing, and for everything _not_ in your writing. Ask yourself, **“Is this necessary? Why?”** Eliminate everything that's not supporting your one point.
 
@@ -19,9 +19,19 @@ Every word, sentence, paragraph, section, and chapter should be in service to yo
 > — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
 
-## Simple
+## Clear
 
-Good writing is simple. Simple writing communicates your point more effectively. Simple writing is easy to understand.
+Good writing is clear. All writing is communication; therefore, clarity is a virtue.
+
+To communicate clearly, use precise, specific, concrete language.
+
+> Prefer the specific to the general, the definite to the vague, the concrete to the abstract.
+>
+> Use “It rained every day for a week," rather than, “A period of unfavorable weather set in.”
+>
+> — <cite>Strunk & White, [The Elements of Style][elements-of-style]</cite>
+
+Clear writing is simple. Simple writing is easy to understand.
 
 > Simple writing is persuasive. A good argument in five sentences will sway more people than a brilliant argument in a hundred sentences. Don’t fight it.
 >
@@ -31,11 +41,19 @@ Use straightforward language. Don't use a long word when a short word will do.
 
 Write short sentences. Don't put multiple thoughts in one sentence. Prune clutter from your writing. Eliminate every unnecessary word, sentence, paragraph, adverb, adjective, and so on.
 
+> Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason a drawing should have no unnecessary lines and a machine no unnecessary parts.
+>
+> — <cite>Strunk & White, [The Elements of Style][elements-of-style]</cite>
+
+---
+
 > Strip every sentence to its cleanest components. Every word that serves no function, every long word that could be a short word, every adverb that carries the same meaning that’s already in the verb, every passive construction that leaves the reader unsure of who is doing what — these are the thousand and one adulterants that weaken the strength of a sentence. [...]
 >
 > Look for the clutter in your writing and prune it ruthlessly. Be grateful for everything you can throw away. Reexamine each sentence you put on paper. Is every word doing new work? Can any thought be expressed with more economy? Is anything pompous or pretentious or faddish? Are you hanging on to something useless just because you think it’s beautiful? **Simplify, simplify**.
 >
 > — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
+
+---
 
 Use simple _subject-verb-object_ sentence structures. This makes it clear who did what, and is easy to understand.
 
@@ -74,12 +92,18 @@ Don't worry about whether the reader will “get it” or not. **You are who you
 >
 > — <cite>William Zinsser, [On Writing Well][writing-well]</cite>
 
-If you follow your affections you will write well and will engage your readers.
+---
+
+> Your concern for the reader must be pure: you must sympathize with the reader’s plight (most readers are in trouble about half the time) but never seek to know the reader’s wants. Your whole duty as a writer is to please and satisfy yourself, and the true writer always plays to an audience of one. Start sniffing the air, or glancing at the Trend Machine, and you are as good as dead, although you may make a nice living.
+>
+> — <cite>Strunk & White, [The Elements of Style][elements-of-style]</cite>
+
+If you follow your affections, you will write well and engage your readers.
 
 
 # The Mechanics of Writing
 
-The mechanics of writing are _how_ you actually write well. It's the process of constructing a piece. It's the syntax, grammar, and words you choose. These guidelines will ensure the fundamentals of your writing are sound. This section is adapted from _[On Writing Well][writing-well]_ by William Zinsser.
+The mechanics of writing are how you write well. It's the process of constructing a piece. It's the syntax, grammar, and words you choose. These guidelines will ensure the fundamentals of your writing are sound. This section is adapted from _[On Writing Well][writing-well]_ by William Zinsser.
 
 Writing is an evolving _process_, not a finished _product_.
 
@@ -111,6 +135,10 @@ In order to better make his point about the ridiculousness of nuclear war, Kubri
 Like design, the key to writing well is **iteration**. Your first draft is never born perfect. Most writers don't initially say what they want to say, or say it as well as they could.
 
 Clear writing is the result of a lot of tinkering. Rewriting is mainly a matter of carpentry: altering the sequence, tightening the flow, sharpening the point.
+
+> Do not be afraid to experiment with what you have written. […] Remember, it is no sign of weakness or defeat that your manuscript ends up in need of major surgery. This is a common occurrence in all writing, and among the best writers.
+>
+> — <cite>Strunk & White, [The Elements of Style][elements-of-style]</cite>
 
 If you’re struggling with an element of your writing, the simplest fix is to just get rid of it. It was trying to do an unnecessary job all along — that’s why it was giving you so much grief. This will also make your writing simpler.
 
@@ -332,7 +360,8 @@ Use “you.” Instead of talking about “the writer” and the trouble “he�
 These books and articles helped me improve my writing immensely:
 
 - [On Writing Well][writing-well] by William Zinsser
-- [The Day You Become a Better Writer][scott-adams] by Scott Adams (yes, of Dilbert fame)
+- [The Elements of Style][elements-of-style] by William Strunk Jr. & E.B. White
+- [The Day You Become a Better Writer][scott-adams] by Scott Adams (of Dilbert fame)
 - [Crystal Clear Writing](http://boostblogtraffic.com/crystal-clear-writing/) by Glen Long
 - [The Art of Omission](http://www.newyorker.com/magazine/2015/09/14/omission) by John McPhee for The New Yorker
 - [Headings Are Pick-Up Lines: 5 Tips for Writing Headlines That Convert](http://www.nngroup.com/articles/headings-pickup-lines/) by Hoa Loranger for Nielsen Norman Group
@@ -343,3 +372,5 @@ These books and articles helped me improve my writing immensely:
 [writing-well]: http://www.amazon.com/Writing-Well-30th-Anniversary-Edition/dp/0060891548 "On Writing Well on Amazon"
 
 [scott-adams]: http://blog.dilbert.com/post/127310496506/the-day-you-became-a-better-writer-2nd-look "The Day You Become a Better Writer by Scott Adams"
+
+[elements-of-style]: https://en.wikipedia.org/wiki/The_Elements_of_Style "The Elements of Style on Wikipedia"
