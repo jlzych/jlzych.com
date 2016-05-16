@@ -27,7 +27,7 @@ This is my personal site that I use to [write](/writing) about **design**, **cod
 ## Things I'm Working On
 
 - [Writing](/writing)
-- [Lettering practice](/lettering)
+- [Lettering & Doodles](/lettering)
 
 ## Get in Touch
 
