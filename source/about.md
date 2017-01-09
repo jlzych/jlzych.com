@@ -28,6 +28,7 @@ This is my personal site that I use to [write](/writing) about **design**, **cod
 
 - [Writing](/writing)
 - [Scribbles & Letters](/scribbles)
+- [Sol LeWitt's Wall Drawing #273](http://codepen.io/jlzych/full/rjVoby/) (on CodePen)
 
 ## Get in Touch
 
