@@ -10,7 +10,7 @@ nav_classes: "nav-main--light"
 
 <h2 class="about-subheadline">I'm a designer, developer, and writer based in San Francisco.</h2>
 
-I'm currently a Design Manager at [Optimizely](http://www.optimizely.com "Optimizely homepage"). Before becoming a manager I was a Product Designer and a [UI Engineer](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.a0dzb4xyl).
+I'm currently Head of Design at [Optimizely](http://www.optimizely.com "Optimizely homepage"). Before becoming a manager I was a Product Designer and a [UI Engineer](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.a0dzb4xyl).
 
 Before joining Optimizely, I earned my Master's degree at UC Berkeley's [School of Information](http://ischool.berkeley.edu "School of Information's homepage"), where I studied human-computer interaction, usability, and behavioral economics.
 
@@ -24,11 +24,13 @@ This is my personal site that I use to [write](/writing) about **design**, **cod
 - [Why I Became a Design Manager](/2015/01/19/why-i-became-a-design-manager/)
 - [Hiring Designers: Advice from Twitter, Uber, and GoPro](/2015/03/22/hiring-designers-advice-from-twitter-uber-and-gopro/)
 
-## Things I'm Working On
+## Side Projects
 
 - [Writing](/writing)
 - [Scribbles & Letters](/scribbles)
-- [Sol LeWitt's Wall Drawing #273](http://codepen.io/jlzych/full/rjVoby/) (on CodePen)
+- [Sol LeWitt's Wall Drawing #273](http://codepen.io/jlzych/full/rjVoby/) (CodePen)
+- [Ellsworth Kelly – Spectrum Colors Arranged by Chance V](http://codepen.io/jlzych/full/OWyYPq/) (CodePen)
+- [Ellsworth Kelly – Spectrum Colors Arranged by Chance III](http://codepen.io/jlzych/full/wgKbRK/) (CodePen)
 
 ## Get in Touch
 
