@@ -1,5 +1,6 @@
 ---
 title: My Talk at Lean Kanban Central Europe 2017
+subtitle: From 20/20 Hindsight to ESP at Optimizely
 date: 2017-11-26 14:57 PST
 tags: talks
 ---
@@ -10,3 +11,19 @@ I spoke about Optimizely's software development process, and how we've used idea
 
 <iframe src="https://player.vimeo.com/video/243651831" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/243651831">Jeff Zych - From 20/20 Hindsight to ESP at Optimizely @ LKCE17</a> from <a href="https://vimeo.com/lkce">Lean Kanban Central Europe</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+## Epilogue
+
+One of the cool things this conference does is give the audience green, yellow, and red index cards they can use to give feedback to the speakers. Green indicates you liked the talk, red means you didn't like it, and yellow is neutral.
+
+I got just one red card, with the comment, "topic title not accurate (this is not ESP?!)." In retrospect, I realized this person is correct — my talk really doesn't talk about ESP much. I touch on it, but that was what Keith covered. Since he dropped out, I mostly cut those sections of the presentation since I can't speak as confidently about them. If I did this talk solo again, I would probably change the title. So thank you, anonymous commenter 🙏
+
+I also got two positive comments on green cards:
+
+> Thanks for sharing. Some useful insights + good to see it used in industry. - Thanks.
+
+And:
+
+> Thank you! Great examples, (maybe less slides next time?) but this was inspiring
+
+I also got some good tweets, like [this](https://twitter.com/ofinker/status/928256477667708928) and [this](https://twitter.com/leankanbance/status/928252318566535169).
