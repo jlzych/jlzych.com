@@ -32,6 +32,11 @@ This is my personal site that I use to [write](/writing) about **design**, **cod
 - [Ellsworth Kelly – Spectrum Colors Arranged by Chance V](http://codepen.io/jlzych/full/OWyYPq/) (CodePen)
 - [Ellsworth Kelly – Spectrum Colors Arranged by Chance III](http://codepen.io/jlzych/full/wgKbRK/) (CodePen)
 
+## Conference Talks
+
+- [From 20/20 Hindsight to ESP at Optimizely](https://vimeo.com/243651831). An updated (and solo!) version of the talk below, given at Lean Kanban Central Europe, November 2017.
+- [From 20/20 Hindsight to ESP at Optimizely](https://www.youtube.com/watch?v=y8Ns5bdg0oo&list=PLVsUnwOzPqiSz8D0WYoUkKxZzzbmM0pPY&index=14). Given at Lean Kanban North America with [Keith Nottonson](https://twitter.com/keithadam), May 2017.
+
 ## Get in Touch
 
 You can find me on [Twitter](http://twitter.com/jlzych), [Instagram](http://instagram.com/jlzych), [Medium](https://medium.com/@jlzych), [LinkedIn](http://www.linkedin.com/in/jlzych/), [Github](http://github.com/jlzych "Jeff Zych's Github page"), and Gmail (jlzych@).
