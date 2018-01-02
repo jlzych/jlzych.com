@@ -4,9 +4,11 @@
 
 // Colors
 $primary-color: #0E7575; // #185d72;
-$link-color: saturate(lighten($primary-color, 2%), 5%);
 $bg-color: #FCFBF8; // #fcfcf9;
 $black: #061519;
+$text-color: $black;
+$link-color: $black;
+$link-color-visited: #555d5f;
 $de-emphasized-text: desaturate(lighten($black, 12%), 45%);
 $light-gray: desaturate(lighten($black, 70%), 60%);
 $light-gray-background-color: #f8f8f5;
