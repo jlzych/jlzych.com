@@ -2,11 +2,13 @@
 title: Discovery Kanban at Optimizely
 subtitle: How we transformed our Agile process to include research and design
 date: 2016-07-17 21:47 PDT
-tags: ["process", "kanban", "design"]
+tags: ["Discovery Kanban", "process", "design"]
 ---
 
 ![Discovery work planning meeting](/images/2016-07-17-discovery-kanban-at-optimizely/discovery-planning.jpeg)
 _Discovery work planning meeting_
+
+_Update 3/23/18: I created a [Skillshare class](https://www.skillshare.com/classes/Discovery-Kanban-101-How-to-Integrate-User-Centered-Design-with-Agile/677077315?teacherRef=748023&via=teacher-referral&utm_campaign=teacher-referral&utm_source=ShortUrl&utm_medium=teacher-referral) to teach you how to implement a Discovery process at your organization._
 
 Like most tech startups, Optimizely uses an Agile process to build software. Agile has been great at helping us plan what we’re building, coordinate across teams, and ship iteratively. Agile’s focus, however, is on shipping working software, which meant design and research were awkwardly shoehorned into the process.
 
