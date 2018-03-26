@@ -1,11 +1,16 @@
 %head>
   %meta{ :charset => 'utf-8' }
   %title
-    - if current_page.data.title
-      = "#{current_page.data.title} by "
-    Jeff Zych
+    - if current_page.data.title == "About"
+      = "About Jeff Zych"
+    - elsif current_page.data.title == "Archives"
+      = "Jeff Zych's Article Archives"
+    - elsif current_page.data.title
+      = "#{current_page.data.title} by Jeff Zych"
+    - else
+      = "Jeff Zych's Corner of the Internet"
 
-  %meta{ :content => "Jeff Zych's website", :name => "description" }
+  %meta{ :content => "Jeff Zych's Corner of the Internet", :name => "description" }
   %meta{ :content => "Jeff Zych", :name => "author" }
   %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes")
   %meta(name="apple-mobile-web-app-status-bar-style" content="black")
@@ -13,7 +18,7 @@
 
   / FB Open Graph meta tags
   %meta(property="og:type" content="blog")
-  %meta(property="og:site_name" content="Jeff Zych's Blog")
+  %meta(property="og:site_name" content="Jeff Zych's Corner of the Internet")
   %meta(property="og:image" content="http://jlzych.com/images/monogram.png")
   %meta(property="og:image:type" content="image/png")
   %meta(property="og:image:width" content="512")
@@ -23,7 +28,7 @@
   - if current_page.data.title
     %meta(property="og:title" content="#{current_page.data.title}")
   - else
-    %meta(property="og:title" content="Jeff Zych's home page")
+    %meta(property="og:title" content="Jeff Zych's corner of the internet")
 
   -# Desktop browsers (including 16x16, 32x32 & 48x48 PNGs). Create on http://www.xiconeditor.com/
   =favicon_tag "/favicon.ico?v=2"
