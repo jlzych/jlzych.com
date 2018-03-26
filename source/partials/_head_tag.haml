@@ -16,8 +16,8 @@
   %meta(property="og:site_name" content="Jeff Zych's Blog")
   %meta(property="og:image" content="http://jlzych.com/images/monogram.png")
   %meta(property="og:image:type" content="image/png")
-  %meta(property="og:image:width" content="1024")
-  %meta(property="og:image:height" content="1024")
+  %meta(property="og:image:width" content="512")
+  %meta(property="og:image:height" content="512")
   %meta(property="og:url" content="http://jlzych.com#{current_page.url}")
 
   - if current_page.data.title
@@ -25,7 +25,14 @@
   - else
     %meta(property="og:title" content="Jeff Zych's home page")
 
-  =favicon_tag "/favicon.ico?v=1"
+  -# Desktop browsers (including 16x16, 32x32 & 48x48 PNGs). Create on http://www.xiconeditor.com/
+  =favicon_tag "/favicon.ico?v=2"
+
+  -# Modern browsers (196x196 should cover all modern browsers)
+  %link(rel="icon" type="image/png" href="/favicon.png")
+
+  -# iOS & other mobile devices (ideally 180x180, at least 120x120)
+  %link(rel="apple-touch-icon" href="touch-icon-iphone.png")
 
   %script( src="//cdn.optimizely.com/js/1111070510.js" )
 
