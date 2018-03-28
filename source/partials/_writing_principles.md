@@ -369,8 +369,8 @@ These books and articles helped me improve my writing immensely:
 - [Interactive guide to unambiguous grammar](http://www.mcsweeneys.net/articles/an-interactive-guide-to-ambiguous-grammar) by Vijith Assar for McSweeney's
 
 
-[writing-well]: http://www.amazon.com/Writing-Well-30th-Anniversary-Edition/dp/0060891548 "On Writing Well on Amazon"
+[writing-well]: https://amzn.to/2J1D3bA "On Writing Well on Amazon"
 
 [scott-adams]: http://blog.dilbert.com/post/127310496506/the-day-you-became-a-better-writer-2nd-look "The Day You Become a Better Writer by Scott Adams"
 
-[elements-of-style]: https://en.wikipedia.org/wiki/The_Elements_of_Style "The Elements of Style on Wikipedia"
+[elements-of-style]: https://amzn.to/2pKE2Uy "The Elements of Style on Wikipedia"
