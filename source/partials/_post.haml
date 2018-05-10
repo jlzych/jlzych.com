@@ -12,13 +12,12 @@
 
   ~ article.body
 
-  %p.follow-me
+  %footer.article__footer
     Thoughts? Reply
 
     =link_to "@jlzych", "https://twitter.com/intent/tweet?screen_name=jlzych"
 
-  %footer.tags.text-uppercase.text-small
-    Tags:
-    - article.tags.each do |tag|
+    -# Tags:
+    -# article.tags.each do |tag|
       -# = link_to tag, tag_path(tag), { class: "tag", title: "Articles tagged #{tag}" }
-      %span.tag= tag
+      -# %span.tag= tag

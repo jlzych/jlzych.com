@@ -321,22 +321,6 @@ header {
   }
 }
 
-/**
- * Tags at the end of each article
- */
-.tags {
-  $border-style: 1px solid $light-gray;
-  border-bottom: $border-style;
-  border-top: $border-style;
-  margin-top: 2em;
-  padding-bottom: 0.8em; // These values differ to make the text more visually centered
-  padding-top: 1em;
-}
-
-.tag {
-  margin: 0 1.5em;
-}
-
 // A link to the full blog article (on the archive)
 .post-teaser {
   color: inherit;
@@ -353,14 +337,6 @@ header {
     }
   }
 } // .post-teaser
-
-.follow-me {
-  background-color: $light-gray-background-color;
-  // border: 1px solid $light-gray-border-color;
-  font-size: 0.85em;
-  font-style: italic;
-  padding: 0.5em;
-}
 
 // Links to previous/next articles
 .article-links {
@@ -404,8 +380,18 @@ header {
   font-size: 0.8em;
 }
 
-// Archive styles
+.article__footer {
+  $border-style: 1px solid $light-gray;
+  border-bottom: $border-style;
+  border-top: $border-style;
+  font-family: $sans-serif-font-stack;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 2em;
+  padding: 0.8em 0;
+}
 
+// Archive styles
 .archives__post-date {
   font-style: italic;
 }
