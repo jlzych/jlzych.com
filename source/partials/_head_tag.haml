@@ -5,6 +5,8 @@
       = "About Jeff Zych"
     - elsif current_page.data.title == "Archives"
       = "Jeff Zych's Article Archives"
+    - elsif current_page.data.title == "Resume"
+      = "Jeff Zych's Resume"
     - elsif current_page.data.title
       = "#{current_page.data.title} by Jeff Zych"
     - else
@@ -42,6 +44,9 @@
   %script( src="//cdn.optimizely.com/js/1111070510.js" )
 
   =stylesheet_link_tag "application"
+  -if current_page.data.stylesheet
+    =stylesheet_link_tag "#{ current_page.data.stylesheet }", media: "all"
+
   %link( rel="alternate" type="application/rss+xml" title="RSS for Jeff Zych" href="/feed.xml" )
 
   %script( type="text/javascript" src="//use.typekit.net/#{ current_page.data.typekit_id || 'kbr8kzk' }.js" )

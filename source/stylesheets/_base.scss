@@ -29,7 +29,7 @@ body {
 
 ::selection {
   background: $primary-color;
-  color: #eee;
+  color: #f7f4ee; // Just a bit darker than the background
 }
 
 ::-moz-selection {
