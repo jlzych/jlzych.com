@@ -1,11 +1,11 @@
 %article
-  %time{ datetime: article.date.strftime('%Y-%m-%d') }
+  %time.article__date{ datetime: article.date.strftime('%Y-%m-%d') }
     %i Posted on
     = article.date.strftime('%b %e, %Y')
     %i by
     Jeff Zych
 
-  %h1= link_to article.title, article
+  %h1.article__title= link_to article.title, article
 
   -if article.data.subtitle != nil
     %h2.article__subtitle= article.data.subtitle

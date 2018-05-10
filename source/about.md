@@ -8,7 +8,7 @@ nav_classes: "nav-main--light"
 
 <h1 class="about-headline">Hi, I'm Jeff.</h1>
 
-<h2 class="about-subheadline">I'm a humane designer & technologist who's passionate about building technology to improve the world.</h2>
+<h2 class="about-subheadline">I'm a humane designer & technologist who's passionate about building products to improve people's lives.</h2>
 
 I'm the former Head of Design at [Optimizely](http://www.optimizely.com "Optimizely homepage"). Before that I was a Product Designer and a [UI Engineer](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.a0dzb4xyl).
 

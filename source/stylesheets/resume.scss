@@ -5,7 +5,7 @@
  */
 
 h1, h2, h3 {
-  font-family: "myriad-pro", sans-serif;
+  font-family: $sans-serif-font-stack;
   margin-top: 1.5em;
   margin-bottom: 0.25em;
 
@@ -63,7 +63,7 @@ h3 {
     margin: 0;
     margin-top: 23px;
     padding: 0;
-    font-family: "myriad-pro", sans-serif;
+    font-family: $sans-serif-font-stack;
     font-size: 0.75em;
     text-align: right;
     float: right;

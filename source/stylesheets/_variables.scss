@@ -14,10 +14,14 @@ $light-gray: desaturate(lighten($black, 70%), 60%);
 $light-gray-background-color: #f8f8f5;
 $light-gray-border-color: #e8e8e5;
 
+// Font variables
+$sans-serif-font-stack: 'myriad-pro', Verdana, sans-serif;
+
 // Transitions
 $default-transition-property: color;
 $default-transition-duration: .25s;
 
+// Monogram variables
 $monogram-width: 100px;
 $monogram-right-gutter: 30px;
 $content-left-gutter: $monogram-width + $monogram-right-gutter;
