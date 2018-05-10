@@ -12,7 +12,7 @@ nav_classes: "nav-main--light"
 
 I'm the former Head of Design at [Optimizely](http://www.optimizely.com "Optimizely homepage"). Before that I was a Product Designer and a [UI Engineer](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.a0dzb4xyl).
 
-Before joining Optimizely, I earned my Master’s degree at UC Berkeley’s [School of Information](http://ischool.berkeley.edu "School of Information's homepage"), where I studied technology, design, and behavioral economics.
+Before joining Optimizely, I earned my Master’s degree at UC Berkeley’s [School of Information](http://ischool.berkeley.edu "School of Information's homepage"), where I studied technology, design, and behavioral economics. View my full [online resume here](/resume) (includes print styles!).
 
 I'm also a tennis player and musician (guitar/bass/drums).
 

@@ -4,7 +4,6 @@
 - 805-368-4791
 - San Francisco, CA
 
-
 ## Experience
 
 ### **Head of Design**, Optimizely <time>5/2016 -- 3/2018</time>

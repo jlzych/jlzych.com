@@ -120,8 +120,10 @@ h3 {
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
+  // Stuff we're hiding when printing
   .nav-main,
-  #site-footer {
+  #site-footer,
+  #print-friendly {
     display: none;
   }
 
