@@ -1,6 +1,8 @@
 ---
 title: Re-Designing Optimizely's Preview Tool
 date: 2014-02-11 10:14 PST
+description: "We just released a major addition to Optimizely's preview tool: the ability to impersonate visitors. In this post, I am going to describe our design process and the design decisions we made along the way."
+relative_image_url: /images/2014-02-11-re-designing-optimizely-s-preview-tool/preview-final.png
 tags: "design process"
 ---
 

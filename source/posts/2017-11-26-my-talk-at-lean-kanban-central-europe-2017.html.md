@@ -2,6 +2,7 @@
 title: My Talk at Lean Kanban Central Europe 2017
 subtitle: From 20/20 Hindsight to ESP at Optimizely
 date: 2017-11-26 14:57 PST
+description: On a chilly fall day a few weeks back, I gave a talk at the cozy Lean Kanban Central Europe in Hamburg, Germany. I was honored to be invited to give a reprise of the talk I gave with Keith earlier this year at Lean Kanban North America.
 tags: talks
 ---
 

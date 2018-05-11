@@ -1,6 +1,7 @@
 ---
 title: Stay Focused on the User by Switching Between Maker Mode and Listener Mode
 date: 2018-02-20 12:20 PST
+description: By switching between “maker” and “listener” modes, you put yourself in your user’s shoes and seeing your work through their eyes, which helps prevent you from “put[ting] too much in.”
 tags: ["design", "creativity", "product development"]
 ---
 

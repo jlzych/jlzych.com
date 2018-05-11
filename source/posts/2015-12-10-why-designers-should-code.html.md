@@ -2,6 +2,8 @@
 title: Why Designers Should Code
 subtitle: But Shouldn't Push Code to Production
 date: 2015-12-10 08:09 PST
+description: In the 1970s, AT&T commissioned Matthew Carter to design a typeface for their phone book. They wanted a typeface that could fit more characters per line without a loss of legibility, especially at smaller sizes.
+relative_image_url: /images/2015-12-10-why-designers-should-code/bell-centennial.png
 tags:
 ---
 

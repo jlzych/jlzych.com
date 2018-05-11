@@ -1,6 +1,7 @@
 ---
 title: Why I Became a Design Manager
 date: 2015-01-19 12:32 PST
+description: At the start of 2015, I officially became a Design Manager at Optimizely. I transitioned from an individual contributor, product design role into a leadership role. So why did I become a Design Manager?
 tags:
 ---
 

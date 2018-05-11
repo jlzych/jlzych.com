@@ -1,6 +1,8 @@
 ---
 title: On Mastery
 date: 2018-02-25 17:29 PST
+description: 'Mastery – “being the very best at just one thing” – doesn’t hold much appeal for me. I’m a very curious person. I like jumping between various creative endeavors that “are interesting to me and that I don’t lose interest in.”'
+relative_image_url: "/images/2018-02-25-on-mastery/mastery.jpg"
 tags: creativity
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: 'Discovery Kanban 101: My Newest Skillshare Class'
 date: 2018-03-23 14:50 PDT
+description: "I just published my first Skillshare class — Discovery Kanban 101: How to Integrate User-Centered Design with Agile"
+relative_image_url: /images/discovery-kanban-101-title-card.jpg
 tags: ["Discovery Kanban", "process", "design", "Skillshare"]
 ---
 

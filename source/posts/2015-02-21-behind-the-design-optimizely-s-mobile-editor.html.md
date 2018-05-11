@@ -1,6 +1,8 @@
 ---
 title: "Behind the Design: Optimizely's Mobile Editor"
 date: 2015-02-21 14:54 PST
+description: In this post, I will walk you through the design process, show you the sketches and prototypes that led up to the final design of Optimizely's Mobile editor.
+relative_image_url: /images/2015-02-21-behind-the-design-optimizely-s-mobile-editor/8-final-editor.png
 tags: ["design process", Optimizely]
 ---
 

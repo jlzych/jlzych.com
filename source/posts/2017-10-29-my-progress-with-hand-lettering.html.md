@@ -1,6 +1,8 @@
 ---
 title: My Progress with Hand Lettering
 date: 2017-10-29 21:21 PDT
+description: I started hand lettering about a year and half ago, and I thought it would be fun to see the progress I've made by comparing my early, crappy work to my recent work.
+relative_image_url: /images/scribbles/1708-7-fitter-happier.jpg
 tags: "hand lettering"
 ---
 

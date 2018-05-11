@@ -1,6 +1,8 @@
 ---
 title: Discovery Kanban at Optimizely
 subtitle: How we transformed our Agile process to include research and design
+description: Like most tech startups, Optimizely uses an Agile process to build software. Agile has been great at helping us plan what we’re building, coordinate across teams, and ship iteratively; however, that meant design and research were awkwardly shoehorned into the process.
+relative_image_url: /images/2016-07-17-discovery-kanban-at-optimizely/discovery-planning.jpeg
 date: 2016-07-17 21:47 PDT
 tags: ["Discovery Kanban", "process", "design"]
 ---
