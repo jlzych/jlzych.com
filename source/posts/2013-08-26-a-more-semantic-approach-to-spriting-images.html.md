@@ -1,6 +1,7 @@
 ---
 title: A More Semantic Approach to Spriting Images
 date: 2013-08-26 21:24 PDT
+description: "Spriting images is a well-known, well-documented way to speed up page load times. The standard technique is to set a sprite sheet image as the `background-image` of an element, and position it so the proper sprite shows through. This works great for icons and other images that aren't part of the actual content, but not so great for images that belong in the page content."
 tags: html, css, spriting
 ---
 

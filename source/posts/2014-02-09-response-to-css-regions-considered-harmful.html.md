@@ -1,6 +1,8 @@
 ---
 title: Response to CSS Regions Considered Harmful
 date: 2014-02-09 12:49 PST
+description: "Håkon Wium Lie, the father of CSS, wrote a great critique of the CSS Regions spec. His article pointed out many of the same flaws that I've noticed."
+relative_image_url: /images/2014-02-09-response-to-css-regions-considered-harmful/regions-demo.png
 tags: css
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: How Tina Fey’s “Lessons From Late Night” Apply to Product Design
 date: 2014-10-05 17:13 PDT
+description: "In 'Lessons From Late Night,' Tina Fey discusses the lessons she learned from Lorne Michaels while working at SNL. Turns out most of them are lessons I’ve learned in product design while working at Optimizely."
 tags: "product design"
 ---
 

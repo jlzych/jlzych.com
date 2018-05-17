@@ -1,6 +1,7 @@
 ---
 title: Shifting from a Product-centric to a Service-centric Mindset
 date: 2017-01-29 19:20 PST
+description: "Over the past few months I’ve shifted from a product-centric mindset to a service-centric mindset. My focus used to be on building products that help people accomplish a task or goal. That meant I would try to understand the problem to solve, who it’s being solved for, and then design digital products to solve that problem."
 tags:
 ---
 

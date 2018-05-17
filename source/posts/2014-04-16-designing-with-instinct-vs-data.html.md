@@ -1,6 +1,7 @@
 ---
 title: Designing with instinct vs. data
 date: 2014-04-16 22:27 PDT
+description: "Braden Kowitz wrote a great article exploring the ever increasing tension between making design decisions based on instinct versus data."
 tags: "product design"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Link: The Notebooks of Optimizely's Design Team"
 date: 2015-05-18 08:38 PDT
+description: "Over on Design @ Optimizely (the Optimizely Design team's Medium publication), I posted a photo essay documenting the unique sketching and note taking styles of our team members."
 tags: design, Optimizely, sketchbooks
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Artists don't distinguish between...
 date: 2017-02-08 17:13 PST
+description: "'Artists don‘t distinguish between the act of making something and the act of thinking about it — thinking and making evolve together in an emergent, concurrent fashion. As a result, when approaching a project, an artist often doesn‘t seem to plan it out.'"
 tags: quotes
 ---
 

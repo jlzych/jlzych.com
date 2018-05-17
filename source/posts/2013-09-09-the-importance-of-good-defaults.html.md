@@ -1,6 +1,8 @@
 ---
 title: The Importance of Good Defaults
 date: 2013-09-09 18:32 PDT
+description: "One of the simplest and most robust findings from behavioral economics is that when people are faced with a choice they tend to stick with the default option. This sounds like something that shouldn’t have any effect on people."
+relative_image_url: /images/2013-09-09-the-importance-of-good-defaults/default.png
 tags: ["testing theory", "A/B testing", "usability"]
 ---
 

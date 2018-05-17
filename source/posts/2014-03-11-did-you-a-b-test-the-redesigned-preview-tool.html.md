@@ -1,6 +1,7 @@
 ---
 title: Did you A/B test the redesigned preview tool?
 date: 2014-03-11 09:50 PDT
+description: "A lot of people have asked me if we A/B tested the redesigned preview tool. The short answer is no. In this post I'm going to explain why."
 tags: ["a/b testing", "Optimizely"]
 ---
 

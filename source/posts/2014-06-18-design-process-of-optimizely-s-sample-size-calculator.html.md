@@ -1,10 +1,12 @@
 ---
 title: Design Process of Optimizely's Sample Size Calculator
 date: 2014-06-18 08:24 PDT
+description: "Optimizely just released a sample size calculator, which tells people how many visitors they need for an A/B test to get results. This page began as a hack week project, which produced a functioning page, but needed some design love before being ready for primetime. In this post, I'm going to explain the design decisions we made along the way."
+relative_image_url: /images/2014-06-18-design-process-of-optimizely-s-sample-size-calculator/calculator-done.png
 tags: ["design process", "Optimizely"]
 ---
 
-Optimizely just released a [sample size calculator](https://www.optimizely.com/resources/sample-size-calculator), which tells people how many visitors they need for an A/B test to get results. This page began as a hack week project, which produced a functioning page, but needed some design love before being ready for primetime. So my coworker [Jon](http://jonsaquing.com/) (a [communication designer](http://www.jobscore.com/jobs2/optimizely/communication-designer/cEhJpKd7qr45_4iGakhP3Q?ref=rss&sid=68) at Optimizely) and I teamed up to push this page over the finish line. In this post, I'm going to explain the design decisions we made along the way.
+Optimizely just released a [sample size calculator](https://www.optimizely.com/resources/sample-size-calculator), which tells people how many visitors they need for an A/B test to get results. This page began as a hack week project, which produced a functioning page, but needed some design love before being ready for primetime. So my coworker [Jon](http://jonsaquing.com/) (a communication designer at Optimizely) and I teamed up to push this page over the finish line. In this post, I'm going to explain the design decisions we made along the way.
 
 ![Finished sample size calculator](http://jlzych.com/images/2014-06-18-design-process-of-optimizely-s-sample-size-calculator/calculator-done.png)
 

@@ -1,6 +1,7 @@
 ---
 title: Optimizely's iOS SDK Hits Version 1.0!
 date: 2014-11-30 18:13 PST
+description: "On Novemeber 18th, 2014, Optimizely officially released version 1.0 of our iOS SDK and a new mobile editing experience. As the lead designer of this project, I'm extremely proud of the progress we've made."
 tags: Optimizely, ios
 ---
 

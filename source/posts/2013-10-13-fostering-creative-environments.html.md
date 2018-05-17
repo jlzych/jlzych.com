@@ -1,6 +1,7 @@
 ---
 title: Fostering creative environments
 date: 2013-10-13 13:56 PDT
+description: "I recently read Smashing Magazine's article 'On Creative Leadership' that talks about creating an environment in which people can be creative. This section really resonated with me because it's something we do occasionally at Optimizely, and talk about doing more of:"
 tags: creativity
 ---
 

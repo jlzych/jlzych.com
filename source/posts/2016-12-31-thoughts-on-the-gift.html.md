@@ -1,6 +1,8 @@
 ---
 title: Thoughts on “The Gift”
 date: 2016-12-31 12:47 PST
+description: "I finally finished 'The Gift,' by Lewis Hyde, after reading it on and off for at least the last 4 months (probably more). Overall I really enjoyed it and found it very thought-provoking. At its core it's about creativity, the arts, and the tension between art and commerce."
+relative_image_url: /images/2016-12-31-thoughts-on-the-gift/invocation.jpg
 tags: "books"
 ---
 

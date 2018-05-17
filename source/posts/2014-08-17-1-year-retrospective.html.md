@@ -1,6 +1,8 @@
 ---
 title: 1-year Retrospective
 date: 2014-08-17 21:13 PDT
+description: "August 2nd marked the 1-year anniversary of my first post, so it seems appropriate to do a quick retrospective of my first year blogging on my personal site."
+relative_image_url: /images/2014-08-17-1-year-retrospective/ga.png
 tags: retrospective
 ---
 

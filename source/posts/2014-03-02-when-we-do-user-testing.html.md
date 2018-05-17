@@ -1,6 +1,7 @@
 ---
 title: When Do You Do User Testing?
 date: 2014-03-02 15:37 PST
+description: "In response to my preview redesign post, my uncle asked, 'When does the designer go with their own analysis of a design and when do they do a usability test?' I've been asked this question a lot, and we often discuss it in product development meetings."
 tags: ["Optimizely"]
 ---
 

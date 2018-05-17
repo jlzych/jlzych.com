@@ -1,6 +1,8 @@
 ---
 title: Using Gradients In Place of Images
 date: 2013-09-22 21:56 PDT
+description: "Recently at Optimizely, I needed to create ribbons as part of the design of our Summertime Christmas campaign. The easy way would have been to throw a repeating background image on some `div`s, but then I remembered CSS3 gradients can be used to create some pretty interesting patterns."
+relative_image_url: /images/2013-09-22-using-gradients-in-place-of-images/summertime-xmas.png
 tags: css3, gradients
 ---
 

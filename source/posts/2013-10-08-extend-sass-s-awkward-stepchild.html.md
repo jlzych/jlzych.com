@@ -1,6 +1,7 @@
 ---
 title: Extend - SASS's Awkward Stepchild
 date: 2013-10-08 09:47 PDT
+description: "SASS has a lot of really powerful features to help you write DRY code quickly. One such feature is `@extend`, which I find is overlooked by many developers but can be very useful when used properly."
 tags: SASS, css, extend
 ---
 

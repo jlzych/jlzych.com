@@ -1,6 +1,7 @@
 ---
 title: On Being a Generalist
 date: 2014-05-19 21:02 PDT
+description: "The tech community has walls between various disciplines that we see as opposites, such as print vs. digital, text vs. image, and so on. However, the most interesting design happens in the borderlands, where these different media connect."
 tags:
 ---
 

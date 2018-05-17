@@ -1,6 +1,8 @@
 ---
 title: Using Channel Factors to Increase Offline Conversions
 date: 2013-10-22 21:25 PDT
+description: "Anyone who has ever ignored to-do lists knows that any friction between yourself and your goal leads to frustration and potentially giving up altogether. This lesson applies to real life equally as well as it does to visitors on your website."
+relative_image_url: /images/2013-10-22-using-channel-factors-to-increase-offline-conversions/crate-barrel-checkout.png
 tags: ["A/B testing", "channel factors", "testing theory"]
 ---
 

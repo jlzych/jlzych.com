@@ -1,5 +1,6 @@
 ---
 title: Matthew Carter&#8217;s &ldquo;My Life in Typefaces&rdquo;
+description: "I just got around to watching Matthew Carter's excellent TED talk, 'My Life in Typefaces.' In it, he talks about his experience designing type for the past 5 decades, and how technical constraints influenced his designs. The central question he tries to answer is, 'Does a constraint force a compromise?'"
 date: 2014-05-03 20:24 PDT
 tags:
 ---

@@ -1,6 +1,8 @@
 ---
 title: Using Data for Social Proof
 date: 2014-01-12 16:07 PST
+description: "I recently ran a test on Optimizely's free trial signup page that's a great example of using social proof to increase conversions. I've written about social proof before, but the gist of the idea is that telling a person other people are already using your product or service makes them more likely to also use it."
+relative_image_url: /images/2014-01-12-using-data-for-social-proof/2-variation.png
 tags: ["testing theory", "A/B testing"]
 ---
 

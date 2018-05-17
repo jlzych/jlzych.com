@@ -1,6 +1,7 @@
 ---
 title: Why We Hire UI Engineers on the Design Team
 date: 2014-05-11 21:13 PDT
+description: "This Happy Cog article by Stephen Caver perfectly encapsulates why we hire UI Engineers on the design team at Optimizely (as opposed to the engineering team). We want the folks coding a UI to be involved in the design process from the beginning."
 tags: design
 ---
 

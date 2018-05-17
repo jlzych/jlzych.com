@@ -1,6 +1,7 @@
 ---
 title: Play the Right Note
 date: 2016-02-04 08:29 PST
+description: "Like many Americans, I started learning guitar back in high school. I began where everyone did – strumming basic chords and melodies and building up my finger strength. I got a little better every day, and could eventually play simple songs."
 tags:
 ---
 

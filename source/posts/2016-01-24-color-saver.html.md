@@ -1,6 +1,7 @@
 ---
 title: Color Saver
 date: 2016-01-24 15:33 PST
+description: "This weekend I built a quick Mac screensaver that displays the current time as a color. The hour is mapped onto the red channel, the minute onto the green channel, and the second onto the blue channel."
 tags: projects
 ---
 
