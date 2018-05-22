@@ -1,16 +1,4 @@
----
-title: About Jeff Zych
-description: "I'm a humane designer & technologist who's passionate about building products to improve people's lives."
-relative_image_url: /images/me-banner.jpg
-nav_classes: "nav-main--light"
----
-
-<div class="about-banner u-full-width u-pos-a u-top-left">
-</div>
-
-<h1 class="about-headline">Hi, I'm Jeff.</h1>
-
-<h2 class="about-subheadline">I'm a humane designer & technologist who's passionate about building products to improve people's lives.</h2>
+## I'm Jeff, a humane designer & technologist who's passionate about building products to improve people's lives.
 
 I'm the former Head of Design at [Optimizely](http://www.optimizely.com "Optimizely homepage"). Before that I was a Product Designer and a [UI Engineer](https://medium.com/design-optimizely/why-we-hire-ui-engineers-on-optimizely-s-design-team-b2a789553b79#.a0dzb4xyl).
 

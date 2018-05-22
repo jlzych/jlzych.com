@@ -1,0 +1,26 @@
+---
+title: About Jeff Zych
+layout: false
+description: "I'm a humane designer & technologist who's passionate about building products to improve people's lives."
+relative_image_url: /images/me-banner.jpg
+---
+
+!!! 5
+%html
+  = partial "head_tag"
+
+  %body.about
+
+    .about-banner
+      = partial "header", { locals: { nav_classes: "nav-main--light" } }
+
+      = partial "hello"
+
+    #main{ :role => "main" }
+
+      %article.content
+        = partial "about_text"
+
+      = partial "footer_tag"
+
+    = partial "ga"

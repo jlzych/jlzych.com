@@ -7,50 +7,51 @@ $about-banner-height--bp-small: 47vw;
 $about-banner-height--bp-smaller: 72vw;
 
 .about-banner {
+  background-color: #343534; // In case the image doesn't load
   background-image: url("/images/me-banner.jpg");
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
   height: $about-banner-height--default;
   max-height: 500px;
+  padding-left: 10%;
+  padding-right: 1.5em;
   overflow: hidden;
-  z-index: -1;
+  width: 100%;
 
   @media #{$breakpoint-small} {
     background-position: top right;
     height: $about-banner-height--bp-small;
+    padding-left: 0;
+
+    // These correct for the body padding at this breakpoint
+    margin-left: -5vw;
+    width: 100vw;
   }
 
   @media only screen and (max-width: 525px) {
     background-position: top right -7vw;
     height: $about-banner-height--bp-smaller;
   }
+
+  // Some small tech debt here
+  .monogram {
+    z-index: -1;
+  }
 }
 
-.about-headline {
-  color: white;
-  font-size: 64px;
-  font-weight: 800;
-  margin: 0;
-  margin-bottom: $about-banner-height--default / 2;
-  margin-top: $about-banner-height--default / 4;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+.about-hello {
+  margin-left: 83px; // Roughly aligned with page text
+  margin-top: 1%;
+  width: 38%;
+
+  @media only screen and (min-width: 1330px) {
+    margin-top: 45px;
+    width: 500px;
+  }
 
   @media #{$breakpoint-small} {
-    font-size: 58px;
-    margin-top: 0;
-    margin-bottom: $about-banner-height--bp-small / 2;
+    margin-left: 5%;
+    margin-top: -6%;
   }
-
-  @media only screen and (max-width: 525px) {
-    color: $black;
-    text-shadow: none;
-    margin-bottom: 0;
-    margin-top: $about-banner-height--bp-smaller - 10;
-  }
-}
-
-.about-subheadline {
-  font-size: 40px;
-  font-weight: 400;
 }
