@@ -28,13 +28,11 @@ body {
 }
 
 ::selection {
-  background: $primary-color;
-  color: #f7f4ee; // Just a bit darker than the background
+  background: #e1c4f9;
 }
 
 ::-moz-selection {
-  background: $primary-color;
-  color: #f7f4ee;
+  background: #e1c4f9;
 }
 
 /* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
