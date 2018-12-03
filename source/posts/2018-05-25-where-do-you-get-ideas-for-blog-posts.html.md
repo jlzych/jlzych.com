@@ -7,7 +7,6 @@ tags: creativity, writing
 ---
 
 ![A picture of a dam by Anthony Da Cruz on Unsplash](/images/2018-05-25-where-do-you-get-ideas-for-blog-posts/dam.jpg)
-
 _A dam, blocking all of your great ideas -- Photo by [Anthony Da Cruz](https://unsplash.com/photos/DMfSpSrhF-k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 People often ask me, “Where do you get ideas for blog posts?” I have many sources, but my most effective one is simple: pay attention to the questions people ask you.

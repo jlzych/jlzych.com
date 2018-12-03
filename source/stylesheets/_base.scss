@@ -131,6 +131,11 @@ hr {
   margin: 1.75em 2.5em;
 }
 
+img ~ em {
+  font-size: .8em;
+  opacity: 0.85;
+}
+
 /**
  * Utility classes
  */
