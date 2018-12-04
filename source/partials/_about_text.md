@@ -15,6 +15,19 @@ This is my personal site that I use to [write](/writing) about **design**, **cod
 - [Why I Became a Design Manager](/2015/01/19/why-i-became-a-design-manager/)
 - [Hiring Designers: Advice from Twitter, Uber, and GoPro](/2015/03/22/hiring-designers-advice-from-twitter-uber-and-gopro/)
 
+## A Few of My Beliefs About Design
+
+- Design doesn't own the customer experience. A great customer experience is the emergent outcome of the contributions of every department.
+- Design is not the center of the universe. Design is one function of many at an organization.
+- Other departments have more customer contact than you. Listen to them.
+- Don't hand your work down from on high and expect everyone to worship its genius. You need to bring people along for the ride so that they see how you got to your solution, and can get there themselves.
+- Everyone can improve the customer's experience, not just designers. Foster an environment where everyone applies a user-centered mindset to their work.
+- Done is better than perfect.
+- Don't hide behind jargon and the cloak of the "creative."
+- Design needs to be aligned to the needs of the business, and deliver measurable business value. Don't design for design's sake.
+
+[Read the full list here.](/2018/12/03/my-beliefs-about-design/)
+
 ## Side Projects
 
 - [Writing](/writing)
