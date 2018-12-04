@@ -6,6 +6,11 @@
 
 ## Experience
 
+### **Senior Product Designer**, Casetext, Inc. <time>7/2018 -- 11/2018</time>
+
+- Designed and researched new features from concept to launch.
+- Delivered growth initiatives, including A/B tests and in-product education, that increased our trialee activation rate from ~15% to ~30%. This helped us more than triple the number of self-serve subscribers between July and September.
+
 ### **Head of Design**, Optimizely <time>5/2016 -- 3/2018</time>
 
 - Hired and managed a team of Product Designers, UX Researchers, and UI Engineers. Oversaw all product design work for Optimizely’s multi-product platform, from exploratory research to finished designs. Ensured we were delivering a consumer-grade experience in enterprise software.
@@ -20,7 +25,7 @@
 - Co-led the team to build [Optimizely’s Design Guide](http://design.optimizely.com/), a place for anyone to access brand standards, presentation templates, design patterns, and more. Result was scaling design’s output across a growing org and reducing ad hoc requests for design assets.
 - Started the [Design @ Optimizely blog](https://medium.com/design-optimizely) to evangelize the team to the broader design community. Result was numerous blog posts by myself and the team that had over 10K reads, increasing design applicants and candidate quality.
 
-### **Product Designer**, Optimizely 10/2013 -- 12/2014
+### **Product Designer**, Optimizely <time>10/2013 -- 12/2014</time>
 
 Designed features from concept to launch by researching the customer problem, iterating on solutions, and working with engineers to ensure the working code was launch ready. Lead Designer for [Optimizely Mobile](http://jlzych.com/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/), Optimizely’s second product that grew to multiple million in revenue and was the #1 iOS A/B testing solution by app install.
 
