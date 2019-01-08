@@ -18,3 +18,7 @@ If I look at someone's behavior and think, "That doesn't make sense," or "Why di
 Is this always possible? No. Even armed with the same knowledge, operating in the same environment, and possessing the same skills as another person, I will occasionally make different decisions than them. Every individual is unique, and interpret and act on stimuli differently.
 
 Even so, imagining myself behave the same as another person is what I strive for. That's my yardstick for empathy.
+
+---
+
+_If you want to learn more about empathy and how to apply it to your work and personal life, I highly recommend_ [Practical Empathy](https://rosenfeldmedia.com/books/practical-empathy/) _by [Indi Young](https://indiyoung.com/)._
