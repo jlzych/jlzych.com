@@ -2,14 +2,14 @@
 title: My Yardstick for Empathy
 date: 2019-01-08 12:22 PST
 tags: empathy, design
-description: 'Empathy is defined as "the ability to understand and share the feelings of another." While this is a good definition, it‘s not particularly useful. How do you know if you‘re being empathetic?'
+description: 'How do you know if you‘re being empathetic? It‘s easy to throw the term around, but difficult to actually apply. This is important to understand in my chosen field of design, but can also help anyone improve their interactions with other people.'
 relative_image_url: /images/2019-01-08-my-yardstick-for-empathy/cover.jpg
 ---
 
 ![A different perspective by Jamie Street on Unsplash](/images/2019-01-08-my-yardstick-for-empathy/cover.jpg)
 _A different perspective. Photo by [Jamie Street](https://unsplash.com/photos/OAKFk5_pVWY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-Empathy is defined as "the ability to understand and share the feelings of another" ([New Oxford American Dictionary](https://en.oxforddictionaries.com/definition/empathy)). While this is a good definition, it's not particularly useful. How do you know if you're being empathetic? This is important to understand in my chosen field of design, but can also help anyone improve their interactions with other people.
+How do you know if you're being empathetic? It's easy to throw the term around, but difficult to actually apply. This is important to understand in my chosen field of design, but can also help anyone improve their interactions with other people.
 
 My yardstick for being empathetic is **imagining myself make the same decisions, in the same situation**, that another person made.
 
