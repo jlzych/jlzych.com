@@ -110,7 +110,7 @@ pre,
 .highlight {
   @include border-radius(3px);
   background-color: $light-gray-background-color;
-  border: 1px solid $light-gray-border-color;
+  box-shadow: inset 0 1px 6px 1px hsla(43, 13%, 90%, 80%);
   padding: 0.75em;
 }
 
@@ -120,9 +120,13 @@ code {
 
 blockquote {
   border-left: 1px solid $light-gray; // $light-gray-border-color;
-  color: lighten($de-emphasized-text, 5%); // lighten($black, 20%);
+  font-style: italic;
   margin: 0;
   padding-left: 1em;
+
+  em {
+    font-style: normal;
+  }
 }
 
 hr {
@@ -283,16 +287,14 @@ header {
 }
 
 #site-footer {
-  $footer-text-color: darken($light-gray, 15%);
-
   border-top: 1px solid $light-gray-border-color;
-  color: $footer-text-color;
+  color: $de-emphasized-text;
   font-size: 0.75em;
   margin-left: $content-left-gutter;
   margin-top: 3em;
 
   a {
-    color: $footer-text-color;
+    color: $de-emphasized-text;
   }
 
   @media #{$breakpoint-small} {
@@ -350,12 +352,10 @@ header {
 }
 
 .article__subtitle {
-  color: $de-emphasized-text;
   margin-bottom: 0.8em;
 }
 
 .article__date {
-  color: $de-emphasized-text;
   font-size: 0.8em;
 }
 

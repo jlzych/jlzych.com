@@ -4,15 +4,15 @@
 
 // Colors
 $primary-color: #2F8C68; // #0E7575;
-$bg-color: #FCFBF8; // #fcfcf9;
-$black: #061519;
+$bg-color: hsla(53, 53%, 98%, 1);
+$black: hsl(43, 88%, 7%);
 $text-color: $black;
 $link-color: $black;
-$link-color-visited: #555d5f;
-$de-emphasized-text: desaturate(lighten($black, 12%), 45%);
-$light-gray: desaturate(lighten($black, 70%), 60%);
-$light-gray-background-color: #f8f8f5;
-$light-gray-border-color: #e8e8e5;
+$link-color-visited: hsl(37, 11%, 28%);
+$de-emphasized-text: hsl(40, 13%, 23%);
+$light-gray: hsl(40, 15%, 80%);
+$light-gray-background-color: hsl(40, 23%, 97%);
+$light-gray-border-color: hsl(43, 13%, 90%);
 
 // Font variables
 $sans-serif-font-stack: 'myriad-pro', Verdana, sans-serif;
