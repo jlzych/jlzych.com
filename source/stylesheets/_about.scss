@@ -7,11 +7,6 @@ $about-banner-height--bp-small: 47vw;
 $about-banner-height--bp-smaller: 72vw;
 
 .about-banner {
-  background-color: #343534; // In case the image doesn't load
-  background-image: url("/images/me-banner.jpg");
-  background-size: cover;
-  background-position: top right;
-  background-repeat: no-repeat;
   height: $about-banner-height--default;
   max-height: 500px;
   padding-left: 10%;
@@ -19,8 +14,14 @@ $about-banner-height--bp-smaller: 72vw;
   overflow: hidden;
   width: 100%;
 
+  // Background image and bottom curve
+  background-color: #343534; // In case the image doesn't load
+  background-image: radial-gradient(ellipse farthest-side at bottom right, #fdfcf7 0%, #fdfcf7 99%, transparent 100%), url(/images/me-banner.jpg);
+  background-size: 110% 14%, cover;
+  background-position: bottom -1px right -1px, top right; // -1px because of sub-pixel rendering issues causing gaps
+  background-repeat: no-repeat;
+
   @media #{$breakpoint-small} {
-    background-position: top right;
     height: $about-banner-height--bp-small;
     padding-left: 0;
 
@@ -30,7 +31,7 @@ $about-banner-height--bp-smaller: 72vw;
   }
 
   @media only screen and (max-width: 525px) {
-    background-position: top right -7vw;
+    background-position: bottom right, top right -7vw;
     height: $about-banner-height--bp-smaller;
   }
 
