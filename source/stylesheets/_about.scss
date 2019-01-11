@@ -56,3 +56,28 @@ $about-banner-height--bp-smaller: 72vw;
     margin-top: -6%;
   }
 }
+
+.about-story {
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 1.6em;
+    text-align: justify;
+    hyphens: auto;
+
+    &:first-child {
+      text-indent: 0;
+    }
+  }
+}
+
+.pullquote {
+  float: right;
+  width: 300px;
+  margin: 0 0 1em 2em;
+  background: white;
+  border-left: 0;
+  box-shadow: 0 2px 6px 1px rgba(0,0,0,0.1);
+  padding: 1em;
+  margin-right: -100px;
+}
