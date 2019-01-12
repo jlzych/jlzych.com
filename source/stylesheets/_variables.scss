@@ -3,16 +3,32 @@
  */
 
 // Colors
-$primary-color: #2F8C68; // #0E7575;
+
+// Grays - darkest to lightest
+$gray-95: hsl(43, 88%, 7%);
+$gray-90: hsl(42, 15%, 13%);
+$gray-80: hsl(40, 13%, 23%);
+$gray-70: hsl(37, 11%, 28%);
+$gray-60: hsl(41, 9%, 35%);
+$gray-50: hsl(41, 8%, 48%);
+$gray-40: hsl(41, 8%, 61%);
+$gray-30: hsl(39, 11%, 69%);
+$gray-20: hsl(40, 15%, 80%);
+$gray-10: hsl(43, 13%, 90%);
+$gray-0: hsl(40, 23%, 97%);
+
+
+// Site colors
+$primary-color: #2F8C68;
 $bg-color: hsla(53, 53%, 98%, 1);
-$black: hsl(43, 88%, 7%);
+$black: $gray-95;
 $text-color: $black;
 $link-color: $black;
-$link-color-visited: hsl(37, 11%, 28%);
-$de-emphasized-text: hsl(40, 13%, 23%);
-$light-gray: hsl(40, 15%, 80%);
-$light-gray-background-color: hsl(40, 23%, 97%);
-$light-gray-border-color: hsl(43, 13%, 90%);
+$link-color-visited: $gray-70;
+$de-emphasized-text: $gray-80;
+$light-gray: $gray-20;
+$light-gray-background-color: $gray-0;
+$light-gray-border-color: $gray-10;
 
 // Shadows
 $light-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);

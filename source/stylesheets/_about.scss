@@ -58,6 +58,8 @@ $about-banner-height--bp-smaller: 72vw;
 }
 
 .about-story {
+  margin-top: 1em;
+
   p {
     margin-bottom: 0;
     margin-top: 0;
@@ -67,6 +69,21 @@ $about-banner-height--bp-smaller: 72vw;
 
     &:first-child {
       text-indent: 0;
+    }
+
+    // Drop cap
+    &:first-child:first-letter {
+      display: block;
+      float: left;
+      font-size: 3.9em;
+      line-height: 1;
+      margin-right: 20px;
+      padding: 0 23px;
+      text-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
+      border: 3px solid $gray-80;
+      background: radial-gradient(white 30%, $gray-0);
+      border-radius: 0 13px;
+      box-shadow: inset 0 0 0px 3px $gray-70, 6px 6px 0 $gray-80;
     }
   }
 }

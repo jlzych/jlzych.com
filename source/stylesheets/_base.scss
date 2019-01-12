@@ -17,6 +17,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "alt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  font-variant-numeric: oldstyle-nums proportional-nums;
 
   // Font smoothing
   -webkit-font-smoothing: antialiased;
@@ -156,7 +157,7 @@ img ~ em {
  */
 
 .text-small-caps {
-  font-variant: small-caps;
+  font-feature-settings: 'smcp';
 }
 
 .text-uppercase {
