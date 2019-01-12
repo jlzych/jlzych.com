@@ -14,6 +14,10 @@ $light-gray: hsl(40, 15%, 80%);
 $light-gray-background-color: hsl(40, 23%, 97%);
 $light-gray-border-color: hsl(43, 13%, 90%);
 
+// Shadows
+$light-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+$medium-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.06);
+
 // Font variables
 $sans-serif-font-stack: 'myriad-pro', Verdana, sans-serif;
 

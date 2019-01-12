@@ -3,6 +3,28 @@ title: About Jeff Zych
 layout: false
 description: "I'm a humane designer & technologist who's passionate about building products to improve people's lives."
 relative_image_url: /images/me-banner.jpg
+
+popular_posts: [
+  { name: Discovery Kanban at Optimizely,
+    description: "Like most tech startups, Optimizely uses an Agile process to build software. Agile has been great at helping us plan what we’re building, coordinate across teams, and ship iteratively; however, that meant design and research were awkwardly shoehorned into the process.",
+    url: '/2016/07/17/discovery-kanban-at-optimizely/',
+    image_url: '/images/2016-07-17-discovery-kanban-at-optimizely/discovery-planning.jpeg' },
+  { name: "Where do you get ideas for blog posts?",
+    description: 'People often ask me, “Where do you get ideas for blog posts?” I have many sources, but my most effective one is simple: pay attention to the questions people ask you.',
+    url: '/2018/05/25/where-do-you-get-ideas-for-blog-posts/',
+    image_url: '/images/2018-05-25-where-do-you-get-ideas-for-blog-posts/dam.jpg' },
+  { name: "Building an MVPP - A Minimum Viable Product we're Proud of",
+    description: "On November 18th, 2014, we publicly released Optimizely's iOS editor. This was a big release for us because it marked the end of a months-long public beta in which we received a ton of customer feedback and built a lot of missing features.",
+    url: '/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/',
+    image_url: '/images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png' },
+  { name: Why I Became a Design Manager,
+    description: "At the start of 2015, I officially became a Design Manager at Optimizely. I transitioned from an individual contributor, product design role into a leadership role. So why did I become a Design Manager?",
+    url: '/2015/01/19/why-i-became-a-design-manager/',
+    image_url: '' },
+  { name: "Hiring Designers: Advice from Twitter, Uber, and GoPro",
+    description: "Google Ventures invited design leaders from Twitter, Uber, and GoPro to discuss the topic of hiring designers. What follows are my aggregated and summarized notes.",
+    url: '/2015/03/22/hiring-designers-advice-from-twitter-uber-and-gopro/' }
+]
 ---
 
 !!! 5
@@ -41,20 +63,19 @@ relative_image_url: /images/me-banner.jpg
           %p
             This is my personal site that I use to <a href='/writing'>write</a> about <strong>design</strong>, <strong>code</strong>, <strong>A/B testing</strong>, and other topics that interests me.
 
+        %h3 Popular Posts
 
-        %ul
-          %li
-            %a{ :href => '/2016/07/17/discovery-kanban-at-optimizely/' } Discovery Kanban at Optimizely
-          %li
-            %a{ :href => '/2014/05/11/why-we-hire-ui-engineers-on-the-design-team/' } Why We Hire UI Engineers on the Design Team
-          %li
-            %a{ :href => '/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/' } Building an MVPP - A Minimum Viable Product we're Proud of
-          %li
-            %a{ :href => '/2015/08/30/get-comfortable-sharing-shitty-work/' } Get Comfortable Sharing Your Shitty Work
-          %li
-            %a{ :href => '/2015/01/19/why-i-became-a-design-manager/' } Why I Became a Design Manager
-          %li
-            %a{ :href => '/2015/03/22/hiring-designers-advice-from-twitter-uber-and-gopro/' } Hiring Designers: Advice from Twitter, Uber, and GoPro
+        %ul.about-popular-posts
+          - current_page.data.popular_posts.each do |post|
+            %li.card
+              -if post.image_url? and post.image_url != ''
+                .card-image-top-container
+                  =image_tag post.image_url, :class => "card-image-top"
+              .card-body
+                %h4.card-title
+                  =link_to post.name, post.url
+                %p.card-text=post.description
+                =link_to "Continue reading &raquo;", post.url
 
         %h2 A Few of My Beliefs About Design
 

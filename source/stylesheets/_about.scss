@@ -81,3 +81,17 @@ $about-banner-height--bp-smaller: 72vw;
   padding: 1em;
   margin-right: -100px;
 }
+
+.about-popular-posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+}
