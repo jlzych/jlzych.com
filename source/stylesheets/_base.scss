@@ -201,7 +201,7 @@ img ~ em {
   @media #{$breakpoint-small} {
     padding-left: 0;
     min-width: initial;
-    width: 95%;
+    width: 100%;
   }
 }
 
