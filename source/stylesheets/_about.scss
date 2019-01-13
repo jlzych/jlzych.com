@@ -2,6 +2,19 @@
  * About page specific styles
  */
 
+.about-content {
+  padding-left: calc(10vw + #{$content-left-gutter});
+  max-width: 50em;
+  min-width: 500px;
+  width: 80%;
+
+  @media #{$breakpoint-small} {
+    padding-left: 0;
+    min-width: initial;
+    width: 95%;
+  }
+}
+
 $about-banner-height--default: 38vw;
 $about-banner-height--bp-small: 47vw;
 $about-banner-height--bp-smaller: 72vw;
@@ -19,7 +32,7 @@ $about-banner-height--bp-smaller: 72vw;
   background-image:
     radial-gradient(ellipse farthest-side at bottom right, $bg-color 0%, $bg-color 99%, transparent 100%),
     url(/images/me-banner.jpg);
-  background-size: 110% 14%, cover;
+  background-size: 103% 60px, cover;
   background-position: bottom -1px right -1px, top right; // -1px because of sub-pixel rendering issues causing gaps
   background-repeat: no-repeat;
 
@@ -112,5 +125,62 @@ $about-banner-height--bp-smaller: 72vw;
 
   @media only screen and (max-width: 1000px) {
     grid-template-columns: 1fr;
+  }
+}
+
+.about-beliefs {
+  background-color: $accent-color;
+  color: $text-on-accent;
+  padding: 110px 0 100px 0;
+  margin-top: -110px; // So the cards overlap it
+
+  // Section swathes
+  background-image:
+    radial-gradient(ellipse farthest-side at top left, $bg-color 0%, $bg-color 99%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse farthest-side at bottom right, $bg-color 0%, $bg-color 99%, transparent 100%);
+  background-size: 110% 60px, 110% 80px;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+
+  .about-content {
+    max-width: 55em; // Make this section a bit wider
+    width: 90%;
+    padding: 0 inherit;
+    padding-left: 8%;
+  }
+
+  h2 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2em;
+    grid-row-gap: 0.6em;
+
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      display: flex;
+      align-items: start;
+      text-align: justify;
+      hyphens: auto;
+
+      &::before {
+        content: "\261E";
+        font-size: 1.8em;
+        margin-right: 0.5em;
+        margin-top: -6px;
+      }
+    }
   }
 }
