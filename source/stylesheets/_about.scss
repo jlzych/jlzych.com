@@ -142,6 +142,12 @@ $about-banner-height--bp-smaller: 72vw;
   background-position: top left, bottom right;
   background-repeat: no-repeat;
 
+  // So the section expands from edge to edge
+  @media #{$breakpoint-small} {
+    margin-left: -6%;
+    width: 112%;
+  }
+
   .about-content {
     max-width: 55em; // Make this section a bit wider
     width: 90%;
