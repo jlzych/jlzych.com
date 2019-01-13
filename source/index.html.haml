@@ -1,7 +1,8 @@
 - page_articles[0..4].each do |article|
   =partial :post, locals: { article: article }
 
-=link_to "View all posts &raquo;", "/archives", { class: "view-all-link" }
+.justify-content-center{ :style => "padding-top: 2em;" }
+  =link_to "View all posts &raquo;", "/archives", { class: "view-all-link" }
 
 -# - if paginate
 -#   .pagination

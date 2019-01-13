@@ -30,104 +30,106 @@ popular_posts: [
 
   %body.about
 
-    .about-banner
-      = partial "header", { locals: { nav_classes: "nav-main--light" } }
+    .container
 
-      = partial "hello"
+      .about-banner
+        = partial "header", { locals: { nav_classes: "nav-main--light" } }
 
-    %article{ :role => "main" }
+        = partial "hello"
 
-      %section.about-content
-        .about-intro
-          %h1 I’m Jeff, a humane designer & technologist.
+      %article{ :role => "main" }
 
-          %h2 I’m passionate about building products that improve people’s lives. I’m currently managing the product design team at Gladly. Formerly at Optimizely and Casetext.
+        %section.about-content
+          .about-intro
+            %h1 I’m Jeff, a humane designer & technologist.
 
-      %section.about-content.about-story
-        %p
-          %span.text-small-caps I ’ve defined my career by
-          riding the line between design and code. I got my start building websites in high school, back when there was no distinction between “web design” and “web development,” and CSS wasn’t a “thing” yet. I indulged these twin interests by studying graphic communication and computer science at Cal Poly.
+            %h2 I’m passionate about building products that improve people’s lives. I’m currently managing the product design team at Gladly. Formerly at Optimizely and Casetext.
 
-        %p After college I went down the programming path by joining Cityspan as a Data Warehouse Developer. Over time my design muse got restless and rescued me from the depths of the database by sending me to UC Berkeley’s School of Information. While there I cut my teeth on user-centered design, and learned a ton about topics ranging from sociology, law & policy, technology, research, design, behavioral economics, and more.
+        %section.about-content.about-story
+          %p
+            %span.text-small-caps I ’ve defined my career by
+            riding the line between design and code. I got my start building websites in high school, back when there was no distinction between “web design” and “web development,” and CSS wasn’t a “thing” yet. I indulged these twin interests by studying graphic communication and computer science at Cal Poly.
 
-        %blockquote.pullquote Over time my design muse got restless and rescued me from the depths of the database
+          %p After college I went down the programming path by joining Cityspan as a Data Warehouse Developer. Over time my design muse got restless and rescued me from the depths of the database by sending me to UC Berkeley’s School of Information. While there I cut my teeth on user-centered design, and learned a ton about topics ranging from sociology, law & policy, technology, research, design, behavioral economics, and more.
 
-        %p
-          After grad school I joined Optimizely, jumping between code and design, and eventually becoming the head of the design team. After 5 and half years it was time for a change, so I joined Casetext to transform the legal tech landscape. Now I’m at Gladly, spreading my code and design chops by managing the product design team. View my full online resume.
+          %blockquote.pullquote Over time my design muse got restless and rescued me from the depths of the database
+
+          %p
+            After grad school I joined Optimizely, jumping between code and design, and eventually becoming the head of the design team. After 5 and half years it was time for a change, so I joined Casetext to transform the legal tech landscape. Now I’m at Gladly, spreading my code and design chops by managing the product design team. View my full online resume.
 
 
-        %p In my free time I like to play tennis, music (guitar, bass, and drums, but I’m pretty rusty now), hand letter, and write on this blog.
+          %p In my free time I like to play tennis, music (guitar, bass, and drums, but I’m pretty rusty now), hand letter, and write on this blog.
 
-        %p
-          This is my personal site that I use to <a href='/writing'>write</a> about <strong>design</strong>, <strong>code</strong>, <strong>A/B testing</strong>, and other topics that interests me.
+          %p
+            This is my personal site that I use to <a href='/writing'>write</a> about <strong>design</strong>, <strong>code</strong>, <strong>A/B testing</strong>, and other topics that interests me.
 
-      %section.about-content
+        %section.about-content
 
-        %h3 Popular Posts
+          %h3 Popular Posts
 
-        %ul.about-popular-posts
-          - current_page.data.popular_posts.each do |post|
-            %li.card
-              -if post.image_url? and post.image_url != ''
-                .card-image-top-container
-                  =image_tag post.image_url, :class => "card-image-top"
-              .card-body
-                %h4.card-title
-                  =link_to post.name, post.url
-                %p.card-text=post.description
-                =link_to "Continue reading &raquo;", post.url
+          %ul.about-popular-posts
+            - current_page.data.popular_posts.each do |post|
+              %li.card
+                -if post.image_url? and post.image_url != ''
+                  .card-image-top-container
+                    =image_tag post.image_url, :class => "card-image-top"
+                .card-body
+                  %h4.card-title
+                    =link_to post.name, post.url
+                  %p.card-text=post.description
+                  =link_to "Continue reading &raquo;", post.url
 
-      %section.about-beliefs
+        %section.about-beliefs
 
-        .about-content
+          .about-content
 
-          %h2 A Few of My Beliefs About Design
+            %h2 A Few of My Beliefs About Design
+
+            %ul
+              %li Design is not the center of the universe. Design is one function of many at an organization.
+              %li Other departments have more customer contact than you. Listen to them.
+              %li Design needs to be aligned to the needs of the business, and deliver measurable business value. Don't design for design's sake.
+              %li Design doesn't own the customer experience. A great customer experience is the emergent outcome of the contributions of every department.
+              %li Done is better than perfect.
+
+            .justify-content-center
+              %a.button-light{ :href => '/2018/12/03/my-beliefs-about-design/' } Read the full list
+
+        %section.about-content
+
+          %h2 Side Projects
 
           %ul
-            %li Design is not the center of the universe. Design is one function of many at an organization.
-            %li Other departments have more customer contact than you. Listen to them.
-            %li Design needs to be aligned to the needs of the business, and deliver measurable business value. Don't design for design's sake.
-            %li Design doesn't own the customer experience. A great customer experience is the emergent outcome of the contributions of every department.
-            %li Done is better than perfect.
+            %li
+              %a{ :href => '/writing' } Principles of Writing Well
+            %li
+              %a{ :href => '/scribbles' } Hand-Lettering
+            %li
+              %a{ :href => 'http://codepen.io/jlzych/full/rjVoby/' } Sol LeWitt's Wall Drawing #273 (CodePen)
+            %li
+              %a{ :href => 'http://codepen.io/jlzych/full/OWyYPq/' } Ellsworth Kelly – Spectrum Colors Arranged by Chance V (CodePen)
+            %li
+              %a{ :href => 'http://codepen.io/jlzych/full/wgKbRK/' } Ellsworth Kelly – Spectrum Colors Arranged by Chance III (CodePen)
+            %li
+              %a{ :href => 'https://www.skillshare.com/classes/Discovery-Kanban-101-How-to-Integrate-User-Centered-Design-with-Agile/677077315?teacherRef=748023&via=teacher-referral&utm_campaign=teacher-referral&utm_source=ShortUrl&utm_medium=teacher-referral' } Discovery Kanban 101: How to Integrate User-Centered Design with Agile (Skillshare class)
 
-          .justify-content-center
-            %a.button-light{ :href => '/2018/12/03/my-beliefs-about-design/' } Read the full list
+        %section.about-content
 
-      %section.about-content
+          %h2 Conference Talks
 
-        %h2 Side Projects
+          %ul
+            %li
+              <a href='https://vimeo.com/243651831'>From 20/20 Hindsight to ESP at Optimizely</a> &mdash; An updated (and solo!) version of the talk below, given at Lean Kanban Central Europe, November 2017.
+            %li
+              <a href='https://www.youtube.com/watch?v=y8Ns5bdg0oo&list=PLVsUnwOzPqiSz8D0WYoUkKxZzzbmM0pPY&index=14'>From 20/20 Hindsight to ESP at Optimizely</a> &mdash; Given at Lean Kanban North America with <a href='https://twitter.com/keithadam'>Keith Nottonson</a>, May 2017.
 
-        %ul
-          %li
-            %a{ :href => '/writing' } Principles of Writing Well
-          %li
-            %a{ :href => '/scribbles' } Hand-Lettering
-          %li
-            %a{ :href => 'http://codepen.io/jlzych/full/rjVoby/' } Sol LeWitt's Wall Drawing #273 (CodePen)
-          %li
-            %a{ :href => 'http://codepen.io/jlzych/full/OWyYPq/' } Ellsworth Kelly – Spectrum Colors Arranged by Chance V (CodePen)
-          %li
-            %a{ :href => 'http://codepen.io/jlzych/full/wgKbRK/' } Ellsworth Kelly – Spectrum Colors Arranged by Chance III (CodePen)
-          %li
-            %a{ :href => 'https://www.skillshare.com/classes/Discovery-Kanban-101-How-to-Integrate-User-Centered-Design-with-Agile/677077315?teacherRef=748023&via=teacher-referral&utm_campaign=teacher-referral&utm_source=ShortUrl&utm_medium=teacher-referral' } Discovery Kanban 101: How to Integrate User-Centered Design with Agile (Skillshare class)
+        %section.about-content
 
-      %section.about-content
+          %h2 Get in Touch
 
-        %h2 Conference Talks
+          %p
+            You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@).
 
-        %ul
-          %li
-            <a href='https://vimeo.com/243651831'>From 20/20 Hindsight to ESP at Optimizely</a> &mdash; An updated (and solo!) version of the talk below, given at Lean Kanban Central Europe, November 2017.
-          %li
-            <a href='https://www.youtube.com/watch?v=y8Ns5bdg0oo&list=PLVsUnwOzPqiSz8D0WYoUkKxZzzbmM0pPY&index=14'>From 20/20 Hindsight to ESP at Optimizely</a> &mdash; Given at Lean Kanban North America with <a href='https://twitter.com/keithadam'>Keith Nottonson</a>, May 2017.
-
-      %section.about-content
-
-        %h2 Get in Touch
-
-        %p
-          You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@).
-
-      = partial "footer_tag"
+    = partial "footer_tag"
 
     = partial "ga"

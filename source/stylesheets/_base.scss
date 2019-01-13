@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: $bg-color;
+  background-color: $gray-10;
   color: $text-color;
   font-family: "minion-pro", Georgia, serif;
   font-size: 20px;
@@ -22,10 +22,6 @@ body {
   // Font smoothing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media #{$breakpoint-small} {
-    padding: 0 5%;
-  }
 }
 
 ::selection {
@@ -77,10 +73,6 @@ h3 {
 h4 {
   font-size: 1em;
   letter-spacing: 0;
-}
-
-article {
-  margin-bottom: 3em;
 }
 
 p {
@@ -181,9 +173,23 @@ img ~ em {
 /**
  * Layout styles (nav, content, etc.)
  */
+.container {
+  background-color: $bg-color;
+  width: 100%;
+  border-radius: 0 0 9px 9px;
+  box-shadow: $lightest-shadow;
+  padding-bottom: 3em;
+  position: relative;
+
+  @media #{$breakpoint-small} {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
 #main {
-  margin-left: 10%;
-  max-width: 45em;
+  padding-left: 10vw;
+  max-width: 50em;
   min-width: 500px;
   overflow: hidden;
   width: 80%;
@@ -193,7 +199,7 @@ img ~ em {
   }
 
   @media #{$breakpoint-small} {
-    margin-left: 0;
+    padding-left: 0;
     min-width: initial;
     width: 95%;
   }
@@ -309,18 +315,24 @@ header {
 }
 
 #site-footer {
-  border-top: 1px solid $light-gray-border-color;
   color: $de-emphasized-text;
   font-size: 0.75em;
-  margin-left: $content-left-gutter;
-  margin-top: 3em;
+  margin: 0;
+  padding-left: calc(10vw + #{$content-left-gutter});
+  padding-top: 1.3em;
+  padding-bottom: 1em;
+
+  p {
+    margin: 0;
+  }
 
   a {
     color: $de-emphasized-text;
   }
 
   @media #{$breakpoint-small} {
-    margin-left: 0;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 

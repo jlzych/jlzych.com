@@ -3,11 +3,12 @@
   = partial "head_tag"
 
   %body
-    #main{ :role => "main" }
-      = partial "header"
+    .container
+      #main{ :role => "main" }
+        = partial "header"
 
-      .content= yield
+        .content= yield
 
-      = partial "footer_tag"
+    = partial "footer_tag"
 
     = partial "ga"
