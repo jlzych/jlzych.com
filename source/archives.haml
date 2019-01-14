@@ -21,6 +21,6 @@ per_page: 50
 - if paginate
   %p.pagination.justify-content-center
     - if prev_page
-      = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous" }
+      = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous button-light button-small" }
     - if next_page
-      = link_to "Next page &raquo;", next_page, { class: "paginate-next" }
+      = link_to "Next page &raquo;", next_page, { class: "paginate-next button-light button-small" }

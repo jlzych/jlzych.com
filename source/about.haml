@@ -43,7 +43,7 @@ popular_posts: [
           .about-intro
             %h1 I’m Jeff, a humane designer & technologist.
 
-            %h2 I’m passionate about building products that improve people’s lives. I’m currently managing the product design team at Gladly. Formerly at Optimizely and Casetext.
+            %h2 I’m passionate about building products that improve people’s lives. I’m currently managing the product design team at Gladly. Formerly at Optimizely.
 
         %section.about-content.about-story
           %p
@@ -56,6 +56,9 @@ popular_posts: [
             While in grad school I took a class applying the learnings from behavioral economics to websites via <span class="text-small-caps">A/B</span> testing, which led me to join Optimizely after graduating. While there I continued moving between code and design, eventually becoming the head of the design team. After 5 and half years I was ready for a change, so I joined Casetext to build modern, easy-to-use legal tech tools. Now I’m at Gladly, spreading my code and design knowledge by managing the product design team.
 
           %p Outside of work I like to play tennis, music (guitar, bass, and drums, but I’m pretty rusty now), <a href="/scribbles">hand letter</a>, write, and spend time with my lovely fiancée eating, drinking, and traveling.
+
+          %p
+            =link_to "View my resume &raquo;", "/resume"
 
         %section.about-content
 
@@ -70,13 +73,13 @@ popular_posts: [
                 .card-body
                   %h4.card-title
                     =link_to post.name, post.url
-                  %p.card-text=post.description
-                  =link_to "Continue reading &raquo;", post.url
+                  %p.card-text
+                    =post.description
+                    %br
+                    =link_to "Keep reading &raquo;", post.url
 
         %section.about-beliefs
-
           .about-content
-
             %h2 A Few of My Beliefs About Design
 
             %ul
@@ -84,13 +87,12 @@ popular_posts: [
               %li Other departments have more customer contact than you. Listen to them.
               %li Design needs to be aligned to the needs of the business, and deliver measurable business value. Don't design for design's sake.
               %li Design doesn't own the customer experience. A great customer experience is the emergent outcome of the contributions of every department.
-              %li Done is better than perfect.
 
             .justify-content-center
-              %a.button-light{ :href => '/2018/12/03/my-beliefs-about-design/' } Read the full list
+              %a{ :href => '/2018/12/03/my-beliefs-about-design/', :class => 'link-light' }
+                Read the full list &raquo;
 
         %section.about-content
-
           %h2 Side Projects
 
           %ul

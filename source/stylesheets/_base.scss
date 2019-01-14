@@ -101,6 +101,12 @@ a {
   }
 }
 
+.link-light {
+  &, &:visited {
+    color: $text-on-accent;
+  }
+}
+
 li {
   margin-bottom: 0.5em;
 }
@@ -312,6 +318,10 @@ header {
 
 .content {
   @extend %main-column-styles;
+
+  article + article {
+    padding-top: 3em;
+  }
 }
 
 #site-footer {
@@ -467,4 +477,26 @@ header {
   &:active {
     background: #D9E0E9;
   }
+
+  .icon-cheveron-right-circle {
+    width: 1.1em;
+    height: 1.1em;
+    margin-left: 0.15em;
+    margin-bottom: -0.2em; // Align the icon with baseline. Hacky.
+  }
+}
+
+.button-small {
+  font-size: 0.8em !important; // Hacky :(
+  padding: 0.2em 0.8em !important;
+}
+
+// SVG icon stuff
+
+.primary {
+  fill: rgba(0,0,0,0.1);
+}
+
+.secondary {
+  fill: $black;
 }

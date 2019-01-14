@@ -80,10 +80,13 @@ $about-banner-height--bp-smaller: 72vw;
   box-shadow: $medium-shadow;
 
   h1 {
+    font-size: 1.9em;
     margin-top: 0;
   }
 
   h2 {
+    color: $gray-60;
+    font-size: 1.6em;
     margin-bottom: 0;
   }
 
@@ -101,7 +104,7 @@ $about-banner-height--bp-smaller: 72vw;
 .about-story {
   margin-top: 1em;
 
-  p {
+  p:not(:last-child) {
     margin-bottom: 0;
     margin-top: 0;
     text-indent: 1.6em;
@@ -142,7 +145,7 @@ $about-banner-height--bp-smaller: 72vw;
 }
 
 .about-beliefs {
-  background-color: $accent-color;
+  background-color: #0e988e; // $accent-color;
   color: $text-on-accent;
   padding: 110px 0 100px 0;
   margin-top: -110px; // So the cards overlap it
@@ -150,8 +153,9 @@ $about-banner-height--bp-smaller: 72vw;
   // Section swathes
   background-image:
     radial-gradient(ellipse farthest-side at top left, $bg-color 0%, $bg-color 99%, rgba(0, 0, 0, 0) 100%),
-    radial-gradient(ellipse farthest-side at bottom right, $bg-color 0%, $bg-color 99%, transparent 100%);
-  background-size: 110% 60px, 110% 80px;
+    radial-gradient(ellipse farthest-side at bottom right, $bg-color 0%, $bg-color 99%, transparent 100%),
+    linear-gradient(177deg, $accent-color, hsl(186, 99%, 25%));
+  background-size: 110% 60px, 110% 80px, 100% 100%;
   background-position: top left, bottom right;
   background-repeat: no-repeat;
 
@@ -173,15 +177,18 @@ $about-banner-height--bp-smaller: 72vw;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
   }
 
+  a {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+
   ul {
-    list-style: none;
     padding: 0;
     margin-bottom: 2em;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2em;
+    grid-column-gap: 3em;
     grid-row-gap: 0.6em;
 
     @media only screen and (max-width: 1000px) {
@@ -189,17 +196,8 @@ $about-banner-height--bp-smaller: 72vw;
     }
 
     li {
-      display: flex;
-      align-items: start;
       text-align: justify;
       hyphens: auto;
-
-      &::before {
-        content: "\261E";
-        font-size: 1.8em;
-        margin-right: 0.5em;
-        margin-top: -6px;
-      }
     }
   }
 }
