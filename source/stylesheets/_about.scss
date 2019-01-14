@@ -177,3 +177,27 @@ $about-banner-height--bp-smaller: 72vw;
     }
   }
 }
+
+.about-talks {
+  background-color: $gray-90;
+  color: $text-on-accent;
+  padding: 90px 0 80px 0;
+
+  // Section swathes
+  background-image:
+    radial-gradient(ellipse farthest-side at top left, $bg-color 0%, $bg-color 99%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse farthest-side at bottom right, $bg-color 0%, $bg-color 99%, transparent 100%);
+  background-size: 104% 100px, 104% 70px;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+
+  // So the section expands from edge to edge
+  @media #{$breakpoint-small} {
+    margin-left: -6%;
+    width: 112%;
+  }
+
+  a, a:visited {
+    color: $text-on-accent;
+  }
+}
