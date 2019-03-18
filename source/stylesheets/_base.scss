@@ -146,6 +146,7 @@ hr {
 }
 
 img ~ em {
+  display: block;
   font-size: .8em;
   opacity: 0.85;
 }
