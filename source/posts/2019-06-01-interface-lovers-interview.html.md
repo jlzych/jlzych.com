@@ -1,8 +1,8 @@
 ---
 title: Interface Lovers Interview
 date: 2019-06-01 16:03 PDT
-tags: interview
-description:
+tags: "Interface Lovers"
+description: Last week I was featured on Interface Lovers, a site that "put[s] the spotlight on designers who are creating the future and touching the lives of many." Read my response to their first question about what led me into design.
 ---
 
 Last week I was featured on [Interface Lovers](https://interfacelovers.com/interviews/jeff-zych), a site that "put[s] the spotlight on designers who are creating the future and touching the lives of many." Read my response to their first question about what led me into design.
