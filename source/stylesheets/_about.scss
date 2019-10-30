@@ -2,6 +2,12 @@
  * About page specific styles
  */
 
+.about {
+  .container {
+    overflow: hidden; // For rounded corner on pic. Also so monogram can be sticky.
+  }
+}
+
 .about-content {
   padding-left: calc(10vw + #{$content-left-gutter});
   max-width: 50em;
@@ -52,7 +58,14 @@ $about-banner-height--bp-smaller: 72vw;
 
   // Some small tech debt here
   .monogram {
+    width: 100px;
+    height: 100px;
+    position: fixed;
     z-index: -1;
+
+    img {
+      width: 100%;
+    }
   }
 }
 

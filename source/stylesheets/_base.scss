@@ -1,13 +1,31 @@
+@font-face {
+  font-family:"ITC Souvenir W03 Bold";
+  src:url("/fonts/5728389/9a143efc-9da1-42b2-84ba-49195a7c9e2c.eot?#iefix");
+  src:url("/fonts/5728389/9a143efc-9da1-42b2-84ba-49195a7c9e2c.eot?#iefix") format("eot"),url("/fonts/5728389/1d1f6646-60ca-45c9-9cf8-355ce161e534.woff2") format("woff2"),url("/fonts/5728389/2a5081bc-f764-46b5-92e7-14fe6b2aba75.woff") format("woff"),url("/fonts/5728389/5d6bbf9d-ea35-4c5d-8256-e8cbb4d953a8.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"ITC Souvenir W03 Bold Italic";
+  src:url("/fonts/5728395/56a28c44-081f-4383-ac0f-36bcadbd2fe9.eot?#iefix");
+  src:url("/fonts/5728395/56a28c44-081f-4383-ac0f-36bcadbd2fe9.eot?#iefix") format("eot"),url("/fonts/5728395/5e2136cb-a1fd-4388-a4a1-f1d6169ba307.woff2") format("woff2"),url("/fonts/5728395/94ff745f-d465-4695-85a0-0693cd6ae546.woff") format("woff"),url("/fonts/5728395/61981287-2b71-4920-a2a1-c171e2b70d2f.ttf") format("truetype");
+}
+
 *, *::before, *::after {
   @include box-sizing(border-box);
 }
 
+html {
+  font-size: 21px;
+}
+
 body {
-  background-color: $gray-10;
+  background: linear-gradient(180deg, #D5F3F3 62.62%, #FCF89F 85.69%, #FED772 100%);
+  background: linear-gradient(180deg, #D5F3F3 5%, #FCF89F 85.69%, #FED772 100%);
   color: $text-color;
-  font-family: "minion-pro", Georgia, serif;
-  font-size: 20px;
-  line-height: 1.4;
+  font-family: $body-font-stack;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 13px;
 
   // OpenType features: kerning, ligatures
   text-rendering: optimizeLegibility;
@@ -22,25 +40,29 @@ body {
   // Font smoothing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media #{$breakpoint-small} {
+    font-size: 0.9rem;
+  }
 }
 
 ::selection {
-  background: #e1c4f9;
+  background: hsla(184, 76%, 83%, 1);
 }
 
 ::-moz-selection {
-  background: #e1c4f9;
+  background: hsla(184, 76%, 83%, 1);
 }
 
 /* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
 h1, h2, h3, h4, h5, h6 {
-  font-family: $sans-serif-font-stack;
+  font-family: $headline-font-stack;
   line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.5em;
-  margin-top: 0.8em;
+  margin-bottom: 0.1em;
+  margin-top: 1.2em;
 
-  a {
+  .content & a {
+    box-shadow: none;
     color: $text-color;
     text-decoration: none;
 
@@ -49,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &:hover {
+      box-shadow: none;
       color: $primary-color;
       text-decoration: none;
     }
@@ -56,51 +79,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
-  font-weight: 800;
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.8em;
-  font-weight: normal;
+  font-size: 1.6rem;
 }
 
 h3 {
-  font-size: 1.3em;
-  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 h4 {
-  font-size: 1em;
-  letter-spacing: 0;
+  font-size: 1.1rem;
 }
 
 p {
-  font-size: 1em;
-  line-height: 1.6;
+  font-family: $body-font-stack;
   margin-bottom: 1em;
-  margin-top: 0.5em;
+  margin-top: 0;
 }
 
-// Transition the color in and out for all links
-a,
-a:hover {
-  @include single-transition();
-}
-
-a {
-  color: $link-color;
-  text-decoration: underline;
-
-  &:visited {
-    color: $link-color-visited;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
+// NEEDED?
 .link-light {
   &, &:visited {
     color: $text-on-accent;
@@ -108,31 +109,33 @@ a {
 }
 
 li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 code,
 pre {
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
+// CHECK THIS
 pre,
 .highlight {
   @include border-radius(3px);
   background-color: $light-gray-background-color;
   box-shadow: inset 0 1px 6px 1px hsla(43, 13%, 90%, 80%);
-  padding: 0.75em;
+  padding: 0.75rem;
 }
 
 code {
   color: $primary-color;
 }
 
+// CHECK THIS
 blockquote {
   border-left: 1px solid $light-gray; // $light-gray-border-color;
   font-style: italic;
   margin: 0;
-  padding-left: 1em;
+  padding-left: 1rem;
 
   em {
     font-style: normal;
@@ -182,84 +185,66 @@ img ~ em {
  */
 .container {
   background-color: $bg-color;
-  width: 100%;
-  border-radius: 0 0 9px 9px;
+  border-radius: 10px;
   box-shadow: $lightest-shadow;
   padding-bottom: 3em;
-  position: relative;
-
-  @media #{$breakpoint-small} {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
 }
 
-#main {
-  padding-left: 10vw;
-  max-width: 50em;
-  min-width: 500px;
-  overflow: hidden;
-  width: 80%;
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px minmax(200px, 700px) 100px;
+  grid-column-gap: 3.5%;
+  grid-template-rows: 75px auto;
+  grid-template-areas:
+    ". navigation ."
+    "monogram content .";
+  justify-content: center;
+  padding: 15px 25px;
+
+  @media #{$breakpoint-small} {
+    grid-template-columns: 75px auto;
+    grid-template-areas:
+      "monogram navigation"
+      "content content";
+  }
 
   img {
     max-width: 100%; // Ensure images stay within the main content at any size
   }
-
-  @media #{$breakpoint-small} {
-    padding-left: 0;
-    min-width: initial;
-    width: 100%;
-  }
 }
-
-// Styles used by elements who
-%main-column-styles {
-  padding-left: $content-left-gutter;
-
-  @media #{$breakpoint-small} {
-    padding-left: 0; // Relies on the body's margin to keep content from the very edge
-  }
-}
-
-header {
-  margin-bottom: 2.3em;
-  overflow: hidden;
-  width: 100%;
-
-  @media #{$breakpoint-small} {
-    margin-bottom: 0.5em;
-  }
-} // header
 
 // The JZ monogram!
 .monogram {
-  display: inline-block;
-  height: $monogram-width;
+  grid-area: monogram;
   margin: 0;
-  margin-top: 15px;
-  overflow: hidden;
-  position: fixed;
-  width: $monogram-width;
 
-  img {
-    width: 100%;
-    height: 100%;
+  a {
+    display: block;
+    position: sticky;
+    top: 12px;
+    margin-top: 31px;
+
+    @media #{$breakpoint-small} {
+      position: relative;
+      top: 0;
+      margin-top: 0;
+    }
   }
 
-  @media #{$breakpoint-small} {
-    position: relative;
-    width: 70px;
-    height: 70px;
+  .name {
+    display: inline-block;
+    text-indent: -999em;
   }
 } // .monogram
 
 .nav-main {
-  @extend %main-column-styles;
-  display: inline-block;
-  width: 100%;
+  grid-area: navigation;
+  align-items: center;
+  justify-items: end;
+  // font-size: 15px;
 
   ul {
-    border-bottom: 1px solid $black; // desaturate(lighten($black, 30%), 45%);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -268,22 +253,28 @@ header {
 
   li {
     display: inline-block;
+    margin-bottom: 0;
 
+    // NEEDED?
     &:last-child a {
       padding-right: 2px; // Looks better pushed away from the right edge slightly
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.8rem;
     }
   }
 
   a {
-    color: $black;
+    color: hsl(33, 88%, 21%);
     display: block;
     font-family: $sans-serif-font-stack;
-    font-size: 1.3em;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 900;
     padding: 0.3em;
     text-decoration: none;
-    text-transform: lowercase;
-    font-variant: small-caps;
+    // text-transform: lowercase;
+    // font-variant: small-caps;
 
     &:hover {
       color: $primary-color;
@@ -292,18 +283,13 @@ header {
   } // a
 
   @media #{$breakpoint-small} {
-    float: right;
-    width: 75%;
 
-    a {
-      font-size: 1em;
-    }
   }
 
   // Special breakpoint in case someone is on an old phone
-  @media only screen and (max-width: 350px) {
-    width: 70%;
-  }
+  // @media only screen and (max-width: 350px) {
+  //   width: 70%;
+  // }
 } // .nav-main
 
 .nav-main--light {
@@ -318,10 +304,34 @@ header {
 }
 
 .content {
-  @extend %main-column-styles;
+  grid-area: content;
+
+  & > h1 {
+    margin-top: 0;
+  }
 
   article + article {
     padding-top: 3em;
+  }
+
+  a {
+    color: $link-color;
+    transition: box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+    // text-decoration: underline;
+    // text-decoration-color: hsla(184, 76%, 83%, 1);
+
+    box-shadow: inset 0 -0.07em 0 hsla(184, 76%, 83%, 1);
+
+    &:visited {
+      color: $link-color-visited;
+    }
+
+    &:hover {
+      // color: hsla(186, 68%, 60%, 1);
+      // text-decoration: none;
+      box-shadow: inset 0 -0.45em 0 hsla(184, 76%, 83%, 1);
+    }
   }
 }
 

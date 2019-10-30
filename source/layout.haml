@@ -4,10 +4,11 @@
 
   %body
     .container
-      #main{ :role => "main" }
+      .grid{ :role => "main" }
         = partial "header"
 
-        .content= yield
+        .content
+          = yield
 
     = partial "footer_tag"
 

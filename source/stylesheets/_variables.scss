@@ -19,11 +19,11 @@ $gray-0: hsl(40, 23%, 97%);
 
 
 // Site colors
-$primary-color: #2F8C68;
+$primary-color: #87DADF; // #2F8C68;
 $accent-color: hsl(179, 100%, 27%);
-$bg-color: hsla(53, 53%, 98%, 1);
+$bg-color: #FFFEF6;
 $black: $gray-95;
-$text-color: $black;
+$text-color: #4B2502; // $black;
 $text-on-accent: hsla(179, 39%, 99%, 1);
 $link-color: $black;
 $link-color-visited: $gray-70;
@@ -38,7 +38,9 @@ $light-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
 $medium-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.06);
 
 // Font variables
-$sans-serif-font-stack: 'myriad-pro', Verdana, sans-serif;
+$headline-font-stack: "ITC Souvenir W03 Bold", serif;
+$body-font-stack: mrs-eaves-xl-serif, Georgia, serif;
+$sans-serif-font-stack: gill-sans-nova, Verdana, sans-serif;
 
 // Transitions
 $default-transition-property: color;
@@ -50,4 +52,4 @@ $monogram-right-gutter: 30px;
 $content-left-gutter: $monogram-width + $monogram-right-gutter;
 
 // Mobile vars
-$breakpoint-small: "only screen and (max-width: 700px)";
+$breakpoint-small: "only screen and (max-width: 600px)";

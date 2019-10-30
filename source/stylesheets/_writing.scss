@@ -8,14 +8,15 @@ $writing-font-color: #0E0321;
 $writing-font-color--lighter: #201D25;
 
 .writing {
+  background: $bg-color;
   color: $writing-font-color;
   font-family: $writing-font-body;
   font-size: 22px;
   line-height: 1.6;
+  padding: 0;
 
   @media #{$breakpoint-small} {
     font-size: 20px;
-    padding: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -144,15 +145,6 @@ $writing-font-color--lighter: #201D25;
     font-weight: 400;
     margin-bottom: 0.5em;
     margin-top: 1.25em;
-  }
-
-  a {
-    color: $writing-font-color;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   ul {
