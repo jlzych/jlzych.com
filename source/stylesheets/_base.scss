@@ -54,14 +54,14 @@ body {
   background: hsla(184, 76%, 83%, 1);
 }
 
-/* Font styles: see developer.yahoo.com/yui/fonts/ for more info */
 h1, h2, h3, h4, h5, h6 {
   font-family: $headline-font-stack;
+  letter-spacing: 0.02em;
   line-height: 1.2;
   margin-bottom: 0.1em;
-  margin-top: 1.2em;
+  margin-top: 1em;
 
-  .content & a {
+  a {
     box-shadow: none;
     color: $text-color;
     text-decoration: none;
@@ -79,20 +79,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.9rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 0.5em;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
+  margin-bottom: 0.4em;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.65rem;
+  margin-bottom: 0.4em;
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.3em;
 }
 
 p {
@@ -101,7 +104,22 @@ p {
   margin-top: 0;
 }
 
-// NEEDED?
+a {
+  color: $link-color;
+  transition: box-shadow 0.15s ease-in-out;
+  text-decoration: none;
+  box-shadow: inset 0 -0.07em 0 hsla(184, 76%, 83%, 1);
+
+  &:visited {
+    color: $light-brown; // meh not sure this color is working
+  }
+
+  &:hover {
+    box-shadow: inset 0 -0.45em 0 hsla(184, 76%, 83%, 1);
+  }
+}
+
+// Used on the nav of the about page
 .link-light {
   &, &:visited {
     color: $text-on-accent;
@@ -242,7 +260,6 @@ img ~ em {
   grid-area: navigation;
   align-items: center;
   justify-items: end;
-  // font-size: 15px;
 
   ul {
     list-style: none;
@@ -255,17 +272,13 @@ img ~ em {
     display: inline-block;
     margin-bottom: 0;
 
-    // NEEDED?
-    &:last-child a {
-      padding-right: 2px; // Looks better pushed away from the right edge slightly
-    }
-
     &:not(:last-child) {
       margin-right: 0.8rem;
     }
   }
 
   a {
+    box-shadow: none;
     color: hsl(33, 88%, 21%);
     display: block;
     font-family: $sans-serif-font-stack;
@@ -273,8 +286,6 @@ img ~ em {
     font-weight: 900;
     padding: 0.3em;
     text-decoration: none;
-    // text-transform: lowercase;
-    // font-variant: small-caps;
 
     &:hover {
       color: $primary-color;
@@ -312,26 +323,6 @@ img ~ em {
 
   article + article {
     padding-top: 3em;
-  }
-
-  a {
-    color: $link-color;
-    transition: box-shadow 0.15s ease-in-out;
-    text-decoration: none;
-    // text-decoration: underline;
-    // text-decoration-color: hsla(184, 76%, 83%, 1);
-
-    box-shadow: inset 0 -0.07em 0 hsla(184, 76%, 83%, 1);
-
-    &:visited {
-      color: $link-color-visited;
-    }
-
-    &:hover {
-      // color: hsla(186, 68%, 60%, 1);
-      // text-decoration: none;
-      box-shadow: inset 0 -0.45em 0 hsla(184, 76%, 83%, 1);
-    }
   }
 }
 
@@ -415,12 +406,9 @@ img ~ em {
 }
 
 .article__footer {
-  $border-style: 1px solid $light-gray;
-  border-bottom: $border-style;
-  border-top: $border-style;
+  color: $light-brown;
   font-family: $sans-serif-font-stack;
-  font-size: 0.8em;
-  font-style: italic;
+  font-size: 0.75em;
   margin-top: 2em;
   padding: 0.8em 0;
 }

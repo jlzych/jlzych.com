@@ -62,10 +62,10 @@ $about-banner-height--bp-smaller: 72vw;
     height: 100px;
     position: fixed;
     z-index: -1;
+  }
 
-    img {
-      width: 100%;
-    }
+  a {
+    box-shadow: none;
   }
 }
 
@@ -93,13 +93,13 @@ $about-banner-height--bp-smaller: 72vw;
   box-shadow: $medium-shadow;
 
   h1 {
-    font-size: 1.9em;
+    line-height: 1.05;
     margin-top: 0;
   }
 
   h2 {
-    color: $gray-60;
-    font-size: 1.6em;
+    color: $light-brown;
+    font-size: 1.65em;
     margin-bottom: 0;
   }
 
