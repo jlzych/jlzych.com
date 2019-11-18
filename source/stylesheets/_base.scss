@@ -208,10 +208,9 @@ img ~ em {
   padding-bottom: 3em;
 }
 
-
 .grid {
   display: grid;
-  grid-template-columns: 100px minmax(200px, 700px) 100px;
+  grid-template-columns: 140px minmax(200px, 700px) 140px;
   grid-column-gap: 3.5%;
   grid-template-rows: 75px auto;
   grid-template-areas:
@@ -220,8 +219,16 @@ img ~ em {
   justify-content: center;
   padding: 15px 25px;
 
+  @media #{$breakpoint-med} {
+    grid-template-columns: 120px auto;
+    grid-template-areas:
+      ". navigation"
+      "monogram content";
+  }
+
   @media #{$breakpoint-small} {
-    grid-template-columns: 75px auto;
+    grid-template-columns: 105px auto;
+    grid-template-rows: 105px auto;
     grid-template-areas:
       "monogram navigation"
       "content content";
@@ -250,6 +257,11 @@ img ~ em {
     }
   }
 
+  svg {
+    max-width: 100%;
+    height: 100%;
+  }
+
   .name {
     display: inline-block;
     text-indent: -999em;
@@ -257,15 +269,15 @@ img ~ em {
 } // .monogram
 
 .nav-main {
+  display: flex;
   grid-area: navigation;
   align-items: center;
-  justify-items: end;
+  justify-content: flex-end;
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: right;
   }
 
   li {
