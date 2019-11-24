@@ -1,5 +1,5 @@
 ---
-title: A story about the importance of designing every screen
+title: A cautionary tale about the importance of designing every screen
 date: 2019-11-23 16:27 PST
 tags: "product design"
 description: "\"What does the 'Archived' tab look like?\" I was walking the engineers through the final designs of some admin screens when they asked me this. The page is just a table of objects, with a tab showing the active ones, and another tab showing archived ones."
