@@ -81,7 +81,7 @@ GEM
       middleman-core (~> 3.0)
       rouge (~> 0.3.0)
     multi_json (1.11.2)
-    rack (1.6.4)
+    rack (1.6.12)
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
