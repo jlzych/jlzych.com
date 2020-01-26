@@ -1,9 +1,8 @@
 %article
   %time.article__date{ datetime: article.date.strftime('%Y-%m-%d') }
-    %i Posted on
+    Posted on
     = article.date.strftime('%b %e, %Y')
-    %i by
-    Jeff Zych
+    by Jeff Zych
 
   %h1.article__title= link_to article.title, article
 

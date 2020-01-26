@@ -17,7 +17,8 @@ $gray-20: hsl(40, 15%, 80%);
 $gray-10: hsl(43, 13%, 90%);
 $gray-0: hsl(40, 23%, 97%);
 
-$light-brown: hsl(28, 83%, 24%);
+$light-brown: hsla(28, 52%, 27%, 1);
+$lighter-brown: hsla(30, 35%, 38%, 1);
 
 // Site colors
 $primary-color: #87DADF; // #2F8C68;
@@ -40,6 +41,10 @@ $medium-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.06);
 $headline-font-stack: "ITC Souvenir W03 Bold", serif;
 $body-font-stack: mrs-eaves-xl-serif, Georgia, serif;
 $sans-serif-font-stack: gill-sans-nova, Verdana, sans-serif;
+
+// Type scale
+$body-font-size: 21px;
+$body-font-line-height: 1.4;
 
 // Transitions
 $default-transition-property: color;
