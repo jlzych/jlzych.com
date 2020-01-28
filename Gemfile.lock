@@ -80,8 +80,8 @@ GEM
     middleman-syntax (1.2.1)
       middleman-core (~> 3.0)
       rouge (~> 0.3.0)
-    multi_json (1.11.2)
-    rack (1.6.4)
+    multi_json (1.14.1)
+    rack (1.6.12)
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
@@ -95,7 +95,7 @@ GEM
     rouge (0.3.10)
       thor
     sass (3.4.18)
-    sprockets (2.12.4)
+    sprockets (2.12.5)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
