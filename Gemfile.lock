@@ -28,7 +28,7 @@ GEM
     eventmachine (1.0.8)
     execjs (1.4.1)
       multi_json (~> 1.0)
-    ffi (1.9.10)
+    ffi (1.12.1)
     haml (4.0.7)
       tilt
     hike (1.2.3)
