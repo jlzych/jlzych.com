@@ -68,3 +68,11 @@ The last thing I did, mostly in code, was the link style. I knew I wanted a link
 And that, my friends, sums up my journey of how I redesigned this site. It took multiple years of off-and-on bursts of activity going back all the way to when I started adding hand lettering to the site, but the end result is a massive leap forward. I will continue tweaking it, but I'm confident the core aesthetic will serve me for years to come.
 
 [_If you want to see all the iterations and gory detail of how I got to the site as you see it today, I published my work on Figma Community._](https://www.figma.com/c/file/808494599049531462/jlzych.com-site-explorations-2019)
+
+---
+
+_The rest of the site redesign posts_
+
+- [Site Redesign I: The Guiding Concept](/2020/01/27/site-redesign-i-the-guiding-concept/)
+- [Site Redesign II: Inspiration](/2020/02/10/site-redesign-ii-inspiration/)
+- [Site Redesign III: Typography](/2020/03/15/site-redesign-iii-typography/)

@@ -47,3 +47,11 @@ After many months (at least), I was in the kitchen at work wearing my customary 
 BOOM! 💥 That was the underlying concept I was looking for! Summer, warm, friendly, beach-y, So Cal vibes. Those were feelings I could evoke on the screen with visual design.
 
 Next up, I'll write about how I turned those into the color and font choices you're seeing now (unless you're from the future).
+
+---
+
+_The rest of the site redesign posts_
+
+- [Site Redesign II: Inspiration](/2020/02/10/site-redesign-ii-inspiration/)
+- [Site Redesign III: Typography](/2020/03/15/site-redesign-iii-typography/)
+- [Site Redesign IV: Color, Layout, and Logo](/2020/03/29/site-redesign-iv-color-layout-logo/)

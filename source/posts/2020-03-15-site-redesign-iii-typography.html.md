@@ -94,3 +94,11 @@ _A fraction of my type explorations (and visual design ideas) in Figma._
 It wasn't an easy process, and the road was far from straight, but in the end I'm really happy with how it turned out.
 
 Next up is the site layout and color palette.
+
+---
+
+_The rest of the site redesign posts_
+
+- [Site Redesign I: The Guiding Concept](/2020/01/27/site-redesign-i-the-guiding-concept/)
+- [Site Redesign II: Inspiration](/2020/02/10/site-redesign-ii-inspiration/)
+- [Site Redesign IV: Color, Layout, and Logo](/2020/03/29/site-redesign-iv-color-layout-logo/)

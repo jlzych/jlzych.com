@@ -29,3 +29,11 @@ For the site itself, I was inspired by a [tweet I saw from Jules Forrest](https:
 _Screenshot of Iheanyi's website that Jules posted_
 
 This gave me enough direction to start choosing typography and a color palette for the site, which I'll describe in my next posts. In the meantime, check out my [Figma file that I published](https://www.figma.com/c/file/808494599049531462/jlzych.com-site-explorations-2019) on their community page (which contains spoilers for the actual site design).
+
+---
+
+_The rest of the site redesign posts_
+
+- [Site Redesign I: The Guiding Concept](/2020/01/27/site-redesign-i-the-guiding-concept/)
+- [Site Redesign III: Typography](/2020/03/15/site-redesign-iii-typography/)
+- [Site Redesign IV: Color, Layout, and Logo](/2020/03/29/site-redesign-iv-color-layout-logo/)
