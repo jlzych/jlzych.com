@@ -42,28 +42,30 @@ popular_posts: [
 
         %section.about-content
           .about-intro
-            %h1 I’m Jeff, a humane designer & technologist.
+            %h1
+              I’m Jeff, a multi-disciplinary product design leader
 
-            %h2 I’m passionate about building products that improve people’s lives. I’m currently leading the product design team at Gladly. Formerly at Optimizely.
+            %h2
+              I'm passionate about unlocking the potential of design within organizations by designing the systems that design the product. I did this most recently at #{ link_to "Gladly", "https://www.gladly.com" } and #{ link_to "Optimizely", "https://www.optimizely.com" }.
 
         %section.about-content.about-story
           %p
-            %span.text-small-caps I ’ve defined my career by
-            riding the line between design and code. I got my start building websites in high school, back when there was no distinction between “web design” and “web development,” and CSS wasn’t a “thing” yet. I indulged these twin interests by studying graphic communication and computer science at Cal Poly.
+            %span I ’ve defined my career by riding the line between design and code. I got my start building websites in high school, back when there was no distinction between “web design” and “web development,” and CSS wasn’t a “thing” yet. I indulged these twin interests by studying graphic communication and computer science at Cal Poly.
 
           %p After college I went down the programming path by joining Cityspan as a Data Warehouse Developer. Over time my design muse got restless and rescued me from the database by sending me to UC Berkeley’s School of Information. While there I cut my teeth on user-centered design, and learned a ton about sociology, law & policy, technology, research, design, behavioral economics, and more.
 
           %p
-            While in grad school I took a class applying the learnings from behavioral economics to websites via <span class="text-small-caps">A/B</span> testing, which led me to join Optimizely after graduating. While there I continued moving between code and design, eventually becoming the head of the design team. After 5 and half years I was ready for a change, so I joined Casetext to build modern, easy-to-use legal tech tools. Now I’m at Gladly, leading the product design team.
+            While in grad school I took a class applying the learnings from behavioral economics to websites via <span class="text-small-caps">A/B</span> testing, which led me to join Optimizely after graduating. While there I continued moving between code and design, eventually becoming the head of the design team. In that role I #{ link_to "integrated research and design with the engineering team's Agile delivery process", "/2016/07/17/discovery-kanban-at-optimizely/" }, which helped teams focus on solving the biggest customer problems, and doubled the throughput of the design team. I also led the design systems team, which further brought design and engineering together while improved the quality of our UI.
+
+          %p After 5 and half years I was ready for a change, so I joined Casetext to build modern, easy-to-use legal tech tools.
+
+          %p Most recently I led the product design team at Gladly. While there I improved how teams designed & built features by documenting our end-to-end product development process, and defining the RACI for each stage. I also improved product quality by setting the vision for the team to ensure we’re pushing the product’s design forward in a consistent direction. Finally, I also led the design systems team, which improved product quality, and increased the speed of designing and building UIs
 
           %p Outside of work I like to play tennis, music (guitar, bass, and drums, but I’m pretty rusty now), <a href="/scribbles">hand letter</a>, write, and spend time with my lovely wife eating, drinking, and traveling.
 
-          %p
-            =link_to "View my resume &raquo;", "/resume"
-
         %section.about-content
 
-          %h3 Popular Posts
+          %h2 Popular Posts
 
           %ul.about-popular-posts
             - current_page.data.popular_posts.each do |post|
@@ -76,7 +78,8 @@ popular_posts: [
                     =link_to post.name, post.url
                   %p.card-text
                     =post.description
-                    %br
+
+                  %p.card-link
                     =link_to "Keep reading &raquo;", post.url
 
         %section.about-beliefs
@@ -127,7 +130,7 @@ popular_posts: [
           %h2 Get in Touch
 
           %p
-            You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@).
+            You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@). #{ link_to "View my full resume online", "/resume" }.
 
     = partial "footer_tag"
 
