@@ -1,77 +1,27 @@
+@import "fonts";
 @import "variables";
 
 /**
  * Styles shared between print and screen
  */
 
-h1, h2, h3 {
-  font-family: $sans-serif-font-stack;
-  margin-top: 1.5em;
-  margin-bottom: 0.25em;
-
-  // OpenType features: kerning, ligatures
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-  font-variant-ligatures: common-ligatures, contextual;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "alt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
-
-  & + ul,
-  & + p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+h3 time {
+  color: $light-brown;
+  float: right;
+  font-size: 0.65em;
+  margin-top: 7px;
 }
 
-h1 {
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 1.4em;
-  font-weight: 800;
-}
-
-h2 + h3 {
-  margin-top: 0;
-}
-
-h3 {
-  font-size: 1.1em;
-  font-weight: normal;
-  margin-bottom: 0.5em;
-
-  time {
-    float: right;
-    font-size: 0.8em;
-    font-style: italic;
-    margin-top: 4px;
-  }
+ul {
+  padding-left: 1em;
 }
 
 #jeff-zych {
   display: inline-block;
-  font-size: 58px;
+  font-size: 41px;
   margin-bottom: 12px;
   margin-top: 15px;
   line-height: 1;
-
-  & + ul {
-    list-style: none;
-    margin: 0;
-    margin-top: 23px;
-    padding: 0;
-    font-family: $sans-serif-font-stack;
-    font-size: 0.75em;
-    text-align: right;
-    float: right;
-
-    li {
-      margin-bottom: 0;
-    }
-  }
 }
 
 // Bring my name and experience header together
@@ -103,7 +53,7 @@ h3 {
 
   body {
     color: $text-color;
-    font-family: "minion-pro", Georgia, serif;
+    font-family: $body-font-stack;
     font-size: 16px;
     line-height: 1.4;
     margin: 1em;
@@ -118,6 +68,28 @@ h3 {
     -ms-font-feature-settings: "kern", "liga", "clig", "alt";
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
     font-feature-settings: "kern", "liga", "clig", "calt";
+  }
+
+  h1, h2, h3 {
+    font-family: $headline-font-stack;
+  }
+
+  h3 {
+    margin-bottom: 0.3em;
+  }
+
+  #jeff-zych + ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 23px;
+    padding: 0;
+    font-size: 0.9em;
+    text-align: right;
+    float: right;
+
+    li {
+      margin-bottom: 0;
+    }
   }
 
   // Stuff we're hiding when printing
@@ -137,7 +109,7 @@ h3 {
     width: 80px;
     height: 80px;
 
-    img {
+    svg {
       width: 100%;
       height: 100%;
     }
@@ -145,6 +117,10 @@ h3 {
 
   .content {
     margin-left: 100px;
+
+    ul, p {
+      margin-top: 0;
+    }
   }
 
   a,

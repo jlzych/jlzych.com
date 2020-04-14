@@ -6,10 +6,18 @@
 
 ## Experience
 
-### **Senior Product Designer**, Casetext, Inc. <time>7/2018 -- 11/2018</time>
+### **Product Design Manager**, Gladly <time>1/2019 -- 4/2020</time>
+
+* Managed a team of 5 product designers. Provided input and guidance on their work, and reviewed all finished designs to ensure it met our quality bar. Defined career levels to aid career development and coaching.
+* Set the vision for the team to ensure we’re pushing the product's design forward in a consistent direction that’s aligned with company goals, while improving the quality of the product.
+* Improved how teams designed & built features by documenting our end-to-end product development process, and defining the RACI for each stage. Made it so teams were sharing progress and getting input consistently, and set expectations for when and how executives and other stakeholders should contribute to projects.
+* Led the design systems team, which improved product quality and consistency, and also increased the speed of designing and building UIs.
+* Did occasional hands-on product design work, sometimes from research to finished specs, and other times shaping the work for another designer to finish.
+
+### **Senior Product Designer**, Casetext <time>7/2018 -- 11/2018</time>
 
 - Designed and researched new features from concept to launch.
-- Delivered growth initiatives, including A/B tests and in-product education, that increased our trialee activation rate from ~15% to ~30%. This helped us more than triple the number of self-serve subscribers between July and September.
+- Doubled trialee activation rate, from 15% to 30%, by designing and building growth initiatives, including A/B tests and in-product education. This helped us more than triple the number of paid subscribers between July and September.
 
 ### **Head of Design**, Optimizely <time>5/2016 -- 3/2018</time>
 
