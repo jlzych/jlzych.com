@@ -5,7 +5,7 @@ tags: strategy, design
 description: 'Strategy has always been difficult for me to pin down. What does a strategy look like? What makes a strategy good or bad? “Good Strategy / Bad Strategy,” by UCLA Anderson School of Management professor Richard P. Rumelt, takes a nebulous concept and makes it concrete.'
 ---
 
-Strategy has always been a fuzzy concept in my mind. What goes into a strategy? What makes a strategy good or bad? How is it different from vision and goals? _[Good Strategy / Bad Strategy](https://amzn.to/2yY7tdV)_, by UCLA Anderson School of Management professor Richard P. Rumelt, takes a nebulous concept and makes it concrete. He explains what goes into developing a strategy, what makes a strategy good, and what makes a strategy bad -- which makes good strategy even clearer.
+Strategy has always been a fuzzy concept in my mind. What goes into a strategy? What makes a strategy good or bad? How is it different from vision and goals? _[Good Strategy / Bad Strategy][book]_, by UCLA Anderson School of Management professor Richard P. Rumelt, takes a nebulous concept and makes it concrete. He explains what goes into developing a strategy, what makes a strategy good, and what makes a strategy bad -- which makes good strategy even clearer.
 
 As I read the book, I kept underlining passages and scribbling notes in the margins because it's so full of good information and useful techniques that are just as applicable to my everyday work as they are to running a multi-national corporation. To help me use the concepts I learned, I decided to publish my notes and key takeaways so I can refer back to them later.
 
@@ -97,4 +97,6 @@ In other words, design work _is_ strategy work. As Rumelt says, “Good strategy
 
 ---
 
-_If you enjoyed this post (and I’m assuming you did if you made it this far), then I highly recommend reading [the book](https://amzn.to/2yY7tdV) yourself. I only covered the highlights here, and the book goes into a lot more depth on all of these topics. Enjoy!_
+_If you enjoyed this post (and I’m assuming you did if you made it this far), then I highly recommend reading [the book][book] yourself. I only covered the highlights here, and the book goes into a lot more depth on all of these topics. Enjoy!_
+
+[book]: https://amzn.to/2YtItq3
