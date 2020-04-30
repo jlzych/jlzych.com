@@ -1,12 +1,12 @@
 ---
-title: "Exercises from <em>Interactions of Color</em> by Josef Albers"
+title: "Exercises from <em>Interaction of Color</em> by Josef Albers"
 date: 2020-04-29 10:33 PDT
 tags: design, color
-description: 'Interactions of Color is, by far, the best book on color I’ve ever read. Other teaching methods focus on theory, color systems, the physics of color (wavelength, rods and cones, etc.), or resort to rote rules like, "red means danger."  It’s mechanical, mathematical, rules-based, and divorced from how people perceive and react to color. Or as Albers puts it: "Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect."'
+description: 'Interaction of Color is, by far, the best book on color I’ve ever read. Other teaching methods focus on theory, color systems, the physics of color (wavelength, rods and cones, etc.), or resort to rote rules like, "red means danger."  It’s mechanical, mathematical, rules-based, and divorced from how people perceive and react to color. Or as Albers puts it: "Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect."'
 relative_image_url: /images/2020-04-interaction-of-color/XVIII/12.jpg
 ---
 
-[_Interactions of Color_][book] is, by far, the best book on color I've ever read. Other teaching methods focus on theory, color systems, the physics of color (wavelength, rods and cones, etc.), or resort to rote rules like, "red means danger."  It's mechanical, mathematical, rules-based, and divorced from how people perceive and react to color. Or as Albers puts it: "Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect."
+[_Interaction of Color_][book] is, by far, the best book on color I've ever read. Other teaching methods focus on theory, color systems, the physics of color (wavelength, rods and cones, etc.), or resort to rote rules like, "red means danger."  It's mechanical, mathematical, rules-based, and divorced from how people perceive and react to color. Or as Albers puts it: "Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect."
 
 In contrast, Albers' teaches you how to truly _see_ color. His central thesis is that there are no absolutes in color. The way humans perceive color is influenced by the surrounding context of neighboring colors, lighting conditions, size and quantity, what we look at before and after, and more. Two colors can look like one. One color can look like two. What looks dull in one context may look bright in another. Reds can look cool-toned, and blues can be warm-toned. As Albers says, "This fact makes color the most relative medium in art."
 
