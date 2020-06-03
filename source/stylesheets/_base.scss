@@ -13,6 +13,7 @@ body {
   font-family: $body-font-stack;
   font-size: 1rem;
   line-height: $body-font-line-height;
+  min-height: 100vh;
   padding: 13px;
 
   // OpenType features: kerning, ligatures
@@ -216,6 +217,7 @@ img ~ em {
   background-color: $bg-color;
   border-radius: 10px;
   box-shadow: $lightest-shadow;
+  min-height: 85vh;
   padding-bottom: 3em;
 }
 
