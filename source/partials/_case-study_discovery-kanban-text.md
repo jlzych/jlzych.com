@@ -2,6 +2,9 @@ It was October of 2015, and we just launched Optimizely's newest product. The on
 
 Instead, the product launched behind schedule, with bugs and feature gaps, and struggled to gain traction in the market. Less than 6 months later, there were company-wide layoffs.
 
+![Discovery kanban board in its final, full board form, tracking work from dreams through delivery](/images/case-studies/optimizely-discovery-kanban/4-fullwall.jpg)
+_The final discovery kanban board that helped us stay focused on customer needs by tracking work from dreams through delivery_
+
 ## How did we get here?
 
 Optimizely was founded in 2009, and grew to over 400 people by the end of 2014. Design, engineering, and product were around 120 people, split into "squads" who owned a product area and ran their own flavor of scrum.
