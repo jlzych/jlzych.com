@@ -350,6 +350,16 @@ img ~ em {
   li {
     margin-bottom: 0.5em;
   }
+
+  code {
+    background-color: $code-highlight-color;
+    border-radius: 6px;
+    box-shadow: $inset-code-shadow;
+    color: $accent-color;
+    font-size: 0.75em;
+    margin: 0 0.25em;
+    padding: 0.2em 0.5em;
+  }
 }
 
 #site-footer {

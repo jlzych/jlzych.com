@@ -31,11 +31,13 @@ $de-emphasized-text: $gray-80;
 $light-gray: $gray-20;
 $light-gray-background-color: $gray-0;
 $light-gray-border-color: $gray-10;
+$code-highlight-color: hsla(59, 46%, 96%, 0.8);
 
 // Shadows
 $lightest-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.14);
 $light-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
 $medium-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.06);
+$inset-code-shadow: inset 0 0 3px rgba(0,0,0,0.1), inset 0 0 1px rgba(0,0,0,0.1);
 
 // Font variables
 $headline-font-stack: "ITC Souvenir W03 Bold", serif;
