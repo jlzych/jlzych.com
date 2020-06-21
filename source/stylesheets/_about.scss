@@ -148,6 +148,10 @@ $about-banner-height--bp-smaller: 72vw;
   }
 }
 
+.about-work {
+  margin-bottom: 1.5em;
+}
+
 .about-popular-posts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -244,4 +248,95 @@ $about-banner-height--bp-smaller: 72vw;
   a, a:visited {
     color: $text-on-accent;
   }
+}
+
+// Pull quote stuff
+
+.quotes {
+  min-height: 100vh;
+  align-items: center;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-container {
+  $image-column: 170px;
+
+  display: grid;
+  grid-template-columns: $image-column auto;
+  grid-column-gap: 2.5em;
+  grid-template-areas:
+    "img quote";
+  width: 80%;
+  max-width: 930px;
+
+  &.push-left {
+    margin-right: auto;
+  }
+
+  &.push-right {
+    margin-left: auto;
+    grid-template-columns: auto $image-column;
+    grid-template-areas:
+      "quote img";
+
+    blockquote::before {
+      content: "“";
+      right: auto;
+      left: -0.2em;
+      bottom: -0.2em;
+    }
+  }
+
+  & + & {
+    margin-top: 4em;
+  }
+
+  blockquote {
+    grid-area: quote;
+    border: none;
+    font-size: 1.3em;
+    position: relative;
+    padding: 0;
+
+    &::before {
+      content: "”";
+      font-size: 14em;
+      position: absolute;
+      bottom: -0.1em;
+      right: 0;
+      line-height: 0.1;
+      opacity: 0.1;
+      color: $accent-color;
+      mix-blend-mode: hard-light;
+      pointer-events: none;
+    }
+  }
+}
+
+.quote-image-container {
+  grid-area: img;
+  overflow: hidden;
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+}
+
+.quote-name {
+  font-weight: 600;
+}
+
+.quote-title {
+  color: $lighter-brown;
+}
+
+.quote-name, .quote-title {
+  // font-variant: small-caps;
+  font-size: 0.7em;
+  font-family: $sans-serif-font-stack;
+  text-align: right;
 }

@@ -5,23 +5,38 @@ description: "I'm a humane designer & technologist who's passionate about buildi
 relative_image_url: /images/me-banner.jpg
 
 popular_posts: [
-  { name: Discovery Kanban at Optimizely,
-    description: "Like most tech startups, Optimizely uses an Agile process to build software. Agile has been great at helping us plan what we’re building, coordinate across teams, and ship iteratively; however, that meant design and research were awkwardly shoehorned into the process.",
-    url: '/2016/07/17/discovery-kanban-at-optimizely/',
-    image_url: '/images/2016-07-17-discovery-kanban-at-optimizely/discovery-planning.jpeg' },
-  { name: "Where do you get ideas for blog posts?",
-    description: 'People often ask me, “Where do you get ideas for blog posts?” I have many sources, but my most effective one is simple: pay attention to the questions people ask you.',
-    url: '/2018/05/25/where-do-you-get-ideas-for-blog-posts/',
-    image_url: '/images/2018-05-25-where-do-you-get-ideas-for-blog-posts/dam.jpg' },
+  { name: "Site Redesign I: The Guiding Concept",
+    description: "As some of you may have noticed, I (semi-)recently gave my site a visual overhaul. It's far more opinionated than before, so I want to document my decision making process over the next couple of posts.",
+    url: '/2020/01/27/site-redesign-i-the-guiding-concept/',
+    image_url: '/images/2020-redesign/before-after.png' },
   { name: "Building an MVPP - A Minimum Viable Product we're Proud of",
     description: "On November 18th, 2014, we publicly released Optimizely's iOS editor. This was a big release for us because it marked the end of a months-long public beta in which we received a ton of customer feedback and built a lot of missing features.",
     url: '/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/',
     image_url: '/images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png' },
+  { name: "What to expect if I'm you're manager",
+    description: "This past January I started my new gig at Gladly, managing the product design team. I wrote a document to describe what my new team could expect from me as their manager. I decided to re-publish that document here. Enjoy.",
+    url: '/2019/05/19/what-to-expect-if-i-m-your-manager/'},
   { name: Why I Became a Design Manager,
     description: "At the start of 2015, I officially became a Design Manager at Optimizely. I transitioned from an individual contributor, product design role into a leadership role. So why did I become a Design Manager?",
     url: '/2015/01/19/why-i-became-a-design-manager/',
     image_url: '' }
 ]
+
+selected_work: [
+  {
+    title: "Implementing a Discovery process at Optimizely",
+    subtitle: "How I reduced cost, increased revenue, and improved product quality by creating an explicit Discovery phase",
+    relative_image_url: /images/case-studies/optimizely-discovery-kanban/4-fullwall.jpg,
+    relative_url: /case-studies/optimizely-discovery-kanban/
+  },
+  {
+    title: "Gladly’s Actions API",
+    subtitle: "Designing a way for agents to trigger actions in external systems, without leaving Gladly",
+    relative_image_url: /images/case-studies/gladly-actions-api/4-mid-fi-with-errors.jpg,
+    relative_url: /case-studies/gladly-actions-api/
+  }
+]
+
 ---
 
 !!! 5
@@ -63,6 +78,41 @@ popular_posts: [
 
           %p Outside of work I like to play tennis, music (guitar, bass, and drums, but I’m pretty rusty now), <a href="/scribbles">hand letter</a>, write, and spend time with my lovely wife eating, drinking, and traveling.
 
+        %section.quotes
+          .quote-container.push-left
+            .quote-image-container
+              = image_tag "/images/about/bruno.png"
+              %p.quote-name Bruno Bergher
+              %p.quote-title VP of Product and Design at Gladly
+
+            :markdown
+              > Jeff is **thoughtfulness and empathy incarnate**. Yes, he's a very **thoughtful designer** and a **skilled leader of design teams**. But while managing him at Gladly, I saw how, into that package, he also packs: a prolific, precise writer; an analytical product manager (as he ran our design systems product team); a dedicated, disciplined people manager. You should work with Jeff and see it in practice.
+
+          .quote-container.push-right
+            .quote-image-container
+              = image_tag "/images/about/claire.png"
+              %p.quote-name Claire Vo
+              %p.quote-title CPO at Optimizely
+
+            :markdown
+              > As Optimizely's design lead, Jeff had a **significant impact on the product, team and company culture**. Responsible for design, research and UI engineering, Jeff was **instrumental in delivering a "consumer-grade" user experience to Optimizely's customers**. [...] I was especially **impressed with his hiring and team building skills**; he put tons of thought into our interviewing and on-boarding processes, which lead to a happy and effective design team.
+
+        %section.about-content.about-work
+          %h2 Selected Work
+
+          %ul.about-popular-posts
+            - current_page.data.selected_work.each do |work|
+              %li.card
+                .card-image-top-container
+                  =image_tag work.relative_image_url, :class => "card-image-top"
+                .card-body
+                  %h4.card-title
+                    =link_to work.title, work.relative_url
+                  %p.card-text
+                    =work.subtitle
+                  %p.card-link
+                    =link_to "Read the case study", work.relative_url
+
         %section.about-content
 
           %h2 Popular Posts
@@ -95,6 +145,25 @@ popular_posts: [
             .justify-content-center
               %a{ :href => '/2018/12/03/my-beliefs-about-design/', :class => 'link-light' }
                 Read the full list &raquo;
+
+        %section.quotes
+          .quote-container.push-left
+            .quote-image-container
+              = image_tag "/images/about/pete.png"
+              %p.quote-name Pete Koomen
+              %p.quote-title Co-founder of Optimizely
+
+            :markdown
+              > Jeff is a **strong design leader** who helped build Optimizely's design team from scratch. He knows how to hire & manage a design team, make them effective & efficient, and keep them happy. He has a **strong understanding of user centered design** and what it takes to ship great user experiences. He's also a **pleasure to work with** and a strong addition to any team.
+
+          .quote-container.push-right
+            .quote-image-container
+              = image_tag "/images/about/susan.png"
+              %p.quote-name Susan Park
+              %p.quote-title Senior Product Designer at Gladly
+
+            :markdown
+              > Jeff was my manager at Gladly and I had a **great experience with him**! He made many improvements to our design team and framed our weeklys to share knowledge, frameworks, and build team harmony. He **always supported me and did what he could to unblock me**. I always looked forward to our meetings and would recommend him to help build any design team.
 
         %section.about-content
           %h2 Side Projects
