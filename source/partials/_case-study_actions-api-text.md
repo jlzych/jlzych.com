@@ -73,6 +73,9 @@ I got so caught up in the **technical constraints and staying in lock-step with 
 
 We flew out to Chicago the following week, and the meeting was a resounding success. The Ulta team was happy with the fleshed-out API spec. We whiteboarded what they would have to build to get this working, and the only roadblocks were on their side. Their technology stack was a mishmash of various technology vendors and homegrown systems, most of which lacked APIs to integrate with us. Thankfully that wasn't a knock against our solution – it was a knock against their other technology vendors. They would have to work through that on their side. For us, it meant we had **the all clear to start building**.
 
+![Picture of us huddled outside Wendy's trying to get food the night before our meeting](/images/case-studies/gladly-actions-api/wendys.jpg)
+*The team huddled outside Wendy's trying to get food the night before our meeting. Everything was closed, including the inside of Wendy's, so we had to walk through the drive-thru.*
+
 ## Finalizing the Agent Experience
 
 Upon returning from the Ulta meeting I passed off the work to another designer. There were a few reasons for this:
