@@ -1,5 +1,5 @@
 ---
-title: "Exercises from <em>Interaction of Color</em> by Josef Albers"
+title: "Exercises from 'Interaction of Color' by Josef Albers"
 date: 2020-04-29 10:33 PDT
 tags: design, color
 description: 'Interaction of Color is, by far, the best book on color I’ve ever read. Other teaching methods focus on theory, color systems, the physics of color (wavelength, rods and cones, etc.), or resort to rote rules like, "red means danger."  It’s mechanical, mathematical, rules-based, and divorced from how people perceive and react to color. Or as Albers puts it: "Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect."'
