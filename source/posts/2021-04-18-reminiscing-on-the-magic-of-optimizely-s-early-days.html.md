@@ -8,7 +8,7 @@ relative_image_url: '/images/2021-optimizely/2-office.jpeg'
 
 Last fall, Optimizely was acquired by Episerver, signaling the official end of Optimizely as I knew it. I've been re-connecting with old Optinauts and reminiscing on the magic of those early days.
 
-I joined the company in 2012 as employee 29. It was pre-series A, everyone fit in 1 office in downtown SF, and the average age of employees was about 27. Not too long after joining we had the 4th highest valuation of all YCombinator-backed companies (behind AirBnB, Dropbox, and Stripe). There was a ton of energy and momentum behind us. We were all young and hungry and full of ideas and eager to prove ourselves. We had lot of freedom to try out ideas, fail, learn, and grow. It launched the careers of most of the people who were there, including mine.
+I joined the company in 2012 as employee 29. It was pre-series A, everyone fit in 1 office in downtown SF, and the average age of employees was about 27. Not too long after joining we had the 4th highest valuation of all YCombinator-backed companies (behind AirBnB, Dropbox, and Stripe). There was a ton of energy and momentum behind us. We were all young and hungry and full of ideas and eager to prove ourselves. We had a lot of freedom to try out ideas, fail, learn, and grow. It launched the careers of most of the people who were there, including mine.
 
 What follows are a collection of my most cherished memories.
 
