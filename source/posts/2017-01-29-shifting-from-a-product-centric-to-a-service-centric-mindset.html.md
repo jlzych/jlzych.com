@@ -28,8 +28,8 @@ Learning about the discipline of service design has helped me connect all the di
 If you’re interested in learning more about service design, these books and articles have taught me a lot:
 
 - _Service Design, From Insight to Implementation_ by Andy Polaine, Ben Reason & Lavrans Løvlie: <http://rosenfeldmedia.com/books/service-design/>
-- Service Design 101: <https://www.cooper.com/journal/2014/07/service-design-101>
-- Service Blueprints: <http://www.cooper.com/journal/2014/08/service-blueprints-laying-the-foundation>
-- Bringing Together Personas, Jobs-to-be-done, and Customer Journey Maps: <http://www.cooper.com/journal/2016/11/bringing-together-personas-jobs-to-be-done-and-customer-journey-maps>
+- <s>Service Design 101: <https://www.cooper.com/journal/2014/07/service-design-101></s> (link is dead)
+- <s>Service Blueprints: <http://www.cooper.com/journal/2014/08/service-blueprints-laying-the-foundation></s> (link is dead)
+- <s>Bringing Together Personas, Jobs-to-be-done, and Customer Journey Maps: <http://www.cooper.com/journal/2016/11/bringing-together-personas-jobs-to-be-done-and-customer-journey-maps></s> (link is dead)
 - Experience Mapping Guide, by Adaptive Path: <http://mappingexperiences.com/>
 - Guide to Service Blueprinting, by Adaptive Path: <https://medium.com/capitalonedesign/download-our-guide-to-service-blueprinting-d70bb2717ddf#.c16es9oce>
