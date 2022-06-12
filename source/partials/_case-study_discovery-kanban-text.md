@@ -2,7 +2,7 @@ It was October of 2015, and we just launched Optimizely's newest product. The on
 
 Instead, the product launched behind schedule, with bugs and feature gaps, and struggled to gain traction in the market. Less than 6 months later, there were company-wide layoffs.
 
-![Discovery kanban board in its final, full board form, tracking work from dreams through delivery](/images/case-studies/optimizely-discovery-kanban/4-fullwall.jpg)
+![Discovery kanban board in its final, full board form, tracking work from dreams through delivery](/images/case-studies/discovery-kanban/4-fullwall.jpg)
 _The final discovery kanban board that helped us stay focused on customer needs by tracking work from dreams through delivery_
 
 ## How did we get here?
@@ -41,7 +41,7 @@ To design this system, I drew on what I learned in grad school, my hands-on know
 
 After talking through options with the design team and PMs, and trying on some models with projects that went well (and not so well), we aligned on the **double diamond model of design.**
 
-![Diagram of the double diamond model of design, courtesy the UK Design Council](/images/case-studies/optimizely-discovery-kanban/1-double-diamond.png)
+![Diagram of the double diamond model of design, courtesy the UK Design Council](/images/case-studies/discovery-kanban/1-double-diamond.png)
 _Double Diamond model of design, courtesy the [UK Design Council](https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond)_
 
 This was created by the [UK Design Council](https://www.designcouncil.org.uk/news-opinion/what-framework-innovation-design-councils-evolved-double-diamond) to model the design process. It's not overly prescriptive, but has enough structure to both guide the team's work while communicating what work is being done at each stage.
@@ -58,7 +58,7 @@ Once the work has gone through this process, it's ready to be built and can be p
 
 Now that we had a new proposal for how to work, I started using it with one team who's designer and PM were ready to try a new way of working and smoothing out the kinks. We made the kanban board on a whiteboard, put their current and upcoming work on it, and started reviewing it in sprint planning.
 
-![First prototype of the Discovery kanban board](/images/case-studies/optimizely-discovery-kanban/2-proto-board.jpg)
+![First prototype of the Discovery kanban board](/images/case-studies/discovery-kanban/2-proto-board.jpg)
 _First prototype of the Discovery kanban board_
 
 There were a couple of quick improvements to make, such as adding a column for problem definitions that were done but not being worked on by a designer yet, but otherwise the system was accurately modeling reality and increasing the visibility of the team's work.
@@ -69,19 +69,19 @@ After a few weeks, the early results were positive. We were explicit about which
 
 Once it was working for one team, I expanded team by team until all the squads were using this system. Doing it this way helped me get buy-in for this new way of working, explain the design process, and address any confusion.
 
-![Next iteration of the Discovery kanban board](/images/case-studies/optimizely-discovery-kanban/3-board2.jpg)
+![Next iteration of the Discovery kanban board](/images/case-studies/discovery-kanban/3-board2.jpg)
 _Next iteration of the Discovery kanban board_
 
 I also started a weekly planning meeting with the designers, researchers, and PMs to review all the work in flight, and prioritize new work. This ensured we were working on the most impactful projects that were aligned to our product strategy and vision, helped us choose which projects were most in need of research across teams, improved coordination between teams, and reduced the number of meetings of "work about the work" (i.e. who is doing what, and when). Put simply, it **aligned design's efforts to business outcomes**.
 
 While I was doing this, our Engineering Development Director was improving how we tracked and coordinated engineering work across teams. I stayed in sync with him, and we moved all the work onto a huge physical wall that tracked everything the product, design, and eng teams were working on, from vague ideas through discovery to shipped code.
 
-![Discovery kanban board in its final, full board form, tracking work from dreams through delivery](/images/case-studies/optimizely-discovery-kanban/4-fullwall.jpg)
+![Discovery kanban board in its final, full board form, tracking work from dreams through delivery](/images/case-studies/discovery-kanban/4-fullwall.jpg)
 _Discovery kanban board in its final, full board form, tracking work from dreams through delivery_
 
 We also expanded my weekly planning meeting to include engineering and product leadership, and to review all work in flight, from what engineers were building back to the exploratory research. This greatly increased visibility into what everyone was doing, what customer pain points and opportunities most needed research, and what cross-team prioritization and trade-offs we needed to make.
 
-![Meeting to review the whole board, expanded to include engineering and product leadership](/images/case-studies/optimizely-discovery-kanban/5-moped.jpg)
+![Meeting to review the whole board, expanded to include engineering and product leadership](/images/case-studies/discovery-kanban/5-moped.jpg)
 _Meeting to review the whole board, expanded to include engineering and product leadership_
 
 ## Impact
