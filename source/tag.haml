@@ -1,0 +1,17 @@
+---
+pageable: true
+per_page: 50
+---
+
+-# This variable is used in _head_tag.haml to set
+-# the page title with the tagname
+- @tagname = "##{tagname}"
+
+%h1= @tagname
+
+%ul.cards
+  - page_articles.each do |article|
+    =partial :card, locals: { article: article }
+
+- if paginate
+  =partial :pagination, locals: { prev_page: prev_page, next_page: next_page }

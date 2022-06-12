@@ -4,6 +4,7 @@ date: 2015-02-03 20:20 PST
 description: On November 18th, 2014, we publicly released Optimizely's iOS editor. This was a big release for us because it marked the end of a months-long public beta in which we received a ton of customer feedback and built a lot of missing features.
 relative_image_url: /images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png
 tags: "design process"
+popular_post: true
 ---
 
 On November 18th, 2014, we publicly released [Optimizely's iOS editor](https://www.optimizely.com/mobile). This was a big release for us because it marked the end of a months-long public beta in which we received a ton of customer feedback and built a lot of missing features. But before we launched, there was one problem the whole team rallied behind to fix: we weren’t *proud* of the product. To fix this issue, we went beyond a Minimum Viable Product (MVP) to an MVPP — the Minimum Viable Product we're Proud of.

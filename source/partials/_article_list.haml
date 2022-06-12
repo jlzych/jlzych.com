@@ -1,0 +1,4 @@
+- articles.each_with_index do |article, i|
+  %p
+    = link_to article.title, article
+    %time.archives__post-date{ datetime: article.date.strftime('%Y-%m-%d') }= "(#{ article.date.strftime('%b %e')})"

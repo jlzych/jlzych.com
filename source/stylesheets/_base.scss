@@ -37,11 +37,11 @@ body {
 }
 
 ::selection {
-  background: hsla(184, 76%, 83%, 1);
+  background: $selection-color;
 }
 
 ::-moz-selection {
-  background: hsla(184, 76%, 83%, 1);
+  background: $selection-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,22 +116,22 @@ h4 {
 
 p {
   font-family: $body-font-stack;
-  margin-bottom: 0.75em;
   margin-top: 0;
+  margin-bottom: 0.75em;
 }
 
 a {
   color: inherit;
   transition: box-shadow 0.15s ease-in-out;
   text-decoration: none;
-  box-shadow: inset 0 -0.07em 0 hsla(184, 76%, 83%, 1);
+  box-shadow: inset 0 -0.07em 0 $selection-color;
 
   &:visited {
     color: $light-brown; // meh not sure this color is working
   }
 
   &:hover {
-    box-shadow: inset 0 -0.45em 0 hsla(184, 76%, 83%, 1);
+    box-shadow: inset 0 -0.45em 0 $selection-color;
   }
 }
 
@@ -422,7 +422,9 @@ img ~ em {
 }
 
 .article-link-label {
+  color: $light-brown;
   display: block;
+  font-family: $sans-serif-font-stack;
 }
 
 .article__title {
@@ -447,8 +449,8 @@ img ~ em {
   color: $light-brown;
   font-family: $sans-serif-font-stack;
   font-size: 0.75em;
-  margin-top: 2em;
   padding: 0.8em 0;
+  margin-bottom: 1em;
 }
 
 // Archive styles
@@ -457,6 +459,21 @@ img ~ em {
 }
 
 // Card styles
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  list-style: none;
+  margin: 0;
+  margin-top: 1.3em;
+  padding: 0;
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+}
 
 .card {
   background: white;
@@ -495,6 +512,7 @@ img ~ em {
 }
 
 .card-image-top {
+  border-radius: 0 !important; // !important to override default grid styles
   display: block;
   width: 100%;
   height: 100%;
@@ -504,6 +522,8 @@ img ~ em {
 // Buttons
 
 .button-light {
+  $box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
   &, &:visited {
     color: $black;
     display: inline-block;
@@ -513,11 +533,12 @@ img ~ em {
     text-shadow: 1px 1px 1px white;
     border-radius: 5px;
     font-family: $sans-serif-font-stack;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: $box-shadow;
   }
 
   &:hover {
     background: #EEF3F7;
+    box-shadow: $box-shadow;
   }
 
   &:active {
@@ -537,6 +558,10 @@ img ~ em {
   padding: 0.2em 0.8em !important;
 }
 
+.paginate-previous {
+  margin-right: 1em;
+}
+
 // SVG icon stuff
 
 .primary {
@@ -545,4 +570,47 @@ img ~ em {
 
 .secondary {
   fill: $black;
+}
+
+// Tags stff
+
+.tag {
+  background-color: $selection-color;
+  border-radius: 4px;
+  box-shadow: none;
+  color: $tag-text-color;
+  display: inline-block;
+  font-size: 0.6rem;
+  margin-right: 0.5rem;
+  padding: 0.1em 0.5em 0.2em;
+
+  box-shadow: 0 0 0 $tag-text-color;
+  transition: transform $faster-transition-duration ease-in-out;
+
+  &::after {
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 $tag-text-color;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity $faster-transition-duration ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover {
+    box-shadow: none;
+    transform: translate(-2px, -2px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:visited {
+    color: $tag-text-color;
+  }
 }

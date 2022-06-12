@@ -5,6 +5,8 @@
 
   - if is_blog_article?
     - @page_title = "#{current_page.data.title} by Jeff Zych"
+  - elsif @tagname
+    - @page_title = "#{@tagname} — #{data.site.site_name}"
   - elsif current_page.data.title
     - @page_title = current_page.data.title
 

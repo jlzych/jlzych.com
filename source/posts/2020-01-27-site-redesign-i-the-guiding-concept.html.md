@@ -4,6 +4,7 @@ date: 2020-01-27 22:22 PST
 tags: redesign, design process
 description: As some of you may have noticed, I (semi-)recently gave my site a visual overhaul. It's far more opinionated than before, so I want to document my decision making process over the next couple of posts.
 relative_image_url: /images/2020-redesign/before-after.png
+popular_post: true
 ---
 
 As some of you may have noticed, I (semi-)recently gave my site a visual overhaul. It's far more opinionated than before, so I want to document my decision making process over the next couple of posts.

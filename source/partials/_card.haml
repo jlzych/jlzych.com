@@ -1,0 +1,11 @@
+%li.card
+  - if article.data.relative_image_url
+    .card-image-top-container
+      =image_tag article.data.relative_image_url, :class => "card-image-top"
+  .card-body
+    %h4.card-title
+      =link_to article.title, article
+    %p.card-text
+      =article.data.description
+    %p.card-link
+      =link_to "Keep reading &raquo;", article

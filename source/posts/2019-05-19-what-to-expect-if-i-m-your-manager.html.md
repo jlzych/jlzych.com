@@ -3,6 +3,7 @@ title: What to Expect if I'm Your Manager
 date: 2019-05-19 16:46 PDT
 tags: management
 description: "This past January I started my new gig at Gladly, managing the product design team. Unlike at Optimizely, where I transitioned into managing people I already worked with, at Gladly I inherited a team who didn't know me at all. Inspired by my new boss who did the same thing, I wrote a document to describe what my new team could expect from me as their manager. I decided to re-publish that document here. Enjoy."
+popular_post: true
 ---
 
 This past January I started my new gig at [Gladly](https://www.gladly.com), managing the product design team. Unlike at Optimizely, where I transitioned into managing people I already worked with, at Gladly I inherited a team who didn't know me at all. Inspired by my new boss who did the same thing, I wrote a document to describe what my new team could expect from me as their manager. I decided to re-publish that document here. Enjoy.

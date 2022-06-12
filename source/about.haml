@@ -4,24 +4,6 @@ layout: false
 description: "I'm a humane designer & technologist who's passionate about building products to improve people's lives. Currently managing the product design team at Gladly. Formerly at Optimizely and Casetext."
 relative_image_url: /images/me-banner.jpg
 
-popular_posts: [
-  { name: "Site Redesign I: The Guiding Concept",
-    description: "As some of you may have noticed, I (semi-)recently gave my site a visual overhaul. It's far more opinionated than before, so I want to document my decision making process over the next couple of posts.",
-    url: '/2020/01/27/site-redesign-i-the-guiding-concept/',
-    image_url: '/images/2020-redesign/before-after.png' },
-  { name: "Building an MVPP - A Minimum Viable Product we're Proud of",
-    description: "On November 18th, 2014, we publicly released Optimizely's iOS editor. This was a big release for us because it marked the end of a months-long public beta in which we received a ton of customer feedback and built a lot of missing features.",
-    url: '/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/',
-    image_url: '/images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png' },
-  { name: "What to expect if I'm you're manager",
-    description: "This past January I started my new gig at Gladly, managing the product design team. I wrote a document to describe what my new team could expect from me as their manager. I decided to re-publish that document here. Enjoy.",
-    url: '/2019/05/19/what-to-expect-if-i-m-your-manager/'},
-  { name: Why I Became a Design Manager,
-    description: "At the start of 2015, I officially became a Design Manager at Optimizely. I transitioned from an individual contributor, product design role into a leadership role. So why did I become a Design Manager?",
-    url: '/2015/01/19/why-i-became-a-design-manager/',
-    image_url: '' }
-]
-
 selected_work: [
   {
     title: "Implementing a Discovery process at Optimizely",
@@ -109,9 +91,9 @@ selected_work: [
               > As Optimizely's design lead, Jeff had a **significant impact on the product, team and company culture**. Responsible for design, research and UI engineering, Jeff was **instrumental in delivering a "consumer-grade" user experience to Optimizely's customers**. [...] I was especially **impressed with his hiring and team building skills**; he put tons of thought into our interviewing and on-boarding processes, which lead to a happy and effective design team.
 
         %section.about-content.about-work
-          %h2 Selected Work
 
-          %ul.about-popular-posts
+          %h2 Selected Work
+          %ul.cards
             - current_page.data.selected_work.each do |work|
               %li.card
                 .card-image-top-container
@@ -125,23 +107,10 @@ selected_work: [
                     =link_to "Read the case study", work.relative_url
 
         %section.about-content
-
           %h2 Popular Posts
-
-          %ul.about-popular-posts
-            - current_page.data.popular_posts.each do |post|
-              %li.card
-                -if post.image_url? and post.image_url != ''
-                  .card-image-top-container
-                    =image_tag post.image_url, :class => "card-image-top"
-                .card-body
-                  %h4.card-title
-                    =link_to post.name, post.url
-                  %p.card-text
-                    =post.description
-
-                  %p.card-link
-                    =link_to "Keep reading &raquo;", post.url
+          %ul.cards
+            -blog.articles.select {|a| a.data[:popular_post]}.each do |article|
+              =partial :card, locals: { article: article }
 
         %section.about-beliefs
           .about-content

@@ -5,11 +5,11 @@
     - previous_article = current_article.previous_article
     - if previous_article
       %div
-        %span.article-link-label.text-uppercase.text-small Previous article:
+        %span.article-link-label.text-uppercase.text-small Previous article
         = link_to "&laquo; #{previous_article.title}", previous_article
 
     - next_article = current_article.next_article
     - if next_article
       %div
-        %span.article-link-label.text-uppercase.text-small Next article:
+        %span.article-link-label.text-uppercase.text-small Next article
         = link_to "#{next_article.title} &raquo;", next_article

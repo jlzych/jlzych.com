@@ -2,7 +2,8 @@
 title: Why I Became a Design Manager
 date: 2015-01-19 12:32 PST
 description: At the start of 2015, I officially became a Design Manager at Optimizely. I transitioned from an individual contributor, product design role into a leadership role. So why did I become a Design Manager?
-tags:
+tags: management
+popular_post: true
 ---
 
 At the start of 2015, I officially became a Design Manager at [Optimizely](https://www.optimizely.com). I transitioned from an individual contributor, product design role into a leadership role. For the entirety of my career up to this point, I had never planned on going into management. Doing hands-on, nitty-gritty design and coding work seemed so much more exciting and fulfilling. Management sounded more like a necessary evil than an interesting challenge. But since then, my thinking has changed. So why did I become a Design Manager?

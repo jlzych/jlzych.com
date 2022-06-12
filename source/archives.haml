@@ -12,15 +12,13 @@ per_page: 50
     %h2
       %time= year
 
-    - articles.each do |article|
-      %p
-        = link_to article.title, article
-        -# &mdash;
-        %time.archives__post-date{ datetime: article.date.strftime('%Y-%m-%d') }= "(#{ article.date.strftime('%b %e')})"
+    =partial :article_list, locals: { articles: articles }
 
 - if paginate
-  %p.pagination.justify-content-center
-    - if prev_page
-      = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous button-light button-small" }
-    - if next_page
-      = link_to "Next page &raquo;", next_page, { class: "paginate-next button-light button-small" }
+  =partial :pagination, locals: { prev_page: prev_page, next_page: next_page }
+
+  -# %p.pagination.justify-content-center
+  -#   - if prev_page
+  -#     = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous button-light button-small" }
+  -#   - if next_page
+  -#     = link_to "Next page &raquo;", next_page, { class: "paginate-next button-light button-small" }
