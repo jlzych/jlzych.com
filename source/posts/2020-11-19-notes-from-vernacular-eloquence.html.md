@@ -1,7 +1,7 @@
 ---
 title: Notes from "Vernacular Eloquence"
 date: 2020-11-19 16:12 PST
-tags: writing
+tags: writing, books
 description: "How can speech improve your writing? Your initial reaction is probably, not at all. But it turns out there's a lot that speech can offer writing, and that's what Peter Elbow's 'Vernacular Eloquence' is all about. It's full of practical advice for harnessing the power of speech to improve your writing, so I wrote them down here for future reference."
 ---
 

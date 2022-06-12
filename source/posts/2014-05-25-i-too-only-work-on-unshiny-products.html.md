@@ -2,7 +2,7 @@
 title: I, Too, Only Work On Unshiny Products
 date: 2014-05-25 11:55 PDT
 description: "Jeff Domke's article about working on 'unshiny' products sums up my view of my own work at Optimizely. The crux of his argument is that many designers are drawn to working on 'shiny' products — products that are pretty and lauded in the design community — but 'unshiny' products are a lot more interesting to work on."
-tags: design
+tags: "product design"
 ---
 
 [Jeff Domke's article](https://medium.com/design-founders/847701785dae) about working on "unshiny" products sums up my view of my own work at [Optimizely](https://www.optimizely.com). The crux of his argument is that many designers are drawn to working on "shiny" products — products that are pretty and lauded in the design community — but "unshiny" products are a lot more interesting to work on. They're often solving difficult problems, and have more room for you to make an impact. You're working to make the product reach its potential. Shiny products, on the other hand, have reached that potential, and you are less able to make your mark.

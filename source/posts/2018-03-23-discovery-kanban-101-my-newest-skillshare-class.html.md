@@ -3,7 +3,7 @@ title: 'Discovery Kanban 101: My Newest Skillshare Class'
 date: 2018-03-23 14:50 PDT
 description: "I just published my first Skillshare class — Discovery Kanban 101: How to Integrate User-Centered Design with Agile"
 relative_image_url: /images/discovery-kanban-101-title-card.jpg
-tags: ["Discovery Kanban", "process", "design", "Skillshare"]
+tags: ["Discovery Kanban", "design process", "product design"]
 ---
 
 I just published my first Skillshare class — [Discovery Kanban 101: How to Integrate User-Centered Design with Agile](https://www.skillshare.com/classes/Discovery-Kanban-101-How-to-Integrate-User-Centered-Design-with-Agile/677077315?teacherRef=748023&via=teacher-referral&utm_campaign=teacher-referral&utm_source=ShortUrl&utm_medium=teacher-referral). From the class description:

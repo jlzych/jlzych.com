@@ -2,7 +2,7 @@
 title: Performance comparison of serving fonts through Typekit vs Cloud.typography
 date: 2013-08-15 22:40 PDT
 description: "On optimizely.com, we just switched our typeface from Proxima Nova (via Typekit), to Gotham (via Hoefler & Frere-Jones Cloud.typography). Gotham has long been what we used in Photoshop mocks, but we made the switch mostly because it just looks better. We've long known that Typekit can be a bottleneck to our page load, so I took this opportunity to compare the performance impact of each service."
-tags: performance
+tags: [performance, "frontend dev"]
 ---
 
 On [optimizely.com](https://www.optimizely.com), we just switched our typeface from Proxima Nova (via [Typekit](http://typekit.com)), to Gotham (via Hoefler & Frere-Jones [Cloud.typography](http://typography.com)). Gotham has long been what we used in Photoshop mocks, but we made the switch mostly because it just looks better. We've long known that Typekit can be a bottleneck to our page load, so I took this opportunity to compare the performance impact of each service.

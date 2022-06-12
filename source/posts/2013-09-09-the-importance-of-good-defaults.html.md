@@ -3,7 +3,7 @@ title: The Importance of Good Defaults
 date: 2013-09-09 18:32 PDT
 description: "One of the simplest and most robust findings from behavioral economics is that when people are faced with a choice they tend to stick with the default option. This sounds like something that shouldn’t have any effect on people."
 relative_image_url: /images/2013-09-09-the-importance-of-good-defaults/default.png
-tags: ["testing theory", "A/B testing", "usability"]
+tags: ["A/B testing", "usability", "behavioral economics"]
 ---
 
 One of the simplest and most robust findings from [behavioral economics](http://en.wikipedia.org/wiki/Behavioral_economics) is that when people are faced with a choice they tend to stick with the default option. This sounds like something that shouldn’t have any effect on people. Common sense leads us to believe we'll always choose whichever option benefits us the most, regardless of the default. Although this intuitively makes sense, numerous studies show that's not the case. For example, most countries have an option for people to donate their organs upon their death. In America, the default choice is to not donate organs, meaning they must specifically check a box on a form (an "opt-in" system). As a result, the consent rate is only about 28%. In contrast, Belgium’s default option is to donate organs (an "opt-out" system), in which about 98% of the population consent to donation ([read the fully study here [pdf]](http://www.dangoldstein.com/papers/DefaultsScience.pdf)).

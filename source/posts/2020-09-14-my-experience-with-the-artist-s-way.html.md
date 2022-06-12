@@ -1,7 +1,7 @@
 ---
 title: My Experience with "The Artist's Way"
 date: 2020-09-14 12:00 PDT
-tags: creativity, books
+tags: [creativity, books, "The Artist's Way"]
 relative_image_url: /images/2020-artists-way/book.jpeg
 description: "Creativity is an innate gift we all possess. And it's part of our nature to use that creativity. I firmly believe this, and so does The Artist's Way author, Julia Cameron. Unfortunately, for most of us, it's stamped out at an early age by education, society, friends, family, and other cultural norms. A lucky few get encouragement at a young age, or have enough creative energy to push through those headwinds, but the rest of us are left thinking we aren't \"creative.\" Fortunately, Julia is here to undo that damage."
 ---

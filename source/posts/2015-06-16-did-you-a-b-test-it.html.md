@@ -2,7 +2,7 @@
 title: '“Did You A/B Test It?”'
 date: 2015-06-16 08:49 PDT
 description: "After launching a feature, coworkers often ask me, 'Did you A/B test it?' While the question is well-meaning, A/B testing isn’t the only way, or even the best way, of making data-informed decisions in product development. In this post, I’ll explain why, and provide other ways of validating hypotheses to assure your coworkers that a feature was worth building."
-tags: ab testing, user-centered design
+tags: "A/B testing"
 ---
 
 After launching a feature, coworkers often ask me, "Did you A/B test it?" While the question is well-meaning, A/B testing isn’t the only way, or even the best way, of making data-informed decisions in product development. In this post, I’ll explain why, and provide other ways of validating hypotheses to assure your coworkers that a feature was worth building.

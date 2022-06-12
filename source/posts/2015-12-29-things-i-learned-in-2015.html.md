@@ -2,7 +2,7 @@
 title: Things I Learned in 2015
 date: 2015-12-29 14:52 PST
 description: "I learned that writing helps clarify my thoughts. It makes me much more articulate. It forces me to engage with a topic and wrestle it to the ground so that I understand it much more deeply than I did when I started."
-tags: "Things I Learned"
+tags: "retrospective"
 ---
 
 I learned that writing helps clarify my thoughts. It makes me much more articulate. It forces me to engage with a topic and wrestle it to the ground so that I understand it much more deeply than I did when I started.

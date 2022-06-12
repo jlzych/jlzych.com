@@ -3,7 +3,7 @@ title: "Everyone’s Reading This: Increase Conversions With Social Proof"
 date: 2013-08-02
 description: "Looking for a way to get users to engage with your product or service? Just tell them everyone else is doing it. Although we like to think of ourselves as independent beings who make our own decisions, studies show that touting popularity and ubiquity is a very effective form of persuasion."
 relative_image_url: /images/basecamp-homepage.png
-tags: ["testing theory", "A/B testing"]
+tags: ["A/B testing", "behavioral economics"]
 ---
 
 Looking for a way to get users to engage with your product or service? Just tell them everyone else is doing it. Although we like to think of ourselves as independent beings who make our own decisions, studies show that touting popularity and ubiquity is a very effective form of persuasion.

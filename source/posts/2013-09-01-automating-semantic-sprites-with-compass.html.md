@@ -2,7 +2,7 @@
 title: Automating Semantic Sprites with Compass
 date: 2013-09-01 21:15 PDT
 description: "In my previous post, I explained how to use image sprites semantically. But as with all image spriting, setting each sprite's size and position is a pain. Compass can automate this, but it's designed with the assumption that all your sprites will be background images of elements."
-tags: html, css, spriting, compass
+tags: "frontend dev"
 ---
 
 In my [previous post](http://jlzych.com/2013/08/26/a-more-semantic-approach-to-spriting-images/), I explained how to use image sprites semantically. But as with all image spriting, setting each sprite's size and position is a pain. [Compass](http://compass-style.org) can automate this, but it's designed with the assumption that all your sprites will be background images of elements. Even so, Compass provides a number of under-documented functions that can help automate my technique.

@@ -1,7 +1,7 @@
 ---
 title: Adding clarity by removing information
 date: 2019-03-17 19:54 PDT
-tags: design, "clickstream analysis", "ux writing"
+tags: ["product design", writing]
 description: "“Where’s the clipboard?” A customer wrote this in to our support team after using our “Copy with cite” feature. But who doesn't know where the clipboard is?"
 relative_image_url: /images/2019-03-17-adding-clarity-by-removing-information/1-copied-to-clipboard.png
 ---

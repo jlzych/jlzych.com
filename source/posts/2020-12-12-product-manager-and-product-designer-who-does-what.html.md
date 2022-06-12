@@ -1,7 +1,7 @@
 ---
 title: 'Product Manager and Product Designer: Who Does What?'
 date: 2020-12-12 17:29 PST
-tags: design, 'product management'
+tags: ["product design", "management"]
 description: "I recently noticed that my team of Product Designers at LaunchDarkly was having trouble navigating the overlap of Product Design and Product Management. No one said it explicitly, but after hearing some frustrations in 1:1s and team meetings I connected the dots that this issue was the common variable across a variety of complaints."
 relative_image_url: '/images/2020-pd-pm-overlap/overlap.png'
 ---

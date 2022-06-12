@@ -2,7 +2,7 @@
 title: Designing Backwards
 date: 2016-03-13 19:19 PDT
 description: "Action is the bedrock of drama. Action drives the play forward and makes for a compelling story that propels the audience to the end. And an engaging play is just a series of connected actions, according to David Ball in 'Backwards & Forwards.'"
-tags:
+tags: "product design"
 ---
 
 Action is the bedrock of drama. Action drives the play forward and makes for a compelling story that propels the audience to the end. And an engaging play is just a series of connected actions, according to David Ball in _[Backwards & Forwards](http://www.amazon.com/Backwards-Forwards-Technical-Manual-Reading/dp/0809311100)_.

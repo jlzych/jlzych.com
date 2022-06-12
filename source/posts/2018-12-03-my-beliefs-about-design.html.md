@@ -1,7 +1,7 @@
 ---
 title: My Beliefs About Design
 date: 2018-12-03 13:12 PST
-tags: design, beliefs
+tags: "product design"
 description: 'A list of my deeply held beliefs as a designer.'
 relative_image_url: /images/2018-12-03-my-beliefs-about-design/trees.jpg
 ---

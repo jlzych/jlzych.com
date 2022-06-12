@@ -1,7 +1,7 @@
 ---
 title: Learning the True Power of Artist Dates
 date: 2020-11-23 21:21 PST
-tags: design, "artist's way"
+tags: "The Artist's Way"
 description: "I saw a color palette I liked recently, and wanted to use it on something, but I had no project for it. I decided to just make some fake card UIs (plus I got to use some fonts I had been itching to use for awhile). There was no point to it other than playing with some colors and fonts. No one else saw it (until now). It will never be built. It won't win any design awards."
 relative_image_url: /images/2020-artist-dates/cards.jpg
 ---

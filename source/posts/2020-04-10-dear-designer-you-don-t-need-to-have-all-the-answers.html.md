@@ -1,7 +1,7 @@
 ---
 title: "Dear Designer: You Don't Need to Have All the Answers"
 date: 2020-04-10 13:10 PDT
-tags: design process
+tags: "product design"
 description: "You're working on a project and the team is aligned on the customer problem to be solved, the business value, and success criteria. The project has moved into the solution exploration phase, and now the ball is firmly in your court. The whole team is looking to you to come up with a solution. A stroke of genius the likes of which the world has never seen. The success of this entire project rests on your shoulders. In the words of Ru Paul, don't fuck it up!"
 relative_image_url: '/images/2020-04-dear-designer/team-misunderstanding.png'
 ---

@@ -3,7 +3,7 @@ title: Thoughts on “The Gift”
 date: 2016-12-31 12:47 PST
 description: "I finally finished 'The Gift,' by Lewis Hyde, after reading it on and off for at least the last 4 months (probably more). Overall I really enjoyed it and found it very thought-provoking. At its core it's about creativity, the arts, and the tension between art and commerce."
 relative_image_url: /images/2016-12-31-thoughts-on-the-gift/invocation.jpg
-tags: "books"
+tags: ["books", "creativity"]
 ---
 
 I finally finished "[The Gift](http://www.lewishyde.com/publications/the-gift)," by Lewis Hyde, after reading it on and off for at least the last 4 months (probably more). Overall I really enjoyed it and found it very thought-provoking. At its core it's about creativity, the arts, and the tension between art and commerce — topics which are fascinating to me. It explores the question, how do artists make a living in a market-based economy? (I say "explores the question" instead of "answers" because it doesn't try to definitively answer the question, although some solutions are provided).

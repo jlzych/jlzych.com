@@ -3,7 +3,7 @@ title: "Testing Theory: Mo' Choices, Mo' Problems"
 date: 2014-10-25 13:17 PDT
 description: "When asked, most of us would say we’d prefer more options to choose from, rather than fewer. We want to make the best possible choice, so more options should increase the likelihood we’ll choose correctly. But in actuality, research shows that more choice usually leads to worse decisions, or the abandonment of choice altogether. In this post, I will describe how we can use this knowledge to generate A/B test ideas."
 relative_image_url: /images/2014-10-25-testing-theory-mo-choices-mo-problems/crateandbarrel-noNav.png
-tags: ["testing theory", "A/B testing", "choice sets"]
+tags: ["A/B testing", "behavioral economics"]
 ---
 
 When asked, most of us would say we’d prefer more options to choose from, rather than fewer. We want to make the best possible choice, so more options should increase the likelihood we’ll choose correctly. But in actuality, research shows that more choice usually leads to worse decisions, or the abandonment of choice altogether. In this post, I will describe how we can use this knowledge to generate [A/B test](https://www.optimizely.com/ab-testing/) ideas.

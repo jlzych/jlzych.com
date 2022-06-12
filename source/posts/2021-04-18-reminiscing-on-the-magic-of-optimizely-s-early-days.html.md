@@ -1,7 +1,7 @@
 ---
 title: Reminiscing on the magic of Optimizely’s early days
 date: 2021-04-18 11:19 PDT
-tags: optimizely, memories
+tags: [Optimizely, retrospective]
 description: "Last fall, Optimizely was acquired by Episerver, signaling the official end of Optimizely as I knew it. I've been re-connecting with old Optinauts and reminiscing on the magic of those early days."
 relative_image_url: '/images/2021-optimizely/2-office.jpeg'
 ---

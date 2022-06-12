@@ -1,7 +1,7 @@
 ---
 title: "Site Redesign II: Inspiration"
 date: 2020-02-10 21:53 PST
-tags: redesign, design process
+tags: ["design process", "site redesign", "visual design"]
 description: "Having found my guiding concept in my last post (tl;dr is it should feel like me, but on the internet, as expressed through SoCal summer vibes), I started gathering inspiration for how to translate that into colors, fonts, and an overall site design."
 relative_image_url: "/images/2020-redesign/inspo-1.png"
 ---

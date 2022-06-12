@@ -1,7 +1,7 @@
 ---
 title: "User Research Interview Tip: Shut. Up."
 date: 2019-09-13 18:38 PDT
-tags: [design, research, interviews]
+tags: [product design]
 description: If you were to look at Robert Caro's notebook, you would see lots of "SU"s, short for "Shut Up!", scattered throughout his interview notes. The Pulitzer-prize winning author of "The Power Broker," among other mammoth books, uses this trick to keep himself silent while interviewing subjects.
 ---
 

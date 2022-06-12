@@ -3,7 +3,7 @@ title: Good North Star, Bad North Star
 date: 2022-04-24 15:01 PDT
 description: '"We need a North Star." Most product designers have been asked for one at some point, and it usually causes us to internally groan and roll our eyes (if not externally, too). We''ve all worked on North Stars that are a frustrating waste of time and served no purpose, and where the sole burden was on us to "come up with the vision."'
 relative_image_url: '/images/2022-north-stars/ld-global-search.png'
-tags: ["north star", "product design"]
+tags: "product design"
 ---
 
 "We need a North Star." Most product designers have been asked for one at some point, and it usually causes us to internally groan and roll our eyes (if not externally, too). We've all worked on North Stars that are a frustrating waste of time and served no purpose, and where the sole burden was on us to "come up with the vision."

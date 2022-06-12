@@ -2,7 +2,7 @@
 title: On Being a Generalist
 date: 2014-05-19 21:02 PDT
 description: "The tech community has walls between various disciplines that we see as opposites, such as print vs. digital, text vs. image, and so on. However, the most interesting design happens in the borderlands, where these different media connect."
-tags:
+tags: ["creativity", "product design"]
 ---
 
 I recently read [Frank Chimero](http://frankchimero.com/intros/quilt/)'s excellent article, ["Designing in the Borderlands"](http://frankchimero.com/talks/designing-in-the-borderlands/transcript/). The gist of it is that we (designers, and the larger tech community) have constructed walls between various disciplines that we see as opposites, such as print vs. digital, text vs. image, and so on. However, the most interesting design happens in the borderlands, where these different media connect. He cites examples that combine physical and digital media, but the most interesting bit for me was his thoughts on roles that span disciplines:

@@ -3,7 +3,7 @@ title: My Progress with Hand Lettering
 date: 2017-10-29 21:21 PDT
 description: I started hand lettering about a year and half ago, and I thought it would be fun to see the progress I've made by comparing my early, crappy work to my recent work.
 relative_image_url: /images/scribbles/1708-7-fitter-happier.jpg
-tags: "hand lettering"
+tags: "side project"
 ---
 
 I started hand lettering about a year and half ago, and I thought it would be fun to see the progress I've made by comparing my early, crappy work to my recent work. I started hand lettering because a coworker of mine is a great letterer and I was inspired by the drawings he would make. I tried a few of his pens and found that trying to recreate the words he drew forced me to focus on the shape of the letter and the movement of the pen, which was intoxicating and meditative. So I bought a few pens and started practicing. Here's the progress I've made so far.

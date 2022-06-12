@@ -1,7 +1,7 @@
 ---
 title: 'On Creativity: My modest guide to being more creative'
 date: 2022-06-06 13:29 PDT
-tags: [creativity, The Artist\'s Way]
+tags: [creativity, "The Artist's Way"]
 description: 'Generate lots of options. Refine the best ones until you have something you like.'
 ---
 

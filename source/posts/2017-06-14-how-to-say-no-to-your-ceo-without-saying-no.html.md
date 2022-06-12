@@ -3,7 +3,7 @@ title: How to Say No to Your CEO Without Saying No
 date: 2017-06-14 22:19 PDT
 description: "Shortly after I rolled out Optimizely's Discovery kanban process last year, one of its benefits became immediately obvious: using it as a tool to say No."
 relative_image_url: /images/2017-06-14-how-to-say-no-to-your-ceo-without-saying-no/kanban-board.jpg
-tags: kanban
+tags: "management"
 ---
 
 Shortly after I rolled out [Optimizely's Discovery kanban process](/2016/07/17/discovery-kanban-at-optimizely/) last year, one of its benefits became immediately obvious: using it as a tool to say No.

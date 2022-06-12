@@ -2,7 +2,7 @@
 title: Framing your message for maximum impact
 date: 2013-09-30 21:09 PDT
 description: "A common piece of advice in the website optimization space is to test headlines and copy to find the optimal messaging. But there are endless possibilities and it’s not feasible to test them all, so how do you focus your tests on only the content that’s most likely to have an impact? Having a good hypothesis of why a change will be effective is key, and one such theory is framing."
-tags: ["testing theory", "A/B testing", "framing"]
+tags: ["A/B testing", "behavioral economics"]
 ---
 
 A common piece of advice in the website optimization space is to test headlines and copy to find the optimal messaging. But there are endless possibilities and it’s not feasible to test them all, so how do you focus your tests on only the content that’s most likely to have an impact? Having a good hypothesis of why a change will be effective is key, and one such theory is **framing**.

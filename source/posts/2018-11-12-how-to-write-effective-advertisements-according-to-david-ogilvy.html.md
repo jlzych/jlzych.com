@@ -1,7 +1,7 @@
 ---
 title: How to Write Effective Advertisements, according to David Ogilvy
 date: 2018-11-12 22:07 PST
-tags: ["advertising"]
+tags: ["writing"]
 description: 'David Ogilvy is known as the “Father of Advertising." He earned that moniker by pioneering the use of research to come up with effective ads and measure their impact. He breaks down his methods in his book "Ogivly on Advertising," which is just as relevant today as it was when it was written in 1983. Since I’ve found his techniques useful, I’m publishing my notes here so I can easily refer back to them and share them.'
 ---
 

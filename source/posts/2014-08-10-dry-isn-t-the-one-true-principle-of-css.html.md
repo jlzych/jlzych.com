@@ -2,7 +2,7 @@
 title: DRY isn't the One True Principle of CSS
 date: 2014-08-10 15:50 PDT
 description: "Ben Frain wrote a great article of recommendations for writing long-living CSS that's authored by many people (e.g. CSS for a product). The whole thing is worth reading, but I especially agree with his argument against writing DRY (Don't Repeat Yourself) code at the expense of maintainability."
-tags:
+tags: "frontend dev"
 ---
 
 [Ben Frain](http://benfrain.com/) wrote a [great article](http://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/) of recommendations for writing long-living CSS that's authored by many people (e.g. CSS for a product). The whole thing is worth reading, but I especially agree with his argument against writing [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself) (Don't Repeat Yourself) code at the expense of maintainability. He says:

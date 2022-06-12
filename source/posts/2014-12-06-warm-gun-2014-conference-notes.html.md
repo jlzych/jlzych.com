@@ -2,7 +2,7 @@
 title: Warm Gun 2014 Conference Notes
 date: 2014-12-06 18:53 PST
 description: "This year's Warm Gun conference was great, just like last year's. This year generally seemed to be about using design to generate and validate product insights, e.g. through MVPs, prototyping, researching, etc."
-tags: ["conference notes", "warm gun"]
+tags: ["conference notes"]
 ---
 
 This year's [Warm Gun](http://www.warmgun.com/) conference was great, just like last year's. This year generally seemed to be about using design to generate and validate product insights, e.g. through MVPs, prototyping, researching, etc.

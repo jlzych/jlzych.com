@@ -2,7 +2,7 @@
 title: Why we built the Optimizely Styleguide
 date: 2013-11-11 12:16 PST
 description: "A few months ago, myself and the design team created the Optimizely Stylguide. It's a living document of our brand standards and the visual style of our site. Designing, building, and writing the content for it took a significant amount of time, but it was worth the effort. In this post I'm going to explain why we did it."
-tags: [styleguide, Optimizely]
+tags: ["design systems", Optimizely]
 ---
 
 A few months ago, myself and the design team created the Optimizely Stylguide _(note: the styleguide has been deprecated)_. It's a living document of our brand standards and the visual style of our site. Designing, building, and writing the content for it took a significant amount of time, but it was worth the effort. In this post I'm going to explain why we did it.

@@ -3,7 +3,7 @@ title: Managing Design work with Discovery Kanban at Optimizely
 date: 2016-09-20 20:21 PDT
 description: In my previous article, I described how we transformed our Agile development process at Optimizely to include research and design by implementing our own flavor of Discovery kanban. In this article, I’ll go a level deeper to describe all the stages research and design work moves through during the discovery process.
 relative_image_url: /images/2016-09-20-managing-design-work-with-discovery-kanban-at-optimizely/1-updating-board.jpeg
-tags: ["Discovery Kanban", "process", "design"]
+tags: ["Discovery Kanban", "Optimizely", "product design", "design process"]
 ---
 
 _Update 3/23/18: I created a [Skillshare class](https://www.skillshare.com/classes/Discovery-Kanban-101-How-to-Integrate-User-Centered-Design-with-Agile/677077315?teacherRef=748023&via=teacher-referral&utm_campaign=teacher-referral&utm_source=ShortUrl&utm_medium=teacher-referral) to teach you how to implement a Discovery process at your organization._

@@ -1,7 +1,7 @@
 ---
 title: Lessons in Creativity from Leonardo
 date: 2020-05-05 17:06 PDT
-tags: creativity, "Leonardo da Vinci"
+tags: creativity, books
 description: "Creativity is a muscle that we all have. It can be strengthened. It can be practiced. It's not an inherent trait that only a chosen few are anointed with. I firmly believe this, but it's also one of the central themes of Walter Isaacson's biography of Leonardo da Vinci."
 relative_image_url: /images/2020-05-leo/leo.jpg
 ---

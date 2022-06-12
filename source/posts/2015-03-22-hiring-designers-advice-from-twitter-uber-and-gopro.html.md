@@ -2,7 +2,7 @@
 title: "Hiring Designers: Advice from Twitter, Uber, and GoPro"
 date: 2015-03-22 13:57 PDT
 description: Google Ventures invited design leaders from Twitter, Uber, and GoPro to discuss the topic of hiring designers. What follows are my aggregated and summarized notes.
-tags:
+tags: "management"
 ---
 
 _[Google Ventures](https://www.gv.com/design/) invited design leaders from Twitter, Uber, and GoPro to discuss the topic of hiring designers. What follows are my aggregated and summarized notes._

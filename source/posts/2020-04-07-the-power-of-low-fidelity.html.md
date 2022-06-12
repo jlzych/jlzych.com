@@ -1,7 +1,7 @@
 ---
 title: The Power of Low-Fidelity
 date: 2020-04-07 11:53 PDT
-tags: "low-fidelity"
+tags: "product design"
 description: '"I know you’re not there yet, but..." This was how our brand designer began his feedback to one of my product designers in design critique. The product designer presented early designs for a feature he was working on. Most importantly, his work was low-fidelity.'
 relative_image_url: '/images/2020-04-lo-fi/lo-fi-modal.png'
 ---

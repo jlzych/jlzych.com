@@ -1,7 +1,7 @@
 ---
 title: Notes from “Good Strategy / Bad Strategy”
 date: 2018-06-27 14:16 PDT
-tags: strategy, design
+tags: books
 description: 'Strategy has always been difficult for me to pin down. What does a strategy look like? What makes a strategy good or bad? “Good Strategy / Bad Strategy,” by UCLA Anderson School of Management professor Richard P. Rumelt, takes a nebulous concept and makes it concrete.'
 ---
 

@@ -2,7 +2,7 @@
 title: Did you A/B test the redesigned preview tool?
 date: 2014-03-11 09:50 PDT
 description: "A lot of people have asked me if we A/B tested the redesigned preview tool. The short answer is no. In this post I'm going to explain why."
-tags: ["a/b testing", "Optimizely"]
+tags: ["A/B testing", "Optimizely"]
 ---
 
 A lot of people have asked me if we [A/B tested](https://www.optimizely.com/ab-testing) the [redesigned preview tool](/2014/02/11/re-designing-optimizely-s-preview-tool/). The question comes in two flavors: did we use A/B testing to validate impersonation was worth building (a.k.a. fake door testing); and, did we A/B test the redesigned UI against the old UI? Both are good questions, but the short answer is no. In this post I'm going to dig into both and explain why.

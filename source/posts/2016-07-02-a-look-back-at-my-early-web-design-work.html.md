@@ -3,7 +3,7 @@ title: A Look Back at My Early Web Design Work
 date: 2016-07-02 14:41 PDT
 description: "In the spirit of sharing my work, I thought it would be fun to look back at some early web sites I designed and built."
 relative_image_url: /images/2016-07-02-a-look-back-at-my-early-web-design-work/1-ced.png
-tags:
+tags: "retrospective"
 ---
 
 In the spirit of [sharing my work](/2015/08/30/get-comfortable-sharing-shitty-work/), I thought it would be fun to look back at some early web sites I designed and built.

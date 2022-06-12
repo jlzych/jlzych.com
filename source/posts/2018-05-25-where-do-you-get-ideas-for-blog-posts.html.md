@@ -3,7 +3,7 @@ title: Where do you get ideas for blog posts?
 date: 2018-05-25 13:27 PDT
 description: 'People often ask me, “Where do you get ideas for blog posts?” I have many sources, but my most effective one is simple: pay attention to the questions people ask you.'
 relative_image_url: /images/2018-05-25-where-do-you-get-ideas-for-blog-posts/dam.jpg
-tags: creativity, writing
+tags: [creativity, writing, blogging]
 ---
 
 ![A picture of a dam by Anthony Da Cruz on Unsplash](/images/2018-05-25-where-do-you-get-ideas-for-blog-posts/dam.jpg)

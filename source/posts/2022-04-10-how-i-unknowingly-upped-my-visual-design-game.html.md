@@ -2,7 +2,7 @@
 title: How I unknowingly upped my visual design game
 date: 2022-04-10 11:57 PDT
 description: 'As I’ve been building out the team at LaunchDarkly, I realized my eye for visual design details had gotten a lot sharper. I was seeing rough edges and ways to improve UIs that I wouldn’t have caught a few years prior. This was cropping up in the UI work I was doing myself as well. I hadn’t explicitly tried to improve my visual design skills, and professionally have spent more time in management than IC work, so how had this happened?'
-tags: 'visual design'
+tags: ["product design", "visual design"]
 relative_image_url: '/images/2020-redesign/before-after.png'
 ---
 

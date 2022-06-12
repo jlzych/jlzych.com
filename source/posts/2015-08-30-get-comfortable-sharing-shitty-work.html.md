@@ -2,7 +2,7 @@
 title: Get Comfortable Sharing Your Shitty Work
 date: 2015-08-30 15:34 PDT
 description: "After jamming with a friend, she commented that she felt emotionally spent afterwards. Not quite sure what she meant, I asked her to elaborate. She said that improvising music makes you feel vulnerable. You’ve got to put yourself out there, which opens you up to judgement and criticism."
-tags:
+tags: ["product design", "creativity"]
 ---
 
 After jamming with a friend, she commented that she felt emotionally spent afterwards. Not quite sure what she meant, I asked her to elaborate. She said that improvising music makes you feel vulnerable. You’ve got to put yourself out there, which opens you up to judgement and criticism.

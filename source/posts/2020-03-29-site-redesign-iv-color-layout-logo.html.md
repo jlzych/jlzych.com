@@ -1,7 +1,7 @@
 ---
 title: 'Site Redesign IV: Color, Layout, & Logo'
 date: 2020-03-29 17:09 PDT
-tags: redesign, design process
+tags: ["site redesign", "design process", "visual design"]
 description: 'Part IV of my site redesign series. The final post. While I was exploring the world of typography to match my guiding concept, I was also exploring ideas for the color, layout, and logo (some of which you saw in the previous post). I explored all 3 of these together because they were all interrelated. The placement of the logo and navigation dictated their color and style, so I was changing each variable simultaneously.'
 relative_image_url: "/images/2020-redesign/color-layout/2-oranges.png"
 ---

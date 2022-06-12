@@ -1,7 +1,7 @@
 ---
 title: When in the design process should I use components in my design system?
 date: 2021-05-22 15:51 PDT
-tags: ["product design", "design systems"]
+tags: ["product design", "design systems", "design process"]
 description: 'A common mistake I see product designers make is that they start the solution exploration phase by cobbling together UIs out of the components and patterns in their design system (often skipping lo-fi, broad explorations).'
 ---
 

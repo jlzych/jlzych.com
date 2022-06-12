@@ -1,7 +1,7 @@
 ---
 title: My Yardstick for Empathy
 date: 2019-01-08 12:22 PST
-tags: empathy, design
+tags: "product design"
 description: 'How do you know if you‘re being empathetic? It‘s easy to throw the term around, but difficult to actually apply. This is important to understand in my chosen field of design, but can also help anyone improve their interactions with other people.'
 relative_image_url: /images/2019-01-08-my-yardstick-for-empathy/cover.jpg
 ---

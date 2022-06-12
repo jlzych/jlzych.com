@@ -1,7 +1,7 @@
 ---
 title: "Site Redesign III: Typography"
 date: 2020-03-15 16:43 PDT
-tags: redesign, design process
+tags: ["site redesign", "design process", "visual design"]
 description: Before I started moodboarding, or even found my guiding concept, I read The Designer's Dictionary of Type and realized the typography on my site was not particularly warm or human. In this third part of my redesign series, I document the process of choosing new fonts for the site.
 relative_image_url: "/images/2020-redesign/typography/7-explorations.png"
 ---

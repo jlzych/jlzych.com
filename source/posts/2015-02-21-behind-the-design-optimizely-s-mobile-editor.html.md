@@ -3,7 +3,7 @@ title: "Behind the Design: Optimizely's Mobile Editor"
 date: 2015-02-21 14:54 PST
 description: In this post, I will walk you through the design process, show you the sketches and prototypes that led up to the final design of Optimizely's Mobile editor.
 relative_image_url: /images/2015-02-21-behind-the-design-optimizely-s-mobile-editor/8-final-editor.png
-tags: ["design process", Optimizely]
+tags: ["product design", Optimizely, "design process"]
 ---
 
 On 11/18/14, Optimizely officially launched [A/B testing for iOS apps](https://www.optimizely.com/mobile). This was a big launch because our product had been in beta for months, but none of us felt proud to publicly launch it. To get us over the finish line, we focused our efforts on building out an MVPP — a Minimum Viable Product we’re Proud of (which [I wrote about previously](/2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/)). A core part of the MVPP was redesigning our editing experience from scratch. In this post, I will walk you through the design process, show you the sketches and prototypes that led up to the final design, and the lessons learned along the way, told from my perspective as the Lead Designer.

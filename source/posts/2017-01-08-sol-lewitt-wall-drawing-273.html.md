@@ -3,7 +3,7 @@ title: Sol LeWitt - Wall Drawing #273
 date: 2017-01-08 15:10 PST
 description: "I recently saw Sol LeWitt's Wall Drawing #273 at the SF MOMA, which really stayed with me after leaving the museum. In particular, I like that it wasn't drawn by the artist himself, but rather he wrote instructions for draftspeople to draw this piece directly on the walls of the museum, thus embracing some amount of variability."
 relative_image_url: /images/2017-01-08-sol-lewitt-wall-drawing-273/wall7.jpg
-tags: ["Sol LeWitt", "art"]
+tags: ["side project", "frontend dev"]
 ---
 
 I recently saw [Sol LeWitt's](https://en.wikipedia.org/wiki/Sol_LeWitt) Wall Drawing #273 at the [SF MOMA](https://www.sfmoma.org/), which really stayed with me after leaving the museum. In particular, I like that it wasn't drawn by the artist himself, but rather he wrote instructions for draftspeople to draw this piece directly on the walls of the museum, thus embracing some amount of variability. From the museum's description:
