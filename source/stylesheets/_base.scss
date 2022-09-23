@@ -15,6 +15,7 @@ body {
   line-height: $body-font-line-height;
   min-height: 100vh;
   padding: 13px;
+  position: relative;
 
   // OpenType features: kerning, ligatures
   text-rendering: optimizeLegibility;
@@ -34,6 +35,21 @@ body {
     font-size: 0.9rem;
     line-height: 1.45;
   }
+}
+
+#noiseSvg, #noise, #noiseContrastIncreaser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: overlay;
+  z-index: -1;
+}
+
+#noiseContrastIncreaser {
+  background-color: black;
+  opacity: 0.6;
 }
 
 ::selection {
@@ -366,7 +382,7 @@ img ~ em {
   color: $de-emphasized-text;
   font-size: 0.75em;
   margin: 0;
-  padding-left: calc(10vw + #{$content-left-gutter});
+  padding-left: 1em;
   padding-top: 1.3em;
   padding-bottom: 1em;
 
