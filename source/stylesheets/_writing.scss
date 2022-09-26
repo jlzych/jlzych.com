@@ -34,43 +34,51 @@ $writing-font-color--lighter: #201D25;
 .writing__header {
   background: #A9D8B4;
   background: linear-gradient(250deg, #c2e69c 4%, #64b3f4 122%);
+  clip-path: ellipse(115% 50% at 50% 40%);
   font-family: $writing-font-headline;
-  min-height: 85vh;
-  padding: 8% 0;
-  transition: -webkit-filter 0.5s ease,
-              filter 0.5s ease;
+  min-height: 90vh;
+  overflow: hidden;
+  padding-bottom: 15vh;
+  transition: -webkit-filter 1.5s ease,
+              filter 1.5s ease;
   width: 100%;
 
   // Display properties
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: url(#noiseFilter) brightness(0.4) contrast(1.1);
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
 }
 
 .writing__headline {
-  font-size: 102pt;
+  font-size: clamp(60px, 15vw, 150px);
   font-weight: 400;
   line-height: 1;
   margin: 0;
   text-align: center;
-
-  @media #{$breakpoint-small} {
-    font-size: 94px;
-  }
+  letter-spacing: -1.1px;
 }
 
 .writing__headline--intro {
   display: block;
-  font-size: 38pt;
+  font-size: clamp(24px, 5vw, 60px);
   font-style: italic;
+  letter-spacing: 0;
   margin-bottom: 0.25em;
 
   // For arrow positioning
   position: relative;
-
-  @media #{$breakpoint-small} {
-    font-size: 36px;
-  }
 }
 
 .arrow {

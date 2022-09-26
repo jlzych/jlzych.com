@@ -35,7 +35,7 @@ body {
     line-height: 1.45;
   }
 
-  &::after {
+  &:not(.writing)::after {
     content: '';
     position: absolute;
     top: 0;
