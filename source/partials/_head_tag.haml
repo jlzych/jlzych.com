@@ -20,6 +20,15 @@
 
   %title= @page_title
 
+  / Google tag (gtag.js)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFVVB7QHJP"></script>
+  :javascript
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QFVVB7QHJP');
+
   %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes")
   %meta(name="apple-mobile-web-app-status-bar-style" content="black")
   %meta(name="apple-mobile-web-app-capable" content="yes")
