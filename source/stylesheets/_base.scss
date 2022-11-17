@@ -625,7 +625,7 @@ img ~ em {
   fill: $black;
 }
 
-// Tags stff
+// Tags stuff
 
 .tag {
   background-color: $selection-color;
@@ -674,4 +674,9 @@ img ~ em {
   &:visited {
     color: $button-text-color; // Override default link style
   }
+}
+
+// Codepen embed
+.cp_embed_wrapper {
+  margin-bottom: 1em;
 }
