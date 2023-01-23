@@ -236,8 +236,10 @@ img ~ em {
 }
 
 .grid {
+  --grid-sidebar-width: 140px;
+
   display: grid;
-  grid-template-columns: 140px minmax(200px, 700px) 140px;
+  grid-template-columns: var(--grid-sidebar-width) minmax(200px, 700px) var(--grid-sidebar-width);
   grid-column-gap: 3.5%;
   grid-template-rows: 75px auto;
   grid-template-areas:
@@ -247,7 +249,9 @@ img ~ em {
   padding: 15px 25px;
 
   @media #{$breakpoint-med} {
-    grid-template-columns: 120px auto;
+    --grid-sidebar-width: 120px;
+
+    grid-template-columns: var(--grid-sidebar-width) auto;
     grid-template-areas:
       ". navigation"
       "monogram content";
@@ -687,4 +691,45 @@ img ~ em {
 // Codepen embed
 .cp_embed_wrapper {
   margin-bottom: 1em;
+}
+
+.callout {
+  background: radial-gradient(166.64% 98.9% at 50% 1.1%, #FEDCCD 0%, #FEE1D1 100%);
+  border-radius: 24px;
+  padding: 0.5rem 1rem;
+  box-shadow:
+    inset 0px 1px 1px #F89766,
+    inset 0px 1px 8px hsla(20, 92, 69, 0.08),
+    inset 0px 1px 17px hsla(20, 92, 69, 0.06);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+
+  &.callout-right {
+    width: 60%;
+    float: right;
+    margin-left: 1rem;
+    margin-right: calc(var(--grid-sidebar-width) * -1);
+  }
+
+  &.callout-left {
+    width: 60%;
+    float: left;
+    margin-right: 1rem;
+    margin-left: calc(var(--grid-sidebar-width) * -1);
+  }
+
+  ul {
+    padding-left: 0.75em;
+  }
+
+  @media #{$breakpoint-med} {
+    --grid-sidebar-width: 0;
+
+    &.callout-left,
+    &.callout-right {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
