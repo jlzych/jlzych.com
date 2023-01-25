@@ -17,26 +17,35 @@ It’s 4am. Your alarm’s going off. You’re bleary-eyed and tired but have to
     <strong>Target customer</strong><br />
     Developers & release managers
   </p>
-  <ul>
-    <li>My role: Shaping and directing the work as the Head of Product Design (at start), then the sole Product Designer (for GA launch).
-    <li>Company: LaunchDarkly, the #1 platform for managing feature flags
-    <li>Target customer: Developers & release managers
-    <li>Team: I worked with the leadership team (Co-founder/CTO, SVP Eng/Product) to shape the solution, then a product manager, product designer, engineering manager, and 5 engineers to build and release from early access program (EAP) through a full launch to all Enterprise customers.
-    <li>Timeline: Aug. 2021 to Jan. 2022 (launch to all Enterprise customers), with an early access program starting in Nov. 2021 (EAP start)
-    <li>Impact
+
+  <p>
+    <strong>Team</strong><br />
+    I worked with the leadership team (Co-founder/CTO, SVP Eng/Product) to shape the solution, then a product manager, product designer, engineering manager, and 5 engineers to build and release from early access program (EAP) through a full launch to all Enterprise customers.
+  </p>
+
+  <p>
+    <strong>Timeline</strong><br />
+    Aug. 2021 to Jan. 2022 (launch to all Enterprise customers), with an early access program starting in Nov. 2021 (EAP start)
+  </p>
+
+  <p>
+    <strong>Impact</strong>
     <ul>
-      <li>Steady adoption from EAP through GA, resulting in some of our biggest accounts relying on it for feature launches.
-      <li>Customer quote: “Feature Workflows saves my team time, helps us to avoid mistakes, and enables us to stage automatic rollouts.” —James Pipe, Head of Product at DroneDeploy
-      <li>Key part of the demo to prospects
+      <li>Steady adoption from EAP through GA
+      <li>Some of our biggest accounts rely on it for feature launches
+      <li>Customer quote: <em>Feature Workflows saves my team time, helps us to avoid mistakes, and enables us to stage automatic rollouts.</em> —James Pipe, Head of Product at DroneDeploy
     </ul>
-    <li>Skills used in this project
-      <ul>
-        <li>Led a workshop with product leadership to shape the project by translating the co-founders vision into whiteboarded sketches and lo-fi user flows
-        <li>Directed the work of a product designer
-        <li>Led customer interviews during EAP
-        <li>Visual design and polish of hi-fidelity screens
-      </ul>
-  </ul>
+  </p>
+
+  <p>
+    <strong>Skills used</strong>
+    <ul>
+      <li>Leading workshops
+      <li>Directed work of a product designer
+      <li>Customer interviews
+      <li>Flows, wireframes,and visual design
+    </ul>
+  </p>
 </aside>
 
 These are the hoops we made our customers (and ourselves) jump through every time they launched a new feature. It was a painful, manual, and occasionally error-prone process. It was an obvious pain point that we should solve, and one that no competitor had a solution to, either.
@@ -56,11 +65,22 @@ The first half of the day was **opportunity framing**: what pain points do custo
 
 The second half of the day was **solution exploration**: whiteboarding all the pieces of the finished solution. We started high-level going through all the screens we’ll need and the places in the product that we’ll need to update, then dove into fleshing those out with more sketches.
 
-![Workshop](/images/case-studies/workflow-builder/workshop1.jpg)
+<div class="cs-image-grid">
+  <a href="/images/case-studies/workflow-builder/workshop1.jpg">
+    <img src="/images/case-studies/workflow-builder/workshop1.jpg" />
+    <em>Caption</em>
+  </a>
 
-![Workshop 2](/images/case-studies/workflow-builder/workshop2.jpg)
+  <a href="/images/case-studies/workflow-builder/workshop2.jpg" class="cs-gridItem-2h">
+    <img src="/images/case-studies/workflow-builder/workshop2.jpg" />
+    <em>Caption</em>
+  </a>
 
-![Workshop 3](/images/case-studies/workflow-builder/workshop3.jpg)
+  <a href="/images/case-studies/workflow-builder/workshop3.jpg">
+    <img src="/images/case-studies/workflow-builder/workshop3.jpg" />
+    <em>Caption</em>
+  </a>
+</div>
 
 Some of the key challenges we had to solve were:
 
@@ -90,17 +110,37 @@ At the end of the workshop we felt pretty confident in the overall solution. It 
 
 Urgency was important here because we wanted to launch an early access program (EAP) in November at our annual user conference, and it was already August, so I spent about a day doing quick-and-dirty mocks. I didn’t get bogged down in the details and just focused on the core screens and flows we had discussed the previous day.
 
-![Lo-fi system sketch](/images/case-studies/workflow-builder/lo-fi-system-sketch.png)
+<div class="cs-image-grid">
+  <a href="/images/case-studies/workflow-builder/lo-fi-system-sketch.png" class="cs-gridItem-2w">
+    <img src="/images/case-studies/workflow-builder/lo-fi-system-sketch.png" />
+    <em>Caption</em>
+  </a>
 
-![Lo-fi 1](/images/case-studies/workflow-builder/lo-fi-flow1.png)
+  <a href="/images/case-studies/workflow-builder/lo-fi-flow1.png">
+    <img src="/images/case-studies/workflow-builder/lo-fi-flow1.png" />
+    <em>Caption</em>
+  </a>
 
-![Lo-fi 2](/images/case-studies/workflow-builder/lo-fi-flow2.png)
+  <a href="/images/case-studies/workflow-builder/lo-fi-flow2.png">
+    <img src="/images/case-studies/workflow-builder/lo-fi-flow2.png" />
+    <em>Caption</em>
+  </a>
 
-![Lo-fi 3](/images/case-studies/workflow-builder/lo-fi-flow3.png)
+  <a href="/images/case-studies/workflow-builder/lo-fi-flow3.png">
+    <img src="/images/case-studies/workflow-builder/lo-fi-flow3.png" />
+    <em>Caption</em>
+  </a>
 
-![Lo-fi 4](/images/case-studies/workflow-builder/lo-fi-flow4.png)
+  <a href="/images/case-studies/workflow-builder/lo-fi-flow4.png">
+    <img src="/images/case-studies/workflow-builder/lo-fi-flow4.png" />
+    <em>Caption</em>
+  </a>
 
-![Lo-fi 1](/images/case-studies/workflow-builder/lo-fi-otherscreens.png)
+  <a href="/images/case-studies/workflow-builder/lo-fi-otherscreens.png" class="cs-gridItem-2w">
+    <img src="/images/case-studies/workflow-builder/lo-fi-otherscreens.png" />
+    <em>Caption</em>
+  </a>
+</div>
 
 I got a quick thumbs up from leadership that everything matched what we discussed, and from there we reviewed these mocks with the team who was going to build it. Overall everything was clear, and the questions were mostly about specific details that we were leaving up to the team to fill in. No questions they raised upended any of our original thinking.
 
@@ -119,25 +159,46 @@ After the product designer fleshed out our lo-fi mocks, he ran usability tests w
 
 ### Early Access Program
 
+<aside class="callout callout-right">
+  <h4>EAP exposes a gap</h4>
+
+  <p>We discovered one important gap to fill: workflows that required approval didn’t link to the page where you could approve or deny that request. Users would have to leave the workflow and navigate through the rest of the product to get to the approval request page, creating unnecessary friction that could easily be solved by linking directly to this page (approval requests are like pull requests in GitHub, and we weren’t linking to it).</p>
+
+  <details>
+    <summary>Keep reading</summary>
+
+    <p>The fix was relatively simple: add a button to view the approval request.</p>
+
+    <p>I like this story because it highlights the importance of early access programs for big launches like this: it was an obvious gap once a customer pointed it out, but we hadn’t thought of it upfront or caught it in usability testing. It’s the type of enhancement you find only through real-world usage.</p>
+
+    <a href="/images/case-studies/workflow-builder/add-approval-request-button.png">
+      <img src="/images/case-studies/workflow-builder/add-approval-request-button.png">
+    </a>
+  </details>
+</aside>
+
 In mid-November (just over 3 months after the workshop) we launched the Early Access Program to let select customers use the feature and give us feedback before we launched to all Enterprise customers.
 
 About this time the designer working on this project left, so I took over primary design responsibilities. Myself and the PM did follow up conversations with EAP users and watched FullStory sessions to learn what needed to be improved before launch.
 
 Most of the feedback matched what we heard in the usability testing: the feature was broadly useful and valuable, but people wanted to use more flag targeting changes, and wanted to save workflows as templates.
 
-We discovered one important gap to fill: workflows that required approval didn’t link to the page where you could approve or deny that request. Users would have to leave the workflow and navigate through the rest of the product to get to the approval request page, creating unnecessary friction that could easily be solved by linking directly to this page (approval requests are like pull requests in GitHub, and we weren’t linking to it). The fix was relatively simple: add a button to view the approval request.
+<div class="cs-image-grid">
+  <a href="/images/case-studies/workflow-builder/eap-builder.png">
+    <img src="/images/case-studies/workflow-builder/eap-builder.png" />
+    <em>Caption</em>
+  </a>
 
-<a href="/images/case-studies/workflow-builder/add-approval-request-button.png">
-  <img src="/images/case-studies/workflow-builder/add-approval-request-button.png">
-</a>
+  <a href="/images/case-studies/workflow-builder/eap-wf-bubbles.png">
+    <img src="/images/case-studies/workflow-builder/eap-wf-bubbles.png" />
+    <em>Caption</em>
+  </a>
 
-I like this story because it highlights the importance of early access programs for big launches like this: it was an obvious gap once a customer pointed it out, but we hadn’t thought of it upfront or caught it in usability testing. It’s the type of enhancement you find only through real-world usage.
-
-![EAP 1](/images/case-studies/workflow-builder/eap-builder.png)
-
-![EAP WF bubbles](/images/case-studies/workflow-builder/eap-wf-bubbles.png)
-
-![EAP WF tab](/images/case-studies/workflow-builder/eap-wf-tab.png)
+  <a href="/images/case-studies/workflow-builder/eap-wf-tab.png">
+    <img src="/images/case-studies/workflow-builder/eap-wf-tab.png" />
+    <em>Caption</em>
+  </a>
+</div>
 
 ## Preparing for launch
 
@@ -146,7 +207,7 @@ In addition to the feedback we got during the EAP, there was some functionality 
 ![Progressive rollout](/images/case-studies/workflow-builder/progressive-rollout.png)
 
 <aside class="callout">
-  <h4>Sidebar: A deep-dive into workflow builder read-only view</h4>
+  <h4>Sidebar: Design details of workflow builder read-only view</h4>
 
   <p>An enhancement we added for GA was the ability to view in-progress and completed workflows in a read-only view. This view needed to:</p>
 
@@ -155,43 +216,47 @@ In addition to the feedback we got during the EAP, there was some functionality 
     <li>Make it clear what had already ran, what was currently running, and what had yet to run
   </ul>
 
-  <p>The team and I discussed three options of increasing complexity and effort: crawl (just show the workflow builder with disabled fields, no distinguishing completed steps from incomplete. Least effort), walk (show which stages had completed, but not individual steps. Medium effort), and run (use iconography and color to distinguish completed steps and stages from incomplete ones).</p>
+  <details>
+    <summary>Read on for detailed design decisions</summary>
 
-  <p>The next day I shared quick-and-dirty mockups with the team. The purpose of these mocks was to more concretely discuss level of effort, appetite, and user experience tradeoffs. They were not intended as finished mocks to build, hence I prioritized speed over quality.</p>
+    <p>The team and I discussed three options of increasing complexity and effort: crawl (just show the workflow builder with disabled fields, no distinguishing completed steps from incomplete. Least effort), walk (show which stages had completed, but not individual steps. Medium effort), and run (use iconography and color to distinguish completed steps and stages from incomplete ones).</p>
 
-  <a href="/images/case-studies/workflow-builder/wfb-read-only-artboard1.png">
-    <img src="/images/case-studies/workflow-builder/wfb-read-only-artboard1.png">
-  </a>
+    <p>The next day I shared quick-and-dirty mockups with the team. The purpose of these mocks was to more concretely discuss level of effort, appetite, and user experience tradeoffs. They were not intended as finished mocks to build, hence I prioritized speed over quality.</p>
 
-  <p>After reviewing them we decided the “run” approach wasn’t that much additional effort, and it was a much better experience, so I got to work finalizing that path.</p>
+    <a href="/images/case-studies/workflow-builder/wfb-read-only-artboard1.png">
+      <img src="/images/case-studies/workflow-builder/wfb-read-only-artboard1.png">
+    </a>
 
-  <p>The main detail I wanted to get right was clearly distinguishing which steps had already run from those which hadn’t run. Those that hadn’t run could be in one of two states: it’s either the step we’re currently on, or it will run at a future time. So each step could be in one of three states: already ran, currently running, and will run. The screenshot below shows the Figma artboard of all the explorations I did.</p>
+    <p>After reviewing them we decided the “run” approach wasn’t that much additional effort, and it was a much better experience, so I got to work finalizing that path.</p>
 
-  <a href="/images/case-studies/workflow-builder/wfb-read-only-whole-artboard.png">
-    <img src="/images/case-studies/workflow-builder/wfb-read-only-whole-artboard.png">
-  </a>
+    <p>The main detail I wanted to get right was clearly distinguishing which steps had already run from those which hadn’t run. Those that hadn’t run could be in one of two states: it’s either the step we’re currently on, or it will run at a future time. So each step could be in one of three states: already ran, currently running, and will run. The screenshot below shows the Figma artboard of all the explorations I did.</p>
 
-  <p>Since each step could be in 1 of 3 states, I needed to choose a *visual hierarchy* to focus your attention on the right places. Without that, the page will be a jumble that’s hard to make sense of. When viewing this page, the most urgent thing to know is what’s currently running, followed by future steps (since these two states represent what will happen to your flag’s targeting in the future, and if those are incorrect you can stop the workflow), and least important is the steps that have already ran.</p>
+    <a href="/images/case-studies/workflow-builder/wfb-read-only-whole-artboard.png">
+      <img src="/images/case-studies/workflow-builder/wfb-read-only-whole-artboard.png">
+    </a>
 
-  <p>To get these states visually and hierarchically correct, I played with iconography, color, and shadow. I made past steps recede by graying them out and removing the shadow, current steps jump out by being white and having a drop shadow, and future steps are just white with no shadow.</p>
+    <p>Since each step could be in 1 of 3 states, I needed to choose a *visual hierarchy* to focus your attention on the right places. Without that, the page will be a jumble that’s hard to make sense of. When viewing this page, the most urgent thing to know is what’s currently running, followed by future steps (since these two states represent what will happen to your flag’s targeting in the future, and if those are incorrect you can stop the workflow), and least important is the steps that have already ran.</p>
 
-  <p>Past steps also got a check mark to communicate they successfully ran. Future steps got no icon, and the current step got an “in-progress” icon.</p>
+    <p>To get these states visually and hierarchically correct, I played with iconography, color, and shadow. I made past steps recede by graying them out and removing the shadow, current steps jump out by being white and having a drop shadow, and future steps are just white with no shadow.</p>
 
-  <p>I spent the bulk of my time on the iconography. The variables I played with were position (in the step? outside? in the corner? just on the stage?), color & background (did grayscale suffice? how bright? Should it be in a background circle or just a naked icon? Color the background or the icon?), and size (it should be big enough to be easily noticeable, but not big enough to overwhelm the step or throw off the visual balance). Below is a closeup of a section of the Figma artboard showing some of these explorations.</p>
+    <p>Past steps also got a check mark to communicate they successfully ran. Future steps got no icon, and the current step got an “in-progress” icon.</p>
 
-  <p>Additionally, choosing the right “in-progress” icon was a challenge. An icon for something that is complete is well-worn territory: a check mark. But what about in progress? I tried just an amber circle, an amber ring, an hourglass, a watch, and a few others, but none were immediately clear that they meant “current” or “in progress”.</p>
+    <p>I spent the bulk of my time on the iconography. The variables I played with were position (in the step? outside? in the corner? just on the stage?), color & background (did grayscale suffice? how bright? Should it be in a background circle or just a naked icon? Color the background or the icon?), and size (it should be big enough to be easily noticeable, but not big enough to overwhelm the step or throw off the visual balance). Below is a closeup of a section of the Figma artboard showing some of these explorations.</p>
 
-  <p>Our design system uses Material Icons, which doesn’t include any kind of “in-progress” icon by default, so I searched [Material Design Icons](https://materialdesignicons.com/), which is a community site where people upload icons they made in the style of Material Icons to fill in the gaps in the official library. I found an in progress indicator that was a ring with one half a solid stroke, and the other half a dashed line. I put it on an amber background, reviewed it with the design team, and decided it did the best job of communicating in progress of any of the options.</p>
+    <p>Additionally, choosing the right “in-progress” icon was a challenge. An icon for something that is complete is well-worn territory: a check mark. But what about in progress? I tried just an amber circle, an amber ring, an hourglass, a watch, and a few others, but none were immediately clear that they meant “current” or “in progress”.</p>
 
-  <a href="/images/case-studies/workflow-builder/wfb-read-only-icon-closeup.png">
-    <img src="/images/case-studies/workflow-builder/wfb-read-only-icon-closeup.png">
-  </a>
+    <p>Our design system uses Material Icons, which doesn’t include any kind of “in-progress” icon by default, so I searched [Material Design Icons](https://materialdesignicons.com/), which is a community site where people upload icons they made in the style of Material Icons to fill in the gaps in the official library. I found an in progress indicator that was a ring with one half a solid stroke, and the other half a dashed line. I put it on an amber background, reviewed it with the design team, and decided it did the best job of communicating in progress of any of the options.</p>
 
-  <p>This is the final design I landed on, marked up for the engineers to make sure they got all the details right for each stage (also included is the flow to delete a workflow).</p>
+    <a href="/images/case-studies/workflow-builder/wfb-read-only-icon-closeup.png">
+      <img src="/images/case-studies/workflow-builder/wfb-read-only-icon-closeup.png">
+    </a>
 
-  <a href="/images/case-studies/workflow-builder/wfb-read-only-final.png">
-    <img src="/images/case-studies/workflow-builder/wfb-read-only-final.png">
-  </a>
+    <p>This is the final design I landed on, marked up for the engineers to make sure they got all the details right for each stage (also included is the flow to delete a workflow).</p>
+
+    <a href="/images/case-studies/workflow-builder/wfb-read-only-final.png">
+      <img src="/images/case-studies/workflow-builder/wfb-read-only-final.png">
+    </a>
+  </details>
 </aside>
 
 ## Wrap up or something
