@@ -233,6 +233,10 @@ img ~ em {
   padding-bottom: 3em;
 
   transform: translateZ(0);
+
+  &:has(.cs-hero-image) {
+    padding-top: var(--cs-hero-image-height);
+  }
 }
 
 .grid {
@@ -693,6 +697,20 @@ img ~ em {
   margin-bottom: 1em;
 }
 
+// Mostly cast study stuff below here
+
+.cs-hero-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 190px;
+  clip-path: polygon(0 0, 100% 0, 100% var(--cs-hero-image-height), 0 var(--cs-hero-image-height));
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent var(--cs-hero-image-height));
+  mask-image: linear-gradient(to bottom, black, transparent var(--cs-hero-image-height));
+  filter: brightness(0.7) contrast(1.1) sepia(0.65) saturate(2.2);
+}
+
 .callout {
   background: radial-gradient(166.64% 98.9% at 50% 1.1%, #FEDCCD 0%, #f1bda2 100%);
   border-radius: 24px;
@@ -732,6 +750,10 @@ img ~ em {
       margin-right: 0;
     }
   }
+}
+
+.cs-img-halfWidth {
+  width: 50%;
 }
 
 .cs-image-grid {

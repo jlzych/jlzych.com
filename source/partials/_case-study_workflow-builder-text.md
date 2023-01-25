@@ -52,7 +52,12 @@ These are the hoops we made our customers (and ourselves) jump through every tim
 
 Our solution was the **Workflow Builder**: a visual way to automate feature launches in LaunchDarkly.
 
-![Screenshot of the finished workflow builder](/images/case-studies/workflow-builder/1-finished-wfb.png)
+<a href="/images/case-studies/workflow-builder/1-finished-wfb.png">
+  <img src="/images/case-studies/workflow-builder/1-finished-wfb.png" class="cs-img-halfWidth" />
+  <em>Screenshot of the finished workflow builder</em>
+</a>
+
+![Screenshot of the finished workflow builder]()
 _Screenshot of the finished workflow builder_
 
 ## How’d we get to the workflow builder?
