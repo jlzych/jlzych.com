@@ -57,9 +57,6 @@ Our solution was the **Workflow Builder**: a visual way to automate feature laun
   <em>Screenshot of the finished workflow builder</em>
 </a>
 
-![Screenshot of the finished workflow builder]()
-_Screenshot of the finished workflow builder_
-
 ## How’d we get to the workflow builder?
 
 The pain I described above was well-known to the co-founder — both from experiencing it firsthand, and from talking to customers. As such, he had already had a vision in mind: most software launches are a repeatable process, so we should let customers automate that in LaunchDarkly. Not only would it save time, toil, and prevent errors, but it would be a competitive differentiator to further cement our place as the market leader.
@@ -264,7 +261,7 @@ In addition to the feedback we got during the EAP, there was some functionality 
   </details>
 </aside>
 
-## Wrap up or something
+## Wrap up
 
 <aside class="callout callout-right">
   <h3>Impact</h3>
