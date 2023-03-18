@@ -1,0 +1,42 @@
+.portfolio .container {
+  padding: 0.5rem 2rem 2rem;
+}
+
+.portfolio .monogram {
+  a {
+    top: auto;
+    margin-left: 0;
+
+    &, &:hover {
+      box-shadow: none;
+    }
+  }
+
+  svg {
+    width: 80px;
+  }
+}
+
+.portfolio-headline {
+  margin-top: 13vh;
+  margin-bottom: 26vh;
+  color: $lighter-brown;
+  font-family: $headline-light-font-stack;
+  font-weight: 400;
+}
+
+.headline-highlight {
+  color: $text-color;
+  font-family: $headline-font-stack;
+  font-weight: 600;
+}
+
+.portfolio-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin-top: calc(1.1rem + 0.75em); // total height of the neighboring h3
+}
+
+.portfolio-work h3 {
+  margin-bottom: 0.75em;
+}

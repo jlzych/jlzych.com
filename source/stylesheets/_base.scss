@@ -58,6 +58,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $headline-font-stack;
+  font-weight: 600;
   letter-spacing: 0.02em;
   margin-top: 0;
 
@@ -95,6 +96,12 @@ h2 {
 
   @media #{$breakpoint-small} {
     font-size: 1.15rem;
+  }
+
+  &.subtitle {
+    color: $light-brown;
+    line-height: 1.35;
+    margin-bottom: 0;
   }
 }
 
@@ -274,6 +281,22 @@ img ~ em {
     border-radius: 8px;
     max-width: 100%; // Ensure images stay within the main content at any size
   }
+}
+
+.grid-one-third {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+
+  @media #{$breakpoint-med} {
+    grid-template-columns: auto;
+  }
+}
+
+.grid-three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
 }
 
 // The JZ monogram!

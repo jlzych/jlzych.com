@@ -1,0 +1,82 @@
+---
+title: Jeff Zych's Porfolio · A technical product designer
+layout: false
+description: "TK"
+
+selected_work: [
+  {
+    title: "LaunchDarkly's Workflow Builder",
+    subtitle: "Translating a founder's vision of automating feature flag releases into reality",
+    relative_image_url: /images/case-studies/workflow-builder/1-finished-wfb.png,
+    relative_url: /case-studies/launchdarkly-workflow-builder/
+  },
+  {
+    title: "Gladly’s Actions API",
+    subtitle: "Finding a way to let customers put custom actions in Gladly's customer support tool, which required distilling a complex set of requirements into a simple user experience",
+    relative_image_url: /images/case-studies/gladly-actions-api/4-mid-fi-with-errors.jpg,
+    relative_url: /case-studies/gladly-actions-api/
+  },
+  {
+    title: "Optimizely's Native Mobile A/B Test Editor",
+    subtitle: "Designing an online, no-code A/B test editor for native mobile apps",
+    relative_image_url: /images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png,
+    relative_url: /2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/
+  }
+]
+---
+
+!!! 5
+%html
+  = partial "head_tag"
+
+  %body.portfolio
+    .container
+      -# = partial "header"
+      .monogram
+        =link_to "/", { title: "Home" } do
+          =partial "monogram"
+          %span.name Jeff Zych
+
+      %h1.portfolio-headline
+        Hi, I’m Jeff, a
+        %span.headline-highlight product designer
+        specializing in
+        %span.headline-highlight UI design
+        for developer and technical tools.
+
+      .grid-one-third
+        .portfolio-welcome
+
+          %p.portfolio-subtitle<
+            I have a frontend engineering background and enjoy translating complex, data-heavy problems into simple and beautiful user interfaces. I was formerly at
+            =link_to "LaunchDarkly", "https://launchdarkly.com", target: "_blank"
+            ,
+            =link_to "Gladly", "https://gladly.com", target: "_blank"
+            ,
+            and
+            =link_to "Optimizely", "https://optimizely.com", target: "_blank"
+            \.
+
+          %p
+            =link_to "Resume ↗", "/resume", target: "_blank"
+            ·
+            =link_to "LinkedIn ↗", "https://www.linkedin.com/in/jlzych/", target: "_blank"
+
+        .portfolio-work
+          %h3 Selected work
+
+          .grid-three-col
+            - current_page.data.selected_work.each do |work|
+              .card
+                .card-image-top-container
+                  =image_tag work.relative_image_url, :class => "card-image-top"
+                .card-body
+                  %h4.card-title
+                    =link_to work.title, work.relative_url
+                  %p.card-text
+                    =work.subtitle
+                  %p.card-link
+                    =link_to "Read the case study", work.relative_url
+
+      = partial "footer_tag"
+    = partial "noise"
