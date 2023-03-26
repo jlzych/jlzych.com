@@ -6,6 +6,22 @@
 
 ## Experience
 
+### **Product Designer**, LaunchDarkly <time>4/2022 -- Present</time>
+
+- Designed a brand-new product from scratch, working with a small, nimble team in an environment of high ambiguity to create a revenue-generating product for the company
+- Interviewed customers to hone our target persona, jobs-to-be-done, and value we’re delivering
+- Created a flexible and scalable information architecture and navigation scheme
+- Developed design patterns and components that helped us rapidly spin up new pages and features
+- Wrote product and design principles to guide our decision making
+- Developed and executed a learning plan to drive us to product-market fit
+
+### **Head of Product Design**, LaunchDarkly <time>8/202 -- 4/2022</time>
+
+- Scaled the team from 3 to 12
+- Formed our design systems team, UX Next
+- Directed the reskin of our UI to match our new brand, which launched in sync with the overall brand launch
+- Formalized our product discovery process to make space for research and design
+
 ### **Product Design Manager**, Gladly <time>1/2019 -- 4/2020</time>
 
 * Managed a team of 5 product designers. Provided input and guidance on their work, and reviewed all finished designs to ensure it met our quality bar. Defined career levels to aid career development and coaching.
