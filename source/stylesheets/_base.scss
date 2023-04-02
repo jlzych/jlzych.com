@@ -413,6 +413,10 @@ img ~ em {
     margin: 0 0.25em;
     padding: 0.2em 0.5em;
   }
+
+  a:has(img) {
+    box-shadow: none;
+  }
 }
 
 #site-footer {
@@ -799,4 +803,14 @@ img ~ em {
 
 .cs-gridItem-2w {
   grid-column: 1 / 3;
+}
+
+.u-float-right {
+  float: right;
+  margin-left: 1rem;
+}
+
+.u-float-left {
+  float: left;
+  margin-right: 1rem;
 }
