@@ -1,8 +1,8 @@
 ---
 title: 'Taking the next step in my career: building a company of one'
 date: 2023-05-06 15:10 PDT
-description:
-tags:
+description: "I recently decided to leave LaunchDarkly and take the next step in my career: starting a company of one. I'm going to be a freelance product designer, focusing on design of technical and developer tools."
+tags: career
 ---
 
 I recently decided to leave LaunchDarkly and take the next step in my career: starting a company of one. I'm going to be a freelance product designer, focusing on design of technical and developer tools. This is a niche that requires specific skills and experience, both of which I have: I have a CS degree, was formerly an engineer, a generalist product design background, and I've worked on technical tools for over 10 years now. And there are a lot of developer tools out there with terrible UX, and founders who value good design, so I want to work with those people.
