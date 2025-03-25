@@ -281,6 +281,10 @@ img ~ em {
     border-radius: 8px;
     max-width: 100%; // Ensure images stay within the main content at any size
   }
+
+  iframe {
+    max-width: 100%;
+  }
 }
 
 .grid-one-third {
