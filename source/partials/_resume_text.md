@@ -10,10 +10,6 @@ I'm an **experienced product designer & leader** with **15+ years** building **d
 
 ## Experience
 
-### Owner & Principal Designer, PB & J Designs <time>April 2023 -- Present</time>
-
-Owner and Principal Designer of PB & J Designs, a boutique consultancy specializing in **developer experience and 0-1 product design**. Help founders validate and launch technical products through **user research, rapid prototyping, and scalable design systems**. Select clients include LaunchDarkly, Hyperscout.ai, Flagsmith, and Pragma.
-
 ### **Lead Product Designer**, Pragma <time> May 2024 -- July 2025</time>
 I was the sole Product Designer at Pragma, a series B company building a backend game engine for multiplayer and social games, where I autonomously drove projects from idea to polished designs.
 
@@ -21,6 +17,10 @@ I was the sole Product Designer at Pragma, a series B company building a backend
 - Designed **complex developer flows**, including APIs and function calls, creating novel prototypes for non-UI experiences
 - Redesigned core **information architecture and design system**, resulting in a **cleaner, modern design** and establishing a **scalable foundation for multi-year product roadmap**
 - Led **strategic research initiatives** that directly influenced company direction and product strategy
+
+### Owner & Principal Designer, PB & J Designs <time>April 2023 -- Present</time>
+
+Owner and Principal Designer of PB & J Designs, a boutique consultancy specializing in **developer experience and 0-1 product design**. I help founders validate and launch technical products through **user research, rapid prototyping, and scalable design systems**. Select clients include LaunchDarkly, Hyperscout.ai, Flagsmith, and Pragma.
 
 ### **Product Designer**, LaunchDarkly <time>April 2022 -- April 2023</time>
 
