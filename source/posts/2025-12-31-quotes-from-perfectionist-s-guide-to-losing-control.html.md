@@ -3,6 +3,7 @@ title: Quotes from Perfectionist's Guide to Losing Control
 date: 2025-12-31 15:55 PST
 tags: books, creativity
 description: The quotes that most resonated with me from the book The Perfectionist's Guide to Losing Control, a book about embracing perfectionism as a strength rather than suppressing it.
+relative_image_url: /images/posts/perfectionist-guide-to-losing-control/book-cover.jpg
 ---
 
 Earlier this year I read _[The Perfectionist's Guide to Losing Control](https://amzn.to/4q1tltH)_ by Katherine Morgan Schafler and really really enjoyed it. The quick pitch is that it's a book to help perfectionists embrace their perfectionism as a strength, rather than "tamp down" those tendencies as society would have us do.
