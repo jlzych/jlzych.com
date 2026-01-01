@@ -3,6 +3,7 @@ title: Notes from Make (Sneaky) Art
 date: 2025-12-17 09:24 PST
 description: Notes and tips from the book "Make (Sneaky) Art" by Nishant Jain on building a sketching habit, including techniques like curiosity spirals, anchoring, layers, quick drawing challenges, and simple methods for sketching people.
 tags: books, creativity
+relative_image_url: /images/2025-sneaky-artist/tiny-people.jpeg
 ---
 
 I recently read the book ["Make (Sneaky) Art"](https://amzn.to/4j0h861), which is full of tips and tricks to build your sketching habit. The author, Nishant Jain, calls himself a "sneaky artist" because he was embarassed of his drawings and didn't want people to know he was sketching, but over time he built up a sketching habit and style and shared his techniques in this book.
