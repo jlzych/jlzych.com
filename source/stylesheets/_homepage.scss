@@ -1,0 +1,460 @@
+/**
+ * Homepage specific styles
+ */
+
+// Homepage body class
+.homepage {
+  .container {
+    padding-bottom: 0;
+    min-height: unset;
+    overflow: visible;
+  }
+
+  .above-fold {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "monogram . nav";
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+    padding: 1.5rem 2rem 0;
+
+    @media #{$breakpoint-small} {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "nav"
+        "monogram";
+      padding: 1.5rem 1rem 0;
+    }
+  }
+
+  // Position monogram to stick across entire page
+  .monogram {
+    grid-area: monogram;
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+    z-index: 10;
+    margin: 0;
+
+    a {
+      display: block;
+      box-shadow: none;
+      margin-top: 0;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    svg {
+      width: 140px;
+      height: 100%;
+    }
+
+    @media #{$breakpoint-small} {
+      position: relative;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      margin: 1em 0;
+    }
+  }
+
+  // Position nav at top right, aligned with monogram
+  .nav-main {
+    grid-area: nav;
+    align-self: start;
+    z-index: 10;
+
+    @media #{$breakpoint-small} {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  // Hero spans full width of the above-fold grid
+  .hero {
+    grid-column: 1 / -1;
+  }
+}
+
+// =====================================
+// Hero Section
+// =====================================
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 0;
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 2.5vw;
+  perspective: 1500px;
+  max-height: 100%;
+}
+
+.popup-scene {
+  width: 95vw;
+  max-width: 1280px;
+  max-height: calc(min(100%, 700px));
+  aspect-ratio: 500 / 270;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 1;
+
+  /* Book spine/crease */
+  // &::before {
+  //   content: '';
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   width: 6px;
+  //   height: 100%;
+  //   background: linear-gradient(to bottom,
+  //     transparent 0%,
+  //     rgba(0,0,0,0.08) 50%,
+  //     rgba(0,0,0,0.15) 100%
+  //   );
+  //   pointer-events: none;
+  //   z-index: 100;
+  // }
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: block;
+}
+
+.curved-text {
+  font-family: 'Obviously Demo', 'Arial Black', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  fill: #3d2b1f;
+  letter-spacing: -.08em;
+}
+.inner-text {
+  font-size: 32px;
+}
+
+/* Pop-up layers - each semicircle split into left/right halves */
+.popup-layer {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  max-height: 100%;
+  will-change: transform, filter;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+.popup-left {
+  left: 0;
+  transform-origin: right center;
+  transform: rotateY(90deg) translateZ(0);
+  filter: drop-shadow(-10px 0 30px rgba(0,0,0,0.15));
+  --start-rotate: 90deg;
+  --end-rotate: 90deg;
+  --shadow-x-start: -10px;
+
+  svg {
+    margin-left: auto;
+  }
+}
+
+.popup-right {
+  right: 0;
+  transform-origin: left center;
+  transform: rotateY(-90deg) translateZ(0);
+  filter: drop-shadow(10px 0 30px rgba(0,0,0,0.15));
+  --start-rotate: -90deg;
+  --end-rotate: -90deg;
+  --shadow-x-start: 10px;
+
+  svg {
+    margin-right: auto;
+  }
+}
+
+/* Portrait image - nested inside popup-outer.popup-left, rotates with parent */
+.popup-portrait {
+  position: absolute;
+  bottom: 74%;
+  right: 29%;  // Anchored to parent's bottom-right (center of scene)
+  width: 43%;  // Percentage of parent (which is 50% of scene)
+  transform-origin: bottom right;  // Rotate from the center-bottom of scene
+  transform: rotate(-90deg);  // Start flat/hidden
+  z-index: -1;  // Behind the SVG semicircle
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+
+  // Delay the swing-up until after parent starts folding out
+  animation: portraitRotateIn 1s ease-out .4s forwards;
+}
+
+@keyframes portraitRotateIn {
+  0% {
+    transform: rotate(-80deg);
+  }
+  100% {
+    transform: rotate(-7.5deg);
+  }
+}
+
+/* Phase 1: Time-based fold-out animation on page load */
+.popup-outer { animation: foldOut 0.8s ease-out 0.2s forwards; }
+.popup-middle { animation: foldOut 1.2s ease 0.3s forwards; }
+.popup-inner { animation: foldOut 1.4s ease-out 0.5s forwards; }
+
+@keyframes foldOut {
+  0% {
+    transform: rotateY(var(--start-rotate)) translateZ(1px);
+    filter: drop-shadow(var(--shadow-x-start) 0 30px rgba(0,0,0,0.15));
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(1px);
+    filter: drop-shadow(5px 0 10px rgba(0,0,0,0.35));
+  }
+}
+
+/* Phase 2: Scroll-driven fold-in (only after initial animation completes) */
+.popup-layer.scroll-ready {
+  animation: foldIn linear both;
+  animation-timeline: scroll();
+}
+
+/* Inner folds first, outer folds last */
+.popup-inner.scroll-ready { animation-range: 0% 16%; }
+.popup-middle.scroll-ready { animation-range: 2% 18%; }
+.popup-outer.scroll-ready { animation-range: 4% 20%; }
+
+/* Portrait folds back with the inner layers */
+.popup-portrait.scroll-ready {
+  animation: portraitRotateOut linear both;
+  animation-timeline: scroll();
+  animation-range: 0% 14%;
+}
+
+@keyframes portraitRotateOut {
+  0% {
+    transform: rotate(-7.5deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes foldIn {
+  0% {
+    transform: rotateY(0deg) translateZ(1px);
+    filter: drop-shadow(-1px 0 2px rgba(0,0,0,0.35));
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(var(--end-rotate)) translateZ(1px);
+    filter: drop-shadow(var(--shadow-x-start) 0 30px rgba(0,0,0,0.15));
+    opacity: 0;
+  }
+}
+
+/* Paper styling */
+.popup-layer svg {
+  display: block;
+}
+
+@keyframes pageShadow {
+  to { opacity: 1; }
+}
+
+// =====================================
+// Bento Section (Below the fold)
+// =====================================
+
+.bento-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @media #{$breakpoint-small} {
+    padding: 2rem 1rem;
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  @media #{$breakpoint-small} {
+    font-size: 1.3rem;
+  }
+}
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 3rem;
+}
+
+// =====================================
+// Bento Grid - Apple-style varied card sizes
+// =====================================
+
+.bento-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+// Case studies grid: Featured card spans 2 columns
+.bento-grid--case-studies {
+  grid-template-columns: repeat(2, 1fr);
+
+  // First card (featured) spans full width
+  .bento-card--featured {
+    grid-column: 1 / -1;
+
+    .bento-card__image {
+      height: 280px;
+
+      @media #{$breakpoint-small} {
+        height: 180px;
+      }
+    }
+  }
+
+  @media #{$breakpoint-med} {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Posts grid: 3 equal columns
+.bento-grid--posts {
+  grid-template-columns: repeat(3, 1fr);
+
+  @media #{$breakpoint-med} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$breakpoint-small} {
+    grid-template-columns: 1fr;
+  }
+}
+
+// =====================================
+// Bento Card Styles
+// =====================================
+
+.bento-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: $light-shadow;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $medium-shadow;
+  }
+}
+
+.bento-card__image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+
+  a {
+    display: block;
+    height: 100%;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .bento-card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.bento-card__content {
+  padding: 1.25rem;
+}
+
+.bento-card__title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+
+  a {
+    color: $text-color;
+    box-shadow: none;
+
+    &:hover {
+      color: $accent-color;
+      box-shadow: none;
+    }
+  }
+}
+
+.bento-card__subtitle,
+.bento-card__description {
+  font-size: 0.9rem;
+  color: $light-brown;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.bento-card__date {
+  display: block;
+  font-size: 0.75rem;
+  color: $lighter-brown;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+// Post-specific card styling
+.bento-card--post {
+  .bento-card__image {
+    height: 120px;
+  }
+
+  // For posts without images
+  &:not(:has(.bento-card__image)) {
+    .bento-card__content {
+      padding-top: 1.5rem;
+    }
+  }
+}

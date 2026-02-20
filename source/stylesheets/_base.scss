@@ -332,6 +332,7 @@ img ~ em {
   .name {
     display: inline-block;
     text-indent: -999em;
+    position: absolute;
   }
 } // .monogram
 

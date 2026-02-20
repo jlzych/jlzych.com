@@ -1,18 +1,206 @@
-- page_articles[0..4].each do |article|
-  =partial :post, locals: { article: article }
+---
+title: "Jeff Zych - Product Designer"
+description: "Hi, I'm Jeff, a product designer specializing in UI design for developer and technical tools."
+layout: false
+relative_image_url: /images/me-banner.jpg
 
-.justify-content-center{ :style => "padding-top: 2em; padding-bottom: 4px;" }
-  =link_to "View all posts &raquo;", "/archives", { class: "view-all-link button-light button-large" }
+case_studies: [
+  {
+    title: "Pragma Connect",
+    subtitle: "Using Strategic Research to Drive a $500K Product Pivot",
+    relative_image_url: /images/case-studies/pragma-connect/onboarding-3.png,
+    relative_url: /case-studies/pragma-connect/,
+    featured: true
+  },
+  {
+    title: "LaunchDarkly's Accelerate",
+    subtitle: "Designing LaunchDarkly's third product from the ground up",
+    relative_image_url: /images/case-studies/accelerate/1-accelerate-final.png,
+    relative_url: /case-studies/accelerate/
+  },
+  {
+    title: "LaunchDarkly Workflow Builder",
+    subtitle: "How I translated a founder's vision into reality",
+    relative_image_url: /images/case-studies/workflow-builder/1-finished-wfb.png,
+    relative_url: /case-studies/launchdarkly-workflow-builder/
+  },
+  {
+    title: "Gladly's Actions API",
+    subtitle: "Designing a way for agents to trigger actions in external systems",
+    relative_image_url: /images/case-studies/gladly-actions-api/4-mid-fi-with-errors.jpg,
+    relative_url: /case-studies/gladly-actions-api/
+  }
+]
+---
 
--# - if paginate
--#   .pagination
--#     %p
--#       Page
--#       = page_number
--#       of
--#       = num_pages
--#
--#     - if prev_page
--#       = link_to "&laquo; Previous page", prev_page, { class: "paginate-previous" }
--#     - if next_page
--#       = link_to "Next page &raquo;", next_page, { class: "paginate-next" }
+!!! 5
+%html
+  = partial "head_tag"
+
+  %body.homepage
+    .container
+      .above-fold
+
+        -# Monogram - outside hero so it can stick across entire page
+        %h1.monogram
+          =link_to "/", { title: "Home" } do
+            =partial "monogram"
+            %span.name Jeff Zych
+
+        -# Navigation - top aligned with monogram
+        %nav.nav-main
+          %ul
+            %li=link_to "Writing", "/posts", { title: "Blog Posts" }
+            %li=link_to "Work", "/portfolio", { title: "Portfolio" }
+            %li=link_to "About Me", "/about", { title: "About Jeff Zych" }
+
+        -# Hero Section - Full viewport height
+        %section.hero
+          -# === Highlight settings (tweak these values) ===
+          - highlight_inset = 0.25        # pixels inset from main arc
+          - highlight_opacity = 0.5   # 0-1 (currently ~55%)
+          - highlight_width = 0.5        # stroke width in pixels
+          - highlight_blur = 0.05      # blur radius in pixels
+          - highlight_length = 1     # 0-1, how far down the arc (0.5 = 50%)
+          - highlight_blend = "overlay"  # blend mode (screen, overlay, soft-light, etc.)
+
+          -# Calculate highlight endpoints based on length
+          - angle_rad = highlight_length * Math::PI / 2
+          - outer_r = 225 - highlight_inset
+          - outer_left_end_x = (250 - outer_r * Math.sin(angle_rad)).round
+          - outer_left_end_y = (250 - outer_r * Math.cos(angle_rad)).round
+          - outer_right_end_x = (250 + outer_r * Math.sin(angle_rad)).round
+          - outer_right_end_y = outer_left_end_y
+          - middle_r = 175 - highlight_inset
+          - middle_left_end_x = (250 - middle_r * Math.sin(angle_rad)).round
+          - middle_left_end_y = (250 - middle_r * Math.cos(angle_rad)).round
+          - middle_right_end_x = (250 + middle_r * Math.sin(angle_rad)).round
+          - middle_right_end_y = middle_left_end_y
+          - inner_r = 125 - highlight_inset
+          - inner_left_end_x = (250 - inner_r * Math.sin(angle_rad)).round
+          - inner_left_end_y = (250 - inner_r * Math.cos(angle_rad)).round
+          - inner_right_end_x = (250 + inner_r * Math.sin(angle_rad)).round
+          - inner_right_end_y = inner_left_end_y
+
+          -# Shared path definitions
+          %svg{style: "position:absolute;width:0;height:0;"}
+            %defs
+              %path#textArc1{d: "M 60 250 A 190 190 0 0 1 440 250"}
+              %path#textArc2{d: "M 110 250 A 140 140 0 0 1 390 250"}
+              %filter#highlightBlur
+                %feGaussianBlur{stdDeviation: "#{highlight_blur}"}
+              %filter#paperNoise
+                %feTurbulence{type: "fractalNoise", baseFrequency: "1.5", numOctaves: "5", stitchTiles: "stitch", result: "noise"}
+                %feColorMatrix{type: "saturate", values: "0", in: "noise", result: "grayNoise"}
+                %feComponentTransfer{in: "grayNoise", result: "fadedNoise"}
+                  %feFuncA{type: "linear", slope: "0.4"}
+                %feBlend{mode: "overlay", in: "SourceGraphic", in2: "fadedNoise", result: "blended"}
+                %feComposite{operator: "in", in: "blended", in2: "SourceGraphic"}
+
+          .book
+            .popup-scene
+
+              -# Outer ring - left half (contains portrait)
+              .popup-layer.popup-outer.popup-left
+                -# Portrait image - rotates with parent, then swings up
+                .popup-portrait
+                  = image_tag "me-yellow-sub.png", alt: "Jeff Zych portrait"
+                %svg{viewBox: "0 0 250 250"}
+                  %path{d: "M 25 250 A 225 225 0 0 1 250 25 L 250 250 Z", fill: "#FCF398", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-right edge)
+                  %path{d: "M 250 #{25 + highlight_inset} A #{outer_r} #{outer_r} 0 0 0 #{outer_left_end_x} #{outer_left_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+                  %text.curved-text
+                    %textPath{href: "#textArc1", startOffset: "50%", "text-anchor": "middle"}
+                      Jeff Zych Jeff Zych
+
+              -# Outer ring - right half
+              .popup-layer.popup-outer.popup-right
+                %svg{viewBox: "250 0 250 250"}
+                  %path{d: "M 250 25 A 225 225 0 0 1 475 250 L 250 250 Z", fill: "#FCF398", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-left edge)
+                  %path{d: "M #{250 + highlight_inset} #{25 + highlight_inset} A #{outer_r} #{outer_r} 0 0 1 #{outer_right_end_x} #{outer_right_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+                  %text.curved-text
+                    %textPath{href: "#textArc1", startOffset: "50%", "text-anchor": "middle"}
+                      Jeff Zych Jeff Zych
+
+              -# Middle ring - left half
+              .popup-layer.popup-middle.popup-left
+                %svg{viewBox: "0 0 250 250"}
+                  %path{d: "M 75 250 A 175 175 0 0 1 250 75 L 250 250 Z", fill: "#FED874", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-right edge)
+                  %path{d: "M 250 #{75 + highlight_inset} A #{middle_r} #{middle_r} 0 0 0 #{middle_left_end_x} #{middle_left_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+                  %text.curved-text.inner-text
+                    %textPath{href: "#textArc2", startOffset: "50%", "text-anchor": "middle"}
+                      Designer &amp; Developer
+
+              -# Middle ring - right half
+              .popup-layer.popup-middle.popup-right
+                %svg{viewBox: "250 0 250 250"}
+                  %path{d: "M 250 75 A 175 175 0 0 1 425 250 L 250 250 Z", fill: "#FED874", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-left edge)
+                  %path{d: "M #{250 + highlight_inset} #{75 + highlight_inset} A #{middle_r} #{middle_r} 0 0 1 #{middle_right_end_x} #{middle_right_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+                  %text.curved-text.inner-text
+                    %textPath{href: "#textArc2", startOffset: "50%", "text-anchor": "middle" }
+                      Designer &amp; Developer
+
+              -# Inner ring - left half
+              .popup-layer.popup-inner.popup-left
+                %svg{viewBox: "0 0 250 250"}
+                  %path{d: "M 125 250 A 125 125 0 0 1 250 125 L 250 250 Z", fill: "#CCF7AA", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-right edge)
+                  %path{d: "M 250 #{125 + highlight_inset} A #{inner_r} #{inner_r} 0 0 0 #{inner_left_end_x} #{inner_left_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+
+              -# Inner ring - right half
+              .popup-layer.popup-inner.popup-right
+                %svg{viewBox: "250 0 250 250"}
+                  %path{d: "M 250 125 A 125 125 0 0 1 375 250 L 250 250 Z", fill: "#CCF7AA", filter: "url(#paperNoise)"}
+                  -# Inner highlight - upper portion of arc (top-left edge)
+                  %path{d: "M #{250 + highlight_inset} #{125 + highlight_inset} A #{inner_r} #{inner_r} 0 0 1 #{inner_right_end_x} #{inner_right_end_y}", fill: "none", stroke: "rgba(255,255,255,#{highlight_opacity})", "stroke-width": "#{highlight_width}", filter: "url(#highlightBlur)", style: "mix-blend-mode: #{highlight_blend}"}
+      -# Below the fold - Bento Layout
+      %section.bento-section
+
+        -# Case Studies Bento Grid
+        %h2.section-title Selected Work
+
+        .bento-grid.bento-grid--case-studies
+          - current_page.data.case_studies.each_with_index do |cs, index|
+            - card_class = index == 0 ? "bento-card bento-card--featured" : "bento-card"
+            %article{ :class => card_class }
+              .bento-card__image
+                =link_to cs.relative_url do
+                  =image_tag cs.relative_image_url, :alt => cs.title
+              .bento-card__content
+                %h3.bento-card__title
+                  =link_to cs.title, cs.relative_url
+                %p.bento-card__subtitle= cs.subtitle
+
+        -# Portfolio CTA
+        .section-cta
+          =link_to "View all work &raquo;", "/portfolio", { class: "button-light button-large" }
+
+        -# Recent Posts Section
+        %h2.section-title Recent Posts
+
+        .bento-grid.bento-grid--posts
+          - blog.articles.first(3).each do |article|
+            %article.bento-card.bento-card--post
+              - if article.data.relative_image_url
+                .bento-card__image
+                  =link_to article do
+                    =image_tag article.data.relative_image_url, :alt => article.title
+              .bento-card__content
+                %time.bento-card__date{ :datetime => article.date.strftime('%Y-%m-%d') }
+                  = article.date.strftime('%b %e, %Y')
+                %h3.bento-card__title
+                  =link_to article.title, article
+                - if article.data.description
+                  %p.bento-card__description= article.data.description
+
+        -# Posts CTA
+        .section-cta
+          =link_to "View all posts &raquo;", "/posts", { class: "button-light button-large" }
+
+    = partial "footer_tag"
+    = partial "noise"
+
+    = javascript_include_tag 'popup-animation'
