@@ -53,3 +53,5 @@ configure :build do
   # Enable cache buster
   activate :cache_buster
 end
+
+ENV['THOR_SILENCE_DEPRECATION'] = '1'
