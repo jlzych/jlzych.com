@@ -163,7 +163,7 @@ svg {
     display: block;
     text-align: center;
     line-height: 1.3;
-    font-size: 5cqw;
+    font-size: 4.25cqw;
   }
 }
 
@@ -344,9 +344,53 @@ svg {
   }
 }
 
+%section-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+
+  @media #{$breakpoint-med} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-studies-layout,
+.personal-projects-layout {
+  @extend %section-layout;
+  grid-template-columns: 1fr 2fr;
+}
+
+.recent-posts-layout {
+  @extend %section-layout;
+  grid-template-columns: 2fr 1fr;
+}
+
+.case-studies-layout__header,
+.recent-posts-layout__header,
+.personal-projects-layout__header {
+  .section-title {
+    text-align: left;
+  }
+}
+
+.bento-grid--projects {
+  grid-template-columns: repeat(3, 1fr);
+
+  @media #{$breakpoint-med} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.get-in-touch {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
 .section-cta {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem 0 3rem;
 }
 
@@ -382,15 +426,15 @@ svg {
   }
 }
 
-// Posts grid: 3 equal columns
+// Posts grid: Featured card spans 2 columns, then 2 below
 .bento-grid--posts {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-  @media #{$breakpoint-med} {
-    grid-template-columns: repeat(2, 1fr);
+  .bento-card--featured {
+    grid-column: 1 / -1;
   }
 
-  @media #{$breakpoint-small} {
+  @media #{$breakpoint-med} {
     grid-template-columns: 1fr;
   }
 }
