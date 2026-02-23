@@ -6,6 +6,13 @@ relative_image_url: /images/me-banner.jpg
 
 case_studies: [
   {
+    title: "Redesigning Pragma's Web Portal",
+    subtitle: "From Hidden Features to a Scalable IA with Modern UI",
+    relative_image_url: /images/case-studies/pragma-web-portal/2-after.png,
+    relative_url: /case-studies/pragma-web-portal/,
+    featured: true
+  },
+  {
     title: "Pragma Connect",
     subtitle: "Using Strategic Research to Drive a $500K Product Pivot",
     relative_image_url: /images/case-studies/pragma-connect/onboarding-3.png,
@@ -17,18 +24,6 @@ case_studies: [
     subtitle: "Designing LaunchDarkly's third product from the ground up",
     relative_image_url: /images/case-studies/accelerate/1-accelerate-final.png,
     relative_url: /case-studies/accelerate/
-  },
-  {
-    title: "LaunchDarkly Workflow Builder",
-    subtitle: "How I translated a founder's vision into reality",
-    relative_image_url: /images/case-studies/workflow-builder/1-finished-wfb.png,
-    relative_url: /case-studies/launchdarkly-workflow-builder/
-  },
-  {
-    title: "Gladly's Actions API",
-    subtitle: "Designing a way for agents to trigger actions in external systems",
-    relative_image_url: /images/case-studies/gladly-actions-api/4-mid-fi-with-errors.jpg,
-    relative_url: /case-studies/gladly-actions-api/
   }
 ]
 ---
@@ -179,45 +174,85 @@ case_studies: [
       %section.bento-section
 
         -# Case Studies Bento Grid
-        %h2.section-title Selected Work
+        .case-studies-layout
+          .case-studies-layout__header
+            %h2.section-title Featured Work
+            %p Here's some of my recent work. I dig into the messy problems—complex workflows, technical concepts that need to feel simple, products finding their footing.
 
-        .bento-grid.bento-grid--case-studies
-          - current_page.data.case_studies.each_with_index do |cs, index|
-            - card_class = index == 0 ? "bento-card bento-card--featured" : "bento-card"
-            %article{ :class => card_class }
-              .bento-card__image
-                =link_to cs.relative_url do
-                  =image_tag cs.relative_image_url, :alt => cs.title
-              .bento-card__content
-                %h3.bento-card__title
-                  =link_to cs.title, cs.relative_url
-                %p.bento-card__subtitle= cs.subtitle
+          .case-studies-layout__grid
+            .bento-grid.bento-grid--case-studies
+              - current_page.data.case_studies.each_with_index do |cs, index|
+                - card_class = index == 0 ? "bento-card bento-card--featured" : "bento-card"
+                %article{ :class => card_class }
+                  .bento-card__image
+                    =link_to cs.relative_url do
+                      =image_tag cs.relative_image_url, :alt => cs.title
+                  .bento-card__content
+                    %h3.bento-card__title
+                      =link_to cs.title, cs.relative_url
+                    %p.bento-card__subtitle= cs.subtitle
 
-        -# Portfolio CTA
-        .section-cta
-          =link_to "View all work &raquo;", "/portfolio", { class: "button-light button-large" }
+            -# Portfolio CTA
+            .section-cta
+              =link_to "View all work &raquo;", "/portfolio", { class: "button-light button-large" }
 
         -# Recent Posts Section
-        %h2.section-title Recent Posts
+        .recent-posts-layout
+          .recent-posts-layout__grid
+            .bento-grid.bento-grid--posts
+              - blog.articles.first(3).each_with_index do |article, index|
+                - post_class = index == 0 ? "bento-card bento-card--post bento-card--featured" : "bento-card bento-card--post"
+                %article{ :class => post_class }
+                  - if article.data.relative_image_url
+                    .bento-card__image
+                      =link_to article do
+                        =image_tag article.data.relative_image_url, :alt => article.title
+                  .bento-card__content
+                    %time.bento-card__date{ :datetime => article.date.strftime('%Y-%m-%d') }
+                      = article.date.strftime('%b %e, %Y')
+                    %h3.bento-card__title
+                      =link_to article.title, article
+                    - if article.data.description
+                      %p.bento-card__description= article.data.description
 
-        .bento-grid.bento-grid--posts
-          - blog.articles.first(3).each do |article|
-            %article.bento-card.bento-card--post
-              - if article.data.relative_image_url
-                .bento-card__image
-                  =link_to article do
-                    =image_tag article.data.relative_image_url, :alt => article.title
+            -# Posts CTA
+            .section-cta
+              =link_to "View all posts &raquo;", "/posts", { class: "button-light button-large" }
+
+          .recent-posts-layout__header
+            %h2.section-title Recent Posts
+            %p I write about design, strategy, creativity, and whatever books I'm into. This is mostly a vehicle to help me think through whatever's rattling in my brain.
+
+        -# Personal Projects Section
+        .personal-projects-layout
+          .personal-projects-layout__header
+            %h2.section-title Personal Projects
+            %p When I'm not designing products, I'm usually making something else—lettering, music, or tinkering with side projects that'll probably never ship.
+
+          .bento-grid.bento-grid--projects
+            %article.bento-card
               .bento-card__content
-                %time.bento-card__date{ :datetime => article.date.strftime('%Y-%m-%d') }
-                  = article.date.strftime('%b %e, %Y')
                 %h3.bento-card__title
-                  =link_to article.title, article
-                - if article.data.description
-                  %p.bento-card__description= article.data.description
+                  =link_to "Principles of Writing Well", "/writing"
+                %p.bento-card__description A guide to clear, effective writing distilled from the best books on the craft.
 
-        -# Posts CTA
-        .section-cta
-          =link_to "View all posts &raquo;", "/posts", { class: "button-light button-large" }
+            %article.bento-card
+              .bento-card__content
+                %h3.bento-card__title
+                  =link_to "Hand Lettering", "/scribbles"
+                %p.bento-card__description Exploring letterforms by hand—brushes, pens, and whatever else makes interesting marks.
+
+            %article.bento-card
+              .bento-card__content
+                %h3.bento-card__title
+                  =link_to "Frontend Experiments", "https://codepen.io/jlzych"
+                %p.bento-card__description Messing around with CSS and JavaScript to see what's possible.
+
+        -# Get in Touch Section
+        %section.get-in-touch
+          %h2.section-title Get in Touch
+          %p
+            You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@). #{link_to "View my full resume online", "/resume"}.
 
     = partial "footer_tag"
     = partial "noise"
