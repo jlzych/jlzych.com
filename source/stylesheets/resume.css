@@ -1,12 +1,39 @@
-@import "fonts";
-@import "variables";
+/**
+ * Resume styles
+ */
+
+/* Fonts */
+@font-face {
+  font-family:"ITC Souvenir W03 Bold";
+  src:url("/fonts/5728389/9a143efc-9da1-42b2-84ba-49195a7c9e2c.eot?#iefix");
+  src:url("/fonts/5728389/9a143efc-9da1-42b2-84ba-49195a7c9e2c.eot?#iefix") format("eot"),url("/fonts/5728389/1d1f6646-60ca-45c9-9cf8-355ce161e534.woff2") format("woff2"),url("/fonts/5728389/2a5081bc-f764-46b5-92e7-14fe6b2aba75.woff") format("woff"),url("/fonts/5728389/5d6bbf9d-ea35-4c5d-8256-e8cbb4d953a8.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"ITC Souvenir W03 Bold Italic";
+  src:url("/fonts/5728395/56a28c44-081f-4383-ac0f-36bcadbd2fe9.eot?#iefix");
+  src:url("/fonts/5728395/56a28c44-081f-4383-ac0f-36bcadbd2fe9.eot?#iefix") format("eot"),url("/fonts/5728395/5e2136cb-a1fd-4388-a4a1-f1d6169ba307.woff2") format("woff2"),url("/fonts/5728395/94ff745f-d465-4695-85a0-0693cd6ae546.woff") format("woff"),url("/fonts/5728395/61981287-2b71-4920-a2a1-c171e2b70d2f.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"ITC Souvenir W05 Medium";
+  src:url("/fonts/5728367/7184519c-399c-4e5a-9738-4a3d127d04b0.woff2") format("woff2"),url("Fonts/5728367/237f7597-37ce-4f97-ba07-eae3da404a33.woff") format("woff");
+}
+
+/* Variables */
+:root {
+  --light-brown: hsla(28, 52%, 27%, 1);
+  --text-color: #4B2502;
+  --headline-font-stack: "ITC Souvenir W03 Bold", Georgia, serif;
+  --body-font-stack: mrs-eaves-xl-serif, Georgia, serif;
+}
 
 /**
  * Styles shared between print and screen
  */
 
 h3 time {
-  color: $light-brown;
+  color: var(--light-brown);
   float: right;
   font-size: 0.65em;
   margin-top: 7px;
@@ -24,7 +51,7 @@ ul {
   line-height: 1;
 }
 
-// Bring my name and experience header together
+/* Bring my name and experience header together */
 #experience {
   margin-top: 14px;
 }
@@ -52,15 +79,15 @@ ul {
   }
 
   body {
-    color: $text-color;
-    font-family: $body-font-stack;
+    color: var(--text-color);
+    font-family: var(--body-font-stack);
     font-size: 16px;
     line-height: 1.4;
     margin: 1em;
     margin-right: 50px;
     padding: 0;
 
-    // OpenType features: kerning, ligatures
+    /* OpenType features: kerning, ligatures */
     text-rendering: optimizeLegibility;
     font-kerning: normal;
     font-variant-ligatures: common-ligatures, contextual;
@@ -71,7 +98,7 @@ ul {
   }
 
   h1, h2, h3 {
-    font-family: $headline-font-stack;
+    font-family: var(--headline-font-stack);
   }
 
   h3 {
@@ -87,12 +114,12 @@ ul {
     text-align: right;
     float: right;
 
-    li {
+    & li {
       margin-bottom: 0;
     }
   }
 
-  // Stuff we're hiding when printing
+  /* Stuff we're hiding when printing */
   .nav-main,
   #site-footer,
   #print-friendly {
@@ -109,7 +136,7 @@ ul {
     width: 80px;
     height: 80px;
 
-    svg {
+    & svg {
       width: 100%;
       height: 100%;
     }
@@ -118,7 +145,7 @@ ul {
   .content {
     margin-left: 100px;
 
-    ul, p {
+    & ul, & p {
       margin-top: 0;
     }
   }
@@ -126,11 +153,11 @@ ul {
   a,
   a:active,
   a:visited {
-    color: $text-color;
+    color: var(--text-color);
     text-decoration: none;
   }
 
-  // Don't show youtube and skillshare links because they're long and ugly
+  /* Don't show youtube and skillshare links because they're long and ugly */
   a[href]:not([href*="youtube.com"]):not([href*="skillshare.com"])::after {
     content: " (" attr(href) ")";
     font-size: 0.75em;
