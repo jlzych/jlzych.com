@@ -1,0 +1,197 @@
+/**
+ * Writing principles page specific styles
+ */
+
+.writing {
+  background: var(--bg-color);
+  color: var(--writing-font-color);
+  font-family: var(--writing-font-body);
+  font-size: 22px;
+  line-height: 1.6;
+  padding: 0;
+
+  /* --bp-small */
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    font-family: var(--writing-font-headline);
+  }
+
+  & #site-footer {
+    /* --bp-small */
+    @media only screen and (max-width: 600px) {
+      margin-left: 1em;
+    }
+  }
+}
+
+.writing__header {
+  background: #A9D8B4;
+  background: linear-gradient(250deg, #c2e69c 4%, #64b3f4 122%);
+  clip-path: ellipse(115% 50% at 50% 40%);
+  font-family: var(--writing-font-headline);
+  min-height: 90vh;
+  overflow: hidden;
+  padding-bottom: 15vh;
+  transition: -webkit-filter 1.5s ease,
+              filter 1.5s ease;
+  width: 100%;
+
+  /* Display properties */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: url(#noiseFilter) brightness(0.4) contrast(1.1);
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+}
+
+.writing__headline {
+  font-size: clamp(60px, 15vw, 150px);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  letter-spacing: -1.1px;
+}
+
+.writing__headline--intro {
+  display: block;
+  font-size: clamp(24px, 5vw, 60px);
+  font-style: italic;
+  letter-spacing: 0;
+  margin-bottom: 0.25em;
+
+  /* For arrow positioning */
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: -16%;
+
+  & g {
+    stroke: currentColor;
+  }
+
+  /* --bp-small */
+  @media only screen and (max-width: 600px) {
+    & svg {
+      margin: 0 10px;
+      width: 50px;
+    }
+  }
+}
+
+.arrow--left {
+  left: 0;
+}
+
+.arrow--right {
+  right: 0;
+
+  & svg {
+    transform: rotate(180deg);
+  }
+}
+
+.writing__content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32em;
+  padding: 0;
+  padding-left: 1em;
+
+  & h1, & h2, & h3 {
+    line-height: 1.2;
+    position: relative;
+
+    & .headline-anchor-link {
+      opacity: 0;
+      transition: opacity 0.1s ease-in,
+        color 0.1s ease-in;
+    }
+
+    &:hover .headline-anchor-link {
+      opacity: 1;
+    }
+  }
+
+  & h1 {
+    color: var(--writing-font-color--lighter);
+    font-size: 62px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+
+  & h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+
+  & h3 {
+    -moz-font-feature-settings: "smcp";
+    -webkit-font-feature-settings: "smcp";
+    font-feature-settings: "smcp";
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-top: 1.25em;
+  }
+
+  & ul {
+    padding-left: 1em;
+  }
+
+  & strong,
+  & b {
+    font-weight: 600;
+  }
+
+  & blockquote {
+    color: var(--writing-font-color--lighter);
+    font-size: 0.9em;
+    margin-bottom: 1.25em;
+
+    & p {
+      margin: 0;
+    }
+
+    & p + * {
+      margin-top: 1em;
+    }
+  }
+
+  & .headline-anchor-link {
+    color: var(--light-gray);
+    /* Cleaner looking hashes */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.75em;
+    font-weight: 300;
+    text-decoration: none;
+
+    /* Positioning to prevent the link from causing line breaks
+       if it's at the very end of the line */
+    position: absolute;
+    bottom: 0.2em;
+    margin-left: 0.15em;
+
+    &:hover {
+      color: var(--writing-font-color);
+      text-decoration: none;
+    }
+  }
+}
