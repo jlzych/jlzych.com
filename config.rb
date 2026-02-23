@@ -44,8 +44,9 @@ activate :syntax
 # Build-specific configuration
 configure :build do
   #set :http_prefix, "/~jlzych"
-  # For example, change the Compass output style for deployment
-  activate :minify_css
+  # Disabled: Middleman 3's CSS minifier uses the old Sass parser which
+  # doesn't support native CSS nesting
+  # activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
