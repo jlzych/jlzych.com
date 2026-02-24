@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <%= partial "head_tag" %>
+
+  <body>
+    <div class="container">
+      <div class="grid" role="main">
+        <%= partial "header" %>
+
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= partial "footer_tag" %>
+    <%= partial "noise" %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+---
+title: Posts
+description: "Blog posts by Jeff Zych on product design, creativity, and more."
+pageable: true
+per_page: 5
+---
+
+<h1>Posts</h1>
+
+<% page_articles.each do |article| %>
+  <%= partial :post, locals: { article: article } %>
+<% end %>
+
+<% if paginate %>
+  <%= partial :pagination, locals: { prev_page: prev_page, next_page: next_page } %>
+<% end %>

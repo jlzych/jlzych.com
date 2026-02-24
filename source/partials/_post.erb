@@ -1,0 +1,23 @@
+<article>
+  <time class="article__date" datetime="<%= article.date.strftime('%Y-%m-%d') %>">
+    Posted on
+    <%= article.date.strftime('%b %e, %Y') %>
+    by Jeff Zych
+  </time>
+
+  <h1 class="article__title"><%= link_to article.title, article %></h1>
+
+  <% if article.data.subtitle != nil %>
+    <h2 class="article__subtitle"><%= article.data.subtitle %></h2>
+  <% end %>
+
+  <%= article.body %>
+
+  <footer class="article__footer">
+    <div class="tags">
+      <% article.tags.each do |tag| %>
+        <%= link_to '#' + tag, tag_path(tag), { class: "tag", title: "Articles tagged ##{tag}" } %>
+      <% end %>
+    </div>
+  </footer>
+</article>

@@ -6,8 +6,8 @@ relative_image_url: /images/case-studies/pragma-connect/onboarding-3.png
 layout: case_study_layout
 ---
 
-%h1.article__title= current_page.data.title
+<h1 class="article__title"><%= current_page.data.title %></h1>
 
-%h2.article__subtitle= current_page.data.subtitle
+<h2 class="article__subtitle"><%= current_page.data.subtitle %></h2>
 
-=partial "case-study_pragma-connect-text"
+<%= partial "case-study_pragma-connect-text" %>

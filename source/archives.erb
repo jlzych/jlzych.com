@@ -1,0 +1,22 @@
+---
+title: Jeff Zych's Article Archives
+description: Archive of all of my articles, dating back to 2013 when I first started blogging.
+pageable: true
+per_page: 50
+---
+
+<h1>Archives</h1>
+
+<% page_articles.group_by {|a| a.date.year }.each do |year, articles| %>
+  <section>
+    <h2>
+      <time><%= year %></time>
+    </h2>
+
+    <%= partial :article_list, locals: { articles: articles } %>
+  </section>
+<% end %>
+
+<% if paginate %>
+  <%= partial :pagination, locals: { prev_page: prev_page, next_page: next_page } %>
+<% end %>

@@ -1,0 +1,18 @@
+<li class="card">
+  <% if article.data.relative_image_url %>
+    <div class="card-image-top-container">
+      <%= image_tag article.data.relative_image_url, :class => "card-image-top" %>
+    </div>
+  <% end %>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= link_to article.title, article %>
+    </h4>
+    <p class="card-text">
+      <%= article.data.description %>
+    </p>
+    <p class="card-link">
+      <%= link_to "Keep reading &raquo;", article %>
+    </p>
+  </div>
+</li>
