@@ -34,13 +34,13 @@ case_studies: [
 
   %body.homepage
     .container
-      .above-fold
+      -# Monogram - outside above-fold so it can stick across entire page
+      %h1.monogram
+        =link_to "/", { title: "Home" } do
+          =partial "monogram"
+          %span.name Jeff Zych
 
-        -# Monogram - outside hero so it can stick across entire page
-        %h1.monogram
-          =link_to "/", { title: "Home" } do
-            =partial "monogram"
-            %span.name Jeff Zych
+      .above-fold
 
         -# Navigation - top aligned with monogram
         %nav.nav-main
