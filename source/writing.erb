@@ -5,37 +5,43 @@ typekit_id: "nfs8xne"
 last_updated_date: "4/10/16"
 ---
 
-!!! 5
-%html
-  = partial "head_tag"
+<!DOCTYPE html>
+<html>
+  <%= partial "head_tag" %>
 
-  %body.writing
-    %header.writing__header.u-full-width
-      %h1.writing__headline
-        %span.writing__headline--intro
+  <body class="writing">
+    <header class="writing__header u-full-width">
+      <h1 class="writing__headline">
+        <span class="writing__headline--intro">
 
-          %span.arrow.arrow--left= partial "arrow"
-          %span.arrow.arrow--right= partial "arrow"
+          <span class="arrow arrow--left"><%= partial "arrow" %></span>
+          <span class="arrow arrow--right"><%= partial "arrow" %></span>
 
           Principles of
+        </span>
 
         Writing Well
+      </h1>
+    </header>
 
-    #main{ :role => "main" }
+    <div id="main" role="main">
 
-      %article.content.writing__content
-        = partial "writing_principles"
+      <article class="content writing__content">
+        <%= partial "writing_principles" %>
 
-        %hr
+        <hr>
 
-        %em= "Last updated on #{current_page.data.last_updated_date}"
+        <em><%= "Last updated on #{current_page.data.last_updated_date}" %></em>
+      </article>
 
-      = partial "footer_tag"
+      <%= partial "footer_tag" %>
 
-    = partial "noise"
+    </div>
 
-  / Custom page scripts
-  :javascript
+    <%= partial "noise" %>
+
+  <!-- Custom page scripts -->
+  <script>
     if (document.querySelector) {
       // Rotate the hue of the header based on the day of the year
       var today = new Date();
@@ -68,3 +74,6 @@ last_updated_date: "4/10/16"
         }
       }
     }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+pageable: true
+per_page: 50
+---
+
+<%# This variable is used in _head_tag.erb to set
+    the page title with the tagname %>
+<% @tagname = "##{tagname}" %>
+
+<h1><%= @tagname %></h1>
+
+<ul class="cards">
+  <% page_articles.each do |article| %>
+    <%= partial :card, locals: { article: article } %>
+  <% end %>
+</ul>
+
+<% if paginate %>
+  <%= partial :pagination, locals: { prev_page: prev_page, next_page: next_page } %>
+<% end %>

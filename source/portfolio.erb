@@ -1,0 +1,115 @@
+---
+title: Jeff Zych's Porfolio
+layout: false
+description: "TK"
+
+selected_work: [
+  {
+    title: "Pragma Connect",
+    subtitle: "Using Strategic Research to Drive a $500K Product Pivot",
+    relative_image_url: /images/case-studies/pragma-connect/onboarding-3.png,
+    relative_url: /case-studies/pragma-connect/
+  },
+  {
+    title: "Redesigning Pragma's Web Portal",
+    subtitle: "From Hidden Features to a Scalable IA with Modern UI",
+    relative_image_url: /images/case-studies/pragma-web-portal/2-after.png,
+    relative_url: /case-studies/pragma-web-portal/
+  },
+  {
+    title: "LaunchDarkly's Accelerate",
+    subtitle: "Designing LaunchDarkly's third product from the ground up",
+    relative_image_url: /images/case-studies/accelerate/1-accelerate-final.png,
+    relative_url: /case-studies/accelerate/
+  },
+  {
+    title: "LaunchDarkly's Workflow Builder",
+    subtitle: "Translating a founder's vision of automating feature flag releases into reality",
+    relative_image_url: /images/case-studies/workflow-builder/1-finished-wfb.png,
+    relative_url: /case-studies/launchdarkly-workflow-builder/
+  },
+  {
+    title: "Gladly's Actions API",
+    subtitle: "Finding a way to let customers put custom actions in Gladly's customer support tool, which required distilling a complex set of requirements into a simple user experience",
+    relative_image_url: /images/case-studies/gladly-actions-api/4-mid-fi-with-errors.jpg,
+    relative_url: /case-studies/gladly-actions-api/
+  },
+  {
+    title: "Optimizely's Native Mobile A/B Test Editor",
+    subtitle: "Designing an online, no-code A/B test editor for native mobile apps",
+    relative_image_url: /images/2015-02-03-building-an-mvpp-a-minimum-viable-product-we-re-proud-of/1-finished-editor.png,
+    relative_url: /2015/02/03/building-an-mvpp-a-minimum-viable-product-we-re-proud-of/
+  }
+]
+---
+
+<!DOCTYPE html>
+<html>
+  <%= partial "head_tag" %>
+
+  <body class="portfolio">
+    <div class="container">
+      <div class="monogram">
+        <a href="/" title="Home">
+          <%= partial "monogram" %>
+          <span class="name">Jeff Zych</span>
+        </a>
+      </div>
+
+      <h1 class="portfolio-headline">
+        Hi, I'm Jeff, a
+        <span class="headline-highlight">product designer</span>
+        specializing in
+        <span class="headline-highlight">UX and UI design</span>
+        for developer and technical tools.
+      </h1>
+
+      <div class="grid-one-third">
+        <div class="portfolio-welcome">
+
+          <p class="portfolio-subtitle">I have a blended technical and design background and enjoy translating complex, data-heavy problems into simple and beautiful user interfaces. I was formerly at
+            <%= link_to "Pragma", "https://pragma.gg", target: "_blank" %>,
+            <%= link_to "LaunchDarkly", "https://launchdarkly.com", target: "_blank" %>,
+            <%= link_to "Gladly", "https://gladly.com", target: "_blank" %>,
+            and
+            <%= link_to "Optimizely", "https://optimizely.com", target: "_blank" %>.
+          </p>
+
+          <p>
+            <%= link_to "Resume ↗", "/resume", target: "_blank" %>
+            ·
+            <%= link_to "LinkedIn ↗", "https://www.linkedin.com/in/jlzych/", target: "_blank" %>
+          </p>
+        </div>
+
+        <div class="portfolio-work">
+          <h3>Selected work</h3>
+
+          <div class="grid-three-col">
+            <% current_page.data.selected_work.each do |work| %>
+              <div class="card">
+                <div class="card-image-top-container">
+                  <%= image_tag work.relative_image_url, :class => "card-image-top" %>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <%= link_to work.title, work.relative_url %>
+                  </h4>
+                  <p class="card-text">
+                    <%= work.subtitle %>
+                  </p>
+                  <p class="card-link">
+                    <%= link_to "Read the case study", work.relative_url %>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <%= partial "footer_tag" %>
+    </div>
+    <%= partial "noise" %>
+  </body>
+</html>

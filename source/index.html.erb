@@ -1,0 +1,345 @@
+---
+title: "Jeff Zych · Product Builder"
+description: "Hi, I'm Jeff, a product designer specializing in UI design for developer and technical tools."
+layout: false
+relative_image_url: /images/me-banner.jpg
+
+case_studies: [
+  {
+    title: "Redesigning Pragma's Web Portal",
+    subtitle: "From Hidden Features to a Scalable IA with Modern UI",
+    relative_image_url: /images/case-studies/pragma-web-portal/2-after.png,
+    relative_url: /case-studies/pragma-web-portal/,
+    featured: true
+  },
+  {
+    title: "Pragma Connect",
+    subtitle: "Using Strategic Research to Drive a $500K Product Pivot",
+    relative_image_url: /images/case-studies/pragma-connect/onboarding-3.png,
+    relative_url: /case-studies/pragma-connect/,
+    featured: true
+  },
+  {
+    title: "LaunchDarkly's Accelerate",
+    subtitle: "Designing LaunchDarkly's third product from the ground up",
+    relative_image_url: /images/case-studies/accelerate/1-accelerate-final.png,
+    relative_url: /case-studies/accelerate/
+  }
+]
+---
+
+<!DOCTYPE html>
+<html>
+  <%= partial "head_tag" %>
+
+  <body class="homepage">
+    <div class="container">
+      <!-- Monogram - outside above-fold so it can stick across entire page -->
+      <h1 class="monogram">
+        <a href="/" title="Home">
+          <%= partial "monogram" %>
+          <span class="name">Jeff Zych</span>
+        </a>
+      </h1>
+
+      <div class="above-fold">
+
+        <!-- Navigation - top aligned with monogram -->
+        <nav class="nav-main">
+          <ul>
+            <li><%= link_to "Writing", "/posts", { title: "Blog Posts" } %></li>
+            <li><%= link_to "Work", "/portfolio", { title: "Portfolio" } %></li>
+            <li><%= link_to "About Me", "/about", { title: "About Jeff Zych" } %></li>
+          </ul>
+        </nav>
+
+        <!-- Hero Section - Full viewport height -->
+        <section class="hero">
+          <% # === Highlight settings (tweak these values) === %>
+          <% highlight_inset = 0.25        # pixels inset from main arc %>
+          <% highlight_opacity = 0.3   # 0-1 (currently ~55%) %>
+          <% highlight_width = 0.5        # stroke width in pixels %>
+          <% highlight_blur = 0.05      # blur radius in pixels %>
+          <% highlight_length = 1     # 0-1, how far down the arc (0.5 = 50%) %>
+          <% highlight_blend = "overlay"  # blend mode (screen, overlay, soft-light, etc.) %>
+
+          <% # Calculate highlight endpoints based on length %>
+          <% angle_rad = highlight_length * Math::PI / 2 %>
+          <% outer_r = 225 - highlight_inset %>
+          <% outer_left_end_x = (250 - outer_r * Math.sin(angle_rad)).round %>
+          <% outer_left_end_y = (250 - outer_r * Math.cos(angle_rad)).round %>
+          <% outer_right_end_x = (250 + outer_r * Math.sin(angle_rad)).round %>
+          <% outer_right_end_y = outer_left_end_y %>
+          <% middle_r = 175 - highlight_inset %>
+          <% middle_left_end_x = (250 - middle_r * Math.sin(angle_rad)).round %>
+          <% middle_left_end_y = (250 - middle_r * Math.cos(angle_rad)).round %>
+          <% middle_right_end_x = (250 + middle_r * Math.sin(angle_rad)).round %>
+          <% middle_right_end_y = middle_left_end_y %>
+          <% inner_r = 125 - highlight_inset %>
+          <% inner_left_end_x = (250 - inner_r * Math.sin(angle_rad)).round %>
+          <% inner_left_end_y = (250 - inner_r * Math.cos(angle_rad)).round %>
+          <% inner_right_end_x = (250 + inner_r * Math.sin(angle_rad)).round %>
+          <% inner_right_end_y = inner_left_end_y %>
+
+          <!-- Shared path definitions -->
+          <svg style="position:absolute;width:0;height:0;">
+            <defs>
+              <path id="textArc1" d="M 65 250 A 185 185 0 0 1 435 250"/>
+              <path id="textArc2" d="M 110 250 A 140 140 0 0 1 390 250"/>
+              <filter id="highlightBlur">
+                <feGaussianBlur stdDeviation="<%= highlight_blur %>"/>
+              </filter>
+              <filter id="paperNoise">
+                <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="5" stitchTiles="stitch" result="noise"/>
+                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+                <feComponentTransfer in="grayNoise" result="fadedNoise">
+                  <feFuncA type="linear" slope="0.4"/>
+                </feComponentTransfer>
+                <feBlend mode="overlay" in="SourceGraphic" in2="fadedNoise" result="blended"/>
+                <feComposite operator="in" in="blended" in2="SourceGraphic"/>
+              </filter>
+            </defs>
+          </svg>
+
+          <div class="book">
+            <div class="popup-scene">
+
+              <!-- Outer ring - left half (contains portrait) -->
+              <div class="popup-layer popup-outer popup-left">
+                <!-- Portrait image - rotates with parent, then swings up -->
+                <div class="popup-portrait">
+                  <%= image_tag "me-yellow-sub.png", alt: "Jeff Zych portrait" %>
+                </div>
+                <svg viewBox="0 0 250 250">
+                  <path d="M 25 250 A 225 225 0 0 1 250 25 L 250 250 Z" fill="#FCF398" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-right edge) -->
+                  <path d="M 250 <%= 25 + highlight_inset %> A <%= outer_r %> <%= outer_r %> 0 0 0 <%= outer_left_end_x %> <%= outer_left_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <text class="curved-text">
+                    <textPath href="#textArc1" startOffset="50%" text-anchor="middle">
+                      Jeff Zych &nbsp;&nbsp; Jeff Zych
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Outer ring - right half -->
+              <div class="popup-layer popup-outer popup-right">
+                <svg viewBox="250 0 250 250">
+                  <path d="M 250 25 A 225 225 0 0 1 475 250 L 250 250 Z" fill="#FCF398" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-left edge) -->
+                  <path d="M <%= 250 + highlight_inset %> <%= 25 + highlight_inset %> A <%= outer_r %> <%= outer_r %> 0 0 1 <%= outer_right_end_x %> <%= outer_right_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <text class="curved-text">
+                    <textPath href="#textArc1" startOffset="50%" text-anchor="middle">
+                      Jeff Zych &nbsp;&nbsp; Jeff Zych
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Middle ring - left half -->
+              <div class="popup-layer popup-middle popup-left">
+                <svg viewBox="0 0 250 250">
+                  <path d="M 75 250 A 175 175 0 0 1 250 75 L 250 250 Z" fill="#FED874" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-right edge) -->
+                  <path d="M 250 <%= 75 + highlight_inset %> A <%= middle_r %> <%= middle_r %> 0 0 0 <%= middle_left_end_x %> <%= middle_left_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <text class="curved-text inner-text">
+                    <textPath href="#textArc2" startOffset="52%" text-anchor="middle">
+                      Designer &amp; Developer
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Middle ring - right half -->
+              <div class="popup-layer popup-middle popup-right">
+                <svg viewBox="250 0 250 250">
+                  <path d="M 250 75 A 175 175 0 0 1 425 250 L 250 250 Z" fill="#FED874" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-left edge) -->
+                  <path d="M <%= 250 + highlight_inset %> <%= 75 + highlight_inset %> A <%= middle_r %> <%= middle_r %> 0 0 1 <%= middle_right_end_x %> <%= middle_right_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <text class="curved-text inner-text">
+                    <textPath href="#textArc2" startOffset="52%" text-anchor="middle">
+                      Designer &amp; Developer
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Inner ring - left half -->
+              <div class="popup-layer popup-inner popup-left">
+                <svg viewBox="0 0 250 250" style="overflow: hidden">
+                  <path d="M 125 250 A 125 125 0 0 1 250 125 L 250 250 Z" fill="#CCF7AA" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-right edge) -->
+                  <path d="M 250 <%= 125 + highlight_inset %> A <%= inner_r %> <%= inner_r %> 0 0 0 <%= inner_left_end_x %> <%= inner_left_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <!-- Tagline text - foreignObject spans full 500-unit width; left SVG clips to show left half -->
+                  <foreignObject x="0" y="125" width="500" height="125">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="tagline-fo-outer">
+                      <div class="tagline-fo-text">
+                        <span>I'm a</span>
+                        <span>product builder</span>
+                        <span>running PB&amp;J Designs, a</span>
+                        <span>solo studio doing UX for early</span>
+                        <span>stage dev tool startups</span>
+                      </div>
+                    </div>
+                  </foreignObject>
+                </svg>
+              </div>
+
+              <!-- Inner ring - right half -->
+              <div class="popup-layer popup-inner popup-right">
+                <svg viewBox="250 0 250 250" style="overflow: hidden">
+                  <path d="M 250 125 A 125 125 0 0 1 375 250 L 250 250 Z" fill="#CCF7AA" filter="url(#paperNoise)"/>
+                  <!-- Inner highlight - upper portion of arc (top-left edge) -->
+                  <path d="M <%= 250 + highlight_inset %> <%= 125 + highlight_inset %> A <%= inner_r %> <%= inner_r %> 0 0 1 <%= inner_right_end_x %> <%= inner_right_end_y %>" fill="none" stroke="rgba(255,255,255,<%= highlight_opacity %>)" stroke-width="<%= highlight_width %>" filter="url(#highlightBlur)" style="mix-blend-mode: <%= highlight_blend %>"/>
+                  <!-- Tagline text - foreignObject spans full 500-unit width; right SVG clips to show right half -->
+                  <foreignObject x="0" y="125" width="500" height="125">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="tagline-fo-outer">
+                      <div class="tagline-fo-text">
+                        <span>I'm a</span>
+                        <span>product builder</span>
+                        <span>running PB&amp;J Designs, a</span>
+                        <span>solo studio doing UX for early</span>
+                        <span>stage dev tool startups</span>
+                      </div>
+                    </div>
+                  </foreignObject>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Below the fold - Bento Layout -->
+      <section class="bento-section">
+
+        <!-- Case Studies Bento Grid -->
+        <div class="case-studies-layout">
+          <div class="case-studies-layout__header">
+            <h2 class="section-title">Featured Work</h2>
+            <p>Here's some of my recent work. I dig into the messy problems—complex workflows, technical concepts that need to feel simple, products finding their footing.</p>
+          </div>
+
+          <div class="case-studies-layout__grid">
+            <div class="bento-grid bento-grid--case-studies">
+              <% current_page.data.case_studies.each_with_index do |cs, index| %>
+                <% card_class = index == 0 ? "bento-card bento-card--featured" : "bento-card" %>
+                <article class="<%= card_class %>">
+                  <div class="bento-card__image">
+                    <a href="<%= cs.relative_url %>">
+                      <%= image_tag cs.relative_image_url, :alt => cs.title %>
+                    </a>
+                  </div>
+                  <div class="bento-card__content">
+                    <h3 class="bento-card__title">
+                      <%= link_to cs.title, cs.relative_url %>
+                    </h3>
+                    <p class="bento-card__subtitle"><%= cs.subtitle %></p>
+                  </div>
+                </article>
+              <% end %>
+            </div>
+
+            <!-- Portfolio CTA -->
+            <div class="section-cta">
+              <%= link_to "View all work &raquo;", "/portfolio", { class: "button-light button-large" } %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Posts Section -->
+        <div class="recent-posts-layout">
+          <div class="recent-posts-layout__grid">
+            <div class="bento-grid bento-grid--posts">
+              <% blog.articles.first(3).each_with_index do |article, index| %>
+                <% post_class = index == 0 ? "bento-card bento-card--post bento-card--featured" : "bento-card bento-card--post" %>
+                <article class="<%= post_class %>">
+                  <% if article.data.relative_image_url %>
+                    <div class="bento-card__image">
+                      <a href="<%= article.url %>">
+                        <%= image_tag article.data.relative_image_url, :alt => article.title %>
+                      </a>
+                    </div>
+                  <% end %>
+                  <div class="bento-card__content">
+                    <time class="bento-card__date" datetime="<%= article.date.strftime('%Y-%m-%d') %>">
+                      <%= article.date.strftime('%b %e, %Y') %>
+                    </time>
+                    <h3 class="bento-card__title">
+                      <%= link_to article.title, article %>
+                    </h3>
+                    <% if article.data.description %>
+                      <p class="bento-card__description"><%= article.data.description %></p>
+                    <% end %>
+                  </div>
+                </article>
+              <% end %>
+            </div>
+
+            <!-- Posts CTA -->
+            <div class="section-cta">
+              <%= link_to "View all posts &raquo;", "/posts", { class: "button-light button-large" } %>
+            </div>
+          </div>
+
+          <div class="recent-posts-layout__header">
+            <h2 class="section-title">Recent Posts</h2>
+            <p>I write about design, strategy, creativity, and whatever books I'm into. This is mostly a vehicle to help me think through whatever's rattling in my brain.</p>
+          </div>
+        </div>
+
+        <!-- Personal Projects Section -->
+        <div class="personal-projects-layout">
+          <div class="personal-projects-layout__header">
+            <h2 class="section-title">Personal Projects</h2>
+            <p>When I'm not designing products, I'm usually making something else—lettering, music, or tinkering with side projects that'll probably never ship.</p>
+          </div>
+
+          <div class="bento-grid bento-grid--projects">
+            <article class="bento-card">
+              <div class="bento-card__content">
+                <h3 class="bento-card__title">
+                  <%= link_to "Principles of Writing Well", "/writing" %>
+                </h3>
+                <p class="bento-card__description">A guide to clear, effective writing distilled from the best books on the craft.</p>
+              </div>
+            </article>
+
+            <article class="bento-card">
+              <div class="bento-card__content">
+                <h3 class="bento-card__title">
+                  <%= link_to "Hand Lettering", "/scribbles" %>
+                </h3>
+                <p class="bento-card__description">Exploring letterforms by hand—brushes, pens, and whatever else makes interesting marks.</p>
+              </div>
+            </article>
+
+            <article class="bento-card">
+              <div class="bento-card__content">
+                <h3 class="bento-card__title">
+                  <%= link_to "Frontend Experiments", "https://codepen.io/jlzych" %>
+                </h3>
+                <p class="bento-card__description">Messing around with CSS and JavaScript to see what's possible.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Get in Touch Section -->
+        <section class="get-in-touch">
+          <h2 class="section-title">Get in Touch</h2>
+          <p>
+            You can find me on <a href='http://twitter.com/jlzych'>Twitter</a>, <a href='http://instagram.com/jlzych'>Instagram</a>, <a href='https://medium.com/@jlzych'>Medium</a>, <a href='http://www.linkedin.com/in/jlzych/'>LinkedIn</a>, <a href='http://github.com/jlzych'>Github</a>, and Gmail (jlzych@). <%= link_to "View my full resume online", "/resume" %>.
+          </p>
+        </section>
+
+      </section>
+    </div>
+
+    <%= partial "footer_tag" %>
+    <%= partial "noise" %>
+
+    <%= javascript_include_tag 'popup-animation' %>
+  </body>
+</html>
