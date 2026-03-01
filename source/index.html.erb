@@ -45,13 +45,7 @@ case_studies: [
       <div class="above-fold">
 
         <!-- Navigation - top aligned with monogram -->
-        <nav class="nav-main">
-          <ul>
-            <li><%= link_to "Writing", "/posts", { title: "Blog Posts" } %></li>
-            <li><%= link_to "Work", "/portfolio", { title: "Portfolio" } %></li>
-            <li><%= link_to "About Me", "/about", { title: "About Jeff Zych" } %></li>
-          </ul>
-        </nav>
+        <%= partial "nav" %>
 
         <!-- Hero Section - Full viewport height -->
         <section class="hero">
@@ -108,7 +102,7 @@ case_studies: [
               <div class="popup-layer popup-outer popup-left">
                 <!-- Portrait image - rotates with parent, then swings up -->
                 <div class="popup-portrait">
-                  <%= image_tag "me-yellow-sub.png", alt: "Jeff Zych portrait" %>
+                  <%= partial "me_vector" %>
                 </div>
                 <svg viewBox="0 0 250 250">
                   <path d="M 25 250 A 225 225 0 0 1 250 25 L 250 250 Z" fill="#FCF398" filter="url(#paperNoise)"/>
@@ -218,7 +212,7 @@ case_studies: [
         <div class="case-studies-layout">
           <div class="case-studies-layout__header">
             <h2 class="section-title">Featured Work</h2>
-            <p>Here's some of my recent work. I dig into the messy problems—complex workflows, technical concepts that need to feel simple, products finding their footing.</p>
+            <p>I specialize in developer tools and complex technical workflows. I love digging into complex systems and wrapping them in beautiful, easy-to-use UIs.</p>
           </div>
 
           <div class="case-studies-layout__grid">
@@ -298,6 +292,9 @@ case_studies: [
 
           <div class="bento-grid bento-grid--projects">
             <article class="bento-card">
+              <div class="bento-card__icon" style="background: var(--monogram-light-blue)">
+                <img src="/images/icons/book.svg" alt="" width="32" height="32">
+              </div>
               <div class="bento-card__content">
                 <h3 class="bento-card__title">
                   <%= link_to "Principles of Writing Well", "/writing" %>
@@ -307,6 +304,9 @@ case_studies: [
             </article>
 
             <article class="bento-card">
+              <div class="bento-card__icon" style="background: var(--monogram-green)">
+                <img src="/images/icons/pen-nib.svg" alt="" width="32" height="32">
+              </div>
               <div class="bento-card__content">
                 <h3 class="bento-card__title">
                   <%= link_to "Hand Lettering", "/scribbles" %>
@@ -316,6 +316,9 @@ case_studies: [
             </article>
 
             <article class="bento-card">
+              <div class="bento-card__icon" style="background: var(--monogram-orange)">
+                <img src="/images/icons/code.svg" alt="" width="32" height="32">
+              </div>
               <div class="bento-card__content">
                 <h3 class="bento-card__title">
                   <%= link_to "Frontend Experiments", "https://codepen.io/jlzych" %>

@@ -5,8 +5,6 @@ pageable: true
 per_page: 5
 ---
 
-<h1>Posts</h1>
-
 <% page_articles.each do |article| %>
   <%= partial :post, locals: { article: article } %>
 <% end %>

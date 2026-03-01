@@ -11,6 +11,13 @@
     display: grid;
     grid-template-columns: var(--monogram-col-width) 1fr;
     align-items: start;
+
+    /* --bp-small */
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      /* Monogram SVG height + its top/bottom margin (1em each) */
+      --mobile-monogram-height: calc(clamp(80px, 25vw, 140px) + 2em);
+    }
   }
 
   & .above-fold {
@@ -27,8 +34,11 @@
     @media only screen and (max-width: 600px) {
       grid-template-columns: 1fr;
       grid-template-areas: "nav";
-      padding: 1.5rem 1rem 0;
+      padding: 0 1rem;
       grid-column: 1 / -1;
+      grid-row: 2;
+      /* Viewport minus body padding (13px top) minus monogram row */
+      height: calc(100dvh - 1.5rem - var(--mobile-monogram-height));
     }
   }
 
@@ -54,7 +64,7 @@
     }
 
     & svg {
-      width: 140px;
+      width: clamp(80px, 25vw, 140px);
       height: 100%;
     }
 
@@ -64,10 +74,10 @@
       top: 0;
       display: flex;
       justify-content: center;
-      margin: 1em 0;
+      margin-top: 1rem;
       padding: 0;
       grid-column: 1 / -1;
-      grid-row: 2;
+      grid-row: 1;
     }
   }
 
@@ -92,6 +102,11 @@
   & .bento-section {
     grid-column: 1 / -1;
     grid-row: 2;
+
+    /* --bp-small */
+    @media only screen and (max-width: 600px) {
+      grid-row: 3;
+    }
   }
 }
 
@@ -108,7 +123,7 @@
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  min-height: 0;
+  min-height: clamp(0px, 68dvh, 650px);
 }
 
 .book {
@@ -117,7 +132,13 @@
   align-items: flex-end;
   padding: 0 2.5vw;
   perspective: 1500px;
-  max-height: 100%;
+  max-height: min(100%, 580px);
+
+  /* --bp-small */
+  @media only screen and (max-width: 600px) {
+    padding: 0 1vw;
+    width: 100%;
+  }
 }
 
 .popup-scene {
@@ -128,6 +149,11 @@
   position: relative;
   transform-style: preserve-3d;
   z-index: 1;
+
+  /* --bp-small */
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* svg {
@@ -148,7 +174,8 @@
 }
 
 .tagline-fo-text {
-  font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif;
+  /* font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif; */
+  font-family: var(--sans-serif-font-stack);
   font-weight: 900;
   color: #3d2b1f;
   display: flex;
@@ -162,18 +189,22 @@
     display: block;
     text-align: center;
     line-height: 1.3;
-    font-size: 4.25cqw;
+    font-size: 4.5cqw;
   }
 }
 
 .curved-text {
-  font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif;
+  /* font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif; */
+  font-family: var(--headline-font-stack);
+  /* text-transform: uppercase; */
   font-weight: 900;
+  /* font-size: clamp(20px, 6vw, 44px); */
   font-size: 44px;
   fill: #3d2b1f;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.05em;
 }
 .inner-text {
+  /* font-size: clamp(14px, 4.5vw, 32px); */
   font-size: 32px;
 }
 
@@ -226,14 +257,14 @@
 /* Portrait image - nested inside popup-outer.popup-left, rotates with parent */
 .popup-portrait {
   position: absolute;
-  bottom: 65%;
-  right: 29%;
-  width: 37%;
+  bottom: 50cqmin;
+  right: 29cqmin;
+  width: 37cqmin;
   transform-origin: bottom right;
   transform: rotate(-90deg);
   z-index: -1;
 
-  & img {
+  & svg {
     max-width: 100%;
     max-height: 100%;
     display: block;
@@ -255,6 +286,7 @@
 /* Phase 1: Time-based fold-out animation on page load */
 .popup-outer {
   animation: foldOut 0.8s ease-out 0.2s forwards;
+  container-type: inline-size;
 }
 .popup-middle {
   animation: foldOut 1.2s ease 0.3s forwards;
@@ -341,7 +373,7 @@
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 280px;
+  margin-top: clamp(80px, 20vh, 280px);
 
   /* --bp-small */
   @media only screen and (max-width: 600px) {
@@ -372,6 +404,14 @@
   @media only screen and (max-width: 850px) {
     grid-template-columns: 1fr;
   }
+}
+
+.personal-projects-layout {
+  grid-template-columns: 2fr 1fr;
+}
+
+.personal-projects-layout > .bento-grid {
+  grid-column: 1 / -1;
 }
 
 .recent-posts-layout {
@@ -470,7 +510,7 @@
 
 .bento-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--light-shadow);
   transition:
@@ -505,6 +545,16 @@
     border-radius: 0;
     transition: transform 0.3s ease;
   }
+}
+
+.bento-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25rem auto 0;
 }
 
 .bento-card:hover .bento-card__image img {

@@ -42,7 +42,7 @@ selected_work: [
         <section class="about-content">
           <div class="about-intro">
             <h1>
-              Hi, I'm Jeff, a <strong>product designer</strong> specializing in <strong>UI design</strong> for developer and technical tools.
+              Hi, I'm Jeff, a <strong>product builder</strong> specializing in <strong>UX design</strong> for developer and technical tools.
             </h1>
 
             <h2>
@@ -76,11 +76,12 @@ selected_work: [
         </section>
 
         <section class="quotes">
+          <h2>Social Proof</h2>
           <div class="quote-container push-left">
             <div class="quote-image-container">
               <%= image_tag "/images/about/bruno.png" %>
               <p class="quote-name">Bruno Bergher</p>
-              <p class="quote-title">VP of Product and Design at Gladly</p>
+              <p class="quote-title">Product and Design Leader</p>
             </div>
 
             <blockquote><p>Jeff is <strong>thoughtfulness and empathy incarnate</strong>. Yes, he's a very <strong>thoughtful designer</strong> and a <strong>skilled leader of design teams</strong>. But while managing him at Gladly, I saw how, into that package, he also packs: a prolific, precise writer; an analytical product manager (as he ran our design systems product team); a dedicated, disciplined people manager. You should work with Jeff and see it in practice.</p></blockquote>
@@ -90,46 +91,46 @@ selected_work: [
             <div class="quote-image-container">
               <%= image_tag "/images/about/claire.png" %>
               <p class="quote-name">Claire Vo</p>
-              <p class="quote-title">Chief Product Officer at Optimizely</p>
+              <p class="quote-title">Product Leader and Founder</p>
             </div>
 
             <blockquote><p>As Optimizely's design lead, Jeff had a <strong>significant impact on the product, team and company culture</strong>. Responsible for design, research and UI engineering, Jeff was <strong>instrumental in delivering a "consumer-grade" user experience to Optimizely's customers</strong>. [...] I was especially <strong>impressed with his hiring and team building skills</strong>; he put tons of thought into our interviewing and on-boarding processes, which lead to a happy and effective design team.</p></blockquote>
           </div>
         </section>
 
-        <section class="about-content about-work">
+        <%# <section class="about-content about-work">
 
           <h2>Selected Work</h2>
-          <ul class="cards">
-            <% current_page.data.selected_work.each do |work| %>
-              <li class="card">
-                <div class="card-image-top-container">
-                  <%= image_tag work.relative_image_url, :class => "card-image-top" %>
-                </div>
+          <ul class="cards"> %>
+            <%# current_page.data.selected_work.each do |work| %>
+              <%# <li class="card">
+                <div class="card-image-top-container"> %>
+                  <%#= image_tag work.relative_image_url, :class => "card-image-top" %>
+                <%# </div>
                 <div class="card-body">
-                  <h4 class="card-title">
-                    <%= link_to work.title, work.relative_url %>
-                  </h4>
-                  <p class="card-text">
-                    <%= work.subtitle %>
-                  </p>
-                  <p class="card-link">
-                    <%= link_to "Read the case study", work.relative_url %>
-                  </p>
+                  <h4 class="card-title"> %>
+                    <%#= link_to work.title, work.relative_url %>
+                  <%# </h4>
+                  <p class="card-text"> %>
+                    <%#= work.subtitle %>
+                  <%# </p>
+                  <p class="card-link"> %>
+                    <%#= link_to "Read the case study", work.relative_url %>
+                  <%# </p>
                 </div>
-              </li>
-            <% end %>
-          </ul>
+              </li> %>
+            <%# end %>
+          <%# </ul>
         </section>
 
         <section class="about-content">
           <h2>Popular Posts</h2>
-          <ul class="cards">
-            <% blog.articles.select {|a| a.data[:popular_post]}.each do |article| %>
-              <%= partial :card, locals: { article: article } %>
-            <% end %>
-          </ul>
-        </section>
+          <ul class="cards"> %>
+            <%# blog.articles.select {|a| a.data[:popular_post]}.each do |article| %>
+              <%#= partial :card, locals: { article: article } %>
+            <%# end %>
+          <%# </ul>
+        </section> %>
 
         <section class="about-beliefs">
           <div class="about-content">
@@ -171,7 +172,7 @@ selected_work: [
             <blockquote><p>Jeff was my manager at Gladly and I had a <strong>great experience with him</strong>! He made many improvements to our design team and framed our weeklys to share knowledge, frameworks, and build team harmony. He <strong>always supported me and did what he could to unblock me</strong>. I always looked forward to our meetings and would recommend him to help build any design team.</p></blockquote>
           </div>
         </section>
-
+<%#
         <section class="about-content">
           <h2>Side Projects</h2>
 
@@ -200,7 +201,7 @@ selected_work: [
               </li>
             </ul>
           </div>
-        </section>
+        </section> %>
 
         <section class="about-content">
 

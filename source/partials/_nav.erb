@@ -1,0 +1,11 @@
+<% _nav_classes = "nav-main" %>
+<% if defined?(nav_classes) && nav_classes %>
+  <% _nav_classes += " #{nav_classes}" %>
+<% end %>
+<nav class="<%= _nav_classes %>">
+  <ul>
+    <li><%= link_to "Writing", "/posts", { title: "Blog Posts" } %></li>
+    <li><%= link_to "Work", "/portfolio", { title: "Portfolio" } %></li>
+    <li><%= link_to "About Me", "/about", { title: "About Jeff Zych" } %></li>
+  </ul>
+</nav>

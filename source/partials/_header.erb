@@ -5,15 +5,4 @@
   </a>
 </h1>
 
-<% @nav_classes = "nav-main" %>
-<% if defined? nav_classes %>
-  <% @nav_classes += " #{nav_classes}" %>
-<% end %>
-
-<nav class="<%= @nav_classes %>">
-  <ul>
-    <li><%= link_to "Posts", "/posts", { title: "Blog Posts" } %></li>
-    <li><%= link_to "About Me", "/about", { title: "About Jeff Zych" } %></li>
-    <li><%= link_to "Archives", "/archives" %></li>
-  </ul>
-</nav>
+<%= partial "nav", locals: { nav_classes: defined?(nav_classes) ? nav_classes : nil } %>
