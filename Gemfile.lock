@@ -92,7 +92,7 @@ GEM
       ffi (~> 1.0)
     rb-kqueue (0.2.5)
       ffi (>= 0.5.0)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     rouge (0.3.10)
       thor
     sass (3.4.25)
