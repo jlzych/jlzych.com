@@ -6,12 +6,21 @@
   padding: 0.5rem 2rem 2rem;
 }
 
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+
 .portfolio .monogram {
   & a {
     top: auto;
+    margin-top: 0;
     margin-left: 0;
 
-    &, &:hover {
+    &,
+    &:hover {
       box-shadow: none;
     }
   }
