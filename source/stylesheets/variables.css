@@ -23,20 +23,20 @@
   --lightest-brown: hsl(44deg, 49%, 51%);
 
   /* Monogram colors */
-  --monogram-shadow: #3DBBD3;
-  --monogram-light-blue: #ADEBEF;
-  --monogram-green: #CCF7AA;
-  --monogram-yellow: #FCF398;
-  --monogram-orange: #FED874;
+  --monogram-shadow: #3dbbd3;
+  --monogram-light-blue: #adebef;
+  --monogram-green: #ccf7aa;
+  --monogram-yellow: #fcf398;
+  --monogram-orange: #fed874;
 
   /* Site colors */
-  --primary-color: #87DADF;
+  --primary-color: #87dadf;
   --accent-color: hsl(183deg, 100%, 33%);
   --selection-color: hsla(184, 76%, 83%, 1);
-  --button-text-color: #03587A;
-  --bg-color: #FFFEF6;
+  --button-text-color: #03587a;
+  --bg-color: #fffef6;
   --black: var(--gray-95);
-  --text-color: #4B2502;
+  --text-color: #4b2502;
   --text-on-accent: hsla(179, 39%, 99%, 1);
   --de-emphasized-text: var(--gray-80);
   --light-gray: var(--gray-20);
@@ -45,10 +45,14 @@
   --code-highlight-color: hsla(59, 46%, 96%, 0.8);
 
   /* Shadows */
-  --lightest-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.14);
-  --light-shadow: 0 3px 6px rgba(75,37,2,0.15), 0 2px 4px rgba(75,37,2,0.12);
-  --medium-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.06);
-  --inset-code-shadow: inset 0 0 3px rgba(0,0,0,0.1), inset 0 0 1px rgba(0,0,0,0.1);
+  --lightest-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.14);
+  --light-shadow:
+    0 3px 6px rgba(75, 37, 2, 0.15), 0 2px 4px rgba(75, 37, 2, 0.12);
+  --medium-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.06);
+  --inset-code-shadow:
+    inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(0, 0, 0, 0.1);
 
   /* Font stacks */
   --headline-font-stack: "ITC Souvenir W03 Bold", Georgia, serif;
@@ -61,21 +65,25 @@
   --body-font-line-height: 1.4;
 
   /* Transitions */
-  --default-transition-duration: .25s;
+  --default-transition-duration: 0.25s;
   --faster-transition-duration: 0.15s;
 
   /* Monogram spacing */
   --monogram-width: 100px;
   --monogram-right-gutter: 30px;
-  --content-left-gutter: calc(var(--monogram-width) + var(--monogram-right-gutter));
+  --content-left-gutter: calc(
+    var(--monogram-width) + var(--monogram-right-gutter)
+  );
 
   /* Breakpoints (source of truth - can't be used in @media, but documented here) */
   --bp-small: 600px;
   --bp-med: 850px;
+  --bp-large: 1350px;
 
   /* Writing page */
-  --writing-font-headline: "garamond-premier-pro-display", Garamond, Georgia, serif;
+  --writing-font-headline:
+    "garamond-premier-pro-display", Garamond, Georgia, serif;
   --writing-font-body: "garamond-premier-pro", Garamond, Georgia, serif;
-  --writing-font-color: #0E0321;
-  --writing-font-color--lighter: #201D25;
+  --writing-font-color: #0e0321;
+  --writing-font-color--lighter: #201d25;
 }

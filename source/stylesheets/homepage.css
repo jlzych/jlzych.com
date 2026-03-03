@@ -79,6 +79,11 @@
       grid-column: 1 / -1;
       grid-row: 1;
     }
+
+    /* --bp-large */
+    @media only screen and (max-width: 1350px) {
+      position: relative;
+    }
   }
 
   /* Position nav at top right, aligned with monogram */
