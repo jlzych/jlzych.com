@@ -153,6 +153,7 @@
   aspect-ratio: 2 / 1;
   position: relative;
   transform-style: preserve-3d;
+  container-type: size;
   z-index: 1;
 
   /* --bp-small */
@@ -219,7 +220,7 @@
   bottom: 0;
   width: 50%;
   height: 100%;
-  will-change: transform, filter;
+  will-change: transform;
 
   svg {
     overflow: visible;
@@ -303,11 +304,9 @@
 @keyframes foldOut {
   0% {
     transform: rotateY(var(--start-rotate)) translateZ(1px);
-    filter: drop-shadow(var(--shadow-x-start) 0 30px rgba(0, 0, 0, 0.15));
   }
   100% {
     transform: rotateY(0deg) translateZ(1px);
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
   }
 }
 
@@ -347,15 +346,68 @@
 @keyframes foldIn {
   0% {
     transform: rotateY(0deg) translateZ(1px);
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
   }
   80% {
     opacity: 1;
   }
   100% {
     transform: rotateY(var(--end-rotate)) translateZ(1px);
-    filter: drop-shadow(var(--shadow-x-start) 0 30px rgba(0, 0, 0, 0.15));
     opacity: 0;
+  }
+}
+
+/* Per-layer shadow pseudo-elements — box-shadow + opacity-only animation.
+   Keeps filter off the 3D-transformed layers for smooth mobile rendering.
+   border-radius: 100%/0 produces a mathematically exact quarter-circle
+   matching each layer's arc shape (outer=90%, middle=70%, inner=50% of the square layer). */
+.popup-layer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  will-change: opacity;
+  z-index: -1;
+  aspect-ratio: 1 / 1;
+}
+
+/* Left layers: arc centered at bottom-right corner of the div */
+.popup-left::after {
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+
+/* Right layers: arc centered at bottom-left corner of the div */
+.popup-right::after {
+  left: 0;
+  border-radius: 0 100% 0 0;
+}
+
+/* Size each shadow to match its arc radius using container query units.
+   cqmin ensures the arc scales with the container's smallest dimension,
+   maintaining a perfect circle regardless of viewport aspect ratio. */
+.popup-outer::after {
+  width: 79cqmin;
+  height: 79cqmin;
+  animation: shadowFadeIn 0.8s ease-out 0.2s forwards;
+}
+
+.popup-middle::after {
+  width: 59cqmin;
+  height: 59cqmin;
+  animation: shadowFadeIn 1.2s ease 0.3s forwards;
+}
+
+.popup-inner::after {
+  width: 42cqmin;
+  height: 43cqmin;
+  animation: shadowFadeIn 1.4s ease-out 0.5s forwards;
+}
+
+@keyframes shadowFadeIn {
+  to {
+    opacity: 1;
   }
 }
 
