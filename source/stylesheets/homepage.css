@@ -44,7 +44,6 @@
       grid-template-columns: 1fr;
       grid-template-areas: "nav";
       padding: 0;
-      grid-column: 1 / -1;
       grid-row: 2;
       /* Viewport minus body padding (13px top) minus monogram row */
       height: calc(100dvh - 1.5rem - var(--mobile-monogram-height));
@@ -181,7 +180,7 @@
 .popup-scene {
   width: 95vw;
   max-width: 1280px;
-  max-height: calc(min(100%, 700px));
+  max-height: min(100%, 700px);
   aspect-ratio: 2 / 1;
   position: relative;
   transform-style: preserve-3d;
@@ -210,13 +209,6 @@
   }
 }
 
-/* svg {
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  display: block;
-} */
-
 /* Tagline text inside inner ring SVG foreignObjects */
 .tagline-fo-outer {
   width: 100%;
@@ -228,7 +220,6 @@
 }
 
 .tagline-fo-text {
-  /* font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif; */
   font-family: var(--sans-serif-font-stack);
   font-weight: 900;
   color: #3d2b1f;
@@ -248,31 +239,27 @@
 
   @media only screen and (max-aspect-ratio: 1) {
     & span {
-      font-size: 1.4vw; /* cqmin = popup-height/100; scales text with arc size, not viewport width */
+      font-size: 1.4vw; /* vw scales text relative to visible viewport width */
     }
   }
 }
 
 .curved-text {
-  /* font-family: "Obviously Demo", "Arial Black", "Helvetica Neue", sans-serif; */
   font-family: var(--headline-font-stack);
-  /* text-transform: uppercase; */
   font-weight: 900;
-  /* font-size: clamp(20px, 6vw, 44px); */
   font-size: 44px;
   fill: #3d2b1f;
   letter-spacing: -0.05em;
 
   @media only screen and (max-aspect-ratio: 1) {
-    font-size: 2.95vw; /* scale with popup height; cqh from .popup-scene (container-type: size) */
+    font-size: 2.95vw; /* vw scales with visible viewport width */
   }
 }
 .inner-text {
-  /* font-size: clamp(14px, 4.5vw, 32px); */
   font-size: 32px;
 
   @media only screen and (max-aspect-ratio: 1) {
-    font-size: 2.5vw; /* proportional to curved-text: 32/44 × 9.25 */
+    font-size: 2.5vw;
   }
 }
 
@@ -301,7 +288,6 @@
   transform: rotateY(90deg) translateZ(0);
   --start-rotate: 90deg;
   --end-rotate: 90deg;
-  --shadow-x-start: 0px;
 
   & svg {
     margin-left: auto;
@@ -315,7 +301,6 @@
   transform: rotateY(-90deg) translateZ(0);
   --start-rotate: -90deg;
   --end-rotate: -90deg;
-  --shadow-x-start: 0px;
 
   & svg {
     margin-right: auto;
@@ -360,7 +345,6 @@
 /* Phase 1: Time-based fold-out animation on page load */
 .popup-outer {
   animation: foldOut 0.8s ease-out 0.2s forwards;
-  /* container-type: inline-size; */
 }
 .popup-middle {
   animation: foldOut 1.2s ease 0.3s forwards;
@@ -474,17 +458,6 @@
 }
 
 @keyframes shadowFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Paper styling */
-.popup-layer svg {
-  display: block;
-}
-
-@keyframes pageShadow {
   to {
     opacity: 1;
   }
