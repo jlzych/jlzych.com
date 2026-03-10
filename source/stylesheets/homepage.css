@@ -320,7 +320,7 @@
   @media only screen and (max-aspect-ratio: 1) {
     right: 0;
     width: 20dvh;
-    bottom: 44dvh;
+    bottom: 40dvh;
   }
 
   & svg {
@@ -460,6 +460,32 @@
 @keyframes shadowFadeIn {
   to {
     opacity: 1;
+  }
+}
+
+/* Disable popup animations on touch/mobile devices and when reduced motion is preferred.
+   Snap all animated elements to their final (fully open) states. */
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .popup-outer,
+  .popup-middle,
+  .popup-inner {
+    animation: none;
+    transform: rotateY(0deg) translateZ(1px);
+  }
+
+  .popup-portrait {
+    animation: none;
+    transform: rotate(-7.5deg);
+  }
+
+  .popup-layer::after {
+    animation: none;
+    opacity: 1;
+  }
+
+  .popup-layer.scroll-ready,
+  .popup-portrait.scroll-ready {
+    animation: none;
   }
 }
 
