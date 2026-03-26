@@ -10,9 +10,10 @@ This skill commits all changes in the `../jlzych.github.com` output repo and pus
 
 1. Check the last commit message in the current source repo (`/Users/jlzych/Sites/jlzych.com`) for context on what changed.
 2. Check `git status` in `../jlzych.github.com` to confirm there are changes to commit.
-3. Stage all changes with `git add -A`.
-4. Write a concise commit message summarizing what changed based on recent commits in the source repo.
-5. Commit and push to `origin master`.
+3. If there are no changes, run `be middleman build` in the source repo first, then re-check `git status` in `../jlzych.github.com`.
+4. Stage all changes with `git add -A`.
+5. Write a concise commit message summarizing what changed based on recent commits in the source repo.
+6. Commit and push to `origin master`.
 
 ## Commit message format
 
@@ -24,5 +25,4 @@ This skill commits all changes in the `../jlzych.github.com` output repo and pus
 ## Important notes
 
 - Always run commands with `cd ../jlzych.github.com &&` prefix since the working directory is the source repo
-- If there are no changes in `../jlzych.github.com`, inform the user the site is already up to date (they may need to build first)
-- Do NOT build the site as part of this skill — only commit and push what's already there
+- If there are no changes in `../jlzych.github.com` even after building, inform the user the site is already up to date
