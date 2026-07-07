@@ -1,0 +1,617 @@
+/* ==========================================================================
+   Drift — landing page (standalone, layout: false)
+   ==========================================================================
+   A geological "strata" system: warm paper backgrounds, sandstone borders,
+   basalt text, a single hot copper accent. Light aesthetic; the page stacks
+   full-bleed sections from pale paper down to near-black.
+
+   Tokens are scoped to this page only — this stylesheet is the sole CSS
+   loaded by /drift, so it does not touch the main site's variables.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Font — Signifier (Klim Type Foundry, licensed).
+   Drop the licensed web fonts at the paths below. Until then the fallback
+   serif stack renders and the layout stays intact.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Signifier";
+  src: url("/fonts/signifier/signifier-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Söhne (Klim) — the UI sans. Two weights: regular body + 600 for
+   eyebrows and buttons. Fallback system stack renders until dropped in. */
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/sohne/sohne-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/sohne/sohne-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ======================================================================
+     COLOR TOKENS — one named token per distinct color in the design.
+     ====================================================================== */
+
+  /* ----- Strata: surfaces (lightest → darkest) ----- */
+  --drift-paper:          #f7f5f0; /* base background, hero + cards */
+  --drift-button:         #fcfbf8; /* lifted button surface */
+  --drift-surface:        color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 94%); /* elevated: pills, sheets */
+  --drift-limestone:      color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 93%); /* "Why" section background */
+  --drift-sandstone:      #d6cfc1; /* "How" section background */
+  --drift-umber:          #453f39; /* "What I use it for" dark panel */
+  --drift-basalt:         #2c2825; /* text-primary + Download background */
+
+  /* ----- Borders / hairlines ----- */
+  --drift-border:         var(--drift-sandstone); /* default hairline, code chip */
+  --drift-border-warm:    color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 73%); /* card borders on sandstone */
+  --drift-border-strong:  color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 63%); /* hover borders, focus */
+
+  /* ----- Text on light: basalt → paper ladder ----- */
+  --drift-text-primary:   var(--drift-basalt); /* body, headlines */
+  --drift-text-body:      color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 13%); /* "Why" narrative body */
+  --drift-text-secondary: color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 23%); /* hero subtitle, card body */
+  --drift-text-tertiary:  color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 31%); /* "How" subtitle */
+  --drift-text-muted:     color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 44%); /* slate — labels, eyebrows */
+  --drift-eyebrow-warm:   color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 36%); /* "How" eyebrow on sandstone */
+  --drift-text-faint:     color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 66%); /* weathered — placeholders */
+
+  /* ----- Text on dark: umber/basalt → paper ladders ----- */
+  --drift-on-dark:          color-mix(in srgb, var(--drift-umber), var(--drift-paper) 93%); /* "Use" panel base text */
+  --drift-on-dark-heading:  color-mix(in srgb, var(--drift-umber), var(--drift-paper) 97%); /* "Use" headings */
+  --drift-on-dark-muted:    color-mix(in srgb, var(--drift-umber), var(--drift-paper) 73%); /* "Use" item body */
+  --drift-on-dark-faint:    color-mix(in srgb, var(--drift-umber), var(--drift-paper) 68%); /* "Use" subtitle */
+  --drift-on-dark-eyebrow:  color-mix(in srgb, var(--drift-umber), var(--drift-paper) 66%); /* "Use" eyebrow */
+  --drift-download-text:    color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 91%); /* Download base text */
+  --drift-download-heading: color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 97%); /* Download headline */
+  --drift-download-body:    color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 66%); /* Download body */
+  --drift-download-faint:   color-mix(in srgb, var(--drift-basalt), var(--drift-paper) 46%); /* Download footer meta */
+
+  /* ----- Copper accent family ----- */
+  --drift-copper:            #d4622b; /* playhead, primary actions */
+  --drift-copper-hover:      #c1571f; /* CTA hover */
+  --drift-copper-muted:      #c99a7f; /* "Use" numerals */
+  --drift-copper-warm:       #c98b6a; /* Download eyebrow + link */
+  --drift-copper-bright:     #e08a5c; /* "Use" icon glyphs */
+  --drift-copper-soft:       color-mix(in srgb, var(--drift-copper) 12%, transparent); /* accent wash */
+  --drift-copper-10:         color-mix(in srgb, var(--drift-copper) 10%, transparent); /* feature icon fill */
+  --drift-copper-14:         color-mix(in srgb, var(--drift-copper) 14%, transparent); /* "Use" icon fill */
+  --drift-copper-30:         color-mix(in srgb, var(--drift-copper) 30%, transparent); /* "Use" icon border */
+  --drift-copper-tint-border:#e4d3c4; /* feature icon border on light */
+
+  /* ----- Neutrals / overlays ----- */
+  --drift-white:             #ffffff; /* on-accent (CTA text) */
+  --drift-hairline-on-dark:  color-mix(in srgb, var(--drift-paper) 14%, transparent); /* "Use" dividers */
+  --drift-hairline-download: color-mix(in srgb, var(--drift-download-text) 14%, transparent); /* Download footer rule */
+
+  /* ----- Semantic aliases ----- */
+  --bg:            var(--drift-paper);
+  --fg:            var(--drift-text-primary);
+  --fg-muted:      var(--drift-text-muted);
+  --border:        var(--drift-border);
+  --accent:        var(--drift-copper);
+  --on-accent:     var(--drift-white);
+
+  /* ======================================================================
+     TYPE
+     ====================================================================== */
+  --drift-font-display: "Signifier", ui-serif, "Iowan Old Style",
+                        "Apple Garamond", Georgia, serif;
+  --drift-font-ui: "Sohne", ui-sans-serif, -apple-system, BlinkMacSystemFont,
+                   "SF Pro Text", system-ui, "Segoe UI", Helvetica, Arial,
+                   sans-serif;
+  --drift-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Fluid type scale — the design's fixed desktop sizes are the max. */
+  --drift-fs-hero:      clamp(30px, 6.2vw, 40px);  /* hero headline */
+  --drift-fs-download:  clamp(34px, 8vw, 48px);    /* download headline */
+  --drift-fs-title:     clamp(27px, 4.6vw, 34px);  /* section titles + quote */
+  --drift-fs-card:      clamp(19px, 2.4vw, 21px);  /* card / item headings */
+  --drift-fs-lead:      clamp(16px, 2.2vw, 18px);  /* hero subtitle */
+  --drift-fs-body-lg:   16px;   /* "Why" narrative */
+  --drift-fs-body:      15px;   /* general body */
+  --drift-fs-body-sm:   14px;   /* card body */
+  --drift-fs-cta:       14px;   /* button label */
+  --drift-fs-caption:   12px;   /* helper / meta */
+  --drift-fs-eyebrow:   11px;   /* tracked uppercase labels */
+
+  --drift-leading-tight:  1.06;
+  --drift-leading-snug:   1.22;
+  --drift-leading-normal: 1.5;
+  --drift-tracking-eyebrow: 0.08em;
+
+  /* ======================================================================
+     SPACING / RADII / BORDERS / SHADOWS / MOTION
+     ====================================================================== */
+  --drift-section-pad-y: clamp(72px, 11vw, 110px);
+  --drift-section-pad-x: clamp(20px, 5vw, 40px);
+  --drift-hero-pad-top:  clamp(96px, 14vw, 150px);
+  --drift-maxw:          1080px;
+  --drift-maxw-prose:    720px;
+  --drift-maxw-narrow:   640px;
+
+  --drift-radius-sm:   6px;
+  --drift-radius-md:   8px;
+  --drift-radius-lg:   10px;
+  --drift-radius-xl:   12px;
+  --drift-radius-pill: 9999px;
+
+  --drift-shadow-viewport:
+    0 8px 14px rgba(44, 40, 37, 0.08),
+    0 2px 6px rgba(44, 40, 37, 0.20);
+  --drift-shadow-card: 0 1px 2px rgba(44, 40, 37, 0.05);
+
+  --drift-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --drift-dur-fast: 150ms;
+  --drift-dur-base: 200ms;
+}
+
+/* ==========================================================================
+   RESET (minimal — standalone page has no site normalize)
+   ========================================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body.drift {
+  margin: 0;
+  background: var(--drift-basalt);
+  color: var(--drift-text-primary);
+  font-family: var(--drift-font-ui);
+  line-height: var(--drift-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.drift img { max-width: 100%; height: auto; display: block; }
+.drift a { color: inherit; }
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+.drift-display {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.drift-eyebrow {
+  font-family: var(--drift-font-ui);
+  font-size: var(--drift-fs-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--drift-tracking-eyebrow);
+  color: var(--drift-text-muted);
+}
+
+.drift-code {
+  font-family: var(--drift-font-mono);
+  font-size: 0.875em;
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+.drift-section { width: 100%; }
+
+.drift-container {
+  max-width: var(--drift-maxw);
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+}
+
+/* ==========================================================================
+   BUTTON / CTA
+   ========================================================================== */
+.drift-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--drift-button);
+  color: var(--drift-text-primary);
+  font-family: var(--drift-font-ui);
+  font-size: var(--drift-fs-cta);
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--drift-radius-xl);
+  border: 1px solid var(--drift-border);
+  box-shadow: var(--drift-shadow-card);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color var(--drift-dur-fast) var(--drift-ease-standard),
+    background var(--drift-dur-fast) var(--drift-ease-standard);
+}
+.drift-cta:hover {
+  border-color: var(--drift-border-strong);
+  background: var(--drift-paper);
+}
+/* Win over the `.drift a { color: inherit }` reset so the label/icon stay
+   basalt even on the dark download section. */
+.drift a.drift-cta { color: var(--drift-text-primary); }
+.drift-cta svg { width: 16px; height: 16px; }
+
+:where(.drift a, .drift button):focus-visible {
+  outline: 2px solid var(--drift-copper);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Inline icon defaults */
+.drift-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Icon sizing is set per context (.drift-cta / .feat-icon / .use__icon);
+   this only normalizes the svg box. */
+.drift-icon svg { display: block; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  background: var(--drift-paper);
+  text-align: center;
+}
+.hero__inner {
+  max-width: var(--drift-maxw);
+  margin: 0 auto;
+  padding: var(--drift-hero-pad-top) var(--drift-section-pad-x)
+           clamp(48px, 7vw, 70px);
+}
+.hero__lede { max-width: var(--drift-maxw-narrow); margin: 0 auto; }
+
+.hero__wordmark {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 8vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  margin: 0 0 30px;
+  color: var(--drift-text-primary);
+}
+.hero__wordmark img { height: 76px; width: auto; margin: 0 auto; }
+
+.hero__title {
+  font-size: var(--drift-fs-hero);
+  line-height: var(--drift-leading-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+.hero__subtitle {
+  font-size: var(--drift-fs-lead);
+  color: var(--drift-text-secondary);
+  margin: 0 auto 30px;
+  max-width: 520px;
+}
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero__meta { font-size: var(--drift-fs-caption); color: var(--drift-text-muted); }
+
+.hero__visual { margin-top: clamp(40px, 6vw, 64px); }
+.hero__caption {
+  text-align: center;
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-text-muted);
+  margin: 16px 0 0;
+}
+
+/* ----- Static scrubber mockup ------------------------------------------- */
+.scrubber { max-width: 920px; margin: 0 auto; }
+
+.scrubber__viewport {
+  position: relative;
+  background: var(--drift-paper);
+  border-radius: var(--drift-radius-md);
+  box-shadow: var(--drift-shadow-viewport);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+/* Abstract "captured web page" inside the viewport */
+.scrubber__chrome {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  background: var(--drift-surface);
+  border-bottom: 1px solid var(--drift-border);
+}
+.scrubber__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--drift-border-strong); }
+.scrubber__urlbar {
+  margin-left: 10px;
+  flex: 1;
+  height: 16px;
+  border-radius: var(--drift-radius-pill);
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border);
+}
+.scrubber__page { padding: clamp(18px, 3vw, 34px); }
+.scrubber__block {
+  border-radius: var(--drift-radius-sm);
+  background: var(--drift-surface);
+  margin-bottom: 14px;
+}
+.scrubber__block--title { height: 22px; width: 46%; background: var(--drift-sandstone); }
+.scrubber__block--line  { height: 12px; }
+.scrubber__block--line.w80 { width: 80%; }
+.scrubber__block--line.w60 { width: 60%; }
+.scrubber__cards { display: flex; gap: 14px; margin-top: 22px; }
+.scrubber__card {
+  flex: 1;
+  height: clamp(70px, 12vw, 110px);
+  border-radius: var(--drift-radius-md);
+  background: var(--drift-surface);
+  border: 1px solid var(--drift-border);
+}
+.scrubber__card:first-child { background: var(--drift-copper-10); border-color: var(--drift-copper-tint-border); }
+
+/* Metadata overlay pill */
+.scrubber__meta {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: color-mix(in srgb, var(--drift-paper) 86%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--drift-border);
+  border-radius: var(--drift-radius-lg);
+  font-size: 10px;
+  color: var(--drift-text-muted);
+}
+.scrubber__meta strong { color: var(--drift-text-primary); font-weight: 600; }
+.scrubber__meta .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--drift-border-strong); }
+
+/* Filmstrip */
+.scrubber__strip {
+  position: relative;
+  margin-top: 14px;
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  background: var(--drift-surface);
+  border: 1px solid var(--drift-border);
+  border-radius: var(--drift-radius-md);
+}
+.scrubber__frame {
+  flex: 1;
+  height: 40px;
+  border-radius: 3px;
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border);
+}
+.scrubber__frame--active {
+  border-color: var(--drift-copper);
+  box-shadow: 0 0 0 1px var(--drift-copper);
+}
+.scrubber__playhead {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 62%;
+  width: 2px;
+  background: var(--drift-copper);
+  border-radius: 2px;
+}
+.scrubber__playhead::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--drift-copper);
+}
+
+/* ==========================================================================
+   WHY
+   ========================================================================== */
+.why { background: var(--drift-limestone); }
+.why__inner {
+  max-width: var(--drift-maxw-prose);
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+}
+.why__eyebrow { margin-bottom: 26px; }
+.why__hook {
+  font-size: var(--drift-fs-title);
+  line-height: var(--drift-leading-snug);
+  margin: 0 0 32px;
+}
+.why__body { display: flex; flex-direction: column; gap: 18px; }
+.why__body p {
+  font-size: var(--drift-fs-body-lg);
+  color: var(--drift-text-body);
+  margin: 0;
+}
+.why__signoff {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--drift-text-primary);
+  margin: 8px 0 0 !important;
+}
+
+/* ==========================================================================
+   HOW
+   ========================================================================== */
+.how { background: var(--drift-sandstone); }
+.how__head { text-align: center; margin-bottom: 48px; }
+.how__eyebrow { color: var(--drift-eyebrow-warm); margin-bottom: 14px; }
+.how__title { font-size: var(--drift-fs-title); margin: 0 0 6px; }
+.how__subtitle { font-size: var(--drift-fs-body); color: var(--drift-text-tertiary); margin: 0; }
+
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.how__card {
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border-warm);
+  border-radius: var(--drift-radius-lg);
+  padding: 26px;
+}
+.how__card h3 {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: var(--drift-fs-card);
+  margin: 0 0 7px;
+}
+.how__card p {
+  font-size: var(--drift-fs-body-sm);
+  color: var(--drift-text-secondary);
+  margin: 0;
+}
+
+.feat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--drift-copper-10);
+  border: 1px solid var(--drift-copper-tint-border);
+  color: var(--drift-copper);
+  margin-bottom: 14px;
+}
+.feat-icon svg { width: 17px; height: 17px; }
+
+/* ==========================================================================
+   USE (dark panel)
+   ========================================================================== */
+.use { background: var(--drift-umber); color: var(--drift-on-dark); }
+.use__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+}
+.use__eyebrow { color: var(--drift-on-dark-eyebrow); margin-bottom: 14px; }
+.use__title {
+  font-size: var(--drift-fs-title);
+  color: var(--drift-on-dark-heading);
+  margin: 0 0 6px;
+}
+.use__subtitle { font-size: var(--drift-fs-body); color: var(--drift-on-dark-faint); margin: 0 0 22px; }
+
+.use__item {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  padding: 30px 4px;
+  border-top: 1px solid var(--drift-hairline-on-dark);
+}
+.use__num {
+  font-family: var(--drift-font-display);
+  font-size: 15px;
+  color: var(--drift-copper-muted);
+  width: 34px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+.use__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--drift-radius-xl);
+  background: var(--drift-copper-14);
+  border: 1px solid var(--drift-copper-30);
+  color: var(--drift-copper-bright);
+}
+.use__icon svg { width: 24px; height: 24px; }
+.use__item h3 {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: var(--drift-fs-card);
+  color: var(--drift-on-dark-heading);
+  margin: 0 0 6px;
+}
+.use__item p { font-size: var(--drift-fs-body); color: var(--drift-on-dark-muted); margin: 0; }
+
+/* ==========================================================================
+   DOWNLOAD (near-black)
+   ========================================================================== */
+.download { background: var(--drift-basalt); color: var(--drift-download-text); }
+.download__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(88px, 13vw, 120px) var(--drift-section-pad-x);
+  text-align: center;
+}
+.download__eyebrow { color: var(--drift-copper-warm); margin-bottom: 22px; }
+.download__title {
+  font-size: var(--drift-fs-download);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--drift-download-heading);
+  margin: 0 0 20px;
+}
+.download__body {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--drift-download-body);
+  margin: 0 0 30px;
+}
+.download__footer {
+  margin-top: 46px;
+  padding-top: 22px;
+  border-top: 1px solid var(--drift-hairline-download);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-download-faint);
+}
+.download__footer a {
+  color: var(--drift-copper-warm);
+  text-decoration: none;
+}
+.download__footer a:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 850px) { /* --bp-med: collapse the How grid */
+  .how__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) { /* --bp-small */
+  .use__item { gap: 16px; padding: 24px 0; }
+  .use__num { display: none; }
+  .scrubber__cards { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift *, .drift *::before, .drift *::after {
+    transition-duration: 0.001ms !important;
+  }
+}

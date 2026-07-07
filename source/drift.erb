@@ -1,0 +1,212 @@
+---
+title: Drift — Every save a layer
+description: A macOS menubar app that quietly screenshots your browser as you build, storing a scrubbable visual history of your localhost.
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= current_page.data.title %></title>
+    <meta name="description" content="<%= current_page.data.description %>">
+    <%= stylesheet_link_tag "drift" %>
+  </head>
+  <body class="drift">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="drift-section hero">
+      <div class="hero__inner">
+        <div class="hero__lede">
+          <p class="hero__wordmark"><%= image_tag "drift/logo.svg", alt: "Drift" %></p>
+
+          <h1 class="hero__title drift-display">Every save a layer.</h1>
+          <p class="hero__subtitle">A macOS menubar app that quietly screenshots your browser as you build — and stores it as a scrubbable visual history of your localhost.</p>
+          <div class="hero__actions">
+            <a class="drift-cta" href="#download">
+              <span class="drift-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+              </span>
+              Download for Mac — Free
+            </a>
+          </div>
+        </div>
+
+        <!-- Static representation of the app (interactive scrubber TBD) -->
+        <div class="hero__visual">
+          <div class="scrubber" role="img" aria-label="The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames.">
+            <div class="scrubber__viewport">
+              <div class="scrubber__chrome">
+                <span class="scrubber__dot"></span>
+                <span class="scrubber__dot"></span>
+                <span class="scrubber__dot"></span>
+                <span class="scrubber__urlbar"></span>
+              </div>
+              <div class="scrubber__page">
+                <div class="scrubber__block scrubber__block--title"></div>
+                <div class="scrubber__block scrubber__block--line w80"></div>
+                <div class="scrubber__block scrubber__block--line w60"></div>
+                <div class="scrubber__cards">
+                  <div class="scrubber__card"></div>
+                  <div class="scrubber__card"></div>
+                  <div class="scrubber__card"></div>
+                </div>
+              </div>
+              <div class="scrubber__meta">
+                <strong>feature/timeline</strong>
+                <span class="dot"></span>localhost:4567
+                <span class="dot"></span>9:24 AM
+              </div>
+            </div>
+
+            <div class="scrubber__strip">
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame scrubber__frame--active"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__frame"></div>
+              <div class="scrubber__playhead"></div>
+            </div>
+          </div>
+          <p class="hero__caption">Drag the strip below the viewport, or press play. This is the whole app — no other chrome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ===================== -->
+    <section class="drift-section why">
+      <div class="why__inner">
+        <p class="drift-eyebrow why__eyebrow">Why this exists</p>
+        <p class="why__hook drift-display">When I started designing interfaces in code with AI, I gained speed and lost history.</p>
+        <div class="why__body">
+          <p>The old process left a trail whether I wanted it or not. Figma files full of artboards. Slack threads with screenshots. A <span class="drift-code">v2_final_FINAL.png</span> in a folder somewhere. Messy, but the evidence existed.</p>
+          <p>AI-assisted coding inverted that. The work is fast — unreasonably fast — but the record disappears. The chat scrolls away. The browser shows only the current state. Git tracks code, not what the code looks like. At the end of a productive week I'd have a finished feature and almost no evidence of how I got there.</p>
+          <p>I tried screenshotting by hand. It didn't stick. Stopping to hit Cmd-Shift-4 is a context switch, and when you're in a flow state any interruption breaks the rhythm.</p>
+          <p class="why__signoff">Drift is what I wanted to exist in that moment. — Jeff Zych</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW ===================== -->
+    <section class="drift-section how">
+      <div class="drift-container">
+        <div class="how__head">
+          <p class="drift-eyebrow how__eyebrow">How it works</p>
+          <h2 class="how__title drift-display">Passive by design.</h2>
+          <p class="how__subtitle">A frame every five seconds — only when the screen actually changed.</p>
+        </div>
+        <div class="how__grid">
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M6 4v4"/><path d="M10 4v4"/></svg>
+            </span>
+            <h3>Install it and forget it.</h3>
+            <p>Runs in your menubar with no dock icon. Point it at a URL and it does the rest — no start button, no session to manage. It's just on.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            </span>
+            <h3>Only captures what changed.</h3>
+            <p>A frame every five seconds, but only while the tab is visible — and duplicates are thrown away. You keep the moments the screen actually looks different.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+            </span>
+            <h3>Tagged by branch, URL, and time.</h3>
+            <p>Every frame carries its git branch, URL, and commit hash automatically. Filter to exactly the frames from one feature branch on one page.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+            </span>
+            <h3>Scrub through it like video.</h3>
+            <p>Move your mouse and the frames fly by. Sweep to this morning's version in a second; git commits show up as markers to jump to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== USE ===================== -->
+    <section class="drift-section use">
+      <div class="use__inner">
+        <p class="drift-eyebrow use__eyebrow">What I use it for</p>
+        <h2 class="use__title drift-display">The archive earns its keep.</h2>
+        <p class="use__subtitle">Four everyday moments where the history pays off.</p>
+
+        <div class="use__item">
+          <div class="use__num">01</div>
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </span>
+          <div>
+            <h3>Revisit a decision</h3>
+            <p>Scrub back, find the version from three iterations ago, and pull it into Figma for a side-by-side — or bring it to a design critique.</p>
+          </div>
+        </div>
+
+        <div class="use__item">
+          <div class="use__num">02</div>
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <div>
+            <h3>Grab one for Slack</h3>
+            <p>Drop a frame into a progress update. Because Drift captures the live browser, hovers and modals are already in the archive.</p>
+          </div>
+        </div>
+
+        <div class="use__item">
+          <div class="use__num">03</div>
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+          </span>
+          <div>
+            <h3>Document a pull request</h3>
+            <p>A couple of before-and-after shots in a PR go a long way. They already exist — you don't have to stage them.</p>
+          </div>
+        </div>
+
+        <div class="use__item">
+          <div class="use__num">04</div>
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          </span>
+          <div>
+            <h3>Write the case study</h3>
+            <p>This was the original motivation. When it's time to write up how a feature came together, the before-during-after already exists.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOWNLOAD ===================== -->
+    <section class="drift-section download" id="download">
+      <div class="download__inner">
+        <p class="drift-eyebrow download__eyebrow">Free · macOS · Local-only</p>
+        <h2 class="download__title drift-display">Every save a layer.</h2>
+        <p class="download__body">I'm releasing Drift free. I'd rather find out if it's useful than figure out pricing. It runs in the background and stays out of the way while the record builds up, layer by layer.</p>
+        <%# TODO: point href at the real download once available %>
+        <a class="drift-cta" href="#download">
+          <span class="drift-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+          </span>
+          Download for Mac — Free
+        </a>
+        <div class="download__footer">
+          <span>macOS 14+ · Works with any browser · Everything stays on your machine</span>
+          <a href="/">jlzych.com</a>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
