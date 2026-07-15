@@ -86,10 +86,12 @@ layout: false
         <p class="drift-eyebrow why__eyebrow">Why this exists</p>
         <p class="why__hook drift-display">When I started designing interfaces in code with AI, I gained speed and lost history.</p>
         <div class="why__body">
-          <p>The old process left a trail whether I wanted it or not. Figma files full of artboards. Slack threads with screenshots. A <span class="drift-code">v2_final_FINAL.png</span> in a folder somewhere. Messy, but the evidence existed.</p>
-          <p>AI-assisted coding inverted that. The work is fast — unreasonably fast — but the record disappears. The chat scrolls away. The browser shows only the current state. Git tracks code, not what the code looks like. At the end of a productive week I'd have a finished feature and almost no evidence of how I got there.</p>
-          <p>I tried screenshotting by hand. It didn't stick. Stopping to hit Cmd-Shift-4 is a context switch, and when you're in a flow state any interruption breaks the rhythm.</p>
-          <p class="why__signoff">Drift is what I wanted to exist in that moment. — Jeff Zych</p>
+          <p>As I started using AI tools, especially Claude Code, to design more UI in the browser, I started losing the record I had of all my design decisions and design options.</p>
+          <p>When I was using Figma, I would duplicate artboards and try out different things. Then I could look back and see a record of everything I had done. I could pull out some of my favorite versions to compare them and make decisions based on that.</p>
+          <p>But as I moved into code faster and faster, iterating on designs there, trying things out with real data and actually interacting with them, I was losing that record. Sometimes I wanted to go back to a previous decision or idea I had tried, and I couldn't easily do that. Sometimes I wanted to look at options side by side and say, "Which feels better?" and I didn't have that.</p>
+          <p>I would take screenshots sometimes, but taking screenshots manually both took me out of the flow and was easy to forget. I wasn't always capturing the moments that mattered.</p>
+          <p>So I wanted something that would constantly take screenshots in the background. Something I wouldn't have to think about. Something that would automatically capture things as I went, so when I got to a point where I thought, "Wait, what was that thing I tried earlier?" I could open it and look back through the whole timeline.</p>
+          <p class="why__signoff">That was the genesis of Drift.</p>
         </div>
       </div>
     </section>
@@ -99,36 +101,36 @@ layout: false
       <div class="drift-container">
         <div class="how__head">
           <h2 class="how__title drift-display">How does it work?</h2>
-          <p class="how__subtitle">Everything is organized by <em>Projects</em>, which are tied to git repositories. Tell Drift which URLs to watch (could be <span class="drift-code">localhost</span>, could be aliased dev URLs, could be staging environments &mdash; any URL is valid), and it will capture a frame every five seconds while the tab is visible (works with any browser). Screenshots are compressed JPGs stored in a local database on your disc &mdash; I can't access your data, nothing is uploaded to servers, everything is private and yours.</p>
+          <p class="how__subtitle">Everything is organized around <em>Projects</em>, each tied one-to-one to a git repo. Point Drift at a project's directory and the URLs to watch, and it quietly builds a visual timeline in the background from there.</p>
         </div>
         <div class="how__grid">
           <div class="how__card">
             <span class="drift-icon feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M6 4v4"/><path d="M10 4v4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </span>
-            <h3>Install it and forget it.</h3>
-            <p>Runs in your menubar with no dock icon. Point it at a URL and it does the rest — no start button, no session to manage. It's just on.</p>
-          </div>
-          <div class="how__card">
-            <span class="drift-icon feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
-            </span>
-            <h3>Only captures what changed.</h3>
-            <p>A frame every five seconds, but only while the tab is visible — and duplicates are thrown away. You keep the moments the screen actually looks different.</p>
+            <h3>Organized by project.</h3>
+            <p>Each project has a one-to-one relationship with a git repo. Point Drift at the project's directory, and everything it captures is scoped to that project.</p>
           </div>
           <div class="how__card">
             <span class="drift-icon feat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
             </span>
             <h3>Tagged by branch, URL, and time.</h3>
-            <p>Every frame carries its git branch, URL, and commit hash automatically. Filter to exactly the frames from one feature branch on one page.</p>
+            <p>Every frame is saved to a local database along with its git branch, URL, and timestamp — so you can filter to one feature branch, one page, or a certain window of time.</p>
           </div>
           <div class="how__card">
             <span class="drift-icon feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
             </span>
-            <h3>Scrub through it like video.</h3>
-            <p>Move your mouse and the frames fly by. Sweep to this morning's version in a second; git commits show up as markers to jump to.</p>
+            <h3>Only the URLs you choose, every five seconds.</h3>
+            <p>Usually that's <span class="drift-code">localhost</span> with a port, but a proxy, a staging URL, or anything else works too. When one of those tabs is active, Drift takes a screenshot every five seconds — and throws out ones that look the same as the last, so nothing changing doesn't mean piling up frames.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3>Local and private.</h3>
+            <p>Screenshots live in a local database on your machine. Nothing is uploaded to a server, there's no AI or LLM involved, and no one else — including me — can access your data.</p>
           </div>
         </div>
       </div>
@@ -141,11 +143,11 @@ layout: false
 
         <div class="use__item">
           <span class="drift-icon use__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
           </span>
           <div>
-            <h3>Revisit a decision</h3>
-            <p>Scrub back, find the version from three iterations ago, and pull it into Figma for a side-by-side — or bring it to a design critique.</p>
+            <h3>Document a pull request</h3>
+            <p>Grab a screenshot from Drift and drop it into the PR to show what changed — or include a few, covering the different states.</p>
           </div>
         </div>
 
@@ -154,18 +156,28 @@ layout: false
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </span>
           <div>
-            <h3>Grab one for Slack</h3>
-            <p>Drop a frame into a progress update. Because Drift captures the live browser, hovers and modals are already in the archive.</p>
+            <h3>Share progress in Slack</h3>
+            <p>Grab a quick screenshot of what you've been working on and share it — no need to stop and take one yourself.</p>
           </div>
         </div>
 
         <div class="use__item">
           <span class="drift-icon use__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
           </span>
           <div>
-            <h3>Document a pull request</h3>
-            <p>A couple of before-and-after shots in a PR go a long way. They already exist — you don't have to stage them.</p>
+            <h3>Revisit a decision</h3>
+            <p>Look back through all the iterations a screen went through. Pull out the ones that stand out, or grab two that are close together and drop them into Figma side-by-side to decide what the next revision should be.</p>
+          </div>
+        </div>
+
+        <div class="use__item">
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </span>
+          <div>
+            <h3>Watch it evolve</h3>
+            <p>Hit play and watch a page evolve, iteration by iteration — like Procreate, but for a screen instead of a drawing. It's my favorite feature, and it makes turning that evolution into a quick video easy, instead of piecing one together by hand.</p>
           </div>
         </div>
 
@@ -175,7 +187,17 @@ layout: false
           </span>
           <div>
             <h3>Write the case study</h3>
-            <p>This was the original motivation. When it's time to write up how a feature came together, the before-during-after already exists.</p>
+            <p>Pull out the most interesting screenshots to show how a page evolved, what the key design decisions were, and what other paths were explored.</p>
+          </div>
+        </div>
+
+        <div class="use__item">
+          <span class="drift-icon use__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+          </span>
+          <div>
+            <h3>Present a design review</h3>
+            <p>Show the options you tried, why some of them didn't work, and why one direction is the one to move forward with.</p>
           </div>
         </div>
       </div>
