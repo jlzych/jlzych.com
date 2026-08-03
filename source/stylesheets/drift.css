@@ -298,6 +298,10 @@ body.drift {
   letter-spacing: -0.01em;
 }
 
+.title-beat {
+  display: block;
+}
+
 .drift-eyebrow {
   font-family: var(--drift-font-ui);
   font-size: var(--drift-fs-eyebrow);
@@ -422,12 +426,14 @@ body.drift {
   line-height: var(--drift-leading-tight);
   letter-spacing: -0.02em;
   margin: 0 0 20px;
+  text-wrap: balance;
 }
 .hero__subtitle {
   font-size: var(--drift-fs-lead);
   color: var(--drift-text-secondary);
   margin: 0 auto 30px;
   max-width: 520px;
+  text-wrap: pretty;
 }
 .hero__actions {
   display: flex;
@@ -439,6 +445,7 @@ body.drift {
 .hero__meta {
   font-size: var(--drift-fs-caption);
   color: var(--drift-text-muted);
+  text-wrap: pretty;
 }
 
 .hero__visual {
@@ -449,6 +456,7 @@ body.drift {
   font-size: var(--drift-fs-caption);
   color: var(--drift-text-muted);
   margin: 16px 0 0;
+  text-wrap: pretty;
 }
 
 /* ----- Static scrubber mockup ------------------------------------------- */
@@ -604,6 +612,7 @@ body.drift {
 .why {
   background: var(--drift-limestone);
 }
+
 .why__inner {
   max-width: var(--drift-maxw-prose);
   margin: 0 auto;
@@ -616,23 +625,29 @@ body.drift {
   font-size: var(--drift-fs-title);
   line-height: var(--drift-leading-snug);
   margin: 0 0 32px;
+  text-wrap: balance;
 }
 .why__body {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.why__body p {
-  font-size: var(--drift-fs-body-lg);
-  color: var(--drift-text-body);
-  margin: 0;
-}
-.why__signoff {
-  font-family: var(--drift-font-display);
-  font-weight: 500;
-  font-size: 22px;
-  color: var(--drift-text-primary);
-  margin: 8px 0 0 !important;
+.why__body {
+  p {
+    font-size: var(--drift-fs-body-lg);
+    color: var(--drift-text-body);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .why__signoff {
+    font-family: var(--drift-font-display);
+    font-weight: 500;
+    font-size: calc(var(--drift-fs-body-lg) * 1.5);
+    color: var(--drift-text-primary);
+    margin: 8px 0 0 !important;
+    text-wrap: balance;
+  }
 }
 
 /* ==========================================================================
@@ -652,11 +667,14 @@ body.drift {
 .how__title {
   font-size: var(--drift-fs-title);
   margin: 0 0 6px;
+  text-wrap: balance;
 }
 .how__subtitle {
   font-size: var(--drift-fs-body);
   color: var(--drift-text-tertiary);
-  margin: 0;
+  max-width: var(--drift-maxw-prose);
+  margin: 0 auto;
+  text-wrap: pretty;
 }
 
 .how__grid {
@@ -675,11 +693,13 @@ body.drift {
   font-weight: 500;
   font-size: var(--drift-fs-card);
   margin: 0 0 7px;
+  text-wrap: balance;
 }
 .how__card p {
   font-size: var(--drift-fs-body-sm);
   color: var(--drift-text-secondary);
   margin: 0;
+  text-wrap: pretty;
 }
 
 .feat-icon {
@@ -716,11 +736,13 @@ body.drift {
   font-size: var(--drift-fs-title);
   color: var(--drift-on-dark-heading);
   margin: 0 0 6px;
+  text-wrap: balance;
 }
 .use__subtitle {
   font-size: var(--drift-fs-body);
   color: var(--drift-on-dark-faint);
   margin: 0 0 22px;
+  text-wrap: pretty;
 }
 
 .use__item {
@@ -749,11 +771,13 @@ body.drift {
   font-size: var(--drift-fs-card);
   color: var(--drift-on-dark-heading);
   margin: 0 0 6px;
+  text-wrap: balance;
 }
 .use__item p {
   font-size: var(--drift-fs-body);
   color: var(--drift-on-dark-muted);
   margin: 0;
+  text-wrap: pretty;
 }
 
 /* ==========================================================================
@@ -762,6 +786,10 @@ body.drift {
 .download {
   background: var(--drift-basalt);
   color: var(--drift-download-text);
+
+  .hero__subtitle {
+    color: var(--drift-download-body);
+  }
 }
 .download__inner {
   max-width: 600px;
@@ -779,17 +807,17 @@ body.drift {
   letter-spacing: -0.02em;
   color: var(--drift-download-heading);
   margin: 0 0 20px;
+  text-wrap: balance;
 }
 .download__body {
   font-size: 17px;
   line-height: 1.6;
   color: var(--drift-download-body);
   margin: 0 0 30px;
+  text-wrap: pretty;
 }
 .download__footer {
-  margin-top: 46px;
   padding-top: 22px;
-  border-top: 1px solid var(--drift-hairline-download);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -797,12 +825,26 @@ body.drift {
   flex-wrap: wrap;
   font-size: var(--drift-fs-caption);
   color: var(--drift-download-faint);
+  text-wrap: pretty;
 }
 .download__footer a {
   color: var(--drift-copper-warm);
   text-decoration: none;
 }
 .download__footer a:hover {
+  text-decoration: underline;
+}
+.download__credit {
+  margin: 0;
+  padding: 0 var(--drift-section-pad-x) clamp(24px, 4vw, 40px);
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-download-faint);
+}
+.download__credit a {
+  color: var(--drift-copper-warm);
+  text-decoration: none;
+}
+.download__credit a:hover {
   text-decoration: underline;
 }
 
