@@ -33,50 +33,11 @@ layout: false
           <p class="hero__meta">macOS 14+ · Works with any browser, iOS app, or Mac app</p>
         </div>
 
-        <!-- Static representation of the app (interactive scrubber TBD) -->
+        <!-- Product screenshot (web version of this section TBD) -->
         <div class="hero__visual">
-          <div class="scrubber" role="img" aria-label="The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames.">
-            <div class="scrubber__viewport">
-              <div class="scrubber__chrome">
-                <span class="scrubber__dot"></span>
-                <span class="scrubber__dot"></span>
-                <span class="scrubber__dot"></span>
-                <span class="scrubber__urlbar"></span>
-              </div>
-              <div class="scrubber__page">
-                <div class="scrubber__block scrubber__block--title"></div>
-                <div class="scrubber__block scrubber__block--line w80"></div>
-                <div class="scrubber__block scrubber__block--line w60"></div>
-                <div class="scrubber__cards">
-                  <div class="scrubber__card"></div>
-                  <div class="scrubber__card"></div>
-                  <div class="scrubber__card"></div>
-                </div>
-              </div>
-              <div class="scrubber__meta">
-                <strong>feature/timeline</strong>
-                <span class="dot"></span>localhost:4567
-                <span class="dot"></span>9:24 AM
-              </div>
-            </div>
-
-            <div class="scrubber__strip">
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame scrubber__frame--active"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__frame"></div>
-              <div class="scrubber__playhead"></div>
-            </div>
+          <div class="hero__screenshot">
+            <%= image_tag "drift/product-screenshot.png", alt: "The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames." %>
           </div>
-          <p class="hero__caption">Drag the strip below the viewport, or press play. This is the whole app — no other chrome.</p>
         </div>
       </div>
     </section>
@@ -144,21 +105,11 @@ layout: false
 
         <div class="use__item">
           <span class="drift-icon use__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
-          </span>
-          <div>
-            <h3>Document a pull request</h3>
-            <p>Grab a screenshot from Drift and drop it into the PR to show what changed — or include a few, covering the different states.</p>
-          </div>
-        </div>
-
-        <div class="use__item">
-          <span class="drift-icon use__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </span>
           <div>
-            <h3>Share progress in Slack</h3>
-            <p>Grab a quick screenshot of what you've been working on and share it — no need to stop and take one yourself.</p>
+            <h3>Share a quick screenshot</h3>
+            <p>Grab a screenshot from Drift and drop it into a PR to show what changed, or share it in Slack to show progress.</p>
           </div>
         </div>
 
@@ -184,21 +135,11 @@ layout: false
 
         <div class="use__item">
           <span class="drift-icon use__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-          </span>
-          <div>
-            <h3>Write the case study</h3>
-            <p>Pull out the most interesting screenshots to show how a page evolved, what the key design decisions were, and what other paths were explored.</p>
-          </div>
-        </div>
-
-        <div class="use__item">
-          <span class="drift-icon use__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
           </span>
           <div>
-            <h3>Present a design review</h3>
-            <p>Show the options you tried, why some of them didn't work, and why one direction is the one to move forward with.</p>
+            <h3>Tell the story</h3>
+            <p>Pull out the most interesting screenshots to write a case study on how a page evolved, or present a design review: the options you tried, what didn't work, and why one direction is the one to move forward with.</p>
           </div>
         </div>
       </div>
