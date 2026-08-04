@@ -1,0 +1,179 @@
+---
+title: Drift — Screenshots without the interruption
+description: A macOS menubar app that quietly screenshots your browser, iOS app, or Mac app as you build, storing a scrubbable visual history of your work.
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= current_page.data.title %></title>
+    <meta name="description" content="<%= current_page.data.description %>">
+
+    <link rel="icon" type="image/svg+xml" href="/images/drift/icon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/drift/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/drift/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/drift/apple-touch-icon.png">
+
+    <%= stylesheet_link_tag "drift" %>
+  </head>
+  <body class="drift">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="drift-section hero">
+      <div class="hero__inner">
+        <div class="hero__lede">
+          <p class="hero__wordmark"><%= image_tag "drift/logo.svg", alt: "Drift" %></p>
+
+          <h1 class="hero__title drift-display"><span class="title-beat">Screenshots without the interruption</span></h1>
+          <p class="hero__subtitle">Drift is a macOS menubar app that quietly screenshots your browser, iOS app, or Mac app as you build</p>
+          <div class="hero__actions">
+            <a class="drift-cta" href="https://www.dropbox.com/scl/fi/kw3gnu05elvsrt9c4olgs/Drift.dmg.zip?rlkey=qxotrsd0nufmewtt9gd6gn2aw&dl=1">
+              <span class="drift-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+              </span>
+              Download for Mac — Free
+            </a>
+          </div>
+          <p class="hero__meta">macOS 14+ · Works with any browser, iOS app, or Mac app</p>
+        </div>
+
+        <!-- Product screenshot (web version of this section TBD) -->
+        <div class="hero__visual">
+          <div class="hero__screenshot">
+            <%= image_tag "drift/product-screenshot.png", alt: "The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames." %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ===================== -->
+    <section class="drift-section why">
+      <div class="why__inner">
+        <p class="drift-eyebrow why__eyebrow">Why this exists</p>
+        <p class="why__hook drift-display">When I started designing in code with AI, I gained speed and lost history.</p>
+        <div class="why__body">
+          <p>As I started using AI tools, especially Claude Code, to design more UI in the browser, I started losing the record I had of all my design decisions and design options.</p>
+          <p>When I was using Figma, I would duplicate artboards and try out different things. Then I could look back and see a record of everything I had done. I could pull out some of my favorite versions to compare them and make decisions based on that.</p>
+          <p>But as I moved into code faster and faster, iterating on designs there, trying things out with real data and actually interacting with them, I was losing that record. Sometimes I wanted to go back to a previous decision or idea I had tried, and I couldn't easily do that. Sometimes I wanted to look at options side by side and say, "Which feels better?" and I didn't have that.</p>
+          <p>I would take screenshots sometimes, but taking screenshots manually both took me out of the flow and was easy to forget. I wasn't always capturing the moments that mattered.</p>
+          <p>So I wanted something that would constantly take screenshots in the background. Something I wouldn't have to think about. Something that would automatically capture things as I went, so when I got to a point where I thought, "Wait, what was that thing I tried earlier?" I could open it and look back through the whole timeline.</p>
+          <p class="why__signoff">So I built Drift to quietly capture screenshots as I coded.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW ===================== -->
+    <section class="drift-section how">
+      <div class="drift-container">
+        <div class="how__head">
+          <h2 class="how__title drift-display">How does it work?</h2>
+          <p class="how__subtitle">Everything is organized around <em>Projects</em>, each tied one-to-one to a git repo. Point Drift at a project's directory, then tell it which URLs, iOS apps, or Mac apps to watch — it quietly builds a visual timeline in the background from there.</p>
+        </div>
+        <div class="how__grid">
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <h3>Organized by project</h3>
+            <p>Each project has a one-to-one relationship with a git repo. Point Drift at the project's directory, and everything it captures is scoped to that project.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+            </span>
+            <h3>Tagged by branch, source, and time</h3>
+            <p>Every frame is saved to a local database along with its git branch, source (URL or app), and timestamp — so you can filter to one feature branch, one page or app, or a certain window of time.</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            </span>
+            <h3>Only screenshots selected URLs and apps</h3>
+            <p>Drift will only screenshot the URLs and bundle IDs you tell it to. Then when those URLs or apps are frontmost, Drift will take a screenshot every five seconds (duplicates thrown out automatically).</p>
+          </div>
+          <div class="how__card">
+            <span class="drift-icon feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3>Local and private</h3>
+            <p>Screenshots live in a local database on your machine. Nothing is uploaded to a server, there's no AI or LLM involved, and no one else — including me — can access your data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== USE ===================== -->
+    <section class="drift-section use">
+      <div class="use__inner">
+        <div class="use__header">
+          <h2 class="use__title drift-display">Some ways<br>I use it</h2>
+          <p class="use__subtitle">The record of your work is there waiting for you.</p>
+        </div>
+
+        <div class="use__list">
+          <div class="use__item">
+            <h3>
+              <span class="drift-icon use__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </span>
+              Share a quick screenshot
+            </h3>
+            <p>Grab a screenshot from Drift and drop it into a PR to show what changed, or share it in Slack to show progress.</p>
+          </div>
+
+          <div class="use__item">
+            <h3>
+              <span class="drift-icon use__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              </span>
+              Revisit a decision
+            </h3>
+            <p>Look back through all the iterations a screen went through. Pull out the ones that stand out, or grab two that are close together and drop them into Figma side-by-side to decide what the next revision should be.</p>
+          </div>
+
+          <div class="use__item">
+            <h3>
+              <span class="drift-icon use__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </span>
+              Watch it evolve
+            </h3>
+            <p>Hit play and watch a screen evolve, iteration by iteration — like Procreate, but for a screen instead of a drawing. It's my favorite feature, and it makes turning that evolution into a quick video easy, instead of piecing one together by hand.</p>
+          </div>
+
+          <div class="use__item">
+            <h3>
+              <span class="drift-icon use__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+              </span>
+              Tell the story
+            </h3>
+            <p>Pull out the most interesting screenshots to write a case study on how a page evolved, or present a design review: the options you tried, what didn't work, and why one direction is the one to move forward with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOWNLOAD ===================== -->
+    <section class="drift-section download" id="download">
+      <div class="download__inner">
+        <h2 class="download__title drift-display"><span class="title-beat">Screenshots without the interruption</span></h2>
+        <p class="hero__subtitle">Drift is a macOS menubar app that quietly screenshots your browser, iOS app, or Mac app as you build</p>
+        <a class="drift-cta" href="https://www.dropbox.com/scl/fi/kw3gnu05elvsrt9c4olgs/Drift.dmg.zip?rlkey=qxotrsd0nufmewtt9gd6gn2aw&dl=1">
+          <span class="drift-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+          </span>
+          Download for Mac — Free
+        </a>
+        <div class="download__footer">
+          <span>macOS 14+ · Works with any browser, iOS app, or Mac app · Everything stays on your machine</span>
+
+        </div>
+      </div>
+      <p class="download__credit">Built with 🧡 by <a href="/">Jeff Zych</a></p>
+    </section>
+
+  </body>
+</html>

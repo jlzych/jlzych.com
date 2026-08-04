@@ -1,0 +1,670 @@
+/* ==========================================================================
+   Drift — landing page (standalone, layout: false)
+   ==========================================================================
+   A geological "strata" system: warm paper backgrounds, sandstone borders,
+   basalt text, a single hot copper accent. Light aesthetic; the page stacks
+   full-bleed sections from pale paper down to near-black.
+
+   Tokens are scoped to this page only — this stylesheet is the sole CSS
+   loaded by /drift, so it does not touch the main site's variables.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Font — Signifier (Klim Type Foundry, licensed).
+   Drop the licensed web fonts at the paths below. Until then the fallback
+   serif stack renders and the layout stays intact.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Signifier";
+  src: url("/fonts/signifier/signifier-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Söhne (Klim) — the UI sans. Two weights: regular body + 600 for
+   eyebrows and buttons. Fallback system stack renders until dropped in. */
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/sohne/sohne-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/sohne/sohne-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ======================================================================
+     COLOR TOKENS — one named token per distinct color in the design.
+     ====================================================================== */
+
+  /* ----- Strata: surfaces (lightest → darkest) ----- */
+  --drift-paper: #f7f5f0; /* base background, hero + cards */
+  --drift-button: #fcfbf8; /* lifted button surface */
+  --drift-limestone: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 93%
+  ); /* "Why" section background */
+  --drift-sandstone: #d6cfc1; /* "How" section background */
+  --drift-umber: #453f39; /* "What I use it for" dark panel */
+  --drift-basalt: #2c2825; /* text-primary + Download background */
+
+  /* ----- Borders / hairlines ----- */
+  --drift-border: var(--drift-sandstone); /* default hairline, code chip */
+  --drift-border-warm: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 73%
+  ); /* card borders on sandstone */
+  --drift-border-strong: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 63%
+  ); /* hover borders, focus */
+
+  /* ----- Text on light: basalt → paper ladder ----- */
+  --drift-text-primary: var(--drift-basalt); /* body, headlines */
+  --drift-text-body: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 13%
+  ); /* "Why" narrative body */
+  --drift-text-secondary: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 23%
+  ); /* hero subtitle, card body */
+  --drift-text-tertiary: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 31%
+  ); /* "How" subtitle */
+  --drift-text-muted: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 44%
+  ); /* slate — labels, eyebrows */
+
+  /* ----- Text on dark: umber/basalt → paper ladders ----- */
+  --drift-on-dark: color-mix(
+    in srgb,
+    var(--drift-umber),
+    var(--drift-paper) 93%
+  ); /* "Use" panel base text */
+  --drift-on-dark-heading: color-mix(
+    in srgb,
+    var(--drift-umber),
+    var(--drift-paper) 97%
+  ); /* "Use" headings */
+  --drift-on-dark-muted: color-mix(
+    in srgb,
+    var(--drift-umber),
+    var(--drift-paper) 73%
+  ); /* "Use" item body */
+  --drift-on-dark-faint: color-mix(
+    in srgb,
+    var(--drift-umber),
+    var(--drift-paper) 68%
+  ); /* "Use" subtitle */
+  --drift-download-text: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 91%
+  ); /* Download base text */
+  --drift-download-heading: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 97%
+  ); /* Download headline */
+  --drift-download-body: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 66%
+  ); /* Download body */
+  --drift-download-faint: color-mix(
+    in srgb,
+    var(--drift-basalt),
+    var(--drift-paper) 46%
+  ); /* Download footer meta */
+
+  /* ----- Copper accent family ----- */
+  --drift-copper: #d4622b; /* playhead, primary actions */
+  --drift-copper-warm: #c98b6a; /* Download eyebrow + link */
+  --drift-copper-bright: #e08a5c; /* "Use" icon glyphs */
+  --drift-copper-10: color-mix(
+    in srgb,
+    var(--drift-copper) 10%,
+    transparent
+  ); /* feature icon fill */
+  --drift-copper-tint-border: #e4d3c4; /* feature icon border on light */
+
+  /* ----- Neutrals / overlays ----- */
+  --drift-white: #ffffff; /* on-accent (CTA text) */
+  --drift-hairline-on-dark: color-mix(
+    in srgb,
+    var(--drift-paper) 14%,
+    transparent
+  ); /* "Use" dividers */
+
+  /* ----- Semantic aliases ----- */
+  --bg: var(--drift-paper);
+  --fg: var(--drift-text-primary);
+  --fg-muted: var(--drift-text-muted);
+  --border: var(--drift-border);
+  --accent: var(--drift-copper);
+  --on-accent: var(--drift-white);
+
+  /* ======================================================================
+     TYPE
+     ====================================================================== */
+  --drift-font-display:
+    "Signifier", ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, serif;
+  --drift-font-ui:
+    "Sohne", ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Fluid type scale — the design's fixed desktop sizes are the max. */
+  --drift-fs-hero: clamp(30px, 6.2vw, 40px); /* hero headline */
+  --drift-fs-download: clamp(34px, 8vw, 48px); /* download headline */
+  --drift-fs-title: clamp(27px, 4.6vw, 34px); /* section titles + quote */
+  --drift-fs-card: clamp(19px, 2.4vw, 21px); /* card / item headings */
+  --drift-fs-lead: clamp(16px, 2.2vw, 18px); /* hero subtitle */
+  --drift-fs-body-lg: 16px; /* "Why" narrative */
+  --drift-fs-body: 15px; /* general body */
+  --drift-fs-body-sm: 14px; /* card body */
+  --drift-fs-cta: 14px; /* button label */
+  --drift-fs-caption: 12px; /* helper / meta */
+  --drift-fs-eyebrow: 11px; /* tracked uppercase labels */
+
+  --drift-leading-tight: 1.06;
+  --drift-leading-snug: 1.22;
+  --drift-leading-normal: 1.5;
+  --drift-tracking-eyebrow: 0.08em;
+
+  /* ======================================================================
+     SPACING / RADII / BORDERS / SHADOWS / MOTION
+     ====================================================================== */
+  --drift-section-pad-y: clamp(72px, 11vw, 110px);
+  --drift-section-pad-x: clamp(20px, 5vw, 40px);
+  --drift-hero-pad-top: clamp(96px, 14vw, 150px);
+  --drift-maxw: 1080px;
+  --drift-maxw-prose: 720px;
+  --drift-maxw-narrow: 640px;
+
+  --drift-radius-lg: 10px;
+  --drift-radius-xl: 12px;
+
+  --drift-shadow-card: 0 1px 2px rgba(44, 40, 37, 0.05);
+
+  --drift-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --drift-dur-fast: 150ms;
+}
+
+/* ==========================================================================
+   RESET (minimal — standalone page has no site normalize)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body.drift {
+  margin: 0;
+  background: var(--drift-basalt);
+  color: var(--drift-text-primary);
+  font-family: var(--drift-font-ui);
+  line-height: var(--drift-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.drift img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.drift a {
+  color: inherit;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+.drift-display {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.title-beat {
+  display: block;
+}
+
+.drift-eyebrow {
+  font-family: var(--drift-font-ui);
+  font-size: var(--drift-fs-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--drift-tracking-eyebrow);
+  color: var(--drift-text-muted);
+}
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+.drift-section {
+  width: 100%;
+}
+
+.drift-container {
+  max-width: var(--drift-maxw);
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+}
+
+/* ==========================================================================
+   BUTTON / CTA
+   ========================================================================== */
+.drift-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--drift-button);
+  color: var(--drift-text-primary);
+  font-family: var(--drift-font-ui);
+  font-size: var(--drift-fs-cta);
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--drift-radius-xl);
+  border: 1px solid var(--drift-border);
+  box-shadow: var(--drift-shadow-card);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color var(--drift-dur-fast) var(--drift-ease-standard),
+    background var(--drift-dur-fast) var(--drift-ease-standard);
+}
+.drift-cta:hover {
+  border-color: var(--drift-border-strong);
+  background: var(--drift-paper);
+}
+/* Win over the `.drift a { color: inherit }` reset so the label/icon stay
+   basalt even on the dark download section. */
+.drift a.drift-cta {
+  color: var(--drift-text-primary);
+}
+.drift-cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+:where(.drift a, .drift button):focus-visible {
+  outline: 2px solid var(--drift-copper);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Inline icon defaults */
+.drift-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Icon sizing is set per context (.drift-cta / .feat-icon / .use__icon);
+   this only normalizes the svg box. */
+.drift-icon svg {
+  display: block;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  background: var(--drift-paper);
+  text-align: center;
+}
+.hero__inner {
+  max-width: var(--drift-maxw);
+  margin: 0 auto;
+  padding: var(--drift-hero-pad-top) var(--drift-section-pad-x)
+    clamp(48px, 7vw, 70px);
+}
+.hero__lede {
+  max-width: var(--drift-maxw-narrow);
+  margin: 0 auto;
+}
+
+.hero__wordmark {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 8vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  margin: 0 0 30px;
+  color: var(--drift-text-primary);
+}
+.hero__wordmark img {
+  height: 76px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: var(--drift-fs-hero);
+  line-height: var(--drift-leading-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.hero__subtitle {
+  font-size: var(--drift-fs-lead);
+  color: var(--drift-text-secondary);
+  margin: 0 auto 30px;
+  max-width: 520px;
+  text-wrap: pretty;
+}
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero__meta {
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-text-muted);
+  text-wrap: pretty;
+}
+
+.hero__visual {
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+/* ----- Product screenshot ------------------------------------------------ */
+.hero__screenshot {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.hero__screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   WHY
+   ========================================================================== */
+.why {
+  background: var(--drift-limestone);
+}
+
+.why__inner {
+  max-width: var(--drift-maxw-prose);
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+}
+.why__eyebrow {
+  margin-bottom: 26px;
+}
+.why__hook {
+  font-size: var(--drift-fs-title);
+  line-height: var(--drift-leading-snug);
+  margin: 0 0 32px;
+  text-wrap: balance;
+}
+.why__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.why__body {
+  p {
+    font-size: var(--drift-fs-body-lg);
+    color: var(--drift-text-body);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .why__signoff {
+    font-family: var(--drift-font-display);
+    font-weight: 500;
+    font-size: calc(var(--drift-fs-body-lg) * 1.5);
+    color: var(--drift-text-primary);
+    margin: 8px 0 0 !important;
+    text-wrap: balance;
+  }
+}
+
+/* ==========================================================================
+   HOW
+   ========================================================================== */
+.how {
+  background: var(--drift-sandstone);
+}
+.how__head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.how__title {
+  font-size: var(--drift-fs-title);
+  margin: 0 0 6px;
+  text-wrap: balance;
+}
+.how__subtitle {
+  font-size: var(--drift-fs-body);
+  color: var(--drift-text-tertiary);
+  max-width: var(--drift-maxw-prose);
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.how__card {
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border-warm);
+  border-radius: var(--drift-radius-lg);
+  padding: 26px;
+}
+.how__card h3 {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: var(--drift-fs-card);
+  margin: 0 0 7px;
+  text-wrap: balance;
+}
+.how__card p {
+  font-size: var(--drift-fs-body-sm);
+  color: var(--drift-text-secondary);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.feat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--drift-copper-10);
+  border: 1px solid var(--drift-copper-tint-border);
+  color: var(--drift-copper);
+  margin-bottom: 14px;
+}
+.feat-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* ==========================================================================
+   USE (dark panel)
+   ========================================================================== */
+.use {
+  background: var(--drift-umber);
+  color: var(--drift-on-dark);
+}
+.use__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+.use__title {
+  font-size: var(--drift-fs-title);
+  line-height: var(--drift-leading-tight);
+  color: var(--drift-on-dark-heading);
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+.use__subtitle {
+  font-size: var(--drift-fs-body);
+  color: var(--drift-on-dark-faint);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.use__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.use__item {
+  padding: 26px 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--drift-hairline-on-dark);
+  }
+}
+.use__item:last-child {
+  padding-bottom: 0;
+}
+
+.use__icon {
+  width: auto;
+  height: auto;
+  color: var(--drift-copper-bright);
+}
+.use__icon svg {
+  width: 18px;
+  height: 18px;
+}
+.use__item h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: var(--drift-fs-card);
+  color: var(--drift-on-dark-heading);
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+.use__item p {
+  font-size: var(--drift-fs-body);
+  color: var(--drift-on-dark-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   DOWNLOAD (near-black)
+   ========================================================================== */
+.download {
+  background: var(--drift-basalt);
+  color: var(--drift-download-text);
+
+  .hero__subtitle {
+    color: var(--drift-download-body);
+  }
+}
+.download__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(88px, 13vw, 120px) var(--drift-section-pad-x);
+  text-align: center;
+}
+.download__title {
+  font-size: var(--drift-fs-download);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--drift-download-heading);
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.download__footer {
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-download-faint);
+  text-wrap: pretty;
+}
+.download__footer a {
+  color: var(--drift-copper-warm);
+  text-decoration: none;
+}
+.download__footer a:hover {
+  text-decoration: underline;
+}
+.download__credit {
+  margin: 0;
+  padding: 0 var(--drift-section-pad-x) clamp(24px, 4vw, 40px);
+  font-size: var(--drift-fs-caption);
+  color: var(--drift-download-faint);
+}
+.download__credit a {
+  color: var(--drift-copper-warm);
+  text-decoration: none;
+}
+.download__credit a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 850px) {
+  /* --bp-med: collapse the How grid */
+  .how__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --bp-med: stack the Use header above its list */
+  .use__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift *,
+  .drift *::before,
+  .drift *::after {
+    transition-duration: 0.001ms !important;
+  }
+}
