@@ -47,11 +47,6 @@
   /* ----- Strata: surfaces (lightest → darkest) ----- */
   --drift-paper: #f7f5f0; /* base background, hero + cards */
   --drift-button: #fcfbf8; /* lifted button surface */
-  --drift-surface: color-mix(
-    in srgb,
-    var(--drift-basalt),
-    var(--drift-paper) 94%
-  ); /* elevated: pills, sheets */
   --drift-limestone: color-mix(
     in srgb,
     var(--drift-basalt),
@@ -96,16 +91,6 @@
     var(--drift-basalt),
     var(--drift-paper) 44%
   ); /* slate — labels, eyebrows */
-  --drift-eyebrow-warm: color-mix(
-    in srgb,
-    var(--drift-basalt),
-    var(--drift-paper) 36%
-  ); /* "How" eyebrow on sandstone */
-  --drift-text-faint: color-mix(
-    in srgb,
-    var(--drift-basalt),
-    var(--drift-paper) 66%
-  ); /* weathered — placeholders */
 
   /* ----- Text on dark: umber/basalt → paper ladders ----- */
   --drift-on-dark: color-mix(
@@ -128,11 +113,6 @@
     var(--drift-umber),
     var(--drift-paper) 68%
   ); /* "Use" subtitle */
-  --drift-on-dark-eyebrow: color-mix(
-    in srgb,
-    var(--drift-umber),
-    var(--drift-paper) 66%
-  ); /* "Use" eyebrow */
   --drift-download-text: color-mix(
     in srgb,
     var(--drift-basalt),
@@ -156,30 +136,13 @@
 
   /* ----- Copper accent family ----- */
   --drift-copper: #d4622b; /* playhead, primary actions */
-  --drift-copper-hover: #c1571f; /* CTA hover */
-  --drift-copper-muted: #c99a7f; /* "Use" numerals */
   --drift-copper-warm: #c98b6a; /* Download eyebrow + link */
   --drift-copper-bright: #e08a5c; /* "Use" icon glyphs */
-  --drift-copper-soft: color-mix(
-    in srgb,
-    var(--drift-copper) 12%,
-    transparent
-  ); /* accent wash */
   --drift-copper-10: color-mix(
     in srgb,
     var(--drift-copper) 10%,
     transparent
   ); /* feature icon fill */
-  --drift-copper-14: color-mix(
-    in srgb,
-    var(--drift-copper) 14%,
-    transparent
-  ); /* "Use" icon fill */
-  --drift-copper-30: color-mix(
-    in srgb,
-    var(--drift-copper) 30%,
-    transparent
-  ); /* "Use" icon border */
   --drift-copper-tint-border: #e4d3c4; /* feature icon border on light */
 
   /* ----- Neutrals / overlays ----- */
@@ -189,11 +152,6 @@
     var(--drift-paper) 14%,
     transparent
   ); /* "Use" dividers */
-  --drift-hairline-download: color-mix(
-    in srgb,
-    var(--drift-download-text) 14%,
-    transparent
-  ); /* Download footer rule */
 
   /* ----- Semantic aliases ----- */
   --bg: var(--drift-paper);
@@ -211,7 +169,6 @@
   --drift-font-ui:
     "Sohne", ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
-  --drift-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* Fluid type scale — the design's fixed desktop sizes are the max. */
   --drift-fs-hero: clamp(30px, 6.2vw, 40px); /* hero headline */
@@ -241,19 +198,13 @@
   --drift-maxw-prose: 720px;
   --drift-maxw-narrow: 640px;
 
-  --drift-radius-sm: 6px;
-  --drift-radius-md: 8px;
   --drift-radius-lg: 10px;
   --drift-radius-xl: 12px;
-  --drift-radius-pill: 9999px;
 
-  --drift-shadow-viewport:
-    0 8px 14px rgba(44, 40, 37, 0.08), 0 2px 6px rgba(44, 40, 37, 0.2);
   --drift-shadow-card: 0 1px 2px rgba(44, 40, 37, 0.05);
 
   --drift-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --drift-dur-fast: 150ms;
-  --drift-dur-base: 200ms;
 }
 
 /* ==========================================================================
@@ -309,15 +260,6 @@ body.drift {
   text-transform: uppercase;
   letter-spacing: var(--drift-tracking-eyebrow);
   color: var(--drift-text-muted);
-}
-
-.drift-code {
-  font-family: var(--drift-font-mono);
-  font-size: 0.875em;
-  background: var(--drift-paper);
-  border: 1px solid var(--drift-border);
-  border-radius: 4px;
-  padding: 1px 5px;
 }
 
 /* ==========================================================================
@@ -451,13 +393,6 @@ body.drift {
 .hero__visual {
   margin-top: clamp(40px, 6vw, 64px);
 }
-.hero__caption {
-  text-align: center;
-  font-size: var(--drift-fs-caption);
-  color: var(--drift-text-muted);
-  margin: 16px 0 0;
-  text-wrap: pretty;
-}
 
 /* ----- Product screenshot ------------------------------------------------ */
 .hero__screenshot {
@@ -523,10 +458,6 @@ body.drift {
 .how__head {
   text-align: center;
   margin-bottom: 48px;
-}
-.how__eyebrow {
-  color: var(--drift-eyebrow-warm);
-  margin-bottom: 14px;
 }
 .how__title {
   font-size: var(--drift-fs-title);
@@ -595,10 +526,6 @@ body.drift {
   grid-template-columns: minmax(220px, 320px) 1fr;
   gap: clamp(40px, 6vw, 80px);
   align-items: start;
-}
-.use__eyebrow {
-  color: var(--drift-on-dark-eyebrow);
-  margin-bottom: 14px;
 }
 .use__title {
   font-size: var(--drift-fs-title);
@@ -678,10 +605,6 @@ body.drift {
   padding: clamp(88px, 13vw, 120px) var(--drift-section-pad-x);
   text-align: center;
 }
-.download__eyebrow {
-  color: var(--drift-copper-warm);
-  margin-bottom: 22px;
-}
 .download__title {
   font-size: var(--drift-fs-download);
   line-height: 1.05;
@@ -689,13 +612,6 @@ body.drift {
   color: var(--drift-download-heading);
   margin: 0 0 20px;
   text-wrap: balance;
-}
-.download__body {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--drift-download-body);
-  margin: 0 0 30px;
-  text-wrap: pretty;
 }
 .download__footer {
   padding-top: 22px;
