@@ -588,9 +588,13 @@ body.drift {
   color: var(--drift-on-dark);
 }
 .use__inner {
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   padding: var(--drift-section-pad-y) var(--drift-section-pad-x);
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
 }
 .use__eyebrow {
   color: var(--drift-on-dark-eyebrow);
@@ -598,46 +602,56 @@ body.drift {
 }
 .use__title {
   font-size: var(--drift-fs-title);
+  line-height: var(--drift-leading-tight);
   color: var(--drift-on-dark-heading);
-  margin: 0 0 6px;
+  margin: 0 0 14px;
   text-wrap: balance;
 }
 .use__subtitle {
   font-size: var(--drift-fs-body);
   color: var(--drift-on-dark-faint);
-  margin: 0 0 22px;
+  margin: 0;
   text-wrap: pretty;
 }
 
-.use__item {
+.use__list {
   display: flex;
-  gap: 26px;
-  align-items: flex-start;
-  padding: 30px 4px;
-  border-top: 1px solid var(--drift-hairline-on-dark);
+  flex-direction: column;
 }
-.use__item:nth-child(even) {
-  flex-direction: row-reverse;
+
+.use__item {
+  padding: 26px 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--drift-hairline-on-dark);
+  }
+}
+.use__item:last-child {
+  padding-bottom: 0;
 }
 
 .use__icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--drift-radius-xl);
-  background: var(--drift-copper-14);
-  border: 1px solid var(--drift-copper-30);
+  width: auto;
+  height: auto;
   color: var(--drift-copper-bright);
 }
 .use__icon svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 .use__item h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--drift-font-display);
   font-weight: 500;
   font-size: var(--drift-fs-card);
   color: var(--drift-on-dark-heading);
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   text-wrap: balance;
 }
 .use__item p {
@@ -723,16 +737,11 @@ body.drift {
   .how__grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 600px) {
-  /* --bp-small */
-  .use__item {
-    gap: 16px;
-    padding: 24px 0;
-  }
-  .use__num {
-    display: none;
+  /* --bp-med: stack the Use header above its list */
+  .use__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
