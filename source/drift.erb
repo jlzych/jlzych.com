@@ -39,11 +39,9 @@ layout: false
           <p class="hero__meta">macOS 14+ · Works with any browser, iOS app, or Mac app</p>
         </div>
 
-        <!-- Product screenshot (web version of this section TBD) -->
+        <!-- The app itself, running on frames captured while building this page -->
         <div class="hero__visual">
-          <div class="hero__screenshot">
-            <%= image_tag "drift/product-screenshot.png", alt: "The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames." %>
-          </div>
+          <%= partial "drift_timeline" %>
         </div>
       </div>
     </section>
@@ -172,8 +170,10 @@ layout: false
 
         </div>
       </div>
-      <p class="download__credit">Built with 🧡 by <a href="/">Jeff Zych</a></p>
+      <p class="download__credit">Built with 🧡 and 🤖 by <a href="/">Jeff Zych</a></p>
     </section>
+
+    <%= javascript_include_tag "drift/timeline", type: "module" %>
 
   </body>
 </html>

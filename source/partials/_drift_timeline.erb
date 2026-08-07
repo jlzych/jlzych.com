@@ -1,0 +1,123 @@
+<%#
+  The interactive timeline scrubber — a working recreation of the Drift app
+  window, driven by frames exported from the real database (this very branch).
+
+  The static product screenshot is still the safety net, but it's a 1.1MB PNG
+  that nobody with a working browser ever sees — so it carries no src until
+  timeline.js decides it's needed (manifest missing, offline, bad JSON). With
+  JS off entirely, the <noscript> copy below is the one that renders.
+%>
+<div class="dt-fallback" hidden>
+  <img alt="The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames."
+       data-fallback-src="<%= image_path "drift/product-screenshot.png" %>">
+</div>
+<noscript>
+  <div class="dt-fallback">
+    <%= image_tag "drift/product-screenshot.png", alt: "The Drift app: a captured browser viewport above a scrubbable filmstrip of past frames." %>
+  </div>
+</noscript>
+
+<div class="dt" data-timeline-base="/images/drift/timeline/" hidden>
+  <%# Lives inside .dt so only the working version makes the claim — the static
+      fallback never announces itself as interactive. %>
+
+  <div class="dt__window" tabindex="0" role="group" aria-label="Interactive Drift timeline">
+
+    <!-- ----- Top bar ----- -->
+    <header class="dt__topbar">
+      <span class="dt__lights" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+
+      <div class="dt__wordmark">
+        <span class="dt__project">jlzych.com</span>
+        <svg class="dt__wordmark-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 2 5 4 5-4"/></svg>
+      </div>
+
+      <div class="dt__topbar-right">
+        <button type="button" class="dt__export" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m8 8 4-4 4 4"/><path d="M20 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4"/></svg>
+          Export video
+        </button>
+      </div>
+    </header>
+
+    <!-- ----- Viewport ----- -->
+    <div class="dt__viewport">
+      <div class="dt__stage">
+        <!-- Thumb underneath, full frame on top: the thumb is already cached by
+             the strip, so a skim paints instantly and sharpens a moment later. -->
+        <img class="dt__frame dt__frame--thumb" alt="">
+        <img class="dt__frame dt__frame--full" alt="A screenshot captured while building this page">
+
+        <div class="dt__meta" aria-hidden="true">
+          <span class="dt__meta-item dt__meta-branch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="4" x2="6" y2="14"/><circle cx="18" cy="7" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M18 10a8 8 0 0 1-8 8"/></svg>
+            <span></span>
+          </span>
+          <span class="dt__meta-item dt__meta-commit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.4"/><line x1="3" y1="12" x2="8.6" y2="12"/><line x1="15.4" y1="12" x2="21" y2="12"/></svg>
+            <span></span>
+          </span>
+          <span class="dt__meta-item dt__meta-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+            <span></span>
+          </span>
+          <span class="dt__meta-item dt__meta-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg>
+            <span></span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ----- Filter pills (display only — the export is a single branch) ----- -->
+    <div class="dt__filters">
+      <span class="dt__pill">
+        <span class="dt__pill-label">Branch</span>
+        <span class="dt__pill-value dt__filter-branch">drift-product-page</span>
+        <svg class="dt__pill-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 2 5 4 5-4"/></svg>
+      </span>
+      <span class="dt__pill dt__pill--url">
+        <span class="dt__pill-label">URL</span>
+        <span class="dt__pill-value">All</span>
+        <svg class="dt__pill-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 2 5 4 5-4"/></svg>
+      </span>
+      <span class="dt__pill dt__pill--appearance">
+        <span class="dt__pill-label">Appearance</span>
+        <span class="dt__pill-value">All</span>
+        <svg class="dt__pill-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 2 5 4 5-4"/></svg>
+      </span>
+      <span class="dt__pill dt__pill--date">
+        <span class="dt__pill-label">Date</span>
+        <span class="dt__pill-value">All time</span>
+        <svg class="dt__pill-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 2 5 4 5-4"/></svg>
+      </span>
+    </div>
+
+    <!-- ----- Sediment strip ----- -->
+    <div class="dt__strip">
+      <button type="button" class="dt__play" aria-label="Play">
+        <svg class="dt__glyph-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 4.6 20 12 7.5 19.4z"/></svg>
+        <svg class="dt__glyph-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.8h3.4v14.4H7zM13.6 4.8H17v14.4h-3.4z"/></svg>
+      </button>
+
+      <div class="dt__track">
+        <div class="dt__bands"></div>
+        <!-- Dots, playhead and tooltip share the bands' coordinate space, so
+             they live in the same box and can reuse the band centers. -->
+        <div class="dt__markers">
+          <div class="dt__playhead" hidden>
+            <span class="dt__playhead-tip"></span>
+          </div>
+          <div class="dt__tooltip"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="dt__intro">
+    <p class="dt__lede"><strong>Try it yourself!</strong> Every frame here was captured by Drift while I built this page. Scrub the strip to see how the page evolved!</p>
+  </div>
+</div>
