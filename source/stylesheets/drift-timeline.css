@@ -1,0 +1,528 @@
+/* ==========================================================================
+   Drift — interactive timeline scrubber
+   ==========================================================================
+   A working recreation of the app window that sits in the hero: top bar,
+   viewport, filter pills, and the sediment strip. Colors come from drift.css;
+   only the two values the app has and the landing page didn't are defined here.
+
+   Geometry note: the strip's band math lives in JS (sedimentStrip), which
+   measures this element. The numbers that matter to it — the 128px height and
+   the 16px marker lane — are set here and read there.
+   ========================================================================== */
+
+.dt {
+  --dt-surface: #edeae3; /* chips, metadata pill */
+  --dt-text-faint: #b5afa6; /* chevrons, empty state */
+  --dt-topbar-h: 56px;
+  --dt-strip-h: 128px;
+  --dt-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  max-width: 920px;
+  margin: 0 auto;
+}
+.dt[hidden] {
+  display: none;
+}
+
+.dt__window {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  background: var(--drift-paper);
+  border: 1px solid var(--drift-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(44, 40, 37, 0.18),
+    0 4px 14px rgba(44, 40, 37, 0.1);
+}
+.dt__window:focus-visible {
+  outline: 2px solid var(--drift-copper);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   TOP BAR
+   ========================================================================== */
+.dt__topbar {
+  position: relative;
+  flex: none;
+  height: var(--dt-topbar-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+}
+
+/* Traffic lights — the one piece of the window the spec leaves out. */
+.dt__lights {
+  display: flex;
+  gap: 8px;
+  margin-right: 2px;
+}
+.dt__lights i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #febc2e;
+}
+.dt__lights i:first-child {
+  background: #ff5f57;
+}
+.dt__lights i:last-child {
+  background: #28c840;
+}
+
+.dt__wordmark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.dt__project {
+  font-family: var(--drift-font-display);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--drift-text-primary);
+}
+.dt__wordmark-chevron {
+  width: 10px;
+  height: 7px;
+  color: var(--dt-text-faint);
+  opacity: 0;
+  transition: opacity var(--drift-dur-fast) ease-in-out;
+}
+.dt__wordmark:hover .dt__wordmark-chevron {
+  opacity: 1;
+}
+
+.dt__topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.dt__export {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--drift-border);
+  border-radius: 12px;
+  background: var(--drift-button);
+  color: var(--drift-text-primary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: default;
+  transition: opacity var(--drift-dur-fast) ease-in-out;
+}
+.dt__export:active {
+  opacity: 0.8;
+}
+.dt__export svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   VIEWPORT
+   ==========================================================================
+   Height is a share of the window width so the capture floats in paper the way
+   it does in the app, rather than running edge to edge. */
+.dt__viewport {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 16px;
+  height: clamp(150px, 40cqw, 400px);
+}
+
+.dt__stage {
+  position: relative;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1728 / 1031; /* every captured frame shares this ratio */
+  background: #fff;
+  border: 1px solid var(--drift-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 14px rgba(44, 40, 37, 0.08),
+    0 2px 6px rgba(44, 40, 37, 0.2);
+}
+
+.dt__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* The full frame sits over its own thumb and reveals itself once decoded. */
+.dt__frame--full {
+  opacity: 0;
+  transition: opacity 90ms linear;
+}
+.dt__frame--full.is-loaded {
+  opacity: 1;
+}
+.dt__frame:not([src]) {
+  visibility: hidden;
+}
+
+/* ----- Metadata pill ----- */
+.dt__meta {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 9px;
+  background: var(--dt-surface);
+  border: 1px solid var(--drift-border);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  pointer-events: none;
+}
+.dt__window:hover .dt__meta,
+.dt__window:focus-within .dt__meta {
+  opacity: 1;
+}
+.dt__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--drift-text-primary);
+  white-space: nowrap;
+}
+.dt__meta-item[hidden] {
+  display: none;
+}
+.dt__meta-item svg {
+  width: 10px;
+  height: 10px;
+  color: var(--drift-text-muted);
+}
+.dt__meta-commit span {
+  font-family: var(--dt-font-mono);
+}
+
+/* ==========================================================================
+   FILTER PILLS  (display only — the export is a single branch)
+   ========================================================================== */
+.dt__filters {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 16px 6px;
+}
+.dt__pill {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: default;
+  white-space: nowrap;
+}
+.dt__pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--drift-button);
+  border: 1px solid var(--drift-border);
+  opacity: 0;
+  transition: opacity var(--drift-dur-fast) ease-in-out;
+}
+.dt__pill:hover::before {
+  opacity: 1;
+}
+.dt__pill > * {
+  position: relative;
+}
+.dt__pill-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--drift-text-muted);
+}
+.dt__pill-value {
+  font-size: 14px;
+  color: var(--drift-text-primary);
+}
+.dt__pill-chevron {
+  align-self: center;
+  width: 9px;
+  height: 6px;
+  color: var(--dt-text-faint);
+}
+
+/* ==========================================================================
+   SEDIMENT STRIP
+   ========================================================================== */
+.dt__strip {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: var(--dt-strip-h);
+  padding: 0 16px;
+}
+
+/* Playback lives here rather than over the image: always present, and beside
+   the thing it actually moves. The marker lane is dead space, so discount it
+   and the button lands on the bands' centerline. */
+.dt__play {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  padding: 0;
+  border: 1px solid var(--drift-border);
+  border-radius: 50%;
+  background: var(--drift-button);
+  color: var(--drift-text-primary);
+  cursor: pointer;
+  transition: color var(--drift-dur-fast) ease-in-out;
+}
+.dt__play:hover {
+  color: var(--drift-copper);
+}
+.dt__play:focus-visible {
+  outline: 2px solid var(--drift-copper);
+  outline-offset: 2px;
+}
+.dt__play svg {
+  width: 15px;
+  height: 15px;
+}
+/* The play triangle reads off-center at its own optical center. */
+.dt__play .dt__glyph-play {
+  transform: translateX(1px);
+}
+.dt__play .dt__glyph-pause,
+.dt.is-playing .dt__play .dt__glyph-play {
+  display: none;
+}
+.dt.is-playing .dt__play .dt__glyph-pause {
+  display: block;
+}
+
+.dt__track {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  touch-action: pan-y; /* vertical scroll still works; horizontal drags scrub */
+  cursor: pointer;
+}
+.dt__bands,
+.dt__markers {
+  position: absolute;
+  inset: 0;
+}
+.dt__markers {
+  pointer-events: none;
+}
+
+.dt__band {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--drift-border) 35%, transparent);
+  will-change: left, width, height;
+}
+.dt__band img {
+  width: 100%;
+  height: 100%;
+  /* Fill the band's height at the capture's own aspect ratio, cropping to a
+     centered vertical slice — neighbouring frames then read as one continuous
+     seam of page across the strip. */
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+  opacity: 0;
+  transition: opacity 260ms ease-out;
+}
+.dt__band img.is-loaded {
+  opacity: 1;
+}
+.dt__band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0 solid var(--drift-copper);
+}
+.dt__band.is-selected::after {
+  border-width: 1px;
+  opacity: 0.6;
+}
+.dt__band.is-current::after {
+  border-width: 2px;
+  opacity: 1;
+}
+
+/* ----- Commit dots ----- */
+.dt__dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+}
+.dt__dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--drift-copper);
+}
+
+/* ----- Commit tooltip ----- */
+.dt__tooltip {
+  position: absolute;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: var(--drift-text-primary);
+  color: var(--drift-paper);
+  font-family: var(--dt-font-mono);
+  font-size: 11px;
+  line-height: 1.3;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+  box-shadow: 0 4px 10px rgba(44, 40, 37, 0.25);
+}
+.dt__tooltip.is-visible {
+  opacity: 1;
+}
+
+/* ----- Playhead ----- */
+.dt__playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--drift-copper);
+  pointer-events: none;
+}
+.dt__playhead-tip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--drift-copper);
+}
+
+/* ==========================================================================
+   INTRO + FALLBACK
+   ========================================================================== */
+.dt__intro {
+  max-width: 560px;
+  margin: clamp(20px, 3vw, 28px) auto 0;
+}
+.dt__eyebrow {
+  margin: 0 0 8px;
+}
+.dt__lede {
+  margin: 0;
+  font-size: var(--drift-fs-body);
+  color: var(--drift-text-secondary);
+  text-wrap: pretty;
+}
+.dt__legend-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--drift-copper);
+  vertical-align: baseline;
+}
+
+.dt-fallback {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.dt-fallback img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.dt-fallback[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@container (max-width: 600px) {
+  /* Give the capture more of the window once the chrome gets tight. */
+  .dt__viewport {
+    height: clamp(120px, 46cqw, 400px);
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* --bp-small: drop the secondary chrome, shrink the strip, keep the scrub */
+  .dt {
+    --dt-topbar-h: 44px;
+    --dt-strip-h: 104px;
+  }
+  .dt__topbar-right,
+  .dt__pill--url,
+  .dt__pill--appearance,
+  .dt__pill--date {
+    display: none;
+  }
+  .dt__project {
+    font-size: 17px;
+  }
+  .dt__strip {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .dt__play {
+    width: 32px;
+    height: 32px;
+  }
+  .dt__meta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dt__frame--full {
+    transition: none;
+  }
+}

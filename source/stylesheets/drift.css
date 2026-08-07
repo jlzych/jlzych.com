@@ -7,6 +7,13 @@
 
    Tokens are scoped to this page only — this stylesheet is the sole CSS
    loaded by /drift, so it does not touch the main site's variables.css.
+
+   require_self first so the timeline's rules land after this file's — it sets
+   `.drift img { height: auto }`, which otherwise wins the specificity tie
+   against `.dt__band img` and stops the strip thumbnails filling their bands.
+
+   *= require_self
+   *= require "drift-timeline"
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
