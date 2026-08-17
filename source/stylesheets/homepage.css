@@ -567,9 +567,33 @@
 .bento-grid--projects {
   grid-template-columns: repeat(3, 1fr);
 
+  /* Lead project spans 2 columns, with its icon beside the copy */
+  & .bento-card--featured {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.5rem;
+
+    & .bento-card__icon {
+      flex: none;
+      width: clamp(60px, 6vw, 76px);
+      height: clamp(60px, 6vw, 76px);
+      margin: 0;
+    }
+
+    & .bento-card__content {
+      padding: 0;
+    }
+  }
+
   /* --bp-med */
   @media only screen and (max-width: 850px) {
     grid-template-columns: 1fr;
+
+    & .bento-card--featured {
+      grid-column: auto;
+    }
   }
 }
 
@@ -639,6 +663,7 @@
    ===================================== */
 
 .bento-card {
+  position: relative;
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -651,6 +676,16 @@
     transform: translateY(-4px);
     box-shadow: var(--medium-shadow);
   }
+}
+
+/* The title link stretches over the whole card, so anywhere on the card is
+   clickable. Card copy sits under the overlay and isn't selectable, which is
+   the usual trade-off for this pattern. */
+.bento-card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .bento-card__image {
@@ -695,6 +730,20 @@
   padding: 1.25rem;
 }
 
+/* Small category label above a card's title */
+.bento-card__eyebrow {
+  display: block;
+  /* One-off: Verdana rather than the Typekit sans, which only ships at 900.
+     Sized down and tracked in a little because Verdana sets wide and tall. */
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lighter-brown);
+  margin: 0 0 0.35rem;
+}
+
 .bento-card__title {
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
@@ -709,6 +758,11 @@
       box-shadow: none;
     }
   }
+}
+
+/* Hovering anywhere on the card highlights its title */
+.bento-card:hover .bento-card__title a {
+  color: var(--accent-color);
 }
 
 .bento-card__subtitle,
