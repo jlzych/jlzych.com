@@ -11,7 +11,8 @@ A personal blog and portfolio website built with Middleman (Ruby static site gen
 - **Start dev server**: `be middleman` (runs on localhost:4567 with live reload)
 - **Build for production**: `be middleman build` (output to `../jlzych.github.com`)
 - **Install dependencies**: `bundle install`
-- **Ruby version**: 2.6.5 (managed with rbenv)
+- **Ruby version**: 2.6.5 with RVM gemset `jlzych.com` (see `.ruby-version` / `.ruby-gemset`)
+- **Building from a non-interactive shell**: `be` and bare `bundle exec` fail there — the shell inherits RVM's default gemset plus an exported `RBENV_VERSION`, so `middleman` resolves to an rbenv shim and errors with `rbenv: middleman: command not found`. Use `rvm "$(cat .ruby-version)@$(cat .ruby-gemset)" do bundle exec middleman build` instead.
 
 ## Project Structure
 

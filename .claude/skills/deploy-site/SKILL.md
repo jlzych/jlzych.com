@@ -10,10 +10,20 @@ This skill commits all changes in the `../jlzych.github.com` output repo and pus
 
 1. Check the last commit message in the current source repo (`/Users/jlzych/Sites/jlzych.com`) for context on what changed.
 2. Check `git status` in `../jlzych.github.com` to confirm there are changes to commit.
-3. If there are no changes, run `be middleman build` in the source repo first, then re-check `git status` in `../jlzych.github.com`.
+3. If there are no changes, build the site in the source repo first (see "Building"), then re-check `git status` in `../jlzych.github.com`.
 4. Stage all changes with `git add -A`.
 5. Write a concise commit message summarizing what changed based on recent commits in the source repo.
 6. Commit and push to `origin master`.
+
+## Building
+
+The `be` alias and a bare `bundle exec` do **not** work in a non-interactive shell. This project's gems live in the RVM gemset `ruby-2.6.5@jlzych.com` (set by `.ruby-version` + `.ruby-gemset`), but a non-interactive shell inherits RVM's *default* gemset and an exported `RBENV_VERSION`, so `middleman` falls through to an rbenv shim and fails with `rbenv: middleman: command not found`.
+
+Always build with:
+
+```
+rvm "$(cat .ruby-version)@$(cat .ruby-gemset)" do bundle exec middleman build
+```
 
 ## Commit message format
 
