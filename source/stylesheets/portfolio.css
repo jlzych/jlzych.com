@@ -45,9 +45,10 @@
 }
 
 .portfolio-subtitle {
-  font-size: 1.3rem;
+  font-size: clamp(1.15rem, 0.925rem + 0.79vw, 1.3rem);
   line-height: 1.25;
   margin-top: calc(1.1rem + 0.75em);
+  text-wrap: balance;
 }
 
 .portfolio-work h3 {

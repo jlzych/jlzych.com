@@ -10,6 +10,10 @@
 
 html {
   font-size: var(--body-font-size);
+
+  /* Optically align the left edge by hanging opening quotes/brackets
+     into the margin. Safari-only today, degrades to nothing elsewhere. */
+  hanging-punctuation: first last;
 }
 
 body {
@@ -31,6 +35,14 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-variant-numeric: oldstyle-nums proportional-nums;
+
+  /* Let variable fonts pick the right optical size for how big they render,
+     the way metal type was cut differently per size */
+  font-optical-sizing: auto;
+
+  /* Avoid orphans/short last lines in body copy. Inherits, so headings
+     opt back out to `balance` below. */
+  text-wrap: pretty;
 
   /* Font smoothing */
   -webkit-font-smoothing: antialiased;
@@ -74,6 +86,9 @@ h6 {
   letter-spacing: 0.02em;
   margin-top: 0;
 
+  /* Even out the rag so multi-line headings don't leave a stub last line */
+  text-wrap: balance;
+
   & a {
     box-shadow: none;
     color: var(--text-color);
@@ -92,25 +107,15 @@ h6 {
 }
 
 h1 {
-  font-size: 1.7rem;
+  font-size: clamp(1.6rem, 1.45rem + 0.525vw, 1.7rem);
   line-height: 1.25;
   margin-bottom: 0.5em;
-
-  /* --bp-small */
-  @media only screen and (max-width: 600px) {
-    font-size: 1.6rem;
-  }
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: clamp(1.15rem, 0.925rem + 0.79vw, 1.3rem);
   line-height: 1.25;
   margin-bottom: 0.3em;
-
-  /* --bp-small */
-  @media only screen and (max-width: 600px) {
-    font-size: 1.15rem;
-  }
 
   &.subtitle {
     color: var(--light-brown);
@@ -120,15 +125,10 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 0.85rem + 0.525vw, 1.1rem);
   line-height: var(--body-font-line-height);
   margin-bottom: 0.25em;
   margin-top: 0;
-
-  /* --bp-small */
-  @media only screen and (max-width: 600px) {
-    font-size: 1rem;
-  }
 }
 
 /* Reverse nesting: h2 + & extracted */
@@ -137,17 +137,12 @@ h2 + h3 {
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 0.85rem + 0.525vw, 1.1rem);
   font-variant: all-small-caps;
   letter-spacing: 0.04em;
   line-height: 1.3;
   margin-bottom: 0.1em;
   margin-top: 0;
-
-  /* --bp-small */
-  @media only screen and (max-width: 600px) {
-    font-size: 1rem;
-  }
 }
 
 p {
@@ -182,6 +177,11 @@ a {
 code,
 pre {
   font-size: 0.9rem;
+
+  /* Code is not prose: don't hang a leading quote/bracket into the margin
+     and don't let `pretty` re-balance wrapped lines */
+  hanging-punctuation: none;
+  text-wrap: wrap;
 }
 
 pre,
@@ -202,6 +202,10 @@ blockquote {
   margin: 0;
   padding-left: 1rem;
 
+  /* The rule already marks the left edge — hanging punctuation past it
+     would break that line */
+  hanging-punctuation: none;
+
   & em {
     font-style: normal;
   }
@@ -213,10 +217,14 @@ hr {
   margin: 1.75em 2.5em;
 }
 
+/* Image captions */
 img ~ em {
   display: block;
   font-size: 0.8em;
   opacity: 0.85;
+
+  /* Captions are short — even lines beat a one-word second line */
+  text-wrap: balance;
 }
 
 /**
@@ -225,6 +233,31 @@ img ~ em {
 
 .text-small-caps {
   font-feature-settings: "smcp";
+}
+
+/* Drop cap for the opening paragraph of an article. Add to a <p>.
+   `initial-letter` sinks the first letter N lines and flows the text
+   around it automatically — no floats, no magic numbers. */
+.dropcap::first-letter {
+  -webkit-initial-letter: 3;
+  initial-letter: 3;
+  font-family: var(--headline-font-stack);
+  font-weight: 600;
+  color: var(--light-brown);
+  margin-right: 0.08em;
+}
+
+/* Optically hang an opening quote/bracket left in browsers without
+   `hanging-punctuation`. Add to a specific paragraph or blockquote. */
+.text-hang-open {
+  text-indent: -0.42em;
+}
+
+@supports (hanging-punctuation: first) {
+  .text-hang-open {
+    text-indent: 0;
+    hanging-punctuation: first;
+  }
 }
 
 .text-uppercase {

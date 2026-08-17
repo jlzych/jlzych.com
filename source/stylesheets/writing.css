@@ -130,13 +130,13 @@
 
   & h1 {
     color: var(--writing-font-color--lighter);
-    font-size: 62px;
+    font-size: clamp(40px, 18px + 5.5vw, 62px);
     font-weight: 400;
     margin-bottom: 0.5em;
   }
 
   & h2 {
-    font-size: 42px;
+    font-size: clamp(28px, 14px + 3.5vw, 42px);
     font-weight: 600;
     margin-bottom: 0.5em;
     margin-top: 1em;
@@ -146,7 +146,7 @@
     -moz-font-feature-settings: "smcp";
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    font-size: 34px;
+    font-size: clamp(24px, 14px + 2.5vw, 34px);
     font-weight: 400;
     margin-bottom: 0.5em;
     margin-top: 1.25em;
