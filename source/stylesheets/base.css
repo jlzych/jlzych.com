@@ -641,6 +641,7 @@ img ~ em {
     opacity: 0;
     transition: opacity var(--faster-transition-duration) ease-in-out;
     z-index: -1;
+    pointer-events: none;
 
     box-shadow:
       2px 2px 0px var(--monogram-shadow),
