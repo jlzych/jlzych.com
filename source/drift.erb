@@ -11,6 +11,16 @@ layout: false
     <title><%= current_page.data.title %></title>
     <meta name="description" content="<%= current_page.data.description %>">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFVVB7QHJP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QFVVB7QHJP');
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/images/drift/icon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/drift/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/drift/favicon-16x16.png">
