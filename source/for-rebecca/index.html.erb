@@ -1,0 +1,224 @@
+---
+title: For Rebecca
+description: Help celebrate Rebecca's birthday by sharing a message.
+layout: false
+---
+<%
+  # Lucide-style line icons, inlined so the page has no icon dependency.
+  icon_paths = {
+    video: '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+    mic: '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+    redo: '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+    next: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/>',
+    download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>',
+    copy: '<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  }
+  icon = ->(name) {
+    %(<svg class="fr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">#{icon_paths[name]}</svg>)
+  }
+%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#fffef6">
+    <title><%= current_page.data.title %></title>
+    <meta name="description" content="<%= current_page.data.description %>">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <%= stylesheet_link_tag "for-rebecca" %>
+    <script src="https://use.typekit.net/okn2nfu.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body class="fr">
+    <canvas class="fr-confetti" aria-hidden="true"></canvas>
+    <%= partial "rebecca_arcs" %>
+
+    <main class="fr-app">
+
+      <!-- ===================== WELCOME ===================== -->
+      <section class="fr-screen fr-welcome" data-screen="welcome">
+        <p class="fr-eyebrow">Shh… it's a surprise</p>
+        <h1 class="fr-title" tabindex="-1">Help celebrate <span class="fr-highlight">Rebecca's</span> birthday</h1>
+        <p class="fr-lede">
+          I'm collecting messages from the people who love Rebecca. You'll answer two
+          quick questions on video or audio. Talk as long as you like!
+        </p>
+
+        <div class="fr-notice" data-unsupported-notice hidden>
+          <p>
+            <strong>This browser can't record here.</strong>
+            <span data-inapp-text>For the best experience, open this link in Safari or Chrome.</span>
+            You can still send clips you record with your camera app.
+          </p>
+          <button type="button" class="fr-link-button" data-copy-link><%= icon.(:copy) %> <span>Copy link</span></button>
+        </div>
+
+        <form class="fr-name-form" data-name-form>
+          <label class="fr-label" for="fr-name">What's your name?</label>
+          <input class="fr-input" id="fr-name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="go" required maxlength="100" placeholder="Your name">
+          <button class="fr-button fr-button--primary" type="submit">
+            <span>Let's go</span> <%= icon.(:next) %>
+          </button>
+        </form>
+        <p class="fr-signoff">— Jeff</p>
+      </section>
+
+      <!-- ===================== QUESTION ===================== -->
+      <section class="fr-screen fr-question" data-screen="question" data-phase="choose" hidden>
+        <header class="fr-question__header">
+          <p class="fr-step">
+            <span class="fr-step__dots" aria-hidden="true"><span></span><span></span></span>
+            <span>Question <span data-step-number>1</span> of 2</span>
+          </p>
+          <h1 class="fr-question__text" tabindex="-1" data-question-text></h1>
+          <p class="fr-question__hint" data-question-hint></p>
+        </header>
+
+        <!-- Choose: two big buttons -->
+        <div class="fr-phase fr-choose" data-phase-panel="choose">
+          <div class="fr-tiles">
+            <button type="button" class="fr-tile" data-record="video">
+              <span class="fr-tile__icon"><%= icon.(:video) %></span>
+              <span class="fr-tile__label">Record video</span>
+            </button>
+            <button type="button" class="fr-tile" data-record="audio">
+              <span class="fr-tile__icon"><%= icon.(:mic) %></span>
+              <span class="fr-tile__label">Record audio</span>
+            </button>
+          </div>
+          <label class="fr-link-button fr-upload-link">
+            <%= icon.(:upload) %> <span>Or upload a clip you already have</span>
+            <input type="file" accept="video/*,audio/*" data-file-input="any" hidden>
+          </label>
+          <input type="file" accept="video/*" capture="user" data-file-input="video" hidden>
+          <input type="file" accept="audio/*" capture data-file-input="audio" hidden>
+        </div>
+
+        <!-- Countdown + recording: live preview or waveform -->
+        <div class="fr-phase fr-live" data-phase-panel="live">
+          <div class="fr-stage-wrap">
+            <div class="fr-stage" data-stage>
+              <video class="fr-preview" data-preview muted playsinline autoplay></video>
+              <div class="fr-meter" data-meter>
+                <div class="fr-meter__badge">
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__mic"><%= icon.(:mic) %></span>
+                </div>
+                <canvas class="fr-wave" data-wave></canvas>
+              </div>
+              <div class="fr-countdown" data-countdown aria-live="assertive"></div>
+              <p class="fr-rec" aria-live="polite">
+                <span class="fr-rec__dot"></span>
+                <span data-rec-label>Recording</span>
+                <time data-rec-time>0:00</time>
+              </p>
+            </div>
+          </div>
+          <div class="fr-actions">
+            <button type="button" class="fr-link-button" data-cancel>Cancel</button>
+            <button type="button" class="fr-stop" data-stop>
+              <span class="fr-stop__square" aria-hidden="true"></span>
+              <span>Stop recording</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Review: playback, re-record, save -->
+        <div class="fr-phase fr-review" data-phase-panel="review">
+          <div class="fr-stage-wrap">
+            <div class="fr-stage fr-stage--review" data-review-stage>
+              <video class="fr-playback" data-review-video controls playsinline preload="metadata"></video>
+              <div class="fr-audio-review" data-review-audio-wrap>
+                <div class="fr-meter__badge fr-meter__badge--still">
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__ring"></span>
+                  <span class="fr-meter__mic"><%= icon.(:mic) %></span>
+                </div>
+                <audio data-review-audio controls preload="metadata"></audio>
+              </div>
+            </div>
+          </div>
+          <div class="fr-actions">
+            <button type="button" class="fr-button" data-rerecord>
+              <%= icon.(:redo) %> <span>Re-record</span>
+            </button>
+            <button type="button" class="fr-button fr-button--primary" data-save>
+              <span data-save-label>Save &amp; next</span> <%= icon.(:next) %>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FINISHING ===================== -->
+      <section class="fr-screen fr-finishing" data-screen="finishing" hidden>
+        <h1 class="fr-title" tabindex="-1" data-finishing-title>Sending your love…</h1>
+        <div class="fr-progress" role="progressbar" aria-label="Upload progress" aria-valuemin="0" aria-valuemax="100" data-progress>
+          <div class="fr-progress__bar" data-progress-bar></div>
+        </div>
+        <p class="fr-lede" data-finishing-text>Hang tight — please keep this page open until it's done.</p>
+        <div class="fr-finishing__error" data-upload-error hidden>
+          <button type="button" class="fr-button fr-button--primary" data-retry>
+            <%= icon.(:redo) %> <span>Try again</span>
+          </button>
+          <p class="fr-small">
+            Still not working? Save your recordings and text them to Jeff:
+          </p>
+          <ul class="fr-downloads" data-downloads></ul>
+        </div>
+      </section>
+
+      <!-- ===================== DONE ===================== -->
+      <section class="fr-screen fr-done" data-screen="done" hidden>
+        <p class="fr-eyebrow">All done</p>
+        <h1 class="fr-title fr-title--huge" tabindex="-1">Thank you<span data-done-name></span>!</h1>
+        <p class="fr-lede">
+          Rebecca is going to love this. Remember, it's a surprise — mum's the word 🤫
+        </p>
+        <button type="button" class="fr-button" data-celebrate>🎉 <span>Again!</span></button>
+      </section>
+
+      <!-- ===================== PERMISSION DENIED ===================== -->
+      <section class="fr-screen fr-denied" data-screen="denied" hidden>
+        <h1 class="fr-title" tabindex="-1" data-denied-title>We need your camera &amp; microphone</h1>
+        <p class="fr-lede" data-denied-text>
+          It looks like access was blocked. To turn it back on:
+        </p>
+        <ul class="fr-help">
+          <li><strong>iPhone (Safari):</strong> tap <b>aA</b> in the address bar → Website Settings → allow Camera and Microphone.</li>
+          <li><strong>Android (Chrome):</strong> tap the icon left of the address → Permissions → allow Camera and Microphone.</li>
+          <li><strong>Computer:</strong> click the icon left of the address and allow Camera and Microphone, then try again.</li>
+        </ul>
+        <div class="fr-actions fr-actions--start">
+          <button type="button" class="fr-button fr-button--primary" data-denied-retry>
+            <%= icon.(:redo) %> <span>Try again</span>
+          </button>
+          <label class="fr-button">
+            <%= icon.(:upload) %> <span>Upload a clip instead</span>
+            <input type="file" accept="video/*,audio/*" data-file-input="any" hidden>
+          </label>
+        </div>
+      </section>
+
+      <!-- ===================== BAD LINK ===================== -->
+      <section class="fr-screen" data-screen="badlink" hidden>
+        <h1 class="fr-title" tabindex="-1">Hmm, this link isn't working</h1>
+        <p class="fr-lede">Please use the full link Jeff sent you. It ends with a <code>?k=</code> code. If you copied it, make sure you got the whole thing.</p>
+      </section>
+
+    </main>
+
+    <%= javascript_include_tag "for-rebecca/app", type: "module" %>
+  </body>
+</html>

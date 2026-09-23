@@ -1,0 +1,1179 @@
+/* ==========================================================================
+   For Rebecca — birthday recorder + gallery (standalone, layout: false)
+   ==========================================================================
+   Uses the main site's tokens (variables.css) and Souvenir (fonts.css), but
+   none of its page styles. Buttons borrow .button-light's monogram rainbow
+   shadow from base.css.
+
+   *= require "variables"
+   *= require "fonts"
+   *= require_self
+   ========================================================================== */
+
+:root {
+  --fr-red: hsl(4, 76%, 52%);
+  --fr-red-soft: hsla(4, 76%, 52%, 0.35);
+  --fr-ink: var(--text-color);
+  --fr-surface: #fff;
+  --fr-radius: clamp(16px, 3vw, 24px);
+  --fr-gutter: clamp(16px, 4vw, 48px);
+  --fr-ring:
+    2px 2px 0 var(--monogram-shadow),
+    0 0 0 6px var(--monogram-light-blue);
+  --fr-rainbow:
+    2px 2px 0 var(--monogram-shadow),
+    0 0 0 6px var(--monogram-light-blue),
+    -6px 3px 0 6px var(--monogram-green),
+    -12px 6px 0 6px var(--monogram-yellow),
+    -18px 9px 0 6px var(--monogram-orange);
+  --fr-spring: cubic-bezier(0.59, 2.3, 0.62, 0.69);
+
+  /* Outer radius of the corner rings. */
+  --arc-r: clamp(100px, 24vw, 320px);
+
+  /* A light spring: ~12% overshoot and one small settle. */
+  --fr-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* Paper grain for the rings, like the homepage's paperNoise filter. */
+  --fr-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.4'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@supports (animation-timing-function: linear(0, 1)) {
+  :root {
+    --fr-pop: linear(0, 0.033, 0.118, 0.236, 0.372, 0.513, 0.648, 0.77, 0.875, 0.961, 1.028, 1.075, 1.106, 1.122, 1.126, 1.122, 1.111, 1.095, 1.078, 1.06, 1.043, 1.028, 1.015, 1.004, 0.996, 0.99, 0.986, 0.985, 0.984, 0.985, 0.986, 0.988, 0.99, 0.993, 0.995, 0.997, 0.998, 1, 1.001, 1.001, 1);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body.fr {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg-color);
+  color: var(--fr-ink);
+  font-family: var(--body-font-stack);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  line-height: var(--body-font-line-height);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Corner rings — the homepage's pop-up rings, turned 90° into the corner
+   -------------------------------------------------------------------------- */
+
+.fr-arcs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--arc-r);
+  height: var(--arc-r);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Drawn the homepage way up (rings centered on the bottom-right corner,
+   Jeff peeking over the top), parked just above the page, then rotated a
+   quarter turn counterclockwise about that corner so it swings down into
+   the page's top-right corner. */
+.fr-arcs__art {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom right;
+  transform: rotate(-90deg);
+}
+
+.fr-arc {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 100% 0 0 0;
+  background: var(--fr-paper), var(--color);
+  background-blend-mode: overlay;
+  box-shadow: 0 0 clamp(16px, 3vw, 40px) clamp(3px, 0.8vw, 10px) rgba(75, 37, 2, 0.14);
+  transform-origin: bottom right;
+  /* Each ring pops out of the corner, innermost first. */
+  animation: fr-arc-pop 900ms var(--fr-pop) var(--delay) both;
+}
+
+/* Same proportions as the homepage rings (225 / 175 / 125). */
+.fr-arc--outer {
+  --size: 100%;
+  --color: var(--monogram-yellow);
+  --delay: 440ms;
+  z-index: 1;
+}
+
+.fr-arc--middle {
+  --size: 77.8%;
+  --color: var(--monogram-orange);
+  --delay: 280ms;
+  z-index: 2;
+}
+
+.fr-arc--inner {
+  --size: 55.6%;
+  --color: var(--monogram-green);
+  --delay: 120ms;
+  z-index: 3;
+}
+
+@keyframes fr-arc-pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* Jeff sits behind the outer ring with his head and shoulders over its edge,
+   placed as on the homepage. */
+.fr-arcs__me {
+  position: absolute;
+  left: 31.7%;
+  bottom: 70.4%;
+  width: 38%;
+  transform-origin: bottom center;
+  transform: rotate(-7.5deg);
+  z-index: 0;
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Pops up from behind the ring once it has landed. */
+    animation: fr-peek 900ms var(--fr-pop) 900ms both;
+  }
+}
+
+@keyframes fr-peek {
+  0% { transform: translateY(80%); opacity: 0; }
+  1% { opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+::selection {
+  background: var(--selection-color);
+}
+
+.fr-confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fr-icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+.fr-app {
+  --fr-column: 60rem;
+  /* Room text near the top needs to leave for the corner rings and Jeff, who
+     reach about 1.25 radii in from the right edge. None when the content
+     column already stops short of them. */
+  --arc-clear: max(0px, calc(var(--arc-r) * 1.25 - (100vw - min(100vw, var(--fr-column))) / 2 - var(--fr-gutter)));
+  max-width: var(--fr-column);
+  /* A definite height (not just min-height) so the recording stage can size
+     itself to the leftover space with container query units. min-content
+     lets it grow past the screen when the content doesn't fit. */
+  height: 100dvh;
+  min-height: min-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding:
+    max(var(--fr-gutter), env(safe-area-inset-top))
+    max(var(--fr-gutter), env(safe-area-inset-right))
+    max(var(--fr-gutter), env(safe-area-inset-bottom))
+    max(var(--fr-gutter), env(safe-area-inset-left));
+}
+
+.fr-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.75rem);
+
+  & > * {
+    margin: 0;
+  }
+
+  & h1:focus {
+    outline: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Type
+   -------------------------------------------------------------------------- */
+
+.fr-eyebrow,
+.fr-step,
+.fr-label {
+  font-family: var(--sans-serif-font-stack);
+  font-weight: 700;
+  font-size: clamp(0.8rem, 0.75rem + 0.3vw, 0.95rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.fr-title {
+  font-family: var(--headline-font-stack);
+  font-weight: normal;
+  font-size: clamp(2.4rem, 1.5rem + 5vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--fr-ink);
+  text-wrap: balance;
+  max-width: 14ch;
+  padding-right: var(--arc-clear);
+  box-sizing: content-box;
+}
+
+.fr-title--huge {
+  font-size: clamp(3rem, 1.5rem + 9vw, 7.5rem);
+  max-width: none;
+}
+
+.fr-highlight {
+  background: linear-gradient(transparent 62%, var(--monogram-yellow) 62% 92%, transparent 92%);
+  padding: 0 0.08em;
+  margin: 0 -0.08em;
+}
+
+.fr-lede {
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  line-height: 1.35;
+  max-width: 34ch;
+  text-wrap: pretty;
+}
+
+.fr-small {
+  font-size: 1rem;
+  color: var(--de-emphasized-text);
+}
+
+.fr-signoff {
+  font-style: italic;
+  color: var(--de-emphasized-text);
+}
+
+code {
+  font-size: 0.85em;
+  background: var(--gray-10);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.fr-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 56px;
+  padding: 0.6em 1.4em 0.65em;
+  border: 0;
+  border-radius: 14px;
+  background: var(--bg-color);
+  color: var(--button-text-color);
+  box-shadow: var(--fr-ring);
+  font-family: var(--sans-serif-font-stack);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 300ms var(--fr-spring);
+
+  /* The rainbow shadow fades in on hover, like the site's .button-light. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: var(--fr-rainbow);
+    opacity: 0;
+    transition: opacity var(--faster-transition-duration) ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &:active {
+    transform: translate(3px, -1.5px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--button-text-color);
+    outline-offset: 9px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+.fr-button--primary {
+  background: var(--button-text-color);
+  color: var(--bg-color);
+}
+
+@media (hover: hover) {
+  .fr-button:hover:not(:disabled),
+  .fr-tile:hover {
+    transform: translate(9px, -4.5px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.fr-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 44px;
+  padding: 0.25em 0;
+  border: 0;
+  background: none;
+  color: var(--button-text-color);
+  font-family: var(--sans-serif-font-stack);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--monogram-light-blue);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration-color: var(--monogram-shadow);
+  }
+}
+
+.fr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 1.5rem;
+  /* Keeps the actions at the bottom of the screen, in thumb reach on phones. */
+  margin-top: auto;
+  padding-top: 0.5rem;
+
+  & .fr-button {
+    min-height: 64px;
+  }
+}
+
+.fr-actions--start {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Welcome
+   -------------------------------------------------------------------------- */
+
+.fr-welcome {
+  justify-content: center;
+  padding-block: clamp(1rem, 6dvh, 4rem);
+}
+
+.fr-name-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.25rem 1.5rem;
+  max-width: 40rem;
+  margin-top: clamp(0.5rem, 3vw, 1.5rem) !important;
+
+  & .fr-label {
+    flex-basis: 100%;
+    margin-bottom: -0.5rem;
+  }
+}
+
+.fr-input {
+  flex: 1 1 14rem;
+  min-width: 0;
+  min-height: 60px;
+  padding: 0.5em 0.75em;
+  border: 2px solid var(--gray-20);
+  border-radius: 14px;
+  background: var(--fr-surface);
+  color: var(--fr-ink);
+  /* ≥16px so iOS doesn't zoom the page on focus. */
+  font: inherit;
+  font-size: max(16px, 1.25rem);
+  transition: box-shadow var(--faster-transition-duration), border-color var(--faster-transition-duration);
+
+  &::placeholder {
+    color: var(--gray-40);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--monogram-shadow);
+    box-shadow: 0 0 0 5px var(--monogram-light-blue);
+  }
+}
+
+.fr-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  max-width: 40rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  background: hsl(55, 94%, 90%);
+  box-shadow: inset 4px 0 0 var(--monogram-orange);
+  font-size: 1.05rem;
+
+  & p {
+    margin: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Question
+   -------------------------------------------------------------------------- */
+
+.fr-question__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: var(--arc-clear);
+
+  & > * {
+    margin: 0;
+  }
+}
+
+.fr-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.fr-step__dots {
+  display: inline-flex;
+  gap: 6px;
+
+  & span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+  }
+
+  & span:first-child,
+  [data-step="2"] & span:last-child {
+    background: var(--accent-color);
+  }
+}
+
+.fr-question__text {
+  font-family: var(--headline-font-stack);
+  font-weight: normal;
+  font-size: clamp(2.1rem, 1.2rem + 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  max-width: 16ch;
+  transition: font-size 400ms ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Once they're recording, the question shrinks to make room. */
+  [data-phase="countdown"] &,
+  [data-phase="recording"] &,
+  [data-phase="review"] & {
+    font-size: clamp(1.4rem, 1rem + 2.2vw, 2.4rem);
+    max-width: 24ch;
+  }
+}
+
+.fr-question__hint {
+  font-style: italic;
+  color: var(--de-emphasized-text);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+
+  [data-phase="countdown"] &,
+  [data-phase="recording"] &,
+  [data-phase="review"] & {
+    font-size: 1.05rem;
+  }
+}
+
+/* Each phase shows one panel. */
+.fr-phase {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  min-height: 0;
+}
+
+[data-phase="choose"] [data-phase-panel="choose"],
+[data-phase="countdown"] [data-phase-panel="live"],
+[data-phase="recording"] [data-phase-panel="live"],
+[data-phase="review"] [data-phase-panel="review"] {
+  display: flex;
+}
+
+[data-phase="countdown"] [data-stop],
+[data-phase="countdown"] .fr-rec,
+[data-phase="recording"] [data-cancel] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Choose: the big record buttons
+   -------------------------------------------------------------------------- */
+
+.fr-choose {
+  justify-content: center;
+  padding-block: clamp(0.5rem, 4dvh, 3rem);
+}
+
+.fr-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  padding-left: 6px;
+
+  /* Room for the hover rainbow shadow, which extends left. */
+  @media (hover: hover) {
+    padding-left: 24px;
+  }
+}
+
+.fr-tile {
+  --tile-color: var(--monogram-light-blue);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: clamp(11rem, 26vw, 16rem);
+  padding: 1.5rem;
+  border: 0;
+  border-radius: var(--fr-radius);
+  background: var(--fr-surface);
+  color: var(--fr-ink);
+  box-shadow: var(--fr-ring);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 300ms var(--fr-spring);
+
+  &[data-record="audio"] {
+    --tile-color: var(--monogram-green);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: var(--fr-rainbow);
+    opacity: 0;
+    transition: opacity var(--faster-transition-duration) ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &:active {
+    transform: translate(3px, -1.5px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--button-text-color);
+    outline-offset: 10px;
+  }
+
+  &.is-suggested {
+    box-shadow:
+      2px 2px 0 var(--monogram-shadow),
+      0 0 0 6px var(--monogram-shadow);
+  }
+}
+
+.fr-tile__icon {
+  display: grid;
+  place-items: center;
+  width: clamp(4rem, 3rem + 4vw, 6rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--tile-color);
+  color: var(--fr-ink);
+  font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.4rem);
+}
+
+.fr-tile__label {
+  font-family: var(--headline-font-stack);
+  font-size: clamp(1.4rem, 1rem + 1.5vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.fr-upload-link {
+  align-self: center;
+}
+
+/* --bp-small */
+@media (max-width: 600px) {
+  /* Stack the tiles as wide rows so both fit on a phone screen. */
+  .fr-tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .fr-tile {
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 6.5rem;
+    padding: 1.25rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .fr-upload-link {
+    align-self: flex-start;
+  }
+
+  .fr-actions .fr-button {
+    flex: 1 1 10rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Stage: live preview, waveform, and playback
+   -------------------------------------------------------------------------- */
+
+/* The stage fills whatever height is left between the question and the
+   buttons, so both always stay on screen. The media box inside is the largest
+   box of the camera's shape (--aspect, set from the video) that fits. */
+.fr-stage-wrap {
+  flex: 1;
+  min-height: 15rem;
+  container-type: size;
+  display: grid;
+  place-items: center;
+}
+
+.fr-stage {
+  --fit-h: calc(100cqh - 12px);
+  position: relative;
+  width: min(100cqw - 12px, var(--fit-h) * var(--aspect, 4 / 3));
+  aspect-ratio: var(--aspect, 4 / 3);
+  border-radius: var(--fr-radius);
+  overflow: hidden;
+  background: var(--gray-95);
+  box-shadow: 0 0 0 6px var(--monogram-light-blue);
+  transition: box-shadow var(--default-transition-duration);
+
+  &[data-kind="audio"] {
+    width: calc(100cqw - 12px);
+    aspect-ratio: auto;
+    height: min(var(--fit-h), 24rem);
+    background: var(--fr-surface);
+  }
+
+  [data-phase="recording"] & {
+    animation: fr-recording-ring 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes fr-recording-ring {
+  0%, 100% { box-shadow: 0 0 0 6px var(--fr-red); }
+  50% { box-shadow: 0 0 0 6px var(--fr-red), 0 0 0 16px var(--fr-red-soft); }
+}
+
+.fr-preview,
+.fr-playback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--gray-95);
+}
+
+/* Mirror the live preview so it behaves like a mirror. The recording itself
+   isn't mirrored. */
+.fr-preview {
+  transform: scaleX(-1);
+}
+
+.fr-playback {
+  object-fit: contain;
+}
+
+.fr-stage[data-kind="audio"] .fr-preview,
+.fr-stage[data-kind="video"] .fr-meter,
+.fr-stage--review[data-kind="audio"] .fr-playback,
+.fr-stage--review[data-kind="video"] .fr-audio-review {
+  display: none;
+}
+
+.fr-stage--review[data-kind="audio"] {
+  height: auto;
+  max-height: var(--fit-h);
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2.5rem);
+}
+
+.fr-meter,
+.fr-audio-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4dvh, 2.5rem);
+  height: 100%;
+}
+
+.fr-audio-review {
+  gap: 2.5rem;
+
+  & audio {
+    width: min(100%, 30rem);
+  }
+}
+
+/* The mic badge: rainbow rings that swell as you talk (--level is 0–1). */
+.fr-meter__badge {
+  --level: 0;
+  --size: clamp(5rem, 4rem + 4vw, 7rem);
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  aspect-ratio: 1;
+  margin-top: 1rem;
+}
+
+.fr-meter__badge--still {
+  --level: 0.3;
+}
+
+.fr-meter__mic,
+.fr-meter__ring {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.fr-meter__mic {
+  display: grid;
+  place-items: center;
+  background: var(--button-text-color);
+  color: var(--bg-color);
+  font-size: calc(var(--size) * 0.4);
+  z-index: 5;
+}
+
+.fr-meter__ring {
+  --i: 1;
+  background: var(--monogram-light-blue);
+  transform: scale(calc(1 + var(--i) * (0.1 + var(--level) * 0.28)));
+  transition: transform 90ms linear;
+
+  &:nth-child(1) { --i: 1; background: var(--monogram-light-blue); z-index: 4; }
+  &:nth-child(2) { --i: 2; background: var(--monogram-green); z-index: 3; }
+  &:nth-child(3) { --i: 3; background: var(--monogram-yellow); z-index: 2; }
+  &:nth-child(4) { --i: 4; background: var(--monogram-orange); z-index: 1; }
+}
+
+.fr-wave {
+  width: calc(100% - 2rem);
+  height: clamp(3.5rem, 10dvh, 6rem);
+  color: var(--button-text-color);
+}
+
+.fr-countdown {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  font-family: var(--headline-font-stack);
+  font-size: clamp(6rem, 25vmin, 14rem);
+  line-height: 1;
+  color: var(--bg-color);
+  text-shadow:
+    4px 4px 0 var(--monogram-shadow),
+    0 0 40px rgba(0, 0, 0, 0.35);
+
+  &:empty {
+    display: none;
+  }
+
+  &.is-ticking {
+    animation: fr-pop 1s ease-out both;
+  }
+
+  [data-kind="video"] & {
+    background: rgba(20, 12, 4, 0.35);
+  }
+
+  [data-kind="audio"] & {
+    background: rgba(255, 254, 246, 0.8);
+    color: var(--button-text-color);
+    text-shadow: 4px 4px 0 var(--monogram-light-blue);
+  }
+}
+
+@keyframes fr-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  20% { transform: scale(1.08); opacity: 1; }
+  35% { transform: scale(1); }
+  85% { opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+
+.fr-rec {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  background: rgba(20, 12, 4, 0.65);
+  color: #fff;
+  font-family: var(--sans-serif-font-stack);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  & time::before {
+    content: "·";
+    margin-right: 0.5em;
+  }
+}
+
+.fr-rec__dot {
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--fr-red);
+  animation: fr-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes fr-blink {
+  50% { opacity: 0.25; }
+}
+
+.fr-stop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  min-height: 72px;
+  padding: 0.5em 2em 0.5em 1.1em;
+  margin-left: auto;
+  border: 0;
+  border-radius: 999px;
+  background: var(--fr-red);
+  color: #fff;
+  box-shadow: 0 0 0 6px var(--fr-red-soft);
+  font-family: var(--sans-serif-font-stack);
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 300ms var(--fr-spring);
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--fr-red);
+    outline-offset: 9px;
+  }
+}
+
+.fr-stop__square {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: var(--fr-red);
+  }
+}
+
+@media (hover: hover) {
+  .fr-stop:hover {
+    transform: scale(1.04);
+  }
+}
+
+/* --bp-small */
+@media (max-width: 600px) {
+  .fr-stop {
+    flex: 1 1 100%;
+    order: -1;
+  }
+
+  .fr-live .fr-actions {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Finishing
+   -------------------------------------------------------------------------- */
+
+.fr-finishing {
+  justify-content: center;
+}
+
+.fr-progress {
+  width: 100%;
+  max-width: 36rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: var(--gray-10);
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(75, 37, 2, 0.15);
+}
+
+.fr-progress__bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 12px,
+      rgba(255, 255, 255, 0.35) 12px 24px
+    ),
+    linear-gradient(
+      90deg,
+      var(--monogram-light-blue),
+      var(--monogram-green),
+      var(--monogram-yellow),
+      var(--monogram-orange)
+    );
+  background-size: 34px 34px, 100% 100%;
+  animation: fr-stripes 0.8s linear infinite;
+  transition: width 300ms ease;
+}
+
+@keyframes fr-stripes {
+  to { background-position: 34px 0, 0 0; }
+}
+
+.fr-finishing__error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  & p {
+    margin: 0.5rem 0 0;
+  }
+}
+
+.fr-downloads {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Done & help screens
+   -------------------------------------------------------------------------- */
+
+.fr-done {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.fr-help {
+  margin: 0;
+  padding-left: 1.25em;
+  max-width: 40rem;
+
+  & li + li {
+    margin-top: 0.6em;
+  }
+
+  & strong {
+    font-family: var(--sans-serif-font-stack);
+    font-size: 0.9em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Gallery
+   -------------------------------------------------------------------------- */
+
+.frg-app {
+  --fr-column: 90rem;
+}
+
+.frg-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: clamp(1rem, 6dvh, 4rem) clamp(2rem, 6vw, 4rem);
+
+  & > * {
+    margin: 0;
+  }
+
+  & .fr-title {
+    max-width: 12ch;
+  }
+}
+
+.frg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  align-items: start;
+  gap: clamp(2rem, 4vw, 3rem);
+  padding-left: 6px;
+}
+
+.frg-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: var(--fr-radius);
+  background: var(--fr-surface);
+  box-shadow: var(--fr-ring);
+}
+
+.frg-card__name {
+  margin: 0;
+  font-family: var(--headline-font-stack);
+  font-weight: normal;
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.frg-clip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & video {
+    display: block;
+    width: 100%;
+    max-height: 70dvh;
+    border-radius: 14px;
+    background: var(--gray-95);
+  }
+
+  & audio {
+    width: 100%;
+  }
+}
+
+.frg-clip__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+  font-family: var(--sans-serif-font-stack);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  & a {
+    color: var(--de-emphasized-text);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+.frg-audio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: var(--light-gray-background-color);
+
+  & .fr-meter__badge {
+    --size: 3rem;
+    --level: 0.1;
+    margin: 0 1rem;
+    flex: none;
+  }
+}
+
+.frg-empty {
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Motion preferences
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

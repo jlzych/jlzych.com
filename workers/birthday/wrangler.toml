@@ -1,0 +1,14 @@
+name = "rebecca-birthday"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "rebecca-birthday"
+
+[vars]
+ALLOWED_ORIGINS = "https://jlzych.com,https://www.jlzych.com,http://localhost:4567"
+
+# Secrets (set with `npx wrangler secret put <NAME>`, or in .dev.vars locally):
+#   UPLOAD_TOKEN — goes in the invite link as ?k=
+#   ADMIN_TOKEN  — goes in the gallery link as #

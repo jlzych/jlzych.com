@@ -41,6 +41,11 @@ set :partials_dir, "partials"
 activate :livereload
 activate :syntax
 
+# Don't watch the Cloudflare Worker. `wrangler dev` writes its local state
+# under workers/*/.wrangler on every request, and livereload would otherwise
+# refresh the page mid-upload.
+config[:file_watcher_ignore] << %r{^workers\/}
+
 # Build-specific configuration
 configure :build do
   #set :http_prefix, "/~jlzych"
