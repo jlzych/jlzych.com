@@ -12,13 +12,13 @@ export const QUESTIONS = [
   {
     id: "met",
     label: "How we met",
-    text: "When did you first meet Rebecca?",
+    text: "How did you first meet Becca?",
     hint: "Where were you? What was your first impression of her?",
   },
   {
     id: "memory",
     label: "Favorite memory",
-    text: "What's your favorite memory of Rebecca?",
+    text: "What's your favorite memory of Becca?",
     hint: "Big or small, whatever comes to mind first.",
   },
 ];
