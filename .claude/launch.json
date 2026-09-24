@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "middleman",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-lc",
+        "rvm \"$(cat .ruby-version)@$(cat .ruby-gemset)\" do bundle exec middleman server"
+      ],
+      "port": 4568
+    }
+  ]
+}
