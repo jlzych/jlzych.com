@@ -418,11 +418,21 @@ code {
    Question
    -------------------------------------------------------------------------- */
 
+/* Breathing room above the question and between it and the record buttons,
+   kept about equal so the two read as one centered-ish group. */
+.fr-question {
+  --fr-q-space: clamp(1rem, 6dvh, 4rem);
+}
+
 .fr-question__header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding-right: var(--arc-clear);
+
+  [data-phase="choose"] & {
+    padding-top: var(--fr-q-space);
+  }
 
   & > * {
     margin: 0;
@@ -455,11 +465,11 @@ code {
 .fr-question__text {
   font-family: var(--headline-font-stack);
   font-weight: normal;
-  font-size: clamp(2.1rem, 1.2rem + 5vw, 4.5rem);
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 3.6rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
   text-wrap: balance;
-  max-width: 16ch;
+  max-width: 18ch;
   transition: font-size 400ms ease;
 
   &:focus {
@@ -478,7 +488,9 @@ code {
 .fr-question__hint {
   font-style: italic;
   color: var(--de-emphasized-text);
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem);
+  line-height: 1.35;
+  text-wrap: pretty;
 
   [data-phase="countdown"] &,
   [data-phase="recording"] &,
@@ -513,9 +525,13 @@ code {
    Choose: the big record buttons
    -------------------------------------------------------------------------- */
 
+/* Sits right under the question instead of centering in the leftover
+   space. The top padding plus the screen's gap matches the page gutter plus
+   the header's top padding. */
 .fr-choose {
-  justify-content: center;
-  padding-block: clamp(0.5rem, 4dvh, 3rem);
+  flex: none;
+  padding-top: max(0px, calc(var(--fr-q-space) + var(--fr-gutter) - clamp(1rem, 3vw, 1.75rem)));
+  padding-bottom: clamp(0.5rem, 4dvh, 3rem);
 }
 
 .fr-tiles {
