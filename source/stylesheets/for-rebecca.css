@@ -80,7 +80,9 @@ body.fr {
   right: 0;
   width: var(--arc-r);
   height: var(--arc-r);
-  z-index: -1;
+  /* Above the page content so the gift can be hovered; the headline and
+     other copy leave room for it (see --arc-clear). */
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -100,8 +102,20 @@ body.fr {
     display: block;
     width: 100%;
     height: auto;
+    pointer-events: auto;
     /* Pops out of the corner, with the corners of the box still tucked in. */
     animation: fr-peek 900ms var(--fr-pop) 300ms both;
+
+    /* Hovered or tapped: leaps out toward the page, then springs back past
+       its resting spot into the corner and wobbles to a stop (gift.js).
+       The easing is a kicked spring: it runs 0 → 1 (the leap) → -0.4 (the
+       rebound) → a couple of smaller wobbles → 0, so the animation starts and
+       ends at rest. Needs linear(); without it there's no pop. */
+    @supports (animation-timing-function: linear(0, 1)) {
+      &.is-popping {
+        animation: fr-repop 1300ms both linear(0, 0.312, 0.571, 0.77, 0.907, 0.982, 1, 0.966, 0.888, 0.775, 0.638, 0.486, 0.328, 0.173, 0.028, -0.101, -0.209, -0.294, -0.354, -0.389, -0.4, -0.391, -0.363, -0.32, -0.267, -0.207, -0.144, -0.082, -0.023, 0.03, 0.076, 0.111, 0.137, 0.153, 0.16, 0.158, 0.148, 0.132, 0.111, 0.088, 0.063, 0.038, 0.014, -0.008, -0.027, -0.042, -0.053, -0.06, -0.064, -0.064, -0.06, -0.054, -0.046, -0.037, -0.027, -0.017, -0.007, 0.002, 0.009, 0.016, 0);
+      }
+    }
   }
 }
 
@@ -109,6 +123,14 @@ body.fr {
   0% { transform: translateY(100%); opacity: 0; }
   1% { opacity: 1; }
   100% { transform: translateY(-4%); opacity: 1; }
+}
+
+/* From rest to the top of the leap; the easing above carries it there and
+   back. In the gift's rotated frame, up (negative Y) points out of the
+   corner. */
+@keyframes fr-repop {
+  from { transform: translateY(-4%) scale(1); }
+  to { transform: translateY(-24%) scale(1.06); }
 }
 
 ::selection {

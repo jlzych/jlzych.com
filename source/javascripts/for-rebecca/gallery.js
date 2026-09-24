@@ -6,6 +6,7 @@
 import { WORKER_URL, QUESTIONS } from "./config.js";
 import { burst } from "./confetti.js";
 import { fixInfiniteDuration } from "./media.js";
+import "./gift.js";
 
 const grid = document.querySelector("[data-grid]");
 const summary = document.querySelector("[data-summary]");

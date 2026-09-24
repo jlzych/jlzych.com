@@ -11,6 +11,7 @@ import { createAudioContext, LevelMeter } from "./waveform.js";
 import { Upload } from "./upload.js";
 import { burst } from "./confetti.js";
 import { formatTime, fixInfiniteDuration } from "./media.js";
+import "./gift.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
