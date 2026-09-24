@@ -28,7 +28,7 @@
     -18px 9px 0 6px var(--monogram-orange);
   --fr-spring: cubic-bezier(0.59, 2.3, 0.62, 0.69);
 
-  /* Outer radius of the corner rings. */
+  /* Size of the corner gift. */
   --arc-r: clamp(100px, 24vw, 320px);
 
   /* A light spring: ~12% overshoot and one small settle. */
@@ -71,7 +71,7 @@ body.fr {
 }
 
 /* --------------------------------------------------------------------------
-   Corner rings — the homepage's pop-up rings, turned 90° into the corner
+   Corner gift — Pusheen popping out of a present in the top-right corner
    -------------------------------------------------------------------------- */
 
 .fr-arcs {
@@ -84,86 +84,31 @@ body.fr {
   pointer-events: none;
 }
 
-/* Drawn the homepage way up (rings centered on the bottom-right corner,
-   Jeff peeking over the top), parked just above the page, then rotated a
-   quarter turn counterclockwise about that corner so it swings down into
-   the page's top-right corner. */
-.fr-arcs__art {
+/* Drawn upright with the middle of the box's bottom edge parked on the
+   page's top-right corner, then turned 225° about that point so the cat
+   points diagonally down-left into the page. */
+.fr-arcs__gift {
+  --w: var(--arc-r);
   position: absolute;
-  right: 0;
+  right: calc(var(--w) / -2);
   bottom: 100%;
-  width: 100%;
-  height: 100%;
-  transform-origin: bottom right;
-  transform: rotate(-90deg);
-}
-
-.fr-arc {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: var(--size);
-  aspect-ratio: 1;
-  border-radius: 100% 0 0 0;
-  background: var(--fr-paper), var(--color);
-  background-blend-mode: overlay;
-  box-shadow: 0 0 clamp(16px, 3vw, 40px) clamp(3px, 0.8vw, 10px) rgba(75, 37, 2, 0.14);
-  transform-origin: bottom right;
-  /* Each ring pops out of the corner, innermost first. */
-  animation: fr-arc-pop 900ms var(--fr-pop) var(--delay) both;
-}
-
-/* Same proportions as the homepage rings (225 / 175 / 125). */
-.fr-arc--outer {
-  --size: 100%;
-  --color: var(--monogram-yellow);
-  --delay: 440ms;
-  z-index: 1;
-}
-
-.fr-arc--middle {
-  --size: 77.8%;
-  --color: var(--monogram-orange);
-  --delay: 280ms;
-  z-index: 2;
-}
-
-.fr-arc--inner {
-  --size: 55.6%;
-  --color: var(--monogram-green);
-  --delay: 120ms;
-  z-index: 3;
-}
-
-@keyframes fr-arc-pop {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
-}
-
-/* Jeff sits behind the outer ring with his head and shoulders over its edge,
-   placed as on the homepage. */
-.fr-arcs__me {
-  position: absolute;
-  left: 31.7%;
-  bottom: 70.4%;
-  width: 38%;
+  width: var(--w);
   transform-origin: bottom center;
-  transform: rotate(-7.5deg);
-  z-index: 0;
+  transform: rotate(225deg);
 
-  & svg {
+  & img {
     display: block;
     width: 100%;
     height: auto;
-    /* Pops up from behind the ring once it has landed. */
-    animation: fr-peek 900ms var(--fr-pop) 900ms both;
+    /* Pops out of the corner, with the corners of the box still tucked in. */
+    animation: fr-peek 900ms var(--fr-pop) 300ms both;
   }
 }
 
 @keyframes fr-peek {
-  0% { transform: translateY(80%); opacity: 0; }
+  0% { transform: translateY(100%); opacity: 0; }
   1% { opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-4%); opacity: 1; }
 }
 
 ::selection {
@@ -191,9 +136,9 @@ body.fr {
 
 .fr-app {
   --fr-column: 60rem;
-  /* Room text near the top needs to leave for the corner rings and Jeff, who
-     reach about 1.25 radii in from the right edge. None when the content
-     column already stops short of them. */
+  /* Room text near the top needs to leave for the corner gift, which
+     reaches about 1.25 radii in from the right edge. None when the content
+     column already stops short of it. */
   --arc-clear: max(0px, calc(var(--arc-r) * 1.25 - (100vw - min(100vw, var(--fr-column))) / 2 - var(--fr-gutter)));
   max-width: var(--fr-column);
   /* A definite height (not just min-height) so the recording stage can size
